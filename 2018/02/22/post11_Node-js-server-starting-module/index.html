@@ -3,14 +3,22 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Archive: 2018 | Booski&#39;s programming</title>
+    <title>Node.js server starting module | Booski&#39;s programming</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Booski&#39;s programming">
-<meta property="og:url" content="http://bongbooski.github.io/archives/2018/index.html">
+    <meta name="description" content="#Server Strting moduleThis module can be used without abstracting by require()method. When this module is installed, the code uses -g option. -g makes the installing globally.Then the modules which ar">
+<meta name="keywords" content="Node.js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Node.js server starting module">
+<meta property="og:url" content="http://bongbooski.github.io/2018/02/22/post11_Node-js-server-starting-module/index.html">
 <meta property="og:site_name" content="Booski&#39;s programming">
+<meta property="og:description" content="#Server Strting moduleThis module can be used without abstracting by require()method. When this module is installed, the code uses -g option. -g makes the installing globally.Then the modules which ar">
+<meta property="og:image" content="http://bongbooski.github.io/images/supervisor1.png">
+<meta property="og:image" content="http://bongbooski.github.io/images/supervisor2.png">
+<meta property="og:updated_time" content="2018-02-22T12:47:28.838Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Booski&#39;s programming">
+<meta name="twitter:title" content="Node.js server starting module">
+<meta name="twitter:description" content="#Server Strting moduleThis module can be used without abstracting by require()method. When this module is installed, the code uses -g option. -g makes the installing globally.Then the modules which ar">
+<meta name="twitter:image" content="http://bongbooski.github.io/images/supervisor1.png">
 <meta property="fb:app_id" content="965647770265499">
     
 
@@ -219,25 +227,21 @@ ga('send', 'pageview');
 </aside>
 
             
-            <section id="main"><div class="timeline timeline-wrap">
-    
-            <div class="timeline-row timeline-row-major">
-                <span class="node"><i class="fa fa-calendar"></i></span>
-                <h1 class="title">2018</h1>
-            </div>
+            <section id="main"><article id="post-post11_Node-js-server-starting-module" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/02/22/post11_Node-js-server-starting-module/">Node.js server starting module</a>
+        <h1 class="article-title" itemprop="name">
+            Node.js server starting module
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
         <a href="/2018/02/22/post11_Node-js-server-starting-module/">
@@ -246,301 +250,132 @@ ga('send', 'pageview');
     </div>
 
 
-                    
-                    
+                        
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
         <a class="tag-link" href="/tags/Node-js/">Node.js</a>
     </div>
 
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+                    </div>
                 
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/02/22/post10_Node-js-File-System-Module-kr/">Node.js File System 모듈</a>
-        </h1>
-    
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>#Server Strting module<br>This module can be used without abstracting by <code>require()</code>method.</p>
+<p>When this module is installed, the code uses <code>-g</code> option. <code>-g</code> makes the installing globally.<br>Then the modules which are installed with <code>-g</code> option are placed in <code>{prefix}/lib/node_modules</code> and the executable files are placed in <code>{prefix}/bin</code></p>
+<p>We will install <code>supervisor</code> and <code>forever</code> modules with the option like this.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g supervisor</span><br><span class="line">npm install -g forever</span><br></pre></td></tr></table></figure>
+<hr>
+<p>#supervisor module<br><code>Node.js</code> programming makes us stop and restart the <code>server</code> again and again whenever we need to change the code because though the files are changed, the script executing doesn’t get impact. But, <code>supervisor</code> module recognizes the difference and restarts the <code>server</code> automatically.</p>
+<p>we can check their document here -&gt; <a href="https://github.com/petruisfan/node-supervisor" target="_blank" rel="noopener">https://github.com/petruisfan/node-supervisor</a></p>
+<p><code>supervisor</code> module’s basic usage is <code>supervisor (file name)</code> .</p>
+<p>We will see what happens with the module from now on.</p>
+<p>I made a code for showing the changing. When I made this code,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var http = require(&quot;http&quot;);</span><br><span class="line"></span><br><span class="line">http.createServer(function ( request, response)&#123;</span><br><span class="line">    response.writeHead(200, &#123;&apos;Content-Type&apos;:&apos;text/html&apos;&#125;);</span><br><span class="line">    response.end(&apos;&lt;h1&gt;Supervisor test - 1&lt;/h1&gt;&apos;);</span><br><span class="line">&#125;).listen(52273, function()&#123;</span><br><span class="line">    console.log(&quot;Server Running at http://127.0.0.1:52273&quot;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>I see the page when I enter <code>http://127.0.0.1:52273</code> or <code>localhost:52273</code><br><img src="/images/supervisor1.png" alt=""></p>
+<p>And I change and save the <code>server</code> code file like this without restarting,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var http = require(&quot;http&quot;);</span><br><span class="line"></span><br><span class="line">http.createServer(function ( request, response)&#123;</span><br><span class="line">    response.writeHead(200, &#123;&apos;Content-Type&apos;:&apos;text/html&apos;&#125;);</span><br><span class="line">    response.end(&apos;&lt;h1&gt;Supervisor test - 2&lt;/h1&gt;&apos;);</span><br><span class="line">&#125;).listen(52273, function()&#123;</span><br><span class="line">    console.log(&quot;Server Running at http://127.0.0.1:52273&quot;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>and then refresh the web page, the page is changed like this.<br><img src="/images/supervisor2.png" alt=""></p>
+<p><code>supervisor</code> module restarts any programs when the code ends no matter what the programs are. This means in the case we run some short code like<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(&quot;Run with supervisor&quot;);</span><br></pre></td></tr></table></figure></p>
+<p>the program gets infinite restarting.<br>so we should use the module when we start server program.</p>
 
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/02/22/post10_Node-js-File-System-Module-kr/">
-            <time datetime="2018-02-22T10:36:52.000Z" itemprop="datePublished">2018-02-22</time>
-        </a>
-    </div>
-
-
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Node-js/">Node.js</a>
-    </div>
-
-                </div>
-            </div>
+        
         </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/02/22/post9_Node-js-http-module-kr/">Node.js http 모듈</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/02/22/post9_Node-js-http-module-kr/">
-            <time datetime="2018-02-22T10:24:22.000Z" itemprop="datePublished">2018-02-22</time>
-        </a>
-    </div>
+        <footer class="article-footer">
+            <div class="share-container">
 
 
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Node-js/">Node.js</a>
-    </div>
 
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/02/22/post8_Node-js-ejs-jade-module-basic-kr/">Node.js ejs, jade module basic 템플릿 모듈 기본</a>
-        </h1>
-    
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
 
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/02/22/post8_Node-js-ejs-jade-module-basic-kr/">
-            <time datetime="2018-02-22T10:12:05.000Z" itemprop="datePublished">2018-02-22</time>
-        </a>
-    </div>
-
-
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Node-js/">Node.js</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/02/22/post7_MySql-updating-many-columns-by-A-query/">MySql updating many columns by A query</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/02/22/post7_MySql-updating-many-columns-by-A-query/">
-            <time datetime="2018-02-22T10:00:10.000Z" itemprop="datePublished">2018-02-22</time>
-        </a>
-    </div>
-
-
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/MySql/">MySql</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/02/22/post6_MySql-adding-or-subtracting-value-by-update-statement/">MySql adding or subtracting value by update statement</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/02/22/post6_MySql-adding-or-subtracting-value-by-update-statement/">
-            <time datetime="2018-02-22T09:51:04.000Z" itemprop="datePublished">2018-02-22</time>
-        </a>
-    </div>
-
-
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/MySql/">MySql</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/02/22/post5_Node.js-ejs,-jade-module-basic/">Node.js ejs, jade module basic</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/02/22/post5_Node.js-ejs,-jade-module-basic/">
-            <time datetime="2018-02-22T06:49:06.000Z" itemprop="datePublished">2018-02-22</time>
-        </a>
-    </div>
-
-
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Node-js/">Node.js</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/02/22/post4_MySql-selecting-duplicated-data-(by-group-by-and-in)-kr/">MySql selecting duplicated data (by group by and in) 중복된 데이터 다 읽기</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/02/22/post4_MySql-selecting-duplicated-data-(by-group-by-and-in)-kr/">
-            <time datetime="2018-02-22T06:43:04.000Z" itemprop="datePublished">2018-02-22</time>
-        </a>
-    </div>
-
-
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/MySql/">MySql</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/02/22/post3_MySql-selecting-duplicated-data-(by-group-by-and-in)/">MySql selecting duplicated data (by group by and in)</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/02/22/post3_MySql-selecting-duplicated-data-(by-group-by-and-in)/">
-            <time datetime="2018-02-22T05:23:56.000Z" itemprop="datePublished">2018-02-22</time>
-        </a>
-    </div>
-
-
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/MySql/">MySql</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/02/22/post2_Node.js-File-System-Module/">Node.js File System Module</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/02/22/post2_Node.js-File-System-Module/">
-            <time datetime="2018-02-22T05:22:51.000Z" itemprop="datePublished">2018-02-22</time>
-        </a>
-    </div>
-
-
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Node-js/">Node.js</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
 </div>
 
-    <nav id="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/archives/2018/page/2/">2</a><a class="extend next" rel="next" href="/archives/2018/page/2/">Suiv &raquo;</a>
-    </nav>
+            
+    
+        <a href="http://bongbooski.github.io/2018/02/22/post11_Node-js-server-starting-module/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/22/post11_Node-js-server-starting-module/">Commentaires</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2018/02/22/post10_Node-js-File-System-Module-kr/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Plus ancien</strong>
+            <div class="article-nav-title">Node.js File System 모듈</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+</section>
+    
+
 </section>
             
                 
@@ -715,11 +550,13 @@ ga('send', 'pageview');
     <script>
     var disqus_config = function () {
         
-        this.page.identifier = '';
+            this.page.url = 'http://bongbooski.github.io/2018/02/22/post11_Node-js-server-starting-module/';
+        
+        this.page.identifier = 'post11_Node-js-server-starting-module';
     };
     (function() { 
         var d = document, s = d.createElement('script');  
-        s.src = '//' + 'bongbooski' + '.disqus.com/count.js';
+        s.src = '//' + 'bongbooski' + '.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();
