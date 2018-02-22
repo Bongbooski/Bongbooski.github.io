@@ -3,18 +3,18 @@
 <head>
     <meta charset="utf-8">
     
-    <title>why my hexo blog changes the language automacitally | Booski&#39;s programming</title>
+    <title>why hexo blog changes the language automacitally | Booski&#39;s programming</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="Almost whenever I check my hexo github blog no matter local or github,the language kept being changed like an alive creature. One time that was in English, next time it was in Spanish, next time it wa">
 <meta name="keywords" content="hexo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="why my hexo blog changes the language automacitally">
-<meta property="og:url" content="http://bongbooski.github.io/2018/02/22/post12_why-my-hexo-blog-changes-the-language-automacitally/index.html">
+<meta property="og:title" content="why hexo blog changes the language automacitally">
+<meta property="og:url" content="http://bongbooski.github.io/2018/02/22/post12_why-hexo-blog-changes-the-language-automacitally/index.html">
 <meta property="og:site_name" content="Booski&#39;s programming">
 <meta property="og:description" content="Almost whenever I check my hexo github blog no matter local or github,the language kept being changed like an alive creature. One time that was in English, next time it was in Spanish, next time it wa">
-<meta property="og:updated_time" content="2018-02-22T14:22:48.659Z">
+<meta property="og:updated_time" content="2018-02-22T14:35:33.499Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="why my hexo blog changes the language automacitally">
+<meta name="twitter:title" content="why hexo blog changes the language automacitally">
 <meta name="twitter:description" content="Almost whenever I check my hexo github blog no matter local or github,the language kept being changed like an alive creature. One time that was in English, next time it was in Spanish, next time it wa">
 <meta property="fb:app_id" content="965647770265499">
     
@@ -101,7 +101,7 @@ ga('send', 'pageview');
             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Rechercher" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
@@ -120,9 +120,9 @@ ga('send', 'pageview');
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Posts',
+            POSTS: 'Articles',
             PAGES: 'Pages',
-            CATEGORIES: 'Categories',
+            CATEGORIES: 'Catégories',
             TAGS: 'Tags',
             UNTITLED: '(Untitled)',
         },
@@ -154,7 +154,7 @@ ga('send', 'pageview');
                 <td>
                     
     <div class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Rechercher" />
     </div>
 
                 </td>
@@ -174,16 +174,16 @@ ga('send', 'pageview');
             <h2 id="name">Bongbooski</h2>
             <h3 id="title">Web Developer</h3>
             <span id="location"><i class="fa fa-map-marker"></i>Daejeon, South Korea</span>
-            <a id="follow" target="_blank" href="https://github.com/bongbooski/">FOLLOW</a>
+            <a id="follow" target="_blank" href="https://github.com/bongbooski/">SUIVRE</a>
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
                 13
-                <span>posts</span>
+                <span>Articles</span>
             </div>
             <div class="article-info-block">
                 3
-                <span>tags</span>
+                <span>Tags</span>
             </div>
         </div>
         
@@ -224,7 +224,7 @@ ga('send', 'pageview');
 </aside>
 
             
-            <section id="main"><article id="post-post12_why-my-hexo-blog-changes-the-language-automacitally" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-post12_why-hexo-blog-changes-the-language-automacitally" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -232,7 +232,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-            why my hexo blog changes the language automacitally
+            why hexo blog changes the language automacitally
         </h1>
     
 
@@ -241,7 +241,7 @@ ga('send', 'pageview');
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2018/02/22/post12_why-my-hexo-blog-changes-the-language-automacitally/">
+        <a href="/2018/02/22/post12_why-hexo-blog-changes-the-language-automacitally/">
             <time datetime="2018-02-22T14:01:17.000Z" itemprop="datePublished">2018-02-22</time>
         </a>
     </div>
@@ -269,7 +269,9 @@ ga('send', 'pageview');
 <p>And I found the reason and how to <strong>SET</strong> your blog’s language.</p>
 <p><code>hexo</code> says that if we set <code>i18n_dir</code> as <code>lang</code>, they will detect the language within the first segment of <code>URL</code>. For example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/index.html =&gt; en</span><br><span class="line">/archives/index.html =&gt; en</span><br><span class="line">/zh-tw/index.html =&gt; zh-tw</span><br></pre></td></tr></table></figure></p>
 <p>The string will only be served as a language when the language file exists. So archives in /archives/index.html (example 2) will not get served as a language.</p>
-<p>But it was odd. When my blog shows French, <code>request headers</code> message’s language part setting was right(in Korean or English). </p>
+<p>But it was odd. When my blog shows French, <code>request headers</code> message’s language part setting was right(in Korean or English).</p>
+<p>I don’t know why the other languages appeared but after setting <code>language</code>option<br>as <code>en</code> in <code>_config.yml</code> and then deleted, it became ok.</p>
+<p>If this blog’s language is weird then notice me. In case I will see again,<br>I will try to find the reason again</p>
 
         
         </div>
@@ -335,7 +337,7 @@ ga('send', 'pageview');
 
             
     
-        <a href="http://bongbooski.github.io/2018/02/22/post12_why-my-hexo-blog-changes-the-language-automacitally/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/22/post12_why-my-hexo-blog-changes-the-language-automacitally/">Comments</a>
+        <a href="http://bongbooski.github.io/2018/02/22/post12_why-hexo-blog-changes-the-language-automacitally/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/22/post12_why-hexo-blog-changes-the-language-automacitally/">Commentaires</a>
     
 
         </footer>
@@ -346,7 +348,7 @@ ga('send', 'pageview');
     
     
         <a href="/2018/02/22/post11_Node-js-server-starting-module/" id="article-nav-older" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Older</strong>
+            <strong class="article-nav-caption">Plus ancien</strong>
             <div class="article-nav-title">Node.js server starting module</div>
         </a>
     
@@ -373,14 +375,14 @@ ga('send', 'pageview');
    
         
     <div class="widget-wrap">
-        <h3 class="widget-title">recent</h3>
+        <h3 class="widget-title">Récents</h3>
         <div class="widget">
             <ul id="recent-post" class="">
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/02/22/post12_why-my-hexo-blog-changes-the-language-automacitally/" class="thumbnail">
+                            <a href="/2018/02/22/post12_why-hexo-blog-changes-the-language-automacitally/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -391,7 +393,7 @@ ga('send', 'pageview');
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/02/22/post12_why-my-hexo-blog-changes-the-language-automacitally/" class="title">why my hexo blog changes the language automacitally</a></p>
+                            <p class="item-title"><a href="/2018/02/22/post12_why-hexo-blog-changes-the-language-automacitally/" class="title">why hexo blog changes the language automacitally</a></p>
                             <p class="item-date"><time datetime="2018-02-22T14:01:17.000Z" itemprop="datePublished">2018-02-22</time></p>
                         </div>
                     </li>
@@ -481,7 +483,7 @@ ga('send', 'pageview');
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">archives</h3>
+        <h3 class="widget-title">Archives</h3>
         <div class="widget">
             <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">13</span></li></ul>
         </div>
@@ -490,7 +492,7 @@ ga('send', 'pageview');
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">tags</h3>
+        <h3 class="widget-title">Tags</h3>
         <div class="widget">
             <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySql/">MySql</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li></ul>
         </div>
@@ -499,7 +501,7 @@ ga('send', 'pageview');
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">tag cloud</h3>
+        <h3 class="widget-title">Nuage de tags</h3>
         <div class="widget tagcloud">
             <a href="/tags/MySql/" style="font-size: 15px;">MySql</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a>
         </div>
@@ -508,7 +510,7 @@ ga('send', 'pageview');
     
         
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">links</h3>
+        <h3 class="widget-title">Liens</h3>
         <div class="widget">
             <ul>
                 
@@ -540,9 +542,9 @@ ga('send', 'pageview');
     <script>
     var disqus_config = function () {
         
-            this.page.url = 'http://bongbooski.github.io/2018/02/22/post12_why-my-hexo-blog-changes-the-language-automacitally/';
+            this.page.url = 'http://bongbooski.github.io/2018/02/22/post12_why-hexo-blog-changes-the-language-automacitally/';
         
-        this.page.identifier = 'post12_why-my-hexo-blog-changes-the-language-automacitally';
+        this.page.identifier = 'post12_why-hexo-blog-changes-the-language-automacitally';
     };
     (function() { 
         var d = document, s = d.createElement('script');  
