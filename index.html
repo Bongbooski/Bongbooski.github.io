@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang=en>
 <head>
     <meta charset="utf-8">
     
@@ -9,6 +9,7 @@
 <meta property="og:title" content="Booski&#39;s programming">
 <meta property="og:url" content="http://bongbooski.github.io/index.html">
 <meta property="og:site_name" content="Booski&#39;s programming">
+<meta property="og:locale" content="en">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Booski&#39;s programming">
 <meta property="fb:app_id" content="965647770265499">
@@ -96,7 +97,7 @@ ga('send', 'pageview');
             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Rechercher" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
@@ -115,9 +116,9 @@ ga('send', 'pageview');
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Articles',
+            POSTS: 'Posts',
             PAGES: 'Pages',
-            CATEGORIES: 'Catégories',
+            CATEGORIES: 'Categories',
             TAGS: 'Tags',
             UNTITLED: '(Untitled)',
         },
@@ -149,7 +150,7 @@ ga('send', 'pageview');
                 <td>
                     
     <div class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Rechercher" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
     </div>
 
                 </td>
@@ -169,16 +170,16 @@ ga('send', 'pageview');
             <h2 id="name">Bongbooski</h2>
             <h3 id="title">Web Developer</h3>
             <span id="location"><i class="fa fa-map-marker"></i>Daejeon, South Korea</span>
-            <a id="follow" target="_blank" href="https://github.com/bongbooski/">SUIVRE</a>
+            <a id="follow" target="_blank" href="https://github.com/bongbooski/">FOLLOW</a>
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                12
-                <span>Articles</span>
+                13
+                <span>posts</span>
             </div>
             <div class="article-info-block">
-                2
-                <span>Tags</span>
+                3
+                <span>tags</span>
             </div>
         </div>
         
@@ -220,6 +221,127 @@ ga('send', 'pageview');
 
             
             <section id="main">
+    <article id="post-post12_why-my-hexo-blog-changes-the-language-automacitally" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/02/22/post12_why-my-hexo-blog-changes-the-language-automacitally/">why my hexo blog changes the language automacitally</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/02/22/post12_why-my-hexo-blog-changes-the-language-automacitally/">
+            <time datetime="2018-02-22T14:01:17.000Z" itemprop="datePublished">2018-02-22</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/hexo/">hexo</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>Almost whenever I check my hexo github blog no matter local or github,<br>the language kept being changed like an alive creature.</p>
+<p>One time that was in English, next time it was in Spanish, next time it was in<br>French, and then it was in Indonesian.</p>
+<p><em>yeah it was so crazy</em></p>
+<p>So I checked <code>hexo</code>‘s document.<br>-&gt; <a href="https://hexo.io/docs/internationalization.html" target="_blank" rel="noopener">https://hexo.io/docs/internationalization.html</a></p>
+<p>And I found the reason and how to <strong>SET</strong> your blog’s language.</p>
+<p><code>hexo</code> says that if we set <code>i18n_dir</code> as <code>lang</code>, they will detect the language within the first segment of <code>URL</code>. For example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/index.html =&gt; en</span><br><span class="line">/archives/index.html =&gt; en</span><br><span class="line">/zh-tw/index.html =&gt; zh-tw</span><br></pre></td></tr></table></figure></p>
+<p>The string will only be served as a language when the language file exists. So archives in /archives/index.html (example 2) will not get served as a language.</p>
+<p>But it was odd. When my blog shows French, <code>request headers</code> message’s language part setting was right(in Korean or English). </p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://bongbooski.github.io/2018/02/22/post12_why-my-hexo-blog-changes-the-language-automacitally/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/22/post12_why-my-hexo-blog-changes-the-language-automacitally/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-post11_Node-js-server-starting-module" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -338,7 +460,7 @@ ga('send', 'pageview');
 
             
     
-        <a href="http://bongbooski.github.io/2018/02/22/post11_Node-js-server-starting-module/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/22/post11_Node-js-server-starting-module/">Commentaires</a>
+        <a href="http://bongbooski.github.io/2018/02/22/post11_Node-js-server-starting-module/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/22/post11_Node-js-server-starting-module/">Comments</a>
     
 
         </footer>
@@ -465,7 +587,7 @@ ga('send', 'pageview');
 
             
     
-        <a href="http://bongbooski.github.io/2018/02/22/post10_Node-js-File-System-Module-kr/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/22/post10_Node-js-File-System-Module-kr/">Commentaires</a>
+        <a href="http://bongbooski.github.io/2018/02/22/post10_Node-js-File-System-Module-kr/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/22/post10_Node-js-File-System-Module-kr/">Comments</a>
     
 
         </footer>
@@ -600,7 +722,7 @@ ga('send', 'pageview');
 
             
     
-        <a href="http://bongbooski.github.io/2018/02/22/post9_Node-js-http-module-kr/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/22/post9_Node-js-http-module-kr/">Commentaires</a>
+        <a href="http://bongbooski.github.io/2018/02/22/post9_Node-js-http-module-kr/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/22/post9_Node-js-http-module-kr/">Comments</a>
     
 
         </footer>
@@ -751,7 +873,7 @@ ga('send', 'pageview');
 
             
     
-        <a href="http://bongbooski.github.io/2018/02/22/post8_Node-js-ejs-jade-module-basic-kr/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/22/post8_Node-js-ejs-jade-module-basic-kr/">Commentaires</a>
+        <a href="http://bongbooski.github.io/2018/02/22/post8_Node-js-ejs-jade-module-basic-kr/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/22/post8_Node-js-ejs-jade-module-basic-kr/">Comments</a>
     
 
         </footer>
@@ -865,7 +987,7 @@ ga('send', 'pageview');
 
             
     
-        <a href="http://bongbooski.github.io/2018/02/22/post7_MySql-updating-many-columns-by-A-query/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/22/post7_MySql-updating-many-columns-by-A-query/">Commentaires</a>
+        <a href="http://bongbooski.github.io/2018/02/22/post7_MySql-updating-many-columns-by-A-query/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/22/post7_MySql-updating-many-columns-by-A-query/">Comments</a>
     
 
         </footer>
@@ -983,7 +1105,7 @@ ga('send', 'pageview');
 
             
     
-        <a href="http://bongbooski.github.io/2018/02/22/post6_MySql-adding-or-subtracting-value-by-update-statement/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/22/post6_MySql-adding-or-subtracting-value-by-update-statement/">Commentaires</a>
+        <a href="http://bongbooski.github.io/2018/02/22/post6_MySql-adding-or-subtracting-value-by-update-statement/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/22/post6_MySql-adding-or-subtracting-value-by-update-statement/">Comments</a>
     
 
         </footer>
@@ -1135,7 +1257,7 @@ ga('send', 'pageview');
 
             
     
-        <a href="http://bongbooski.github.io/2018/02/22/post5_Node.js-ejs,-jade-module-basic/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/22/post5_Node.js-ejs,-jade-module-basic/">Commentaires</a>
+        <a href="http://bongbooski.github.io/2018/02/22/post5_Node.js-ejs,-jade-module-basic/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/22/post5_Node.js-ejs,-jade-module-basic/">Comments</a>
     
 
         </footer>
@@ -1255,7 +1377,7 @@ ga('send', 'pageview');
 
             
     
-        <a href="http://bongbooski.github.io/2018/02/22/post4_MySql-selecting-duplicated-data-(by-group-by-and-in)-kr/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/22/post4_MySql-selecting-duplicated-data-(by-group-by-and-in)-kr/">Commentaires</a>
+        <a href="http://bongbooski.github.io/2018/02/22/post4_MySql-selecting-duplicated-data-(by-group-by-and-in)-kr/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/22/post4_MySql-selecting-duplicated-data-(by-group-by-and-in)-kr/">Comments</a>
     
 
         </footer>
@@ -1381,133 +1503,7 @@ ga('send', 'pageview');
 
             
     
-        <a href="http://bongbooski.github.io/2018/02/22/post3_MySql-selecting-duplicated-data-(by-group-by-and-in)/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/22/post3_MySql-selecting-duplicated-data-(by-group-by-and-in)/">Commentaires</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-post2_Node.js-File-System-Module" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/02/22/post2_Node.js-File-System-Module/">Node.js File System Module</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/02/22/post2_Node.js-File-System-Module/">
-            <time datetime="2018-02-22T05:22:51.000Z" itemprop="datePublished">2018-02-22</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Node-js/">Node.js</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>Because we can’t write down all <code>HTML</code> page in <code>Javascript</code> file, we use <code>file system module</code> for provide <code>HTML</code> page which exists in server to clients.</p>
-<p>For providing HTML page(<code>HTMLPage.html</code>), we need to make server <code>javascript</code> file like this.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const fs = require(&quot;fs&quot;);</span><br><span class="line">const http = require(&quot;http&quot;);</span><br><span class="line"></span><br><span class="line">http.createServer(function(request, response)&#123;</span><br><span class="line">  fs.readFile(&quot;HTMLPage.html&quot;, function(error, data)&#123;</span><br><span class="line">    response.writeHead(200, &#123;&quot;Content-Type:&quot;:&quot;text/html&quot;&#125;);</span><br><span class="line">    response.end(data);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;).listen(52273, function()&#123;</span><br><span class="line">  console.log(&quot;server running at http://127.0.0.1:52273/&quot;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>If we want to provide another kind of file, we can change <code>MIME</code> type in 5th line.<br>For example, in jpeg case, we change <code>text/html</code> to <code>image/jpeg</code>.<br>It is same to other MIME types.</p>
-<h3 id="Examples-of-MIME"><a href="#Examples-of-MIME" class="headerlink" title="Examples of MIME"></a>Examples of MIME</h3><ul>
-<li>text/plain — basic text</li>
-<li>text/html — HTML document</li>
-<li>text/css — CSS document</li>
-<li>text/xml — XML document</li>
-<li>image/jpeg — JPG/JPEG image file</li>
-<li>image/png — PNG image file</li>
-<li>video/mpeg — MPEG video file</li>
-<li>audio/mp3 — MP3 music file</li>
-</ul>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-    <div class="a2a_kit a2a_default_style">
-    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
-    <span class="a2a_divider"></span>
-    <a class="a2a_button_facebook"></a>
-    <a class="a2a_button_twitter"></a>
-    <a class="a2a_button_google_plus"></a>
-    <a class="a2a_button_pinterest"></a>
-    <a class="a2a_button_tumblr"></a>
-</div>
-<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
-<style>
-    .a2a_menu {
-        border-radius: 4px;
-    }
-    .a2a_menu a {
-        margin: 2px 0;
-        font-size: 14px;
-        line-height: 16px;
-        border-radius: 4px;
-        color: inherit !important;
-        font-family: 'Microsoft Yahei';
-    }
-    #a2apage_dropdown {
-        margin: 10px 0;
-    }
-    .a2a_mini_services {
-        padding: 10px;
-    }
-    a.a2a_i,
-    i.a2a_i {
-        width: 122px;
-        line-height: 16px;
-    }
-    a.a2a_i .a2a_svg,
-    a.a2a_more .a2a_svg {
-        width: 16px;
-        height: 16px;
-        line-height: 16px;
-        vertical-align: top;
-        background-size: 16px;
-    }
-    a.a2a_i {
-        border: none !important;
-    }
-    a.a2a_menu_show_more_less {
-        margin: 0;
-        padding: 10px 0;
-        line-height: 16px;
-    }
-    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
-    .a2a_mini_services{*+height:1%;}
-</style>
-
-</div>
-
-            
-    
-        <a href="http://bongbooski.github.io/2018/02/22/post2_Node.js-File-System-Module/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/22/post2_Node.js-File-System-Module/">Commentaires</a>
+        <a href="http://bongbooski.github.io/2018/02/22/post3_MySql-selecting-duplicated-data-(by-group-by-and-in)/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/22/post3_MySql-selecting-duplicated-data-(by-group-by-and-in)/">Comments</a>
     
 
         </footer>
@@ -1518,7 +1514,7 @@ ga('send', 'pageview');
 
 
     <nav id="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Suiv &raquo;</a>
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
 </section>
             
@@ -1527,9 +1523,28 @@ ga('send', 'pageview');
    
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Récents</h3>
+        <h3 class="widget-title">recent</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/02/22/post12_why-my-hexo-blog-changes-the-language-automacitally/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/02/22/post12_why-my-hexo-blog-changes-the-language-automacitally/" class="title">why my hexo blog changes the language automacitally</a></p>
+                            <p class="item-date"><time datetime="2018-02-22T14:01:17.000Z" itemprop="datePublished">2018-02-22</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1607,25 +1622,6 @@ ga('send', 'pageview');
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/02/22/post7_MySql-updating-many-columns-by-A-query/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/02/22/post7_MySql-updating-many-columns-by-A-query/" class="title">MySql updating many columns by A query</a></p>
-                            <p class="item-date"><time datetime="2018-02-22T10:00:10.000Z" itemprop="datePublished">2018-02-22</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1635,34 +1631,34 @@ ga('send', 'pageview');
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Archives</h3>
+        <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">12</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">13</span></li></ul>
         </div>
     </div>
 
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Tags</h3>
+        <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySql/">MySql</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">7</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySql/">MySql</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">Nuage de tags</h3>
+        <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/MySql/" style="font-size: 10px;">MySql</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a>
+            <a href="/tags/MySql/" style="font-size: 15px;">MySql</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a>
         </div>
     </div>
 
     
         
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">Liens</h3>
+        <h3 class="widget-title">links</h3>
         <div class="widget">
             <ul>
                 
