@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://bongbooski.github.io/"/>
-  <updated>2018-02-22T14:52:08.936Z</updated>
+  <updated>2018-03-01T08:04:31.768Z</updated>
   <id>http://bongbooski.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>OKKY세미나 IT회사 탐방기 - 18.02.27</title>
+    <link href="http://bongbooski.github.io/2018/02/28/post13_okky_seminor_kr/"/>
+    <id>http://bongbooski.github.io/2018/02/28/post13_okky_seminor_kr/</id>
+    <published>2018-02-28T04:48:17.000Z</published>
+    <updated>2018-03-01T08:04:31.768Z</updated>
+    
+    <content type="html"><![CDATA[<p>TGL경복빌딩의 eBrain에서 있었던 OKKY세미나에 형들과 다녀왔다.<br>마이다스 아이티에서 10년 3개월 5일(?) 일하다가 나오신 황후순님이 세미나를 해주셨고,<br>주제는 <strong>IT회사 탐방기</strong> 였다.</p><p>황후순님의 이력에 대한 간단한 설명을 듣고<br>(안전도 시뮬레이션등을 하는 회사, 인공지능 면접 솔루션 개발 등),</p><p>어떻게 많은 회사들을 다녀오실 수 있었는지도말씀해주셨는데,<br><code>facebook</code>등과 같은 SNS를 활용하신다고 한다.</p><p>예를 들면 회사는 내가 누구인지 모르니 나를 알려야 하므로, 그 회사에 다니는 사람 등의<br>게시물에 댓글을 달거나 하는 식으로 인맥을 확장해 나가는 방식!<br>SNS에서 소통하다가 방문하는 방식이라고 한다.</p><hr><p>연사님은 개발자로 10년을 일을 하셨는데 퇴사를 하게 된 계기는 두가지라고 했다.</p><ol><li><strong>데이터 사이언스</strong>, <strong>AI</strong> 에 흥미가 있었고, <strong>TensorFlow</strong> 등에서 가져다 쓰는것보다는 직접 개발해보고 싶었다</li><li>영어를 활용하는 환경</li></ol><p><strong><em>싱가폴로!</em></strong></p><hr><h2 id="기업탐방-해외-싱가폴"><a href="#기업탐방-해외-싱가폴" class="headerlink" title="기업탐방 - 해외(싱가폴)"></a>기업탐방 - 해외(싱가폴)</h2><h3 id="싱가폴-페이스북"><a href="#싱가폴-페이스북" class="headerlink" title="싱가폴 페이스북"></a>싱가폴 페이스북</h3><ul><li>식당이 좋다, 다양한 종류의 사람들이 있으므로 음식도 종류별로 준비된다.</li><li>성과위주이기에 업무에 도움이 되거나 휴식을 위해 음주가 가능하지만 대부분 안함</li><li>모니터에 코드만 안찍히면 구경가서 사진촬영도 가능</li><li>모든 층이 계단으로 연결되어있고, <strong>face to face</strong> 를 선호한다 - 전화 잘 안울림</li><li>포토존이 많다. <em>왜..?</em></li><li>면접<ol><li>길다 - 한두달걸림</li><li>기술면접을 분야별로 본다</li><li>면접마다 평가해서 회사가 연봉을 측정</li><li>통과하면 면접자에게 희망연봉을 묻는다</li><li>측정치랑 일치하거나 측정치보다 낮으면 계약서, 측정치보다 높으면 협상<br><em>일단 한 10억 던지고 협상ㄱㄱ</em></li></ol></li><li><strong>몸값을 제대로 받아야 일도 제대로함 - 연봉만큼의 일이 들어옴</strong></li><li>순수개발자의 비중이 생각보다 작음 - <strong>로컬화</strong> 위주이기 때문</li></ul><p><br></p><h3 id="WeWork-stashaway-이주원님"><a href="#WeWork-stashaway-이주원님" class="headerlink" title="WeWork, stashaway(이주원님)"></a>WeWork, stashaway(이주원님)</h3><ul><li>면접<ol><li>페이스북과 다르다</li><li>면접자가 연봉을 먼저 제시하고</li><li>그 금액에 맞는 면접을 회사가 준비해온다 - 통과하면 처음 부른 액수 그대로 받는다</li></ol></li><li>한국: 신입은 개발좋아하는 사람, 경력은 필요한 스택에 맞는사람</li><li>싱가폴: 지원자가 잘하는 언어로 면접봄(연봉에 맞춘 난이도로), 나머지 언어는 들어와서 배우면됨</li><li>개발자에 대한 대우가 다르다 - 대졸4년차 기본연봉1억</li><li>회사보다는 가족 - 남들 쉴 때 일하는 것은 혼자 미꾸라지되겠다는 의미로 받아들임</li></ul><p><br></p><h3 id="Grab-아시아버전-우버-그랩"><a href="#Grab-아시아버전-우버-그랩" class="headerlink" title="Grab(아시아버전 우버) 그랩"></a>Grab(아시아버전 우버) 그랩</h3><ul><li>연사님이 만나신 분은 <code>Google Developer</code>신분(?)이셔서 코딩테스트 패스하셨고 화상면접, 라이브코딩 여러번을 거치셨다고 한다.</li><li>카카오 입사도 통과하셔서 그 연봉의 2.5배를 제시했는데 바로 계약서가 왔다(회사가 자체 평가한 금액을 넘지 못했다는 의미..)</li><li>입사연봉기준으로 다음 연봉협상 이뤄지기 때문에, 첫 연봉이 중요하다.</li></ul><p><br></p><h3 id="황후순님이-알려주신-팁"><a href="#황후순님이-알려주신-팁" class="headerlink" title="황후순님이 알려주신 팁!"></a>황후순님이 알려주신 팁!</h3><ul><li>혼자 공부하는건 오픈소스외에는 큰 프로젝트보기힘들다 따라서 회사에들어가서 배우는게 빠르다.</li><li>면접여러번 보다보면 언어도 늘기 때문에 영어에 너무 좌절하지 말것!</li><li>영어 회사들어가서 해라</li><li>기술을 보고, 사람을 본다</li><li>개발자는 개발에도 두려움을 가질 필요가 없다. 배우면되기에!</li></ul><p><em>싱가폴-&gt; 개발자가 일하기 좋은 나라</em><br><br></p><hr><h2 id="기업탐방-국내"><a href="#기업탐방-국내" class="headerlink" title="기업탐방(국내)"></a>기업탐방(국내)</h2><h3 id="Clova-naver"><a href="#Clova-naver" class="headerlink" title="Clova(naver)"></a>Clova(naver)</h3><ul><li>네이버의 인공지능분야 담당</li><li>AI관련해서는 면접자가 기여할 부분이 있다면 학사도 뽑음(싱가폴은 학사면 서류에서 이미 거른다고함)</li><li>성과중심 - 본인 업무를 다했다면 출근카드 찍기만 하면된다.<br><br><h3 id="우아한-형제들-배달의-민족"><a href="#우아한-형제들-배달의-민족" class="headerlink" title="우아한 형제들(배달의 민족)"></a>우아한 형제들(배달의 민족)</h3></li><li>평생직장따윈 없다, 최고가 되어 떠나라<br><br><h3 id="카카오"><a href="#카카오" class="headerlink" title="카카오"></a>카카오</h3></li><li>대부분 어떻게든 관리자가 되지 않으려고함. 개발자로 남으려함<br><br><h3 id="구글코리아"><a href="#구글코리아" class="headerlink" title="구글코리아"></a>구글코리아</h3></li><li>영어 중요하다, 아주 잘해야함</li><li>자유로운 문화 - 익히 아는 딱 그 문화</li><li>영어보다 소통능력이 더중요함 - 공감능력, 소통, 성과를 잘보여주는 능력</li><li>인사평가는 자기PR로 함</li><li>구글에 천재가 많음, 하고싶어서 하는 천재, 노력하는 천재가 많다.<br><br><h3 id="삼성SDS-애자일-코어팀"><a href="#삼성SDS-애자일-코어팀" class="headerlink" title="삼성SDS - 애자일 코어팀"></a>삼성SDS - 애자일 코어팀</h3></li><li>si회사로 볼 수 있지만 애자일 코어팀은 변화를 이끌고자 하는 조직</li><li>삼성의 새로운 문화를 이끌려는 조직<br><br><h3 id="셈웨어"><a href="#셈웨어" class="headerlink" title="셈웨어"></a>셈웨어</h3></li><li>서울대에 있는 회사</li><li>math tool개발</li><li>mathFreeOn</li><li><code>실패</code>라는 단어를 사용하지 않고 <code>실수</code>로 여김, <code>실수</code>는 <code>성공</code>하기 위한 과정임</li><li>우주의 움직임도 그래픽으로 물리, 지구과학등으로 분야 넒히려고 함 - 동현이?<br><br><h3 id="데일리-인텔리전스"><a href="#데일리-인텔리전스" class="headerlink" title="데일리 인텔리전스"></a>데일리 인텔리전스</h3></li><li>AI플랫폼 - 다빈치(DaVinCi)</li><li>은행 및 보험사</li></ul><ul><li>더루프 - 루프체인</li><li>인프런 - 강사와 사람들을 연결해주는 서비스<br><br><h3 id="오마이랩"><a href="#오마이랩" class="headerlink" title="오마이랩"></a>오마이랩</h3></li></ul><ul><li>잔디 시작한 개발자(최영근), 이규원 - c#개발자 오마이랩CTO<br><br><h3 id="코더블-상상충전소"><a href="#코더블-상상충전소" class="headerlink" title="코더블/ 상상충전소"></a>코더블/ 상상충전소</h3></li><li>교육커리큘럼, 책만듦<br><br></li></ul><hr><h1 id="프로vs-고수"><a href="#프로vs-고수" class="headerlink" title="프로vs 고수"></a>프로vs 고수</h1><p>나는 어느 쪽을 추구하는지 고민해볼 부분</p><ul><li>프로<ul><li>돈에 움직이는 사람,</li><li>회사에서 원하는 방향을 따르거나 맞는 곳을 찾아감</li><li>고객의 니즈를 맞춰줄 수 있는 사람</li><li>자신의 가치를 돈으로 판단<br><br></li></ul></li><li>고수<ul><li>일은 프로처럼함(고객의 니즈) + 자기의 생각을 담음</li><li>고객의 니즈를 바꾸지 않고 자신의 생각이 추가됨</li><li>자신에 대한 가치를 기술적인 것으로 판단<br><br></li></ul></li><li>은거하면서 아트하는데 그걸로돈도 들어오는…??</li></ul><h2 id="개발자-테크트리의-끝은"><a href="#개발자-테크트리의-끝은" class="headerlink" title="개발자 테크트리의 끝은?"></a>개발자 테크트리의 끝은?</h2><ul><li>관리자냐 테크니션이냐… 고민할 필요없다</li><li>회사에 필요한 기술을 공부하면됨 <strong>필요</strong> 한것을 공부</li><li>현재는 선택할 것이 많다(두갈래가 아니다)</li></ul><hr><p><strong><em>공부는 공부의 결과를 낳는다.</em></strong></p><ul><li>언어는 도구다!</li><li>책보다는 도큐먼트!</li><li>책은 모르고 쓰는 사람도 많다 - 책을 볼때는 다 코드짜보고 맞는지도 확인할것!</li><li>기술공부도 좋지만 시야와 그릇을 넓힐것.</li></ul><p><strong>개발은 80까지!!</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;TGL경복빌딩의 eBrain에서 있었던 OKKY세미나에 형들과 다녀왔다.&lt;br&gt;마이다스 아이티에서 10년 3개월 5일(?) 일하다가 나오신 황후순님이 세미나를 해주셨고,&lt;br&gt;주제는 &lt;strong&gt;IT회사 탐방기&lt;/strong&gt; 였다.&lt;/p&gt;
+&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="okky" scheme="http://bongbooski.github.io/tags/okky/"/>
+    
+  </entry>
   
   <entry>
     <title>why hexo blog changes the language automacitally</title>
