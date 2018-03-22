@@ -2,100 +2,114 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://bongbooski.github.io/2018/03/22/post15_gitignore+config-setting/</loc>
+    
+    <lastmod>2018-03-22T06:15:20.191Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://bongbooski.github.io/2018/03/07/post14_nodejs-bulletin-board_kr/</loc>
+    
+    <lastmod>2018-03-07T13:14:50.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://bongbooski.github.io/2018/02/28/post13_okky_seminor_kr/</loc>
     
-    <lastmod>2018-03-01T08:04:31.768Z</lastmod>
+    <lastmod>2018-03-01T08:04:32.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://bongbooski.github.io/2018/02/22/post12_why-hexo-blog-changes-the-language-automacitally/</loc>
     
-    <lastmod>2018-02-22T14:52:08.936Z</lastmod>
+    <lastmod>2018-02-22T14:52:10.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://bongbooski.github.io/2018/02/22/post11_Node-js-server-starting-module/</loc>
     
-    <lastmod>2018-02-22T12:47:28.838Z</lastmod>
+    <lastmod>2018-02-22T12:47:30.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://bongbooski.github.io/2018/02/22/post10_Node-js-File-System-Module-kr/</loc>
     
-    <lastmod>2018-02-22T12:07:03.197Z</lastmod>
+    <lastmod>2018-02-22T12:07:04.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://bongbooski.github.io/2018/02/22/post9_Node-js-http-module-kr/</loc>
     
-    <lastmod>2018-02-22T10:30:23.704Z</lastmod>
+    <lastmod>2018-02-22T10:30:24.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://bongbooski.github.io/2018/02/22/post8_Node-js-ejs-jade-module-basic-kr/</loc>
     
-    <lastmod>2018-02-22T10:22:36.283Z</lastmod>
+    <lastmod>2018-02-22T10:22:38.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://bongbooski.github.io/2018/02/22/post7_MySql-updating-many-columns-by-A-query/</loc>
     
-    <lastmod>2018-02-22T10:01:53.822Z</lastmod>
+    <lastmod>2018-02-22T10:01:54.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://bongbooski.github.io/2018/02/22/post6_MySql-adding-or-subtracting-value-by-update-statement/</loc>
     
-    <lastmod>2018-02-22T09:59:07.912Z</lastmod>
+    <lastmod>2018-02-22T09:59:08.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://bongbooski.github.io/2018/02/22/post5_Node.js-ejs,-jade-module-basic/</loc>
     
-    <lastmod>2018-02-22T09:56:46.608Z</lastmod>
+    <lastmod>2018-02-22T09:56:48.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://bongbooski.github.io/2018/02/22/post4_MySql-selecting-duplicated-data-(by-group-by-and-in)-kr/</loc>
     
-    <lastmod>2018-02-22T06:45:07.982Z</lastmod>
+    <lastmod>2018-02-22T06:45:08.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://bongbooski.github.io/2018/02/22/post3_MySql-selecting-duplicated-data-(by-group-by-and-in)/</loc>
     
-    <lastmod>2018-02-22T06:42:21.474Z</lastmod>
+    <lastmod>2018-02-22T06:42:22.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://bongbooski.github.io/2018/02/22/post2_Node.js-File-System-Module/</loc>
     
-    <lastmod>2018-02-22T04:32:50.029Z</lastmod>
+    <lastmod>2018-02-22T04:32:52.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://bongbooski.github.io/2018/02/21/post1_Node.js-http-module/</loc>
     
-    <lastmod>2018-02-22T02:47:24.794Z</lastmod>
+    <lastmod>2018-02-22T02:47:26.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://bongbooski.github.io/2018/02/19/hello-world/</loc>
+    <loc>http://bongbooski.github.io/2018/03/22/hello-world/</loc>
     
-    <lastmod>2018-02-19T08:25:40.471Z</lastmod>
+    <lastmod>2018-02-19T08:25:42.000Z</lastmod>
     
   </url>
   

@@ -174,11 +174,11 @@ ga('send', 'pageview');
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                14
+                16
                 <span>posts</span>
             </div>
             <div class="article-info-block">
-                4
+                6
                 <span>tags</span>
             </div>
         </div>
@@ -221,6 +221,396 @@ ga('send', 'pageview');
 
             
             <section id="main">
+    <article id="post-post6_MySql-adding-or-subtracting-value-by-update-statement" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/02/22/post6_MySql-adding-or-subtracting-value-by-update-statement/">MySql adding or subtracting value by update statement</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/02/22/post6_MySql-adding-or-subtracting-value-by-update-statement/">
+            <time datetime="2018-02-22T09:51:04.000Z" itemprop="datePublished">2018-02-22</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/MySql/">MySql</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>When we want to add or subtract some value like <code>+1</code> or <code>-1</code>,<br>we can do like this( in the case we want to add <code>1</code>)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update table name set column&apos;s name = column&apos;s name + 1;</span><br></pre></td></tr></table></figure></p>
+<p>This query adds 1 in all values of that column.<br>So we can use this like this<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update table name set column&apos;s name = column&apos;s name +1 where column&apos;s name = A;</span><br></pre></td></tr></table></figure></p>
+<p>This query adds <code>1</code> if the column’s value is <code>A</code>.</p>
+<h3 id="ex-Waiting-line-in-a-bank"><a href="#ex-Waiting-line-in-a-bank" class="headerlink" title="ex) Waiting line in a bank"></a>ex) Waiting line in a bank</h3><p>If new person came to line ‘6’ in the back,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update bank set waiting = waiting +1 where line_num = &apos;6&apos;;</span><br></pre></td></tr></table></figure></p>
+<p>then we add <code>1</code> to waiting column in the row having <code>6</code> as its line_num column’s value.</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://bongbooski.github.io/2018/02/22/post6_MySql-adding-or-subtracting-value-by-update-statement/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/22/post6_MySql-adding-or-subtracting-value-by-update-statement/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-post5_Node.js-ejs,-jade-module-basic" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/02/22/post5_Node.js-ejs,-jade-module-basic/">Node.js ejs, jade module basic</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/02/22/post5_Node.js-ejs,-jade-module-basic/">
+            <time datetime="2018-02-22T06:49:06.000Z" itemprop="datePublished">2018-02-22</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Node-js/">Node.js</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="ejs-module"><a href="#ejs-module" class="headerlink" title="ejs module"></a>ejs module</h1><p>We can install <code>ejs</code> module by this code.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install ejs;</span><br></pre></td></tr></table></figure></p>
+<p>Then, npm installs eternal modules.<br>We can use those by the same way to internal modules.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var ejs = require(&apos;ejs&apos;);</span><br></pre></td></tr></table></figure></p>
+<p>Module <code>ejs</code> is the engine of template.<br>So it translates specific <code>String</code> to <code>HTML</code> type <code>String</code>.</p>
+<p>We will make the <code>server</code> page which changes <code>ejs</code> page to <code>HTML</code> page.<br>When we translate <code>ejs</code> to <code>HTML</code> page, we use <code>render(str, data, option)</code> of <code>ejs</code> module.</p>
+<p>Though we can use variables after declaring in <code>ejs</code> in side,<br>usually people declare them in <code>Javascript</code> and pass them to <code>ejs</code> for using.<br>When we pass <code>Javascript</code>‘ variables, we use the 2nd parameter of <code>render()</code> method like 9, 10th row.</p>
+<p><strong>Tip — we should set UTF-8 as that file’s encoding</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var http = require(&quot;http&quot;);</span><br><span class="line">var fs = require(&apos;fs&apos;);</span><br><span class="line">var ejs = require(&apos;ejs&apos;);</span><br><span class="line"></span><br><span class="line">http.createServer(function ( request, response)&#123;</span><br><span class="line">  fs.readFile(&quot;ejsPage.ejs&quot;, &apos;utf8&apos;, function(error, data)&#123;</span><br><span class="line">    response.writeHead(200, &#123;&apos;Content-Type&apos;:&apos;text/html&apos;&#125;);</span><br><span class="line">    response.end(ejs.render(data, &#123;</span><br><span class="line">      name: &apos;booski&apos;,</span><br><span class="line">      description : &apos;Hellow ejs with node.js&apos;</span><br><span class="line">      &#125;));</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;).listen(52273, function()&#123;</span><br><span class="line">    console.log(&quot;Server Running at http://127.0.0.1.52273&quot;);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+<p>When we write <code>ejs</code> page, we can use some special tags.</p>
+<ul>
+<li><code>&lt;% Code %&gt;</code> → writing Javascript code inside</li>
+<li><code>&lt;%= Value %&gt;</code> → printing the data</li>
+</ul>
+<p>With using these tags, I made <code>ejsPage.ejs</code> file like this.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;&lt;%=name%&gt;&lt;/h1&gt;</span><br><span class="line">&lt;p&gt;&lt;%=description%&gt;&lt;/p&gt;</span><br><span class="line">&lt;hr/&gt;</span><br><span class="line">&lt;%for(var i = 0;i&lt;10;i++)&#123;%&gt;</span><br><span class="line">  &lt;h2&gt;The Square of &lt;%= i %&gt; is &lt;%= i*i%&gt;&lt;/h2&gt;</span><br><span class="line"> &lt;%&#125;%&gt;</span><br></pre></td></tr></table></figure>
+<p>Starting the server, we can see this page.</p>
+<p><img src="/images/ejs1.png" alt=""></p>
+<hr>
+<h1 id="Jade-module"><a href="#Jade-module" class="headerlink" title="Jade module"></a>Jade module</h1><p><code>Jade</code> module is one of template engine modules too like <code>ejs</code> module.<br>We can install that by the same way to <code>ejs</code> like this<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install jade</span><br></pre></td></tr></table></figure></p>
+<p>When <code>jade</code> module translates <code>jade</code> page to <code>HTML</code> page, it uses <code>compile(string,option)</code>method.<br>One different thing is that if <code>ejs</code>‘ <code>render()</code> returns <code>String</code>, <code>compile()</code> returns a <code>function</code>. And we can pass <code>Javascript</code>‘ variable with the <code>function</code>.<br>We put them as the parameter of the function which <code>compile()</code> returned like 11, 12 rows.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var http = require(&quot;http&quot;);</span><br><span class="line">var fs = require(&apos;fs&apos;);</span><br><span class="line">var jade = require(&apos;jade&apos;);</span><br><span class="line"></span><br><span class="line">http.createServer(function ( request, response)&#123;</span><br><span class="line">  fs.readFile(&quot;jadePage.jade&quot;, &apos;utf8&apos;, function(error, data)&#123;</span><br><span class="line">    var fn = jade.compile(data);</span><br><span class="line"></span><br><span class="line">    response.writeHead(200, &#123;&apos;Content-Type&apos;:&apos;text/html&apos;&#125;);</span><br><span class="line">    response.end(fn(&#123;</span><br><span class="line">      name: &apos;booski&apos;,</span><br><span class="line">      description : &apos;Hellow jade with node.js&apos;</span><br><span class="line">    &#125;));</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;).listen(52273, function()&#123;</span><br><span class="line">    console.log(&quot;Server Running at http://127.0.0.1.52273&quot;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>Jade</code> has special way to write down the page too like <code>ejs</code>.<br>The most important thing is making an indentation.<br><code>Jade</code> module makes new <code>HTML</code> tag based on each indentations.</p>
+<p><strong>Tip: we should use ‘tap’ or ‘space bar’ for every indentation. If not, there will be an error</strong></p>
+<p>When we input words in the tag, we go to the next row and make an indentation again and then write down them there.<br>And If we want to give an attribute to the tag, we give it with parenthesis.<br>(if we want to give many attributes, we divide them by <code>,</code>)</p>
+<p><code>Jade</code> translates some specific words in special way like <code>doctype</code> or <code>annotation</code>,</p>
+<ul>
+<li><code>doctype html</code> → <code>&lt;!DOCTYPE html&gt;</code></li>
+<li><code>// JADE String</code> → <code>&lt;!-- JADE String --&gt;</code></li>
+</ul>
+<p>Especially making new <code>div</code> tag, we don’t need to write ‘div’ down.<br>If we write <code>#header</code> for example, that makes the <code>div</code> tag having ‘header’ as its id.<br>As the same way, <code>.article</code> makes the div having ‘article’ as its class.</p>
+<p><code>Jade</code> has special tags too.</p>
+<ul>
+<li><code>-Code</code> → writing Javascript code</li>
+<li><code>#{Value}</code> → printing the value (inputting the value between content)</li>
+<li><code>=Value</code> → printing the value (whole content becomes value)</li>
+</ul>
+<p>Using these tags, we can make for repetitive statement like 11th row.</p>
+<p>Based on what I mentioned, we can make this code.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">doctype html</span><br><span class="line">html</span><br><span class="line">  head</span><br><span class="line">    title index Page</span><br><span class="line">  body</span><br><span class="line">    // JADE String</span><br><span class="line">    #header</span><br><span class="line">      h1 hello jade...!</span><br><span class="line">      h2 #&#123;name&#125;, we are the World</span><br><span class="line">      h3= description</span><br><span class="line">    hr</span><br><span class="line">    - for(var i = 0; i&lt; 10;i++) &#123;</span><br><span class="line">    .article</span><br><span class="line">      p</span><br><span class="line">        a(href=&quot;https://medium.com/@booski/&quot;, data-test=&quot;attribute added&quot;) Go to new world #&#123;i&#125;</span><br><span class="line">    - &#125;</span><br></pre></td></tr></table></figure>
+<p>And this code shows this page well.<br><img src="/images/jade1.png" alt=""></p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://bongbooski.github.io/2018/02/22/post5_Node.js-ejs,-jade-module-basic/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/22/post5_Node.js-ejs,-jade-module-basic/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-post4_MySql-selecting-duplicated-data-(by-group-by-and-in)-kr" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/02/22/post4_MySql-selecting-duplicated-data-(by-group-by-and-in)-kr/">MySql selecting duplicated data (by group by and in) 중복된 데이터 다 읽기</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/02/22/post4_MySql-selecting-duplicated-data-(by-group-by-and-in)-kr/">
+            <time datetime="2018-02-22T06:43:04.000Z" itemprop="datePublished">2018-02-22</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/MySql/">MySql</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>오늘 mysql 데이터베이스에 있는 데이터중 중복된 데이터를 확인해봐야할 일이 생겼다.<br>중복된 값이 있는 데이터들의 <code>목록</code>을 보는 것은 아래처럼 가능하다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from (table name) group by (column name) having count(column name)&gt;1;</span><br></pre></td></tr></table></figure>
+<p>하지만 이 경우, 각 중복값들에 대한 구체적인 내용은 볼 수가 없다.</p>
+<p>오늘 해결해야했던 상황은 <code>B</code>컬럼에 중복된 값이 있는 경우 그 행들의 <code>A</code>컬럼 값을 비교하고 같은 데이터인지 등을 확인할 필요가 있었다.</p>
+<p>따라서 <code>B</code>컬럼에서 각각의 값들이 중복된 값이 있는가를 확인해야 했고, 간단한 검색 후 다음 쿼리를 만들었다.<br>동작 원리는 <code>B</code>컬럼에서 중복된 값을 갖고 있는 값들의 리스트를 뽑고, 그 값들을 갖는 데이터를 모두 가져오는 방식이었다. (실제 사용때는 <code>order by B, A</code>를 사용해서 중복된 값들로 1차 정렬, 비교할 값들로 1차정렬하였다.)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from tableName where B in (select B from tableName group by B having count(B)&gt;1);</span><br></pre></td></tr></table></figure>
+<p>다행이 잘 작동하였고, 이외에도 같은 구문내에서 <code>where</code>절과 <code>order by</code>절도 사용가능하였다.</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://bongbooski.github.io/2018/02/22/post4_MySql-selecting-duplicated-data-(by-group-by-and-in)-kr/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/22/post4_MySql-selecting-duplicated-data-(by-group-by-and-in)-kr/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-post3_MySql-selecting-duplicated-data-(by-group-by-and-in)" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -594,123 +984,6 @@ ga('send', 'pageview');
 
 
 
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/02/19/hello-world/">Hello World</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/02/19/hello-world/">
-            <time datetime="2018-02-19T08:25:40.471Z" itemprop="datePublished">2018-02-19</time>
-        </a>
-    </div>
-
-
-                        
-                        
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-    <div class="a2a_kit a2a_default_style">
-    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
-    <span class="a2a_divider"></span>
-    <a class="a2a_button_facebook"></a>
-    <a class="a2a_button_twitter"></a>
-    <a class="a2a_button_google_plus"></a>
-    <a class="a2a_button_pinterest"></a>
-    <a class="a2a_button_tumblr"></a>
-</div>
-<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
-<style>
-    .a2a_menu {
-        border-radius: 4px;
-    }
-    .a2a_menu a {
-        margin: 2px 0;
-        font-size: 14px;
-        line-height: 16px;
-        border-radius: 4px;
-        color: inherit !important;
-        font-family: 'Microsoft Yahei';
-    }
-    #a2apage_dropdown {
-        margin: 10px 0;
-    }
-    .a2a_mini_services {
-        padding: 10px;
-    }
-    a.a2a_i,
-    i.a2a_i {
-        width: 122px;
-        line-height: 16px;
-    }
-    a.a2a_i .a2a_svg,
-    a.a2a_more .a2a_svg {
-        width: 16px;
-        height: 16px;
-        line-height: 16px;
-        vertical-align: top;
-        background-size: 16px;
-    }
-    a.a2a_i {
-        border: none !important;
-    }
-    a.a2a_menu_show_more_less {
-        margin: 0;
-        padding: 10px 0;
-        line-height: 16px;
-    }
-    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
-    .a2a_mini_services{*+height:1%;}
-</style>
-
-</div>
-
-            
-    
-        <a href="http://bongbooski.github.io/2018/02/19/hello-world/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/19/hello-world/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <nav id="page-nav">
         <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
     </nav>
@@ -724,6 +997,63 @@ ga('send', 'pageview');
         <h3 class="widget-title">recent</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/03/22/post15_gitignore+config-setting/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/03/22/post15_gitignore+config-setting/" class="title">.gitignore, config파일 사용</a></p>
+                            <p class="item-date"><time datetime="2018-03-22T06:09:17.000Z" itemprop="datePublished">2018-03-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/03/22/hello-world/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/03/22/hello-world/" class="title">Hello World</a></p>
+                            <p class="item-date"><time datetime="2018-03-22T06:09:16.793Z" itemprop="datePublished">2018-03-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/03/07/post14_nodejs-bulletin-board_kr/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/03/07/post14_nodejs-bulletin-board_kr/" class="title">node.js 게시판 만들기 첫 포스팅</a></p>
+                            <p class="item-date"><time datetime="2018-03-07T09:09:17.000Z" itemprop="datePublished">2018-03-07</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -763,63 +1093,6 @@ ga('send', 'pageview');
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/02/22/post11_Node-js-server-starting-module/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/02/22/post11_Node-js-server-starting-module/" class="title">Node.js server starting module</a></p>
-                            <p class="item-date"><time datetime="2018-02-22T12:30:34.000Z" itemprop="datePublished">2018-02-22</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/02/22/post10_Node-js-File-System-Module-kr/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/02/22/post10_Node-js-File-System-Module-kr/" class="title">Node.js File System 모듈</a></p>
-                            <p class="item-date"><time datetime="2018-02-22T10:36:52.000Z" itemprop="datePublished">2018-02-22</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/02/22/post9_Node-js-http-module-kr/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/02/22/post9_Node-js-http-module-kr/" class="title">Node.js http 모듈</a></p>
-                            <p class="item-date"><time datetime="2018-02-22T10:24:22.000Z" itemprop="datePublished">2018-02-22</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -831,7 +1104,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">14</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">13</span></li></ul>
         </div>
     </div>
 
@@ -840,7 +1113,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySql/">MySql</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/okky/">okky</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySql/">MySql</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/okky/">okky</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -849,7 +1122,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/MySql/" style="font-size: 15px;">MySql</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/okky/" style="font-size: 10px;">okky</a>
+            <a href="/tags/MySql/" style="font-size: 15px;">MySql</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/okky/" style="font-size: 10px;">okky</a>
         </div>
     </div>
 
