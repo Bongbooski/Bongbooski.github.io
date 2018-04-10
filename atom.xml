@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://bongbooski.github.io/"/>
-  <updated>2018-03-22T06:15:20.191Z</updated>
+  <updated>2018-04-10T09:42:21.949Z</updated>
   <id>http://bongbooski.github.io/</id>
   
   <author>
@@ -15,6 +15,52 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python 표준 입출력</title>
+    <link href="http://bongbooski.github.io/2018/04/10/post16_standardIO/"/>
+    <id>http://bongbooski.github.io/2018/04/10/post16_standardIO/</id>
+    <published>2018-04-10T09:09:17.000Z</published>
+    <updated>2018-04-10T09:42:21.949Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="sys-모듈의-표준-입출력-모니터-관련-객체"><a href="#sys-모듈의-표준-입출력-모니터-관련-객체" class="headerlink" title="sys 모듈의 표준 입출력(모니터) 관련 객체"></a>sys 모듈의 표준 입출력(모니터) 관련 객체</h2><ul><li>sys.stdout: 표준 입출력</li><li>sys.stderr: 표준 에러 출력</li><li>sys.stdin: 표준 입력</li></ul><h3 id="표준-출력으로-파일-저장하기"><a href="#표준-출력으로-파일-저장하기" class="headerlink" title="표준 출력으로 파일 저장하기"></a>표준 출력으로 파일 저장하기</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import sys</span><br><span class="line"></span><br><span class="line">f = open(&apos;t.txt&apos;,&apos;w&apos;)</span><br><span class="line">stdout = sys.stdout #표준 출력 저장</span><br><span class="line">sys.stdout = f #파일 객체로 표준 출력 변경</span><br><span class="line">print &apos;Sample output&apos;</span><br><span class="line">pirnt &apos;Good&apos;</span><br><span class="line">print &apos;Good&apos;</span><br><span class="line">f.close()</span><br><span class="line">sys.stdout = stdout #표준 출력 복원</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;sys-모듈의-표준-입출력-모니터-관련-객체&quot;&gt;&lt;a href=&quot;#sys-모듈의-표준-입출력-모니터-관련-객체&quot; class=&quot;headerlink&quot; title=&quot;sys 모듈의 표준 입출력(모니터) 관련 객체&quot;&gt;&lt;/a&gt;sys 모듈의 표준 입출
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://bongbooski.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python 파일 입출력</title>
+    <link href="http://bongbooski.github.io/2018/04/10/post16_python_fileIO/"/>
+    <id>http://bongbooski.github.io/2018/04/10/post16_python_fileIO/</id>
+    <published>2018-04-10T06:09:17.000Z</published>
+    <updated>2018-04-10T09:29:02.716Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="파일-입출력"><a href="#파일-입출력" class="headerlink" title="파일 입출력"></a>파일 입출력</h1><p><code>open</code>내장 함수 사용시 두번째 인자값으로 mode설정<br>생략시 읽기전용(r)으로 설정</p><ol><li><code>r</code> -읽기 전용 - 파일 객체를 읽기 모드로 생성, 파일 포인터를 파일 처음 위치로, 존재하지 않는 파일이면 에러발생</li><li><code>w</code> - 쓰기 전용 - 새로운 파일을 생성하거나 기존 파일의 내용을 다 없애고 쓰기모드로 생성, 파일 포인터를 파일 처음 위치로</li><li><code>a</code> - 파일 끝에 추가 - 이미 존재하는 파일을 쓰기모드로 생성하거나 존재하지 않으면 파일 만들고 생성, 파일 포인터를 마지막 위치에 놓음</li></ol><h2 id="이진파일-모드"><a href="#이진파일-모드" class="headerlink" title="이진파일 모드"></a>이진파일 모드</h2><ul><li><code>rb</code></li><li><code>wb</code></li><li><code>ab</code></li></ul><hr><p><code>f.close()</code>처럼 <code>close()</code>로 그때그때 닫아주는 것이 좋음</p><p><code>read()</code>를 사용하면 전체를 다 읽어서 할당함</p><h2 id="라인단위로-파일-읽기"><a href="#라인단위로-파일-읽기" class="headerlink" title="라인단위로 파일 읽기"></a>라인단위로 파일 읽기</h2><ol><li><p><code>for</code> 반복문 활용</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">f = open(&apos;t.txt&apos;)</span><br><span class="line">i = 1</span><br><span class="line">for line in f:</span><br><span class="line">  print i, &quot;:&quot;, line,</span><br><span class="line">  i += 1</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure></li><li><p><code>readline()</code>-현재의 파일 포인터에서 개행 문자까지 읽음 = 한 라인</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">f = open(&apos;t.txt&apos;)</span><br><span class="line">line = f.readline()</span><br><span class="line">i = 1</span><br><span class="line">while line:</span><br><span class="line">  print i, &quot;:&quot;, line,</span><br><span class="line">  line = f.readline()</span><br><span class="line">  i += 1</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure></li><li><p><code>readlines()</code>-각 라인을 모두 읽어서 리스트로 저장, 메모리는 비효율적으로 사용<br>상황별로 다른 동작함 - <code>for in</code>구문: 전체x, 라인별로 가져옴</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">f = open(&apos;t.txt&apos;)</span><br><span class="line">print f.readlines() #리스트 나옴</span><br><span class="line"></span><br><span class="line">#파일 포인터를 맨 앞으로</span><br><span class="line">f.seek(0)</span><br><span class="line"></span><br><span class="line">i = 1</span><br><span class="line">for line in f.readlines():</span><br><span class="line">  print i, &quot;:&quot;, line,</span><br><span class="line">  i += 1</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure></li><li><p><code>xreadlines()</code> - 메모리 비효율 개선</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">f = open(&apos;t.txt&apos;)</span><br><span class="line">print f.xreadlines() #파일객체 자체가 나옴</span><br><span class="line"></span><br><span class="line">#파일 포인터를 맨 앞으로</span><br><span class="line">f.seek(0)</span><br><span class="line"></span><br><span class="line">i = 1</span><br><span class="line">for line in f.xreadlines():</span><br><span class="line">  print i, &quot;:&quot;, line,</span><br><span class="line">  i += 1</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure></li></ol><p><strong><em><code>for in</code> 또는 <code>xreadlines()</code> 추천</em></strong></p><hr><h2 id="라인-단위로-쓰는-방법"><a href="#라인-단위로-쓰는-방법" class="headerlink" title="라인 단위로 쓰는 방법"></a>라인 단위로 쓰는 방법</h2><ol><li><p><code>writelines()</code> - 라인단위로 쓰기 작업</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">lines = [&apos;1st line\n&apos;, &apos;2nd line\n&apos;, &apos;3rd line\n&apos;]</span><br><span class="line">f = open(&apos;t1.txt&apos;,&apos;w&apos;)</span><br><span class="line">f.writelines(lines)</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f = open(&apos;t1.txt&apos;)</span><br><span class="line">print f.read() #전체내용 읽음</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure></li><li><p><code>write()</code> - 임의로 중간에 ‘\n’ 넣어줌</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">lines = [&apos;1st line&apos;, &apos;2nd line&apos;, &apos;3rd line&apos;]</span><br><span class="line">f = open(&apos;t1.txt&apos;,&apos;w&apos;)</span><br><span class="line">f.write(&apos;\n&apos;.join(lines))</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f = open(&apos;t1.txt&apos;)</span><br><span class="line">print f.read() #전체내용 읽음</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure></li></ol><h2 id="기존-파일에-내용-추가"><a href="#기존-파일에-내용-추가" class="headerlink" title="기존 파일에 내용 추가"></a>기존 파일에 내용 추가</h2><ul><li><code>a</code>모드 사용<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f = open(&apos;removeme.txt&apos;, &apos;a&apos;)</span><br><span class="line">f.write(&apos;3rd line\n&apos;)</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f = open(&apos;removeme.txt&apos;)</span><br><span class="line">print f.read()</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure></li></ul><h2 id="파일-내-임의-위치로-접근"><a href="#파일-내-임의-위치로-접근" class="headerlink" title="파일 내 임의 위치로 접근"></a>파일 내 임의 위치로 접근</h2><ul><li>순차접근</li><li>임의접근<ul><li><code>seek(n)</code> - 파일의 가장 첫번째 위치에서 n번째 바이트로 포인터이동</li><li><code>tell()</code> - 파일 내 현재 포인터 위치를 반환</li></ul></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;파일-입출력&quot;&gt;&lt;a href=&quot;#파일-입출력&quot; class=&quot;headerlink&quot; title=&quot;파일 입출력&quot;&gt;&lt;/a&gt;파일 입출력&lt;/h1&gt;&lt;p&gt;&lt;code&gt;open&lt;/code&gt;내장 함수 사용시 두번째 인자값으로 mode설정&lt;br&gt;생략시 읽기전
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://bongbooski.github.io/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>.gitignore, config파일 사용</title>

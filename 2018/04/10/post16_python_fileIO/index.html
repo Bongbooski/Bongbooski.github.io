@@ -3,15 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Tag: MySql | Booski&#39;s programming</title>
+    <title>python 파일 입출력 | Booski&#39;s programming</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Booski&#39;s programming">
-<meta property="og:url" content="http://bongbooski.github.io/tags/MySql/index.html">
+    <meta name="description" content="파일 입출력open내장 함수 사용시 두번째 인자값으로 mode설정생략시 읽기전용(r)으로 설정  r -읽기 전용 - 파일 객체를 읽기 모드로 생성, 파일 포인터를 파일 처음 위치로, 존재하지 않는 파일이면 에러발생 w - 쓰기 전용 - 새로운 파일을 생성하거나 기존 파일의 내용을 다 없애고 쓰기모드로 생성, 파일 포인터를 파일 처음 위치로 a - 파일 끝에">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python 파일 입출력">
+<meta property="og:url" content="http://bongbooski.github.io/2018/04/10/post16_python_fileIO/index.html">
 <meta property="og:site_name" content="Booski&#39;s programming">
+<meta property="og:description" content="파일 입출력open내장 함수 사용시 두번째 인자값으로 mode설정생략시 읽기전용(r)으로 설정  r -읽기 전용 - 파일 객체를 읽기 모드로 생성, 파일 포인터를 파일 처음 위치로, 존재하지 않는 파일이면 에러발생 w - 쓰기 전용 - 새로운 파일을 생성하거나 기존 파일의 내용을 다 없애고 쓰기모드로 생성, 파일 포인터를 파일 처음 위치로 a - 파일 끝에">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-04-10T09:29:02.716Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Booski&#39;s programming">
+<meta name="twitter:title" content="python 파일 입출력">
+<meta name="twitter:description" content="파일 입출력open내장 함수 사용시 두번째 인자값으로 mode설정생략시 읽기전용(r)으로 설정  r -읽기 전용 - 파일 객체를 읽기 모드로 생성, 파일 포인터를 파일 처음 위치로, 존재하지 않는 파일이면 에러발생 w - 쓰기 전용 - 새로운 파일을 생성하거나 기존 파일의 내용을 다 없애고 쓰기모드로 생성, 파일 포인터를 파일 처음 위치로 a - 파일 끝에">
 <meta property="fb:app_id" content="965647770265499">
     
 
@@ -220,138 +225,199 @@ ga('send', 'pageview');
 </aside>
 
             
-            <section id="main">
-<div class="timeline timeline-wrap">
-    <div class="timeline-row timeline-row-major">
-        <span class="node"><i class="fa fa-tag"></i></span>
-        <h1 class="title">#MySql</h1>
-    </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+            <section id="main"><article id="post-post16_python_fileIO" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/02/22/post7_MySql-updating-many-columns-by-A-query/">MySql updating many columns by A query</a>
+        <h1 class="article-title" itemprop="name">
+            python 파일 입출력
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2018/02/22/post7_MySql-updating-many-columns-by-A-query/">
-            <time datetime="2018-02-22T10:00:10.000Z" itemprop="datePublished">2018-02-22</time>
+        <a href="/2018/04/10/post16_python_fileIO/">
+            <time datetime="2018-04-10T06:09:17.000Z" itemprop="datePublished">2018-04-10</time>
         </a>
     </div>
 
 
-                    
-                    
+                        
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/MySql/">MySql</a>
+        <a class="tag-link" href="/tags/python/">python</a>
     </div>
 
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+                    </div>
                 
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/02/22/post6_MySql-adding-or-subtracting-value-by-update-statement/">MySql adding or subtracting value by update statement</a>
-        </h1>
-    
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="파일-입출력"><a href="#파일-입출력" class="headerlink" title="파일 입출력"></a>파일 입출력</h1><p><code>open</code>내장 함수 사용시 두번째 인자값으로 mode설정<br>생략시 읽기전용(r)으로 설정</p>
+<ol>
+<li><code>r</code> -읽기 전용 - 파일 객체를 읽기 모드로 생성, 파일 포인터를 파일 처음 위치로, 존재하지 않는 파일이면 에러발생</li>
+<li><code>w</code> - 쓰기 전용 - 새로운 파일을 생성하거나 기존 파일의 내용을 다 없애고 쓰기모드로 생성, 파일 포인터를 파일 처음 위치로</li>
+<li><code>a</code> - 파일 끝에 추가 - 이미 존재하는 파일을 쓰기모드로 생성하거나 존재하지 않으면 파일 만들고 생성, 파일 포인터를 마지막 위치에 놓음</li>
+</ol>
+<h2 id="이진파일-모드"><a href="#이진파일-모드" class="headerlink" title="이진파일 모드"></a>이진파일 모드</h2><ul>
+<li><code>rb</code></li>
+<li><code>wb</code></li>
+<li><code>ab</code></li>
+</ul>
+<hr>
+<p><code>f.close()</code>처럼 <code>close()</code>로 그때그때 닫아주는 것이 좋음</p>
+<p><code>read()</code>를 사용하면 전체를 다 읽어서 할당함</p>
+<h2 id="라인단위로-파일-읽기"><a href="#라인단위로-파일-읽기" class="headerlink" title="라인단위로 파일 읽기"></a>라인단위로 파일 읽기</h2><ol>
+<li><p><code>for</code> 반복문 활용</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">f = open(&apos;t.txt&apos;)</span><br><span class="line">i = 1</span><br><span class="line">for line in f:</span><br><span class="line">  print i, &quot;:&quot;, line,</span><br><span class="line">  i += 1</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>readline()</code>-현재의 파일 포인터에서 개행 문자까지 읽음 = 한 라인</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">f = open(&apos;t.txt&apos;)</span><br><span class="line">line = f.readline()</span><br><span class="line">i = 1</span><br><span class="line">while line:</span><br><span class="line">  print i, &quot;:&quot;, line,</span><br><span class="line">  line = f.readline()</span><br><span class="line">  i += 1</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>readlines()</code>-각 라인을 모두 읽어서 리스트로 저장, 메모리는 비효율적으로 사용<br>상황별로 다른 동작함 - <code>for in</code>구문: 전체x, 라인별로 가져옴</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">f = open(&apos;t.txt&apos;)</span><br><span class="line">print f.readlines() #리스트 나옴</span><br><span class="line"></span><br><span class="line">#파일 포인터를 맨 앞으로</span><br><span class="line">f.seek(0)</span><br><span class="line"></span><br><span class="line">i = 1</span><br><span class="line">for line in f.readlines():</span><br><span class="line">  print i, &quot;:&quot;, line,</span><br><span class="line">  i += 1</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>xreadlines()</code> - 메모리 비효율 개선</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">f = open(&apos;t.txt&apos;)</span><br><span class="line">print f.xreadlines() #파일객체 자체가 나옴</span><br><span class="line"></span><br><span class="line">#파일 포인터를 맨 앞으로</span><br><span class="line">f.seek(0)</span><br><span class="line"></span><br><span class="line">i = 1</span><br><span class="line">for line in f.xreadlines():</span><br><span class="line">  print i, &quot;:&quot;, line,</span><br><span class="line">  i += 1</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong><em><code>for in</code> 또는 <code>xreadlines()</code> 추천</em></strong></p>
+<hr>
+<h2 id="라인-단위로-쓰는-방법"><a href="#라인-단위로-쓰는-방법" class="headerlink" title="라인 단위로 쓰는 방법"></a>라인 단위로 쓰는 방법</h2><ol>
+<li><p><code>writelines()</code> - 라인단위로 쓰기 작업</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">lines = [&apos;1st line\n&apos;, &apos;2nd line\n&apos;, &apos;3rd line\n&apos;]</span><br><span class="line">f = open(&apos;t1.txt&apos;,&apos;w&apos;)</span><br><span class="line">f.writelines(lines)</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f = open(&apos;t1.txt&apos;)</span><br><span class="line">print f.read() #전체내용 읽음</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>write()</code> - 임의로 중간에 ‘\n’ 넣어줌</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">lines = [&apos;1st line&apos;, &apos;2nd line&apos;, &apos;3rd line&apos;]</span><br><span class="line">f = open(&apos;t1.txt&apos;,&apos;w&apos;)</span><br><span class="line">f.write(&apos;\n&apos;.join(lines))</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f = open(&apos;t1.txt&apos;)</span><br><span class="line">print f.read() #전체내용 읽음</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="기존-파일에-내용-추가"><a href="#기존-파일에-내용-추가" class="headerlink" title="기존 파일에 내용 추가"></a>기존 파일에 내용 추가</h2><ul>
+<li><code>a</code>모드 사용<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f = open(&apos;removeme.txt&apos;, &apos;a&apos;)</span><br><span class="line">f.write(&apos;3rd line\n&apos;)</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f = open(&apos;removeme.txt&apos;)</span><br><span class="line">print f.read()</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="파일-내-임의-위치로-접근"><a href="#파일-내-임의-위치로-접근" class="headerlink" title="파일 내 임의 위치로 접근"></a>파일 내 임의 위치로 접근</h2><ul>
+<li>순차접근</li>
+<li>임의접근<ul>
+<li><code>seek(n)</code> - 파일의 가장 첫번째 위치에서 n번째 바이트로 포인터이동</li>
+<li><code>tell()</code> - 파일 내 현재 포인터 위치를 반환</li>
+</ul>
+</li>
+</ul>
 
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/02/22/post6_MySql-adding-or-subtracting-value-by-update-statement/">
-            <time datetime="2018-02-22T09:51:04.000Z" itemprop="datePublished">2018-02-22</time>
-        </a>
-    </div>
-
-
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/MySql/">MySql</a>
-    </div>
-
-                </div>
-            </div>
+        
         </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/02/22/post4_MySql-selecting-duplicated-data-(by-group-by-and-in)-kr/">MySql selecting duplicated data (by group by and in) 중복된 데이터 다 읽기</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/02/22/post4_MySql-selecting-duplicated-data-(by-group-by-and-in)-kr/">
-            <time datetime="2018-02-22T06:43:04.000Z" itemprop="datePublished">2018-02-22</time>
-        </a>
-    </div>
+        <footer class="article-footer">
+            <div class="share-container">
 
 
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/MySql/">MySql</a>
-    </div>
 
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/02/22/post3_MySql-selecting-duplicated-data-(by-group-by-and-in)/">MySql selecting duplicated data (by group by and in)</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/02/22/post3_MySql-selecting-duplicated-data-(by-group-by-and-in)/">
-            <time datetime="2018-02-22T05:23:56.000Z" itemprop="datePublished">2018-02-22</time>
-        </a>
-    </div>
-
-
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/MySql/">MySql</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
 </div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://bongbooski.github.io/2018/04/10/post16_python_fileIO/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/10/post16_python_fileIO/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/04/10/post16_standardIO/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    python 표준 입출력
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2018/03/22/post15_gitignore+config-setting/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">.gitignore, config파일 사용</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+</section>
+    
+
 </section>
             
                 
@@ -526,11 +592,13 @@ ga('send', 'pageview');
     <script>
     var disqus_config = function () {
         
-        this.page.identifier = '';
+            this.page.url = 'http://bongbooski.github.io/2018/04/10/post16_python_fileIO/';
+        
+        this.page.identifier = 'post16_python_fileIO';
     };
     (function() { 
         var d = document, s = d.createElement('script');  
-        s.src = '//' + 'https-bongbooski-github-io' + '.disqus.com/count.js';
+        s.src = '//' + 'https-bongbooski-github-io' + '.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();

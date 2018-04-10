@@ -174,11 +174,11 @@ ga('send', 'pageview');
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                16
+                18
                 <span>posts</span>
             </div>
             <div class="article-info-block">
-                6
+                7
                 <span>tags</span>
             </div>
         </div>
@@ -221,6 +221,288 @@ ga('send', 'pageview');
 
             
             <section id="main">
+    <article id="post-post16_standardIO" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/04/10/post16_standardIO/">python 표준 입출력</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/04/10/post16_standardIO/">
+            <time datetime="2018-04-10T09:09:17.000Z" itemprop="datePublished">2018-04-10</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h2 id="sys-모듈의-표준-입출력-모니터-관련-객체"><a href="#sys-모듈의-표준-입출력-모니터-관련-객체" class="headerlink" title="sys 모듈의 표준 입출력(모니터) 관련 객체"></a>sys 모듈의 표준 입출력(모니터) 관련 객체</h2><ul>
+<li>sys.stdout: 표준 입출력</li>
+<li>sys.stderr: 표준 에러 출력</li>
+<li>sys.stdin: 표준 입력</li>
+</ul>
+<h3 id="표준-출력으로-파일-저장하기"><a href="#표준-출력으로-파일-저장하기" class="headerlink" title="표준 출력으로 파일 저장하기"></a>표준 출력으로 파일 저장하기</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import sys</span><br><span class="line"></span><br><span class="line">f = open(&apos;t.txt&apos;,&apos;w&apos;)</span><br><span class="line">stdout = sys.stdout #표준 출력 저장</span><br><span class="line">sys.stdout = f #파일 객체로 표준 출력 변경</span><br><span class="line">print &apos;Sample output&apos;</span><br><span class="line">pirnt &apos;Good&apos;</span><br><span class="line">print &apos;Good&apos;</span><br><span class="line">f.close()</span><br><span class="line">sys.stdout = stdout #표준 출력 복원</span><br></pre></td></tr></table></figure>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://bongbooski.github.io/2018/04/10/post16_standardIO/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/10/post16_standardIO/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-post16_python_fileIO" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/04/10/post16_python_fileIO/">python 파일 입출력</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/04/10/post16_python_fileIO/">
+            <time datetime="2018-04-10T06:09:17.000Z" itemprop="datePublished">2018-04-10</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="파일-입출력"><a href="#파일-입출력" class="headerlink" title="파일 입출력"></a>파일 입출력</h1><p><code>open</code>내장 함수 사용시 두번째 인자값으로 mode설정<br>생략시 읽기전용(r)으로 설정</p>
+<ol>
+<li><code>r</code> -읽기 전용 - 파일 객체를 읽기 모드로 생성, 파일 포인터를 파일 처음 위치로, 존재하지 않는 파일이면 에러발생</li>
+<li><code>w</code> - 쓰기 전용 - 새로운 파일을 생성하거나 기존 파일의 내용을 다 없애고 쓰기모드로 생성, 파일 포인터를 파일 처음 위치로</li>
+<li><code>a</code> - 파일 끝에 추가 - 이미 존재하는 파일을 쓰기모드로 생성하거나 존재하지 않으면 파일 만들고 생성, 파일 포인터를 마지막 위치에 놓음</li>
+</ol>
+<h2 id="이진파일-모드"><a href="#이진파일-모드" class="headerlink" title="이진파일 모드"></a>이진파일 모드</h2><ul>
+<li><code>rb</code></li>
+<li><code>wb</code></li>
+<li><code>ab</code></li>
+</ul>
+<hr>
+<p><code>f.close()</code>처럼 <code>close()</code>로 그때그때 닫아주는 것이 좋음</p>
+<p><code>read()</code>를 사용하면 전체를 다 읽어서 할당함</p>
+<h2 id="라인단위로-파일-읽기"><a href="#라인단위로-파일-읽기" class="headerlink" title="라인단위로 파일 읽기"></a>라인단위로 파일 읽기</h2><ol>
+<li><p><code>for</code> 반복문 활용</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">f = open(&apos;t.txt&apos;)</span><br><span class="line">i = 1</span><br><span class="line">for line in f:</span><br><span class="line">  print i, &quot;:&quot;, line,</span><br><span class="line">  i += 1</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>readline()</code>-현재의 파일 포인터에서 개행 문자까지 읽음 = 한 라인</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">f = open(&apos;t.txt&apos;)</span><br><span class="line">line = f.readline()</span><br><span class="line">i = 1</span><br><span class="line">while line:</span><br><span class="line">  print i, &quot;:&quot;, line,</span><br><span class="line">  line = f.readline()</span><br><span class="line">  i += 1</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>readlines()</code>-각 라인을 모두 읽어서 리스트로 저장, 메모리는 비효율적으로 사용<br>상황별로 다른 동작함 - <code>for in</code>구문: 전체x, 라인별로 가져옴</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">f = open(&apos;t.txt&apos;)</span><br><span class="line">print f.readlines() #리스트 나옴</span><br><span class="line"></span><br><span class="line">#파일 포인터를 맨 앞으로</span><br><span class="line">f.seek(0)</span><br><span class="line"></span><br><span class="line">i = 1</span><br><span class="line">for line in f.readlines():</span><br><span class="line">  print i, &quot;:&quot;, line,</span><br><span class="line">  i += 1</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>xreadlines()</code> - 메모리 비효율 개선</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">f = open(&apos;t.txt&apos;)</span><br><span class="line">print f.xreadlines() #파일객체 자체가 나옴</span><br><span class="line"></span><br><span class="line">#파일 포인터를 맨 앞으로</span><br><span class="line">f.seek(0)</span><br><span class="line"></span><br><span class="line">i = 1</span><br><span class="line">for line in f.xreadlines():</span><br><span class="line">  print i, &quot;:&quot;, line,</span><br><span class="line">  i += 1</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong><em><code>for in</code> 또는 <code>xreadlines()</code> 추천</em></strong></p>
+<hr>
+<h2 id="라인-단위로-쓰는-방법"><a href="#라인-단위로-쓰는-방법" class="headerlink" title="라인 단위로 쓰는 방법"></a>라인 단위로 쓰는 방법</h2><ol>
+<li><p><code>writelines()</code> - 라인단위로 쓰기 작업</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">lines = [&apos;1st line\n&apos;, &apos;2nd line\n&apos;, &apos;3rd line\n&apos;]</span><br><span class="line">f = open(&apos;t1.txt&apos;,&apos;w&apos;)</span><br><span class="line">f.writelines(lines)</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f = open(&apos;t1.txt&apos;)</span><br><span class="line">print f.read() #전체내용 읽음</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>write()</code> - 임의로 중간에 ‘\n’ 넣어줌</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">lines = [&apos;1st line&apos;, &apos;2nd line&apos;, &apos;3rd line&apos;]</span><br><span class="line">f = open(&apos;t1.txt&apos;,&apos;w&apos;)</span><br><span class="line">f.write(&apos;\n&apos;.join(lines))</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f = open(&apos;t1.txt&apos;)</span><br><span class="line">print f.read() #전체내용 읽음</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="기존-파일에-내용-추가"><a href="#기존-파일에-내용-추가" class="headerlink" title="기존 파일에 내용 추가"></a>기존 파일에 내용 추가</h2><ul>
+<li><code>a</code>모드 사용<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f = open(&apos;removeme.txt&apos;, &apos;a&apos;)</span><br><span class="line">f.write(&apos;3rd line\n&apos;)</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f = open(&apos;removeme.txt&apos;)</span><br><span class="line">print f.read()</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="파일-내-임의-위치로-접근"><a href="#파일-내-임의-위치로-접근" class="headerlink" title="파일 내 임의 위치로 접근"></a>파일 내 임의 위치로 접근</h2><ul>
+<li>순차접근</li>
+<li>임의접근<ul>
+<li><code>seek(n)</code> - 파일의 가장 첫번째 위치에서 n번째 바이트로 포인터이동</li>
+<li><code>tell()</code> - 파일 내 현재 포인터 위치를 반환</li>
+</ul>
+</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://bongbooski.github.io/2018/04/10/post16_python_fileIO/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/10/post16_python_fileIO/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-post15_gitignore+config-setting" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -1320,271 +1602,6 @@ ga('send', 'pageview');
 
 
 
-    <article id="post-post8_Node-js-ejs-jade-module-basic-kr" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/02/22/post8_Node-js-ejs-jade-module-basic-kr/">Node.js ejs, jade module basic 템플릿 모듈 기본</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/02/22/post8_Node-js-ejs-jade-module-basic-kr/">
-            <time datetime="2018-02-22T10:12:05.000Z" itemprop="datePublished">2018-02-22</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Node-js/">Node.js</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h1 id="ejs-module"><a href="#ejs-module" class="headerlink" title="ejs module"></a>ejs module</h1><p><code>ejs</code>모듈을 다운로드할때는 다음 코드를 사용한다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install ejs;</span><br></pre></td></tr></table></figure></p>
-<p>위의 코드를 실행하면, <code>npm</code>이 외부 모듈을 설치하게된다.</p>
-<p>설치가 끝나면 밑의 코드처럼 기존의 내부 모듈 사용법과 마찬가지로 변수에 담아서 사용이 가능하다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var ejs = require(&apos;ejs&apos;);</span><br></pre></td></tr></table></figure></p>
-<p><code>ejs</code> 모듈은 템플릿 엔진 중 하나이기 때문에 특정 형태의 스트링을 <code>HTML</code> 타입의 스트링으로 변환시켜준다.</p>
-<p><code>ejs</code>페이지를 <code>HTML</code> 페이지로 변환시키는 서버 페이지를 만들고자 한다.<br>이때에는 <code>ejs</code>모듈에 내장된 <code>render(str, data, option)</code>메소드를 사용한다.</p>
-<p>변수를 사용할 때, <code>ejs</code> 안에서 변수를 선언하여 사용할 수도 있지만,<br>일반적으로 자바스크립트에서 선언한 변수를 <code>ejs</code>로 전달하여 사용한다.</p>
-<p>자바스크립트의 변수를 <code>ejs</code>로 넘겨줄때는, 아래 코드의 9, 10번째 줄처럼 <code>render()</code> 메소드의 두 번째 매개변수에 담아 전달한다.</p>
-<p><strong>Tip — 파일을 저장할때 반드시 utf8로 인코딩해서 저장해야한다.</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var http = require(&quot;http&quot;);</span><br><span class="line">var fs = require(&apos;fs&apos;);</span><br><span class="line">var ejs = require(&apos;ejs&apos;);</span><br><span class="line"></span><br><span class="line">http.createServer(function ( request, response)&#123;</span><br><span class="line">  fs.readFile(&quot;ejsPage.ejs&quot;, &apos;utf8&apos;, function(error, data)&#123;</span><br><span class="line">    response.writeHead(200, &#123;&apos;Content-Type&apos;:&apos;text/html&apos;&#125;);</span><br><span class="line">    response.end(ejs.render(data, &#123;</span><br><span class="line">      name: &apos;booski&apos;,</span><br><span class="line">      description : &apos;Hellow ejs with node.js&apos;</span><br><span class="line">      &#125;));</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;).listen(52273, function()&#123;</span><br><span class="line">    console.log(&quot;Server Running at http://127.0.0.1.52273&quot;);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure></p>
-<p><code>ejs</code> 페이지를 작성할때, 몇가지 특수한 태그들을 사용할 수 있다.</p>
-<ul>
-<li><code>&lt;% Code %&gt;</code> → 자바스크립트 코드를 넣는다</li>
-<li><code>&lt;%= Value %&gt;</code> → 데이터를 출력한다</li>
-</ul>
-<p>위의 태그들을 사용하여 <code>ejsPage.ejs</code>파일을 작성해보았다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;&lt;%=name%&gt;&lt;/h1&gt;</span><br><span class="line">&lt;p&gt;&lt;%=description%&gt;&lt;/p&gt;</span><br><span class="line">&lt;hr/&gt;</span><br><span class="line">&lt;%for(var i = 0;i&lt;10;i++)&#123;%&gt;</span><br><span class="line">  &lt;h2&gt;The Square of &lt;%= i %&gt; is &lt;%= i*i%&gt;&lt;/h2&gt;</span><br><span class="line"> &lt;%&#125;%&gt;</span><br></pre></td></tr></table></figure></p>
-<p><img src="/images/ejs1.png" alt=""></p>
-<hr>
-<h1 id="Jade-module"><a href="#Jade-module" class="headerlink" title="Jade module"></a>Jade module</h1><p><code>Jade</code> 모듈도 <code>ejs</code>와 마찬가지로 템플릿 엔진 중 하나이다.</p>
-<p><code>Jade</code>모듈을 설치할 때에도 다음과 같이 <code>ejs</code>와 같은 방식(외부 모듈 설치)을 사용한다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install jade</span><br></pre></td></tr></table></figure></p>
-<p><code>Jade</code> 모듈이 <code>jade</code>페이지를 <code>HTML</code>페이지로 변환할 때는 모듈의 내장 함수 중<br><code>compile(String, option)</code>을 사용한다.<br><code>ejs</code>모듈의 <code>render()</code>함수와 한가지 다른 점은 <code>render()</code>함수는 스트링을 리턴하지만,<br><code>jade</code>의 <code>compile()</code>함수는 함수 자체를 돌려준다.<br>같은 맥락에서 <code>jade</code>에 자바스크립트의 변수를 전달할 때는 아래 코드의 11, 12번째 줄처럼<br><code>compile()</code>함수가 리턴한 함수의 매개변수로 전달한다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var http = require(&quot;http&quot;);</span><br><span class="line">var fs = require(&apos;fs&apos;);</span><br><span class="line">var jade = require(&apos;jade&apos;);</span><br><span class="line"></span><br><span class="line">http.createServer(function ( request, response)&#123;</span><br><span class="line">  fs.readFile(&quot;jadePage.jade&quot;, &apos;utf8&apos;, function(error, data)&#123;</span><br><span class="line">    var fn = jade.compile(data);</span><br><span class="line"></span><br><span class="line">    response.writeHead(200, &#123;&apos;Content-Type&apos;:&apos;text/html&apos;&#125;);</span><br><span class="line">    response.end(fn(&#123;</span><br><span class="line">      name: &apos;booski&apos;,</span><br><span class="line">      description : &apos;Hellow jade with node.js&apos;</span><br><span class="line">    &#125;));</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;).listen(52273, function()&#123;</span><br><span class="line">    console.log(&quot;Server Running at http://127.0.0.1.52273&quot;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p><code>Jade</code>를 사용할 때도 <code>ejs</code>처럼 특별한 방식으로 코드를 작성해야한다.<br>가장 중요한 부분은 들여쓰기이다.<br><code>jade</code>모듈은 들여쓰기를 기준으로 새로운 <code>HTML</code>태그를 만들기 때문이다.</p>
-<p><strong>Tip: jade에서 들여쓰기를 할 때는 탭 또는 스페이스바 중 하나로 통일해야한다.<br>그렇지않으면 에러가 발생한다.</strong></p>
-<p>태그 안에 글을 넣고 싶을 때는 해당 태그의 다음 줄에서 들여쓰기를 한 뒤 작성하면 된다.<br>또한 어떤 태그에 속성을 부여하고 싶을 때는, 괄호 <code>()</code>를 이용하면 된다.(여러 속성을 주고 싶으면 각 속성을 <code>,</code>로 구분한다.)</p>
-<p><code>Jade</code>는 <code>doctype</code>과 주석 등 몇 가지 코드를 특수한 형태로 변환하는데 그 형태는 다음과 같다.</p>
-<ul>
-<li><code>doctype html</code> → <code>&lt;!DOCTYPE html&gt;</code></li>
-<li><code>// JADE String</code> → <code>&lt;!-- JADE String --&gt;</code></li>
-</ul>
-<p>특히 새 <code>div</code>태그를 만들 때는 ‘div’를 직접 쓸 필요가 없다.</p>
-<p><code>#header</code>의 형태로 <code>jade</code>를 작성하면, ‘header’를 <code>id</code>로 갖는 <code>div</code>태그가 만들어진다.<br>같은 방식으로, <code>.article</code>의 경우는 ‘article’을 <code>class</code>로 갖는 <code>div</code>태그가 만들어진다.</p>
-<p><code>Jade</code> 역시 <code>ejs</code>처럼 특수한 태그를 갖는다.</p>
-<ul>
-<li><code>-Code</code> → 자바스크립트 코드를 적는다</li>
-<li><code>#{Value}</code> → 값을 출력한다.(내용 중간에 값을 집어넣음)</li>
-<li><code>=Value</code> → 값을 출력한다.(전체 내용이 값이 됨)<br>이러한 태그들을 사용해서 아래 코드의 11번째 줄처럼 <code>for</code> 반복문도 구현 가능하다.</li>
-</ul>
-<p>지금까지 언급한 내용을 바탕으로 아래와 같은 코드를 작성할 수 있다.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">doctype html</span><br><span class="line">html</span><br><span class="line">  head</span><br><span class="line">    title index Page</span><br><span class="line">  body</span><br><span class="line">    // JADE String</span><br><span class="line">    #header</span><br><span class="line">      h1 hello jade...!</span><br><span class="line">      h2 #&#123;name&#125;, we are the World</span><br><span class="line">      h3= description</span><br><span class="line">    hr</span><br><span class="line">    - for(var i = 0; i&lt; 10;i++) &#123;</span><br><span class="line">    .article</span><br><span class="line">      p</span><br><span class="line">        a(href=&quot;https://medium.com/@booski/&quot;, data-test=&quot;attribute added&quot;) Go to new world #&#123;i&#125;</span><br><span class="line">    - &#125;</span><br></pre></td></tr></table></figure></p>
-<p>그리고 서버를 실행하면 아래의 화면을 브라우저에서 확인할 수 있다.<br><img src="/images/jade1.png" alt=""></p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-    <div class="a2a_kit a2a_default_style">
-    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
-    <span class="a2a_divider"></span>
-    <a class="a2a_button_facebook"></a>
-    <a class="a2a_button_twitter"></a>
-    <a class="a2a_button_google_plus"></a>
-    <a class="a2a_button_pinterest"></a>
-    <a class="a2a_button_tumblr"></a>
-</div>
-<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
-<style>
-    .a2a_menu {
-        border-radius: 4px;
-    }
-    .a2a_menu a {
-        margin: 2px 0;
-        font-size: 14px;
-        line-height: 16px;
-        border-radius: 4px;
-        color: inherit !important;
-        font-family: 'Microsoft Yahei';
-    }
-    #a2apage_dropdown {
-        margin: 10px 0;
-    }
-    .a2a_mini_services {
-        padding: 10px;
-    }
-    a.a2a_i,
-    i.a2a_i {
-        width: 122px;
-        line-height: 16px;
-    }
-    a.a2a_i .a2a_svg,
-    a.a2a_more .a2a_svg {
-        width: 16px;
-        height: 16px;
-        line-height: 16px;
-        vertical-align: top;
-        background-size: 16px;
-    }
-    a.a2a_i {
-        border: none !important;
-    }
-    a.a2a_menu_show_more_less {
-        margin: 0;
-        padding: 10px 0;
-        line-height: 16px;
-    }
-    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
-    .a2a_mini_services{*+height:1%;}
-</style>
-
-</div>
-
-            
-    
-        <a href="http://bongbooski.github.io/2018/02/22/post8_Node-js-ejs-jade-module-basic-kr/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/22/post8_Node-js-ejs-jade-module-basic-kr/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-post7_MySql-updating-many-columns-by-A-query" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/02/22/post7_MySql-updating-many-columns-by-A-query/">MySql updating many columns by A query</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/02/22/post7_MySql-updating-many-columns-by-A-query/">
-            <time datetime="2018-02-22T10:00:10.000Z" itemprop="datePublished">2018-02-22</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/MySql/">MySql</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>When we want to <code>update</code> many columns in one query,<br>we can just connect them with <code>,</code>.<br>Let’s say we want to update <code>A</code> column to <code>1</code> and <code>B</code> column to <code>2</code> in one query.<br>Then we can do like this,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update table name set A = 1, B = 2;</span><br></pre></td></tr></table></figure></p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-    <div class="a2a_kit a2a_default_style">
-    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
-    <span class="a2a_divider"></span>
-    <a class="a2a_button_facebook"></a>
-    <a class="a2a_button_twitter"></a>
-    <a class="a2a_button_google_plus"></a>
-    <a class="a2a_button_pinterest"></a>
-    <a class="a2a_button_tumblr"></a>
-</div>
-<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
-<style>
-    .a2a_menu {
-        border-radius: 4px;
-    }
-    .a2a_menu a {
-        margin: 2px 0;
-        font-size: 14px;
-        line-height: 16px;
-        border-radius: 4px;
-        color: inherit !important;
-        font-family: 'Microsoft Yahei';
-    }
-    #a2apage_dropdown {
-        margin: 10px 0;
-    }
-    .a2a_mini_services {
-        padding: 10px;
-    }
-    a.a2a_i,
-    i.a2a_i {
-        width: 122px;
-        line-height: 16px;
-    }
-    a.a2a_i .a2a_svg,
-    a.a2a_more .a2a_svg {
-        width: 16px;
-        height: 16px;
-        line-height: 16px;
-        vertical-align: top;
-        background-size: 16px;
-    }
-    a.a2a_i {
-        border: none !important;
-    }
-    a.a2a_menu_show_more_less {
-        margin: 0;
-        padding: 10px 0;
-        line-height: 16px;
-    }
-    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
-    .a2a_mini_services{*+height:1%;}
-</style>
-
-</div>
-
-            
-    
-        <a href="http://bongbooski.github.io/2018/02/22/post7_MySql-updating-many-columns-by-A-query/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/22/post7_MySql-updating-many-columns-by-A-query/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <nav id="page-nav">
         <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
@@ -1598,6 +1615,44 @@ ga('send', 'pageview');
         <h3 class="widget-title">recent</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/10/post16_standardIO/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/10/post16_standardIO/" class="title">python 표준 입출력</a></p>
+                            <p class="item-date"><time datetime="2018-04-10T09:09:17.000Z" itemprop="datePublished">2018-04-10</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/10/post16_python_fileIO/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/10/post16_python_fileIO/" class="title">python 파일 입출력</a></p>
+                            <p class="item-date"><time datetime="2018-04-10T06:09:17.000Z" itemprop="datePublished">2018-04-10</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1656,44 +1711,6 @@ ga('send', 'pageview');
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/02/28/post13_okky_seminor_kr/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/02/28/post13_okky_seminor_kr/" class="title">OKKY세미나 IT회사 탐방기 - 18.02.27</a></p>
-                            <p class="item-date"><time datetime="2018-02-28T04:48:17.000Z" itemprop="datePublished">2018-02-28</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/02/22/post12_why-hexo-blog-changes-the-language-automacitally/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/02/22/post12_why-hexo-blog-changes-the-language-automacitally/" class="title">why hexo blog changes the language automacitally</a></p>
-                            <p class="item-date"><time datetime="2018-02-22T14:01:17.000Z" itemprop="datePublished">2018-02-22</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1705,7 +1722,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">13</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">13</span></li></ul>
         </div>
     </div>
 
@@ -1714,7 +1731,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySql/">MySql</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/okky/">okky</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySql/">MySql</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/okky/">okky</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -1723,7 +1740,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/MySql/" style="font-size: 15px;">MySql</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/okky/" style="font-size: 10px;">okky</a>
+            <a href="/tags/MySql/" style="font-size: 16.67px;">MySql</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/okky/" style="font-size: 10px;">okky</a> <a href="/tags/python/" style="font-size: 13.33px;">python</a>
         </div>
     </div>
 

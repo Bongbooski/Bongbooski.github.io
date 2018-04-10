@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://bongbooski.github.io/2018/04/10/post16_standardIO/</loc>
+    
+    <lastmod>2018-04-10T09:42:21.949Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://bongbooski.github.io/2018/04/10/post16_python_fileIO/</loc>
+    
+    <lastmod>2018-04-10T09:29:02.716Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://bongbooski.github.io/2018/03/22/post15_gitignore+config-setting/</loc>
     
     <lastmod>2018-03-22T06:15:20.191Z</lastmod>
