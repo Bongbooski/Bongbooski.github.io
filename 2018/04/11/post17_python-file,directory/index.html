@@ -3,15 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Archive | Booski&#39;s programming</title>
+    <title>python 파일 다루기 | Booski&#39;s programming</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Booski&#39;s programming">
-<meta property="og:url" content="http://bongbooski.github.io/archives/page/2/index.html">
+    <meta name="description" content="파일 다루기파일 목록열기os모듈 사용123456import osprint os.listdir(&amp;apos;.&amp;apos;) #현재 디렉토리의 파일목록printprint os.listdir(&amp;apos;../&amp;apos;) #현재 디렉토리의 부모 디렉토리의 파일 목록  파일 종류 알아보기 os.path 모듈로 파일 종류 판단하여 True, False 반환123456">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python 파일 다루기">
+<meta property="og:url" content="http://bongbooski.github.io/2018/04/11/post17_python-file,directory/index.html">
 <meta property="og:site_name" content="Booski&#39;s programming">
+<meta property="og:description" content="파일 다루기파일 목록열기os모듈 사용123456import osprint os.listdir(&amp;apos;.&amp;apos;) #현재 디렉토리의 파일목록printprint os.listdir(&amp;apos;../&amp;apos;) #현재 디렉토리의 부모 디렉토리의 파일 목록  파일 종류 알아보기 os.path 모듈로 파일 종류 판단하여 True, False 반환123456">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-04-11T07:36:37.593Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Booski&#39;s programming">
+<meta name="twitter:title" content="python 파일 다루기">
+<meta name="twitter:description" content="파일 다루기파일 목록열기os모듈 사용123456import osprint os.listdir(&amp;apos;.&amp;apos;) #현재 디렉토리의 파일목록printprint os.listdir(&amp;apos;../&amp;apos;) #현재 디렉토리의 부모 디렉토리의 파일 목록  파일 종류 알아보기 os.path 모듈로 파일 종류 판단하여 True, False 반환123456">
 <meta property="fb:app_id" content="965647770265499">
     
 
@@ -220,173 +225,225 @@ ga('send', 'pageview');
 </aside>
 
             
-            <section id="main"><div class="timeline timeline-wrap">
-    
-            <div class="timeline-row timeline-row-major">
-                <span class="node"><i class="fa fa-calendar"></i></span>
-                <h1 class="title">2018</h1>
-            </div>
+            <section id="main"><article id="post-post17_python-file,directory" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/03/07/post14_nodejs-bulletin-board_kr/">node.js 게시판 만들기 첫 포스팅</a>
+        <h1 class="article-title" itemprop="name">
+            python 파일 다루기
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2018/03/07/post14_nodejs-bulletin-board_kr/">
-            <time datetime="2018-03-07T09:09:17.000Z" itemprop="datePublished">2018-03-07</time>
+        <a href="/2018/04/11/post17_python-file,directory/">
+            <time datetime="2018-04-11T06:38:47.000Z" itemprop="datePublished">2018-04-11</time>
         </a>
     </div>
 
 
-                    
-                    
+                        
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/node-js/">node.js</a>
+        <a class="tag-link" href="/tags/python/">python</a>
     </div>
 
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+                    </div>
                 
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/02/28/post13_okky_seminor_kr/">OKKY세미나 IT회사 탐방기 - 18.02.27</a>
-        </h1>
-    
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="파일-다루기"><a href="#파일-다루기" class="headerlink" title="파일 다루기"></a>파일 다루기</h1><h2 id="파일-목록열기"><a href="#파일-목록열기" class="headerlink" title="파일 목록열기"></a>파일 목록열기</h2><p><code>os</code>모듈 사용<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line"></span><br><span class="line">print os.listdir(&apos;.&apos;) #현재 디렉토리의 파일목록</span><br><span class="line">print</span><br><span class="line"></span><br><span class="line">print os.listdir(&apos;../&apos;) #현재 디렉토리의 부모 디렉토리의 파일 목록</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="파일-종류-알아보기"><a href="#파일-종류-알아보기" class="headerlink" title="파일 종류 알아보기"></a>파일 종류 알아보기</h2><ul>
+<li><code>os.path</code> 모듈로 파일 종류 판단하여 <code>True</code>, <code>False</code> 반환<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">def filetype(fpath):</span><br><span class="line">  print fpath, &quot;:&quot;,</span><br><span class="line">  if os.path.isfile(fpath):</span><br><span class="line">    print &apos;Regular file&apos;</span><br><span class="line">  if os.path.isdir(fpath):</span><br><span class="line">    print &apos;Directory&apos;</span><br><span class="line">  if os.path.islink(fpath):</span><br><span class="line">    print &apos;Symbolic link&apos;</span><br><span class="line"></span><br><span class="line">flist = os.listdir(&apos;.&apos;)</span><br><span class="line">for fname in flist:</span><br><span class="line">  filetype(fname)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h2 id="파일의-허가권"><a href="#파일의-허가권" class="headerlink" title="파일의 허가권"></a>파일의 허가권</h2><ol>
+<li><p>파일의 허가권 알아보기</p>
+<ul>
+<li><code>os.access(filepath, mode)</code><ul>
+<li><code>mode</code>에 들어갈 값<ul>
+<li><code>os.F_OK</code>: 파일 자체가 존재하는 것을 테스트</li>
+<li><code>os.R_OK</code>: 읽기 권한이 있는 것을 테스트</li>
+<li><code>os.W_OK</code>: 쓰기 권한이 있는 것을 테스트</li>
+<li><code>os.X_OK</code>: 실행 권한이 있는 것(또는 디렉토리인지)을 테스트</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">def fileaccess(fpath):</span><br><span class="line">  print fpath, &apos;:&apos;,</span><br><span class="line">  if os.access(fpath, os.F_OK):</span><br><span class="line">    print &apos;Exists&apos;,</span><br><span class="line">  else:</span><br><span class="line">    return</span><br><span class="line">  if os.access(fpath, os.R_OK):</span><br><span class="line">    print &apos;R&apos;,</span><br><span class="line">  if os.access(fpath, os.W_OK):</span><br><span class="line">    print &apos;W&apos;,</span><br><span class="line">  if os.access(fpath, os.X_OK):</span><br><span class="line">    print &apos;X&apos;,</span><br><span class="line">  print</span><br><span class="line"></span><br><span class="line">flist = os.listdir(&apos;.&apos;)</span><br><span class="line">for fname in flist:</span><br><span class="line">  fileaccess(fname)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>파일의 허가권 변경하기</p>
+<ul>
+<li><code>os.chmod(filepath, mode)</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">os.chmod(&apos;sample.txt&apos;, 0777)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h2 id="파일-조작하기"><a href="#파일-조작하기" class="headerlink" title="파일 조작하기"></a>파일 조작하기</h2><ol>
+<li><p>파일 이름 변경하기</p>
+<ul>
+<li><code>os.rename(old_filepath, new_filepath)</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">os.rename(&apos;t.txt&apos;, &apos;t1.txt&apos;)</span><br><span class="line"></span><br><span class="line">print os.access(&apos;t.txt&apos;, os.F_OK) # 파일 존재 여부 확인</span><br><span class="line">print os.access(&apos;t1.txt&apos;, os.F_OK)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>파일 이동하기</p>
+<ul>
+<li><p><code>os.rename(oldfilepath, new_filepath)</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">os.rename(&apos;t.txt&apos;, &apos;example/t1.txt&apos;)</span><br><span class="line"></span><br><span class="line"># 파일 존재 여부 확인</span><br><span class="line">print os.access(&apos;example/t1.txt&apos;, os.F_OK)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>파일 복사하기</p>
+<ul>
+<li><code>shutil</code>모듈 활용</li>
+<li><code>shutil.copyfile(src_filepath, dest_filepath)</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">import shutil</span><br><span class="line">shutil.copyfile(&apos;sample.txt&apos;, &apos;sample_new.txt&apos;)</span><br><span class="line">print os.access(&apos;sample_new.txt&apos;, os.F_OK)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h2 id="파일-이름-다루기"><a href="#파일-이름-다루기" class="headerlink" title="파일 이름 다루기"></a>파일 이름 다루기</h2><ol>
+<li><p>상대 경로를 절대 경로로 변환하기</p>
+<ul>
+<li><code>os.path.abspath</code> - 상대경로<ul>
+<li>실제 파일 존재와는 무관하게 절대경로로 변경<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">print os.path.abspath(&apos;o.txt&apos;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>주어진 경로에 파일이 존재하는지 확인</p>
+<ul>
+<li><code>os.path.exists(filepath)</code></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="경로명-분리하기"><a href="#경로명-분리하기" class="headerlink" title="경로명 분리하기"></a>경로명 분리하기</h2><ol>
+<li><p>경로와 파일명으로 분리</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f = &apos;/Users/booski/git/python/t.txt&apos;</span><br><span class="line"></span><br><span class="line">print os.path.basename(f) # 파일명만 추출</span><br><span class="line">print os.path.dirname(f) # 디렉토리 경로 추출</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>경로명과 파일명을 한번에 분리 - basename과 dirname을 튜플로 확인</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print os.path.split(f)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>MS윈도우즈에서 드라이브명과 파일 경로명을 분리</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print os.path.splitdrive(f)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>확장자 분리 - 경로와 확장자명으로 튜플 생성</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print os.path.splitext(f)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/02/28/post13_okky_seminor_kr/">
-            <time datetime="2018-02-28T04:48:17.000Z" itemprop="datePublished">2018-02-28</time>
-        </a>
-    </div>
-
-
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/okky/">okky</a>
-    </div>
-
-                </div>
-            </div>
+        
         </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/02/22/post12_why-hexo-blog-changes-the-language-automacitally/">why hexo blog changes the language automacitally</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/02/22/post12_why-hexo-blog-changes-the-language-automacitally/">
-            <time datetime="2018-02-22T14:01:17.000Z" itemprop="datePublished">2018-02-22</time>
-        </a>
-    </div>
+        <footer class="article-footer">
+            <div class="share-container">
 
 
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/hexo/">hexo</a>
-    </div>
 
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/02/22/post11_Node-js-server-starting-module/">Node.js server starting module</a>
-        </h1>
-    
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
 
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/02/22/post11_Node-js-server-starting-module/">
-            <time datetime="2018-02-22T12:30:34.000Z" itemprop="datePublished">2018-02-22</time>
-        </a>
-    </div>
-
-
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Node-js/">Node.js</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/02/22/post10_Node-js-File-System-Module-kr/">Node.js File System 모듈</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/02/22/post10_Node-js-File-System-Module-kr/">
-            <time datetime="2018-02-22T10:36:52.000Z" itemprop="datePublished">2018-02-22</time>
-        </a>
-    </div>
-
-
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Node-js/">Node.js</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
 </div>
 
-    <nav id="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><a class="extend next" rel="next" href="/archives/page/3/">Next &raquo;</a>
-    </nav>
+            
+    
+        <a href="http://bongbooski.github.io/2018/04/11/post17_python-file,directory/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/11/post17_python-file,directory/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2018/04/10/post16_standardIO/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">python 표준 입출력</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+</section>
+    
+
 </section>
             
                 
@@ -561,11 +618,13 @@ ga('send', 'pageview');
     <script>
     var disqus_config = function () {
         
-        this.page.identifier = '';
+            this.page.url = 'http://bongbooski.github.io/2018/04/11/post17_python-file,directory/';
+        
+        this.page.identifier = 'post17_python-file,directory';
     };
     (function() { 
         var d = document, s = d.createElement('script');  
-        s.src = '//' + 'https-bongbooski-github-io' + '.disqus.com/count.js';
+        s.src = '//' + 'https-bongbooski-github-io' + '.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();
