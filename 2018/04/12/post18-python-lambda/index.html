@@ -3,15 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Archive: 2018/3 | Booski&#39;s programming</title>
+    <title>post18_python-lambda | Booski&#39;s programming</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Booski&#39;s programming">
-<meta property="og:url" content="http://bongbooski.github.io/archives/2018/03/index.html">
+    <meta name="description" content="람다(lambda)함수 정의 일반적인 함수를 한 줄의 문으로 정의할 수 있는 새로운 함수 정으 ㅣ리터럴 일회성으로 활용할 함수 정의할 때 주로 사용 :뒤에는 식만 올 수 있음 람다 함수도 하나의 객체임  12f = lambda x: x + 1print f(1)  인수가 두 개 있는 람다 함수를 지니는 변수 지정 및 함수 호출 12g = lambda x,y:">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="post18_python-lambda">
+<meta property="og:url" content="http://bongbooski.github.io/2018/04/12/post18-python-lambda/index.html">
 <meta property="og:site_name" content="Booski&#39;s programming">
+<meta property="og:description" content="람다(lambda)함수 정의 일반적인 함수를 한 줄의 문으로 정의할 수 있는 새로운 함수 정으 ㅣ리터럴 일회성으로 활용할 함수 정의할 때 주로 사용 :뒤에는 식만 올 수 있음 람다 함수도 하나의 객체임  12f = lambda x: x + 1print f(1)  인수가 두 개 있는 람다 함수를 지니는 변수 지정 및 함수 호출 12g = lambda x,y:">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-04-12T11:43:07.276Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Booski&#39;s programming">
+<meta name="twitter:title" content="post18_python-lambda">
+<meta name="twitter:description" content="람다(lambda)함수 정의 일반적인 함수를 한 줄의 문으로 정의할 수 있는 새로운 함수 정으 ㅣ리터럴 일회성으로 활용할 함수 정의할 때 주로 사용 :뒤에는 식만 올 수 있음 람다 함수도 하나의 객체임  12f = lambda x: x + 1print f(1)  인수가 두 개 있는 람다 함수를 지니는 변수 지정 및 함수 호출 12g = lambda x,y:">
 <meta property="fb:app_id" content="965647770265499">
     
 
@@ -220,102 +225,201 @@ ga('send', 'pageview');
 </aside>
 
             
-            <section id="main"><div class="timeline timeline-wrap">
-    
-            <div class="timeline-row timeline-row-major">
-                <span class="node"><i class="fa fa-calendar"></i></span>
-                <h1 class="title">2018</h1>
-            </div>
+            <section id="main"><article id="post-post18-python-lambda" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/03/22/post15_gitignore+config-setting/">.gitignore, config파일 사용</a>
+        <h1 class="article-title" itemprop="name">
+            post18_python-lambda
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2018/03/22/post15_gitignore+config-setting/">
-            <time datetime="2018-03-22T06:09:17.000Z" itemprop="datePublished">2018-03-22</time>
+        <a href="/2018/04/12/post18-python-lambda/">
+            <time datetime="2018-04-12T05:19:37.000Z" itemprop="datePublished">2018-04-12</time>
         </a>
     </div>
 
 
-                    
-                    
+                        
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/github/">github</a>
+        <a class="tag-link" href="/tags/python/">python</a>
     </div>
 
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+                    </div>
                 
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/03/22/hello-world/">Hello World</a>
-        </h1>
-    
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="람다-lambda-함수-정의"><a href="#람다-lambda-함수-정의" class="headerlink" title="람다(lambda)함수 정의"></a>람다(lambda)함수 정의</h1><ul>
+<li>일반적인 함수를 한 줄의 문으로 정의할 수 있는 새로운 함수 정으 ㅣ리터럴</li>
+<li>일회성으로 활용할 함수 정의할 때 주로 사용</li>
+<li><code>:</code>뒤에는 식만 올 수 있음</li>
+<li>람다 함수도 하나의 객체임</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = lambda x: x + 1</span><br><span class="line">print f(1)</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>인수가 두 개 있는 람다 함수를 지니는 변수 지정 및 함수 호출</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">g = lambda x,y: x + y</span><br><span class="line">print g(1,2)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>기본 인수를 지니는 람다 함수 정의</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">g = lambda x, inc=1: x+inc</span><br><span class="line">print g(10) # inc기본 인수 값으로 1사용</span><br><span class="line">print g(10, 5)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>가변 인수를 지니는 람다 함수 정의</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vargs = lambda x, *args: args #args가 리턴됨</span><br><span class="line">print vars(1,2,3,4,5)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h2 id="람다-함수-사용하기"><a href="#람다-함수-사용하기" class="headerlink" title="람다 함수 사용하기"></a>람다 함수 사용하기</h2><ul>
+<li><p>일반 함수 사용</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def f1(x):</span><br><span class="line">  return x*x + 3*x - 10</span><br><span class="line"></span><br><span class="line">def f2(x):</span><br><span class="line">  return x*x*x</span><br><span class="line"></span><br><span class="line">def g(func):</span><br><span class="line">  return [func(x) for x in range(-10, 10)]</span><br><span class="line"></span><br><span class="line">print g(f1)</span><br><span class="line">print g(f2)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>람다 함수 사용</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def g(func):</span><br><span class="line">  return [func(x) for x in range(-10, 10)]</span><br><span class="line"></span><br><span class="line">print g(lambda x: x*x + 3*x - 10)</span><br><span class="line">print g(lambda x: x*x*x)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="람다-함수-활용"><a href="#람다-함수-활용" class="headerlink" title="람다 함수 활용"></a>람다 함수 활용</h2><ul>
+<li><code>map</code>, <code>filter</code>, <code>reduce</code> 내장 함수</li>
+</ul>
+<ol>
+<li><p><code>map</code> 내장 함수</p>
+<ul>
+<li><p><code>map(function, seq)</code>: <code>seq</code>의 원소를 차례로 돌면서 <code>function</code>에 적용한 결과를 <code>seq</code>의 자료형으로 반환</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def f(x):</span><br><span class="line">  return x * x</span><br><span class="line">X - [1,2,3,4,5]</span><br><span class="line">Y = map(f, X)</span><br><span class="line">print Y</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>map</code>과 람다 함수를 동시에 사용 - 가장 추천</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">X = [1,2,3,4,5]</span><br><span class="line">print map(lambda x: x * x, X)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>filter</code> 내장 함수</p>
+<ul>
+<li><code>seq</code>자료형이 지닌 각 원소값에 대해 <code>function</code>에 적용한 결과가 참인 원소값들만을 동일 시퀀스 자료형으로 반환<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print filter(lambda x: x&gt;2, [1,2,3,45])</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>reduce</code> 내장 함수</p>
+<ul>
+<li><code>reduce(function, seq[,initial])</code></li>
+<li><code>seq</code>자료형이 지닌 각 원소값에 대해 <code>function</code>함수를 적용하면서 하나의 값으로 매핑</li>
+<li>첫번째 인자(<code>function</code>)는 반드시 두 개의 인자(ex. x,y)를 받아야한다.<ul>
+<li><code>seq</code>의 각 원소값들이 차례로 y에 들어간다</li>
+<li>함수가 수행된 값은 차례대로 x에 들어간다</li>
+</ul>
+</li>
+<li>추가적으로 제공가능한 세번재 인자인 <code>initial</code>은 첫번째 단계에서 x에 할당할 초기값으로 사용된다<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print reduce(lambda x, y: x + y, [1,2,3,4,5])</span><br><span class="line">print reduce(lambda x, y: x + y, [1,2,3,4,5], 1000)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
 
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/03/22/hello-world/">
-            <time datetime="2018-03-22T06:09:16.793Z" itemprop="datePublished">2018-03-22</time>
-        </a>
-    </div>
-
-
-                    
-                    
-                </div>
-            </div>
+        
         </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/03/07/post14_nodejs-bulletin-board_kr/">node.js 게시판 만들기 첫 포스팅</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/03/07/post14_nodejs-bulletin-board_kr/">
-            <time datetime="2018-03-07T09:09:17.000Z" itemprop="datePublished">2018-03-07</time>
-        </a>
-    </div>
+        <footer class="article-footer">
+            <div class="share-container">
 
 
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/node-js/">node.js</a>
-    </div>
 
-                </div>
-            </div>
-        </div>
-    
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
 </div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://bongbooski.github.io/2018/04/12/post18-python-lambda/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/12/post18-python-lambda/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2018/04/11/post17_python-file,directory/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">python 파일 다루기</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+</section>
+    
+
 </section>
             
                 
@@ -490,11 +594,13 @@ ga('send', 'pageview');
     <script>
     var disqus_config = function () {
         
-        this.page.identifier = '';
+            this.page.url = 'http://bongbooski.github.io/2018/04/12/post18-python-lambda/';
+        
+        this.page.identifier = 'post18-python-lambda';
     };
     (function() { 
         var d = document, s = d.createElement('script');  
-        s.src = '//' + 'https-bongbooski-github-io' + '.disqus.com/count.js';
+        s.src = '//' + 'https-bongbooski-github-io' + '.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();
