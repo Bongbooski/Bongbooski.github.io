@@ -174,7 +174,7 @@ ga('send', 'pageview');
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                20
+                22
                 <span>posts</span>
             </div>
             <div class="article-info-block">
@@ -221,6 +221,257 @@ ga('send', 'pageview');
 
             
             <section id="main">
+    <article id="post-post12_why-hexo-blog-changes-the-language-automacitally" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/02/22/post12_why-hexo-blog-changes-the-language-automacitally/">why hexo blog changes the language automacitally</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/02/22/post12_why-hexo-blog-changes-the-language-automacitally/">
+            <time datetime="2018-02-22T14:01:17.000Z" itemprop="datePublished">2018-02-22</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/hexo/">hexo</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>Almost whenever I check my hexo github blog no matter local or github,<br>the language kept being changed like an alive creature.</p>
+<p>One time that was in English, next time it was in Spanish, next time it was in<br>French, and then it was in Indonesian.</p>
+<p><em>yeah it was so crazy</em></p>
+<p>So I checked <code>hexo</code>‘s document.<br>-&gt; <a href="https://hexo.io/docs/internationalization.html" target="_blank" rel="noopener">https://hexo.io/docs/internationalization.html</a></p>
+<p>And I found the reason and how to <strong>SET</strong> your blog’s language.</p>
+<p><code>hexo</code> says that if we set <code>i18n_dir</code> as <code>lang</code>, they will detect the language within the first segment of <code>URL</code>. For example:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/index.html =&gt; en</span><br><span class="line">/archives/index.html =&gt; en</span><br><span class="line">/zh-tw/index.html =&gt; zh-tw</span><br></pre></td></tr></table></figure></p>
+<p>The string will only be served as a language when the language file exists. So archives in /archives/index.html (example 2) will not get served as a language.</p>
+<p>But it was odd. When my blog shows French, <code>request headers</code> message’s language part setting was right(in Korean or English).</p>
+<p>I don’t know why the other languages appeared but after setting <code>language</code>option<br>as <code>en</code> in <code>_config.yml</code> and then deleted, it became ok.</p>
+<p>Until now I think it’s about <code>hexo-i18n</code> but I don’t understand why;;<br>If this blog’s language is weird then notice me. In case I will see again,<br>I will try to find the reason again</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://bongbooski.github.io/2018/02/22/post12_why-hexo-blog-changes-the-language-automacitally/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/22/post12_why-hexo-blog-changes-the-language-automacitally/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-post11_Node-js-server-starting-module" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/02/22/post11_Node-js-server-starting-module/">Node.js server starting module</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/02/22/post11_Node-js-server-starting-module/">
+            <time datetime="2018-02-22T12:30:34.000Z" itemprop="datePublished">2018-02-22</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Node-js/">Node.js</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>#Server Strting module<br>This module can be used without abstracting by <code>require()</code>method.</p>
+<p>When this module is installed, the code uses <code>-g</code> option. <code>-g</code> makes the installing globally.<br>Then the modules which are installed with <code>-g</code> option are placed in <code>{prefix}/lib/node_modules</code> and the executable files are placed in <code>{prefix}/bin</code></p>
+<p>We will install <code>supervisor</code> and <code>forever</code> modules with the option like this.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g supervisor</span><br><span class="line">npm install -g forever</span><br></pre></td></tr></table></figure>
+<hr>
+<p>#supervisor module<br><code>Node.js</code> programming makes us stop and restart the <code>server</code> again and again whenever we need to change the code because though the files are changed, the script executing doesn’t get impact. But, <code>supervisor</code> module recognizes the difference and restarts the <code>server</code> automatically.</p>
+<p>we can check their document here -&gt; <a href="https://github.com/petruisfan/node-supervisor" target="_blank" rel="noopener">https://github.com/petruisfan/node-supervisor</a></p>
+<p><code>supervisor</code> module’s basic usage is <code>supervisor (file name)</code> .</p>
+<p>We will see what happens with the module from now on.</p>
+<p>I made a code for showing the changing. When I made this code,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var http = require(&quot;http&quot;);</span><br><span class="line"></span><br><span class="line">http.createServer(function ( request, response)&#123;</span><br><span class="line">    response.writeHead(200, &#123;&apos;Content-Type&apos;:&apos;text/html&apos;&#125;);</span><br><span class="line">    response.end(&apos;&lt;h1&gt;Supervisor test - 1&lt;/h1&gt;&apos;);</span><br><span class="line">&#125;).listen(52273, function()&#123;</span><br><span class="line">    console.log(&quot;Server Running at http://127.0.0.1:52273&quot;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>I see the page when I enter <code>http://127.0.0.1:52273</code> or <code>localhost:52273</code><br><img src="/images/supervisor1.png" alt=""></p>
+<p>And I change and save the <code>server</code> code file like this without restarting,<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var http = require(&quot;http&quot;);</span><br><span class="line"></span><br><span class="line">http.createServer(function ( request, response)&#123;</span><br><span class="line">    response.writeHead(200, &#123;&apos;Content-Type&apos;:&apos;text/html&apos;&#125;);</span><br><span class="line">    response.end(&apos;&lt;h1&gt;Supervisor test - 2&lt;/h1&gt;&apos;);</span><br><span class="line">&#125;).listen(52273, function()&#123;</span><br><span class="line">    console.log(&quot;Server Running at http://127.0.0.1:52273&quot;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>and then refresh the web page, the page is changed like this.<br><img src="/images/supervisor2.png" alt=""></p>
+<p><code>supervisor</code> module restarts any programs when the code ends no matter what the programs are. This means in the case we run some short code like<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(&quot;Run with supervisor&quot;);</span><br></pre></td></tr></table></figure></p>
+<p>the program gets infinite restarting.<br>so we should use the module when we start server program.</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://bongbooski.github.io/2018/02/22/post11_Node-js-server-starting-module/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/22/post11_Node-js-server-starting-module/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-post10_Node-js-File-System-Module-kr" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -1264,255 +1515,8 @@ ga('send', 'pageview');
 
 
 
-    <article id="post-post2_Node.js-File-System-Module" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/02/22/post2_Node.js-File-System-Module/">Node.js File System Module</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/02/22/post2_Node.js-File-System-Module/">
-            <time datetime="2018-02-22T05:22:51.000Z" itemprop="datePublished">2018-02-22</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Node-js/">Node.js</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>Because we can’t write down all <code>HTML</code> page in <code>Javascript</code> file, we use <code>file system module</code> for provide <code>HTML</code> page which exists in server to clients.</p>
-<p>For providing HTML page(<code>HTMLPage.html</code>), we need to make server <code>javascript</code> file like this.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const fs = require(&quot;fs&quot;);</span><br><span class="line">const http = require(&quot;http&quot;);</span><br><span class="line"></span><br><span class="line">http.createServer(function(request, response)&#123;</span><br><span class="line">  fs.readFile(&quot;HTMLPage.html&quot;, function(error, data)&#123;</span><br><span class="line">    response.writeHead(200, &#123;&quot;Content-Type:&quot;:&quot;text/html&quot;&#125;);</span><br><span class="line">    response.end(data);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;).listen(52273, function()&#123;</span><br><span class="line">  console.log(&quot;server running at http://127.0.0.1:52273/&quot;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>If we want to provide another kind of file, we can change <code>MIME</code> type in 5th line.<br>For example, in jpeg case, we change <code>text/html</code> to <code>image/jpeg</code>.<br>It is same to other MIME types.</p>
-<h3 id="Examples-of-MIME"><a href="#Examples-of-MIME" class="headerlink" title="Examples of MIME"></a>Examples of MIME</h3><ul>
-<li>text/plain — basic text</li>
-<li>text/html — HTML document</li>
-<li>text/css — CSS document</li>
-<li>text/xml — XML document</li>
-<li>image/jpeg — JPG/JPEG image file</li>
-<li>image/png — PNG image file</li>
-<li>video/mpeg — MPEG video file</li>
-<li>audio/mp3 — MP3 music file</li>
-</ul>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-    <div class="a2a_kit a2a_default_style">
-    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
-    <span class="a2a_divider"></span>
-    <a class="a2a_button_facebook"></a>
-    <a class="a2a_button_twitter"></a>
-    <a class="a2a_button_google_plus"></a>
-    <a class="a2a_button_pinterest"></a>
-    <a class="a2a_button_tumblr"></a>
-</div>
-<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
-<style>
-    .a2a_menu {
-        border-radius: 4px;
-    }
-    .a2a_menu a {
-        margin: 2px 0;
-        font-size: 14px;
-        line-height: 16px;
-        border-radius: 4px;
-        color: inherit !important;
-        font-family: 'Microsoft Yahei';
-    }
-    #a2apage_dropdown {
-        margin: 10px 0;
-    }
-    .a2a_mini_services {
-        padding: 10px;
-    }
-    a.a2a_i,
-    i.a2a_i {
-        width: 122px;
-        line-height: 16px;
-    }
-    a.a2a_i .a2a_svg,
-    a.a2a_more .a2a_svg {
-        width: 16px;
-        height: 16px;
-        line-height: 16px;
-        vertical-align: top;
-        background-size: 16px;
-    }
-    a.a2a_i {
-        border: none !important;
-    }
-    a.a2a_menu_show_more_less {
-        margin: 0;
-        padding: 10px 0;
-        line-height: 16px;
-    }
-    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
-    .a2a_mini_services{*+height:1%;}
-</style>
-
-</div>
-
-            
-    
-        <a href="http://bongbooski.github.io/2018/02/22/post2_Node.js-File-System-Module/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/22/post2_Node.js-File-System-Module/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-post1_Node.js-http-module" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/02/21/post1_Node.js-http-module/">Node.js http module</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/02/21/post1_Node.js-http-module/">
-            <time datetime="2018-02-21T06:49:51.000Z" itemprop="datePublished">2018-02-21</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Node-js/">Node.js</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>When we order chicken, we say ‘it is A apartment in B area, … please deliver us a chicken’ then we get a chicken after some time in the right place where we talked.</p>
-<p>In this situation, putting URL on web browser is ordering chicken and getting the web page from the web server is getting the chicken from the restaurant. It’s the basic understanding about request and response</p>
-<p>Depending on the way to send the ordering, we can call the server as <code>HTTP</code> web server or <code>HTTPS</code> web server etc.<br>When we use <code>request</code> message, we get proper web page for users.<br>When we use <code>response</code> message, we can save and take <code>cookies</code> and force to move the page.<br>In http module, the most important object is <code>server</code>. we can declare <code>server</code> by using <code>createServer()</code> method.</p>
-<h3 id="Server-object’s-method"><a href="#Server-object’s-method" class="headerlink" title="Server object’s method"></a>Server object’s method</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">listen(port[, callback]) — Start server</span><br><span class="line">close([callback]) — Stop server</span><br></pre></td></tr></table></figure>
-<h3 id="Server-object’s-event"><a href="#Server-object’s-event" class="headerlink" title="Server object’s event"></a>Server object’s event</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">request — when client asks something</span><br><span class="line">connection — when client opens the server</span><br><span class="line">close — when the server is closed</span><br><span class="line">checkContinue — when client keeps connecting the server</span><br><span class="line">upgrade — when client asks HTTP upgrade</span><br><span class="line">clientError — when client makes errors</span><br></pre></td></tr></table></figure>
-<p>When we want to provide an web page, we need to write response message. And at that time, we use response object which is the 2nd parameter from request event listener.</p>
-<h3 id="Response-object’s-method"><a href="#Response-object’s-method" class="headerlink" title="Response object’s method"></a>Response object’s method</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">writeHead(statusCode[, statusMessage][, headers]) — write down the response header</span><br><span class="line">end([data][, encoding][, callback]) — write the main response content</span><br></pre></td></tr></table></figure>
-<p><img src="/images/http_module.png" alt=""></p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-    <div class="a2a_kit a2a_default_style">
-    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
-    <span class="a2a_divider"></span>
-    <a class="a2a_button_facebook"></a>
-    <a class="a2a_button_twitter"></a>
-    <a class="a2a_button_google_plus"></a>
-    <a class="a2a_button_pinterest"></a>
-    <a class="a2a_button_tumblr"></a>
-</div>
-<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
-<style>
-    .a2a_menu {
-        border-radius: 4px;
-    }
-    .a2a_menu a {
-        margin: 2px 0;
-        font-size: 14px;
-        line-height: 16px;
-        border-radius: 4px;
-        color: inherit !important;
-        font-family: 'Microsoft Yahei';
-    }
-    #a2apage_dropdown {
-        margin: 10px 0;
-    }
-    .a2a_mini_services {
-        padding: 10px;
-    }
-    a.a2a_i,
-    i.a2a_i {
-        width: 122px;
-        line-height: 16px;
-    }
-    a.a2a_i .a2a_svg,
-    a.a2a_more .a2a_svg {
-        width: 16px;
-        height: 16px;
-        line-height: 16px;
-        vertical-align: top;
-        background-size: 16px;
-    }
-    a.a2a_i {
-        border: none !important;
-    }
-    a.a2a_menu_show_more_less {
-        margin: 0;
-        padding: 10px 0;
-        line-height: 16px;
-    }
-    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
-    .a2a_mini_services{*+height:1%;}
-</style>
-
-</div>
-
-            
-    
-        <a href="http://bongbooski.github.io/2018/02/21/post1_Node.js-http-module/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/21/post1_Node.js-http-module/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <nav id="page-nav">
-        <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+        <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
 </section>
             
@@ -1524,6 +1528,44 @@ ga('send', 'pageview');
         <h3 class="widget-title">recent</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/15/post20-python-package/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/15/post20-python-package/" class="title">python 패키지</a></p>
+                            <p class="item-date"><time datetime="2018-04-15T06:48:23.000Z" itemprop="datePublished">2018-04-15</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/15/post19-python-import/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/15/post19-python-import/" class="title">python 모듈 import하기</a></p>
+                            <p class="item-date"><time datetime="2018-04-15T02:48:23.000Z" itemprop="datePublished">2018-04-15</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1582,44 +1624,6 @@ ga('send', 'pageview');
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/04/09/post16_python_fileIO/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/04/09/post16_python_fileIO/" class="title">python 파일 입출력</a></p>
-                            <p class="item-date"><time datetime="2018-04-09T06:09:17.000Z" itemprop="datePublished">2018-04-09</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/03/22/post15_gitignore+config-setting/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/03/22/post15_gitignore+config-setting/" class="title">.gitignore, config파일 사용</a></p>
-                            <p class="item-date"><time datetime="2018-03-22T06:09:17.000Z" itemprop="datePublished">2018-03-22</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1631,7 +1635,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">13</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">13</span></li></ul>
         </div>
     </div>
 
@@ -1640,7 +1644,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySql/">MySql</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/okky/">okky</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">4</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySql/">MySql</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/okky/">okky</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">6</span></li></ul>
         </div>
     </div>
 
@@ -1649,7 +1653,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/MySql/" style="font-size: 15px;">MySql</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/okky/" style="font-size: 10px;">okky</a> <a href="/tags/python/" style="font-size: 15px;">python</a>
+            <a href="/tags/MySql/" style="font-size: 13.33px;">MySql</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/okky/" style="font-size: 10px;">okky</a> <a href="/tags/python/" style="font-size: 16.67px;">python</a>
         </div>
     </div>
 

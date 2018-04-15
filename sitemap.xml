@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://bongbooski.github.io/2018/04/15/post20-python-package/</loc>
+    
+    <lastmod>2018-04-15T07:31:55.462Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://bongbooski.github.io/2018/04/15/post19-python-import/</loc>
+    
+    <lastmod>2018-04-15T07:03:29.772Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://bongbooski.github.io/2018/04/12/post18-python-lambda/</loc>
     
-    <lastmod>2018-04-12T14:57:36.914Z</lastmod>
+    <lastmod>2018-04-15T02:56:27.291Z</lastmod>
     
   </url>
   

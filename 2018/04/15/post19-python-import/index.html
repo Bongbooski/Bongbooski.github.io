@@ -3,23 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Node.js ejs, jade module basic | Booski&#39;s programming</title>
+    <title>python 모듈 import하기 | Booski&#39;s programming</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="ejs moduleWe can install ejs module by this code.1npm install ejs; Then, npm installs eternal modules.We can use those by the same way to internal modules.1var ejs = require(&amp;apos;ejs&amp;apos;); Module e">
-<meta name="keywords" content="Node.js">
+    <meta name="description" content="import 모듈명 기본적인 형태 12import mymathprint mymath.area(5)  from 모듈명 import 가져올 대상  해당 모듈에 존재하는 대상을 가져옴 기존에 존재하던 이름이면 기존 객체가 상실됨 모듈 이름 없이 바로 사용 가능12from mymath import area, mypiprint area(5)    from 모듈명 i">
+<meta name="keywords" content="python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Node.js ejs, jade module basic">
-<meta property="og:url" content="http://bongbooski.github.io/2018/02/22/post5_Node.js-ejs,-jade-module-basic/index.html">
+<meta property="og:title" content="python 모듈 import하기">
+<meta property="og:url" content="http://bongbooski.github.io/2018/04/15/post19-python-import/index.html">
 <meta property="og:site_name" content="Booski&#39;s programming">
-<meta property="og:description" content="ejs moduleWe can install ejs module by this code.1npm install ejs; Then, npm installs eternal modules.We can use those by the same way to internal modules.1var ejs = require(&amp;apos;ejs&amp;apos;); Module e">
+<meta property="og:description" content="import 모듈명 기본적인 형태 12import mymathprint mymath.area(5)  from 모듈명 import 가져올 대상  해당 모듈에 존재하는 대상을 가져옴 기존에 존재하던 이름이면 기존 객체가 상실됨 모듈 이름 없이 바로 사용 가능12from mymath import area, mypiprint area(5)    from 모듈명 i">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://bongbooski.github.io/images/ejs1.png">
-<meta property="og:image" content="http://bongbooski.github.io/images/jade1.png">
-<meta property="og:updated_time" content="2018-02-22T09:56:48.000Z">
+<meta property="og:updated_time" content="2018-04-15T07:03:29.772Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Node.js ejs, jade module basic">
-<meta name="twitter:description" content="ejs moduleWe can install ejs module by this code.1npm install ejs; Then, npm installs eternal modules.We can use those by the same way to internal modules.1var ejs = require(&amp;apos;ejs&amp;apos;); Module e">
-<meta name="twitter:image" content="http://bongbooski.github.io/images/ejs1.png">
+<meta name="twitter:title" content="python 모듈 import하기">
+<meta name="twitter:description" content="import 모듈명 기본적인 형태 12import mymathprint mymath.area(5)  from 모듈명 import 가져올 대상  해당 모듈에 존재하는 대상을 가져옴 기존에 존재하던 이름이면 기존 객체가 상실됨 모듈 이름 없이 바로 사용 가능12from mymath import area, mypiprint area(5)    from 모듈명 i">
 <meta property="fb:app_id" content="965647770265499">
     
 
@@ -228,7 +225,7 @@ ga('send', 'pageview');
 </aside>
 
             
-            <section id="main"><article id="post-post5_Node.js-ejs,-jade-module-basic" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-post19-python-import" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -236,7 +233,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-            Node.js ejs, jade module basic
+            python 모듈 import하기
         </h1>
     
 
@@ -245,8 +242,8 @@ ga('send', 'pageview');
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2018/02/22/post5_Node.js-ejs,-jade-module-basic/">
-            <time datetime="2018-02-22T06:49:06.000Z" itemprop="datePublished">2018-02-22</time>
+        <a href="/2018/04/15/post19-python-import/">
+            <time datetime="2018-04-15T02:48:23.000Z" itemprop="datePublished">2018-04-15</time>
         </a>
     </div>
 
@@ -255,7 +252,7 @@ ga('send', 'pageview');
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Node-js/">Node.js</a>
+        <a class="tag-link" href="/tags/python/">python</a>
     </div>
 
                     </div>
@@ -266,45 +263,92 @@ ga('send', 'pageview');
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h1 id="ejs-module"><a href="#ejs-module" class="headerlink" title="ejs module"></a>ejs module</h1><p>We can install <code>ejs</code> module by this code.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install ejs;</span><br></pre></td></tr></table></figure></p>
-<p>Then, npm installs eternal modules.<br>We can use those by the same way to internal modules.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var ejs = require(&apos;ejs&apos;);</span><br></pre></td></tr></table></figure></p>
-<p>Module <code>ejs</code> is the engine of template.<br>So it translates specific <code>String</code> to <code>HTML</code> type <code>String</code>.</p>
-<p>We will make the <code>server</code> page which changes <code>ejs</code> page to <code>HTML</code> page.<br>When we translate <code>ejs</code> to <code>HTML</code> page, we use <code>render(str, data, option)</code> of <code>ejs</code> module.</p>
-<p>Though we can use variables after declaring in <code>ejs</code> in side,<br>usually people declare them in <code>Javascript</code> and pass them to <code>ejs</code> for using.<br>When we pass <code>Javascript</code>‘ variables, we use the 2nd parameter of <code>render()</code> method like 9, 10th row.</p>
-<p><strong>Tip — we should set UTF-8 as that file’s encoding</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var http = require(&quot;http&quot;);</span><br><span class="line">var fs = require(&apos;fs&apos;);</span><br><span class="line">var ejs = require(&apos;ejs&apos;);</span><br><span class="line"></span><br><span class="line">http.createServer(function ( request, response)&#123;</span><br><span class="line">  fs.readFile(&quot;ejsPage.ejs&quot;, &apos;utf8&apos;, function(error, data)&#123;</span><br><span class="line">    response.writeHead(200, &#123;&apos;Content-Type&apos;:&apos;text/html&apos;&#125;);</span><br><span class="line">    response.end(ejs.render(data, &#123;</span><br><span class="line">      name: &apos;booski&apos;,</span><br><span class="line">      description : &apos;Hellow ejs with node.js&apos;</span><br><span class="line">      &#125;));</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;).listen(52273, function()&#123;</span><br><span class="line">    console.log(&quot;Server Running at http://127.0.0.1.52273&quot;);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
-<p>When we write <code>ejs</code> page, we can use some special tags.</p>
+            <h1 id="import-모듈명"><a href="#import-모듈명" class="headerlink" title="import 모듈명"></a>import 모듈명</h1><ol>
+<li><p>기본적인 형태</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import mymath</span><br><span class="line">print mymath.area(5)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>from 모듈명 import 가져올 대상</p>
 <ul>
-<li><code>&lt;% Code %&gt;</code> → writing Javascript code inside</li>
-<li><code>&lt;%= Value %&gt;</code> → printing the data</li>
+<li>해당 모듈에 존재하는 대상을 가져옴</li>
+<li>기존에 존재하던 이름이면 기존 객체가 상실됨</li>
+<li>모듈 이름 없이 바로 사용 가능<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from mymath import area, mypi</span><br><span class="line">print area(5)</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<p>With using these tags, I made <code>ejsPage.ejs</code> file like this.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;&lt;%=name%&gt;&lt;/h1&gt;</span><br><span class="line">&lt;p&gt;&lt;%=description%&gt;&lt;/p&gt;</span><br><span class="line">&lt;hr/&gt;</span><br><span class="line">&lt;%for(var i = 0;i&lt;10;i++)&#123;%&gt;</span><br><span class="line">  &lt;h2&gt;The Square of &lt;%= i %&gt; is &lt;%= i*i%&gt;&lt;/h2&gt;</span><br><span class="line"> &lt;%&#125;%&gt;</span><br></pre></td></tr></table></figure>
-<p>Starting the server, we can see this page.</p>
-<p><img src="/images/ejs1.png" alt=""></p>
+</li>
+<li><p>from 모듈명 import *</p>
+<ul>
+<li>해당 모듈에 존재하는 <code>__</code>로 시작되는 것들을 제외한 모든 대상을 가져옴<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from mymath import *</span><br><span class="line">print area(5)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>import 모듈명 as 새로운 모듈 이름</p>
+<ul>
+<li>해당 모듈을 다른 이름으로 사용하고자 할 때 사용</li>
+<li>기존 모듈 이름이 너무 길거나 현재 사용중인 이름인 경우 유용<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import string as chstr</span><br><span class="line">print chstr</span><br><span class="line">print</span><br><span class="line">print chstr.punctuation</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>from 모듈명 import 이름 as 새로운 이름[, 이름 as 새로운 이름]</p>
+<ul>
+<li>해당 모듈 내에 정의된 이름을 새로운 이름으로 사용하고자 할 때<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">from string import replace as substitute[, upper as up]</span><br><span class="line">print substitute</span><br><span class="line">print substitute(&apos;ham chicken spam&apos;, &apos;chicke&apos;, &apos;egg&apos;)</span><br><span class="line"></span><br><span class="line">print up</span><br><span class="line">print up(&apos;abc&apos;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>import문은 어디에서나 사용가능(함수 내에서도 가능)</li>
+</ul>
 <hr>
-<h1 id="Jade-module"><a href="#Jade-module" class="headerlink" title="Jade module"></a>Jade module</h1><p><code>Jade</code> module is one of template engine modules too like <code>ejs</code> module.<br>We can install that by the same way to <code>ejs</code> like this<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install jade</span><br></pre></td></tr></table></figure></p>
-<p>When <code>jade</code> module translates <code>jade</code> page to <code>HTML</code> page, it uses <code>compile(string,option)</code>method.<br>One different thing is that if <code>ejs</code>‘ <code>render()</code> returns <code>String</code>, <code>compile()</code> returns a <code>function</code>. And we can pass <code>Javascript</code>‘ variable with the <code>function</code>.<br>We put them as the parameter of the function which <code>compile()</code> returned like 11, 12 rows.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var http = require(&quot;http&quot;);</span><br><span class="line">var fs = require(&apos;fs&apos;);</span><br><span class="line">var jade = require(&apos;jade&apos;);</span><br><span class="line"></span><br><span class="line">http.createServer(function ( request, response)&#123;</span><br><span class="line">  fs.readFile(&quot;jadePage.jade&quot;, &apos;utf8&apos;, function(error, data)&#123;</span><br><span class="line">    var fn = jade.compile(data);</span><br><span class="line"></span><br><span class="line">    response.writeHead(200, &#123;&apos;Content-Type&apos;:&apos;text/html&apos;&#125;);</span><br><span class="line">    response.end(fn(&#123;</span><br><span class="line">      name: &apos;booski&apos;,</span><br><span class="line">      description : &apos;Hellow jade with node.js&apos;</span><br><span class="line">    &#125;));</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;).listen(52273, function()&#123;</span><br><span class="line">    console.log(&quot;Server Running at http://127.0.0.1.52273&quot;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p><code>Jade</code> has special way to write down the page too like <code>ejs</code>.<br>The most important thing is making an indentation.<br><code>Jade</code> module makes new <code>HTML</code> tag based on each indentations.</p>
-<p><strong>Tip: we should use ‘tap’ or ‘space bar’ for every indentation. If not, there will be an error</strong></p>
-<p>When we input words in the tag, we go to the next row and make an indentation again and then write down them there.<br>And If we want to give an attribute to the tag, we give it with parenthesis.<br>(if we want to give many attributes, we divide them by <code>,</code>)</p>
-<p><code>Jade</code> translates some specific words in special way like <code>doctype</code> or <code>annotation</code>,</p>
+<h1 id="컴파일과-적재시간"><a href="#컴파일과-적재시간" class="headerlink" title="컴파일과 적재시간"></a>컴파일과 적재시간</h1><ul>
+<li><p><code>import mymath</code>를 수행할 때 발생하는 일</p>
+<ol>
+<li><code>mymath.pyc</code>를 찾는다</li>
+<li>없다면 <code>mymath.py</code>를 찾아서 <code>mymath.pyc</code>를 생성한다</li>
+<li><code>mymath.pyc</code>를 메모리로 읽어들여 수행한다</li>
+</ol>
+</li>
+<li><p><code>.pyc</code>파일</p>
+<ol>
+<li><p>바이트 코드 파일</p>
 <ul>
-<li><code>doctype html</code> → <code>&lt;!DOCTYPE html&gt;</code></li>
-<li><code>// JADE String</code> → <code>&lt;!-- JADE String --&gt;</code></li>
+<li>기계나 플랫폼(운영체제 등)에 의존하지 않도록 만들어진 일종의 목적 코드(Object code)</li>
+<li>파이썬은 컴파일 언어이면서 동시에 인터프리터 언어의 수행 방식을 취함</li>
 </ul>
-<p>Especially making new <code>div</code> tag, we don’t need to write ‘div’ down.<br>If we write <code>#header</code> for example, that makes the <code>div</code> tag having ‘header’ as its id.<br>As the same way, <code>.article</code> makes the div having ‘article’ as its class.</p>
-<p><code>Jade</code> has special tags too.</p>
+</li>
+<li><p>새로운 <code>.pyc</code>파일 생성에 대한 판단</p>
 <ul>
-<li><code>-Code</code> → writing Javascript code</li>
-<li><code>#{Value}</code> → printing the value (inputting the value between content)</li>
-<li><code>=Value</code> → printing the value (whole content becomes value)</li>
+<li><code>.py</code>수정시간이 <code>.pyc</code>수정 시간보다 더 최근일 때</li>
 </ul>
-<p>Using these tags, we can make for repetitive statement like 11th row.</p>
-<p>Based on what I mentioned, we can make this code.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">doctype html</span><br><span class="line">html</span><br><span class="line">  head</span><br><span class="line">    title index Page</span><br><span class="line">  body</span><br><span class="line">    // JADE String</span><br><span class="line">    #header</span><br><span class="line">      h1 hello jade...!</span><br><span class="line">      h2 #&#123;name&#125;, we are the World</span><br><span class="line">      h3= description</span><br><span class="line">    hr</span><br><span class="line">    - for(var i = 0; i&lt; 10;i++) &#123;</span><br><span class="line">    .article</span><br><span class="line">      p</span><br><span class="line">        a(href=&quot;https://medium.com/@booski/&quot;, data-test=&quot;attribute added&quot;) Go to new world #&#123;i&#125;</span><br><span class="line">    - &#125;</span><br></pre></td></tr></table></figure>
-<p>And this code shows this page well.<br><img src="/images/jade1.png" alt=""></p>
+</li>
+<li><code>.py</code>가 없이 <code>.pyc</code>파일만 있어도 <code>import</code>가능<ul>
+<li>코드를 숨기는 방법으로 활용 가능</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h1 id="같은-이름을-다시-사용할-때"><a href="#같은-이름을-다시-사용할-때" class="headerlink" title="같은 이름을 다시 사용할 때"></a>같은 이름을 다시 사용할 때</h1><ul>
+<li>같은 이름 사용하면 이전의 내용이 삭제되지만 모듈은 메모리에 남아있고, 다시 <code>import</code>하면 다시 가져오는 것이 아니라 메모리에 존재하는 모듈을 활용함</li>
+</ul>
+<hr>
+<h1 id="모듈의-실행과-테스트-코드"><a href="#모듈의-실행과-테스트-코드" class="headerlink" title="모듈의 실행과 테스트 코드"></a>모듈의 실행과 테스트 코드</h1><ul>
+<li><p><code>__name__</code></p>
+<ul>
+<li>현재의 모듈이 최상위 모듈로서 수행되는지, 아니면다른 모듀렝 의해 <code>imort</code>되어 수행되는지를 구별하기 위해 주로 사용</li>
+<li><p>최상위 모듈에서 사용할 때 -&gt; <code>__main__</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print __name__ # __main__ 출력</span><br><span class="line"></span><br><span class="line">import prname</span><br><span class="line">print prname.__name__ # prname출력</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>사용방법</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def add(a, b):</span><br><span class="line">  return a + b</span><br><span class="line"></span><br><span class="line">def f():</span><br><span class="line">  print &quot;Python is becoming popular.&quot;</span><br><span class="line"></span><br><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line">  print add(1, 10)</span><br><span class="line">  f()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>직접 실행할 때는 <code>if</code>절 동작</li>
+<li>다른 곳에서 활용할 경우 <code>if</code>절 무시</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
         
         </div>
@@ -370,7 +414,7 @@ ga('send', 'pageview');
 
             
     
-        <a href="http://bongbooski.github.io/2018/02/22/post5_Node.js-ejs,-jade-module-basic/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/22/post5_Node.js-ejs,-jade-module-basic/">Comments</a>
+        <a href="http://bongbooski.github.io/2018/04/15/post19-python-import/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/15/post19-python-import/">Comments</a>
     
 
         </footer>
@@ -379,19 +423,19 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2018/02/22/post6_MySql-adding-or-subtracting-value-by-update-statement/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2018/04/15/post20-python-package/" id="article-nav-newer" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Newer</strong>
             <div class="article-nav-title">
                 
-                    MySql adding or subtracting value by update statement
+                    python 패키지
                 
             </div>
         </a>
     
     
-        <a href="/2018/02/22/post4_MySql-selecting-duplicated-data-(by-group-by-and-in)-kr/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/04/12/post18-python-lambda/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">MySql selecting duplicated data (by group by and in) 중복된 데이터 다 읽기</div>
+            <div class="article-nav-title">python 람다(lambda) 함수</div>
         </a>
     
 </nav>
@@ -584,9 +628,9 @@ ga('send', 'pageview');
     <script>
     var disqus_config = function () {
         
-            this.page.url = 'http://bongbooski.github.io/2018/02/22/post5_Node.js-ejs,-jade-module-basic/';
+            this.page.url = 'http://bongbooski.github.io/2018/04/15/post19-python-import/';
         
-        this.page.identifier = 'post5_Node.js-ejs,-jade-module-basic';
+        this.page.identifier = 'post19-python-import';
     };
     (function() { 
         var d = document, s = d.createElement('script');  

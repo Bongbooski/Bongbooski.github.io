@@ -3,23 +3,15 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Node.js ejs, jade module basic | Booski&#39;s programming</title>
+    <title>Booski&#39;s programming</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="ejs moduleWe can install ejs module by this code.1npm install ejs; Then, npm installs eternal modules.We can use those by the same way to internal modules.1var ejs = require(&amp;apos;ejs&amp;apos;); Module e">
-<meta name="keywords" content="Node.js">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Node.js ejs, jade module basic">
-<meta property="og:url" content="http://bongbooski.github.io/2018/02/22/post5_Node.js-ejs,-jade-module-basic/index.html">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="Booski&#39;s programming">
+<meta property="og:url" content="http://bongbooski.github.io/page/3/index.html">
 <meta property="og:site_name" content="Booski&#39;s programming">
-<meta property="og:description" content="ejs moduleWe can install ejs module by this code.1npm install ejs; Then, npm installs eternal modules.We can use those by the same way to internal modules.1var ejs = require(&amp;apos;ejs&amp;apos;); Module e">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://bongbooski.github.io/images/ejs1.png">
-<meta property="og:image" content="http://bongbooski.github.io/images/jade1.png">
-<meta property="og:updated_time" content="2018-02-22T09:56:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Node.js ejs, jade module basic">
-<meta name="twitter:description" content="ejs moduleWe can install ejs module by this code.1npm install ejs; Then, npm installs eternal modules.We can use those by the same way to internal modules.1var ejs = require(&amp;apos;ejs&amp;apos;); Module e">
-<meta name="twitter:image" content="http://bongbooski.github.io/images/ejs1.png">
+<meta name="twitter:title" content="Booski&#39;s programming">
 <meta property="fb:app_id" content="965647770265499">
     
 
@@ -228,15 +220,16 @@ ga('send', 'pageview');
 </aside>
 
             
-            <section id="main"><article id="post-post5_Node.js-ejs,-jade-module-basic" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main">
+    <article id="post-post2_Node.js-File-System-Module" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
             <header class="article-header">
                 
     
-        <h1 class="article-title" itemprop="name">
-            Node.js ejs, jade module basic
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/02/22/post2_Node.js-File-System-Module/">Node.js File System Module</a>
         </h1>
     
 
@@ -245,8 +238,8 @@ ga('send', 'pageview');
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2018/02/22/post5_Node.js-ejs,-jade-module-basic/">
-            <time datetime="2018-02-22T06:49:06.000Z" itemprop="datePublished">2018-02-22</time>
+        <a href="/2018/02/22/post2_Node.js-File-System-Module/">
+            <time datetime="2018-02-22T05:22:51.000Z" itemprop="datePublished">2018-02-22</time>
         </a>
     </div>
 
@@ -266,45 +259,19 @@ ga('send', 'pageview');
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h1 id="ejs-module"><a href="#ejs-module" class="headerlink" title="ejs module"></a>ejs module</h1><p>We can install <code>ejs</code> module by this code.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install ejs;</span><br></pre></td></tr></table></figure></p>
-<p>Then, npm installs eternal modules.<br>We can use those by the same way to internal modules.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var ejs = require(&apos;ejs&apos;);</span><br></pre></td></tr></table></figure></p>
-<p>Module <code>ejs</code> is the engine of template.<br>So it translates specific <code>String</code> to <code>HTML</code> type <code>String</code>.</p>
-<p>We will make the <code>server</code> page which changes <code>ejs</code> page to <code>HTML</code> page.<br>When we translate <code>ejs</code> to <code>HTML</code> page, we use <code>render(str, data, option)</code> of <code>ejs</code> module.</p>
-<p>Though we can use variables after declaring in <code>ejs</code> in side,<br>usually people declare them in <code>Javascript</code> and pass them to <code>ejs</code> for using.<br>When we pass <code>Javascript</code>‘ variables, we use the 2nd parameter of <code>render()</code> method like 9, 10th row.</p>
-<p><strong>Tip — we should set UTF-8 as that file’s encoding</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var http = require(&quot;http&quot;);</span><br><span class="line">var fs = require(&apos;fs&apos;);</span><br><span class="line">var ejs = require(&apos;ejs&apos;);</span><br><span class="line"></span><br><span class="line">http.createServer(function ( request, response)&#123;</span><br><span class="line">  fs.readFile(&quot;ejsPage.ejs&quot;, &apos;utf8&apos;, function(error, data)&#123;</span><br><span class="line">    response.writeHead(200, &#123;&apos;Content-Type&apos;:&apos;text/html&apos;&#125;);</span><br><span class="line">    response.end(ejs.render(data, &#123;</span><br><span class="line">      name: &apos;booski&apos;,</span><br><span class="line">      description : &apos;Hellow ejs with node.js&apos;</span><br><span class="line">      &#125;));</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;).listen(52273, function()&#123;</span><br><span class="line">    console.log(&quot;Server Running at http://127.0.0.1.52273&quot;);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
-<p>When we write <code>ejs</code> page, we can use some special tags.</p>
-<ul>
-<li><code>&lt;% Code %&gt;</code> → writing Javascript code inside</li>
-<li><code>&lt;%= Value %&gt;</code> → printing the data</li>
+            <p>Because we can’t write down all <code>HTML</code> page in <code>Javascript</code> file, we use <code>file system module</code> for provide <code>HTML</code> page which exists in server to clients.</p>
+<p>For providing HTML page(<code>HTMLPage.html</code>), we need to make server <code>javascript</code> file like this.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const fs = require(&quot;fs&quot;);</span><br><span class="line">const http = require(&quot;http&quot;);</span><br><span class="line"></span><br><span class="line">http.createServer(function(request, response)&#123;</span><br><span class="line">  fs.readFile(&quot;HTMLPage.html&quot;, function(error, data)&#123;</span><br><span class="line">    response.writeHead(200, &#123;&quot;Content-Type:&quot;:&quot;text/html&quot;&#125;);</span><br><span class="line">    response.end(data);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;).listen(52273, function()&#123;</span><br><span class="line">  console.log(&quot;server running at http://127.0.0.1:52273/&quot;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>If we want to provide another kind of file, we can change <code>MIME</code> type in 5th line.<br>For example, in jpeg case, we change <code>text/html</code> to <code>image/jpeg</code>.<br>It is same to other MIME types.</p>
+<h3 id="Examples-of-MIME"><a href="#Examples-of-MIME" class="headerlink" title="Examples of MIME"></a>Examples of MIME</h3><ul>
+<li>text/plain — basic text</li>
+<li>text/html — HTML document</li>
+<li>text/css — CSS document</li>
+<li>text/xml — XML document</li>
+<li>image/jpeg — JPG/JPEG image file</li>
+<li>image/png — PNG image file</li>
+<li>video/mpeg — MPEG video file</li>
+<li>audio/mp3 — MP3 music file</li>
 </ul>
-<p>With using these tags, I made <code>ejsPage.ejs</code> file like this.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;&lt;%=name%&gt;&lt;/h1&gt;</span><br><span class="line">&lt;p&gt;&lt;%=description%&gt;&lt;/p&gt;</span><br><span class="line">&lt;hr/&gt;</span><br><span class="line">&lt;%for(var i = 0;i&lt;10;i++)&#123;%&gt;</span><br><span class="line">  &lt;h2&gt;The Square of &lt;%= i %&gt; is &lt;%= i*i%&gt;&lt;/h2&gt;</span><br><span class="line"> &lt;%&#125;%&gt;</span><br></pre></td></tr></table></figure>
-<p>Starting the server, we can see this page.</p>
-<p><img src="/images/ejs1.png" alt=""></p>
-<hr>
-<h1 id="Jade-module"><a href="#Jade-module" class="headerlink" title="Jade module"></a>Jade module</h1><p><code>Jade</code> module is one of template engine modules too like <code>ejs</code> module.<br>We can install that by the same way to <code>ejs</code> like this<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install jade</span><br></pre></td></tr></table></figure></p>
-<p>When <code>jade</code> module translates <code>jade</code> page to <code>HTML</code> page, it uses <code>compile(string,option)</code>method.<br>One different thing is that if <code>ejs</code>‘ <code>render()</code> returns <code>String</code>, <code>compile()</code> returns a <code>function</code>. And we can pass <code>Javascript</code>‘ variable with the <code>function</code>.<br>We put them as the parameter of the function which <code>compile()</code> returned like 11, 12 rows.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var http = require(&quot;http&quot;);</span><br><span class="line">var fs = require(&apos;fs&apos;);</span><br><span class="line">var jade = require(&apos;jade&apos;);</span><br><span class="line"></span><br><span class="line">http.createServer(function ( request, response)&#123;</span><br><span class="line">  fs.readFile(&quot;jadePage.jade&quot;, &apos;utf8&apos;, function(error, data)&#123;</span><br><span class="line">    var fn = jade.compile(data);</span><br><span class="line"></span><br><span class="line">    response.writeHead(200, &#123;&apos;Content-Type&apos;:&apos;text/html&apos;&#125;);</span><br><span class="line">    response.end(fn(&#123;</span><br><span class="line">      name: &apos;booski&apos;,</span><br><span class="line">      description : &apos;Hellow jade with node.js&apos;</span><br><span class="line">    &#125;));</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;).listen(52273, function()&#123;</span><br><span class="line">    console.log(&quot;Server Running at http://127.0.0.1.52273&quot;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p><code>Jade</code> has special way to write down the page too like <code>ejs</code>.<br>The most important thing is making an indentation.<br><code>Jade</code> module makes new <code>HTML</code> tag based on each indentations.</p>
-<p><strong>Tip: we should use ‘tap’ or ‘space bar’ for every indentation. If not, there will be an error</strong></p>
-<p>When we input words in the tag, we go to the next row and make an indentation again and then write down them there.<br>And If we want to give an attribute to the tag, we give it with parenthesis.<br>(if we want to give many attributes, we divide them by <code>,</code>)</p>
-<p><code>Jade</code> translates some specific words in special way like <code>doctype</code> or <code>annotation</code>,</p>
-<ul>
-<li><code>doctype html</code> → <code>&lt;!DOCTYPE html&gt;</code></li>
-<li><code>// JADE String</code> → <code>&lt;!-- JADE String --&gt;</code></li>
-</ul>
-<p>Especially making new <code>div</code> tag, we don’t need to write ‘div’ down.<br>If we write <code>#header</code> for example, that makes the <code>div</code> tag having ‘header’ as its id.<br>As the same way, <code>.article</code> makes the div having ‘article’ as its class.</p>
-<p><code>Jade</code> has special tags too.</p>
-<ul>
-<li><code>-Code</code> → writing Javascript code</li>
-<li><code>#{Value}</code> → printing the value (inputting the value between content)</li>
-<li><code>=Value</code> → printing the value (whole content becomes value)</li>
-</ul>
-<p>Using these tags, we can make for repetitive statement like 11th row.</p>
-<p>Based on what I mentioned, we can make this code.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">doctype html</span><br><span class="line">html</span><br><span class="line">  head</span><br><span class="line">    title index Page</span><br><span class="line">  body</span><br><span class="line">    // JADE String</span><br><span class="line">    #header</span><br><span class="line">      h1 hello jade...!</span><br><span class="line">      h2 #&#123;name&#125;, we are the World</span><br><span class="line">      h3= description</span><br><span class="line">    hr</span><br><span class="line">    - for(var i = 0; i&lt; 10;i++) &#123;</span><br><span class="line">    .article</span><br><span class="line">      p</span><br><span class="line">        a(href=&quot;https://medium.com/@booski/&quot;, data-test=&quot;attribute added&quot;) Go to new world #&#123;i&#125;</span><br><span class="line">    - &#125;</span><br></pre></td></tr></table></figure>
-<p>And this code shows this page well.<br><img src="/images/jade1.png" alt=""></p>
 
         
         </div>
@@ -370,46 +337,140 @@ ga('send', 'pageview');
 
             
     
-        <a href="http://bongbooski.github.io/2018/02/22/post5_Node.js-ejs,-jade-module-basic/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/22/post5_Node.js-ejs,-jade-module-basic/">Comments</a>
+        <a href="http://bongbooski.github.io/2018/02/22/post2_Node.js-File-System-Module/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/22/post2_Node.js-File-System-Module/">Comments</a>
     
 
         </footer>
     </div>
     
+</article>
+
+
+
+    <article id="post-post1_Node.js-http-module" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-<nav id="article-nav">
-    
-        <a href="/2018/02/22/post6_MySql-adding-or-subtracting-value-by-update-statement/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Newer</strong>
-            <div class="article-nav-title">
+        
+            <header class="article-header">
                 
-                    MySql adding or subtracting value by update statement
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/02/21/post1_Node.js-http-module/">Node.js http module</a>
+        </h1>
+    
+
                 
-            </div>
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/02/21/post1_Node.js-http-module/">
+            <time datetime="2018-02-21T06:49:51.000Z" itemprop="datePublished">2018-02-21</time>
         </a>
-    
-    
-        <a href="/2018/02/22/post4_MySql-selecting-duplicated-data-(by-group-by-and-in)-kr/" id="article-nav-older" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">MySql selecting duplicated data (by group by and in) 중복된 데이터 다 읽기</div>
-        </a>
-    
-</nav>
+    </div>
 
 
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Node-js/">Node.js</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>When we order chicken, we say ‘it is A apartment in B area, … please deliver us a chicken’ then we get a chicken after some time in the right place where we talked.</p>
+<p>In this situation, putting URL on web browser is ordering chicken and getting the web page from the web server is getting the chicken from the restaurant. It’s the basic understanding about request and response</p>
+<p>Depending on the way to send the ordering, we can call the server as <code>HTTP</code> web server or <code>HTTPS</code> web server etc.<br>When we use <code>request</code> message, we get proper web page for users.<br>When we use <code>response</code> message, we can save and take <code>cookies</code> and force to move the page.<br>In http module, the most important object is <code>server</code>. we can declare <code>server</code> by using <code>createServer()</code> method.</p>
+<h3 id="Server-object’s-method"><a href="#Server-object’s-method" class="headerlink" title="Server object’s method"></a>Server object’s method</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">listen(port[, callback]) — Start server</span><br><span class="line">close([callback]) — Stop server</span><br></pre></td></tr></table></figure>
+<h3 id="Server-object’s-event"><a href="#Server-object’s-event" class="headerlink" title="Server object’s event"></a>Server object’s event</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">request — when client asks something</span><br><span class="line">connection — when client opens the server</span><br><span class="line">close — when the server is closed</span><br><span class="line">checkContinue — when client keeps connecting the server</span><br><span class="line">upgrade — when client asks HTTP upgrade</span><br><span class="line">clientError — when client makes errors</span><br></pre></td></tr></table></figure>
+<p>When we want to provide an web page, we need to write response message. And at that time, we use response object which is the 2nd parameter from request event listener.</p>
+<h3 id="Response-object’s-method"><a href="#Response-object’s-method" class="headerlink" title="Response object’s method"></a>Response object’s method</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">writeHead(statusCode[, statusMessage][, headers]) — write down the response header</span><br><span class="line">end([data][, encoding][, callback]) — write the main response content</span><br></pre></td></tr></table></figure>
+<p><img src="/images/http_module.png" alt=""></p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://bongbooski.github.io/2018/02/21/post1_Node.js-http-module/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/21/post1_Node.js-http-module/">Comments</a>
+    
+
+        </footer>
+    </div>
     
 </article>
 
 
-    
-    
-        <section id="comments">
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-</section>
-    
 
+    <nav id="page-nav">
+        <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    </nav>
 </section>
             
                 
@@ -584,13 +645,11 @@ ga('send', 'pageview');
     <script>
     var disqus_config = function () {
         
-            this.page.url = 'http://bongbooski.github.io/2018/02/22/post5_Node.js-ejs,-jade-module-basic/';
-        
-        this.page.identifier = 'post5_Node.js-ejs,-jade-module-basic';
+        this.page.identifier = '';
     };
     (function() { 
         var d = document, s = d.createElement('script');  
-        s.src = '//' + 'https-bongbooski-github-io' + '.disqus.com/embed.js';
+        s.src = '//' + 'https-bongbooski-github-io' + '.disqus.com/count.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();
