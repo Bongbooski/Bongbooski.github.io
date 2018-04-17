@@ -174,7 +174,7 @@ ga('send', 'pageview');
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                22
+                30
                 <span>posts</span>
             </div>
             <div class="article-info-block">
@@ -221,6 +221,674 @@ ga('send', 'pageview');
 
             
             <section id="main">
+    <article id="post-post22-python-exception-raise" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/04/17/post22-python-exception-raise/">python 예외 발생시키기</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/04/17/post22-python-exception-raise/">
+            <time datetime="2018-04-17T05:47:23.000Z" itemprop="datePublished">2018-04-17</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="Exception-raise"><a href="#Exception-raise" class="headerlink" title="Exception raise"></a>Exception raise</h1><h2 id="raise로-예외-발생하기"><a href="#raise로-예외-발생하기" class="headerlink" title="raise로 예외 발생하기"></a><code>raise</code>로 예외 발생하기</h2><ul>
+<li>예외를 특정 상황 조건에서 <code>raise</code>키워드를 통해 발생시킬 수 있다.</li>
+<li><p>아래 예는 시퀀스 형 클래스를 설계할 때 인덱싱을 구현하는 <code>__getitem__</code>메소드에서 인덱스가 범위를 넘을 때 <code>IndexError</code>를 발생시킨다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class SquareSeq:</span><br><span class="line">  def __init__(self, n):</span><br><span class="line">    self.n = n</span><br><span class="line">  def __getitem__(self,k):</span><br><span class="line">    if k &gt;= self.n or k &lt; 0:</span><br><span class="line">      raise IndexError # 인덱스 범위를 벗어나나면 IndexError발생</span><br><span class="line">    return k * k</span><br><span class="line">  def __len_(self):</span><br><span class="line">    return self.n</span><br><span class="line"></span><br><span class="line">s = SquareSeq(10)</span><br><span class="line">print s[2], s[4]</span><br><span class="line">for x in s: # IndexError가 발생하는 시점까지 반복</span><br><span class="line">   print x,</span><br><span class="line">print s[20] # 인덱스 범위를 넘음</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h2 id="사용자-정의-예외-클래스"><a href="#사용자-정의-예외-클래스" class="headerlink" title="사용자 정의 예외 클래스"></a>사용자 정의 예외 클래스</h2><ul>
+<li>일반적으로 <code>Exception</code>클래스를 상속 받아 구현<br>(나머지 예외들은 일반적으로 나타나기 힘든 예외들이다)</li>
+<li>예외 발생 방법<ul>
+<li>내장 예외 발생 방법과 동일하게 <code>raise [클래스 인스턴스]</code>와 같이 해당 예외 클래스의 인스턴스를 던진다</li>
+</ul>
+</li>
+<li>사용자 정의 예외를 잡는 방법<ul>
+<li><code>except [클래스이름]</code>과 같이 해당 예외 클래스의 이름을 사용한다.</li>
+</ul>
+</li>
+<li><p>아래 예에서 <code>except Big</code>이 잡는 예외는 <code>Big</code>과 <code>Small</code>이다<br>-&gt; <code>Small</code>은 <code>Big</code>의 하위 클래스 이기 때문</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class Big(Exception):</span><br><span class="line">  pass</span><br><span class="line"></span><br><span class="line">class Small(Big):</span><br><span class="line">  pass</span><br><span class="line"></span><br><span class="line">def dosomething1():</span><br><span class="line">  x = Big()</span><br><span class="line">  raise x # x는 예외객체이므로 raise가능</span><br><span class="line"></span><br><span class="line">def dosomething2():</span><br><span class="line">  raise Small()</span><br><span class="line"></span><br><span class="line">for f in (dosomething1, dosomething2):</span><br><span class="line">  try:</span><br><span class="line">    f()</span><br><span class="line">  except Big:</span><br><span class="line">    print &quot;Exception occurs!&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h2 id="예외값-전달하기"><a href="#예외값-전달하기" class="headerlink" title="예외값 전달하기"></a>예외값 전달하기</h2><ul>
+<li><p><code>raise</code>키워드 뒤에 예외와 함께, 추가 메시지를 함께 던질 수 있다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def f():</span><br><span class="line">  raise Exception, &apos;message!!!&apos;</span><br><span class="line"></span><br><span class="line">try:</span><br><span class="line">  f()</span><br><span class="line">except Exception, a:</span><br><span class="line">  print a</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>생성자 안에 넣어준 에러 메시지는 <code>except</code>키워드 사용시에 두 번째 인자로 해당 메시지를 받을 수 있다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = 10</span><br><span class="line">b = 0</span><br><span class="line">try:</span><br><span class="line">  if b == 0:</span><br><span class="line">    raise ArithmeticError(&apos;0으로 나누고 있습니다.&apos;)</span><br><span class="line">    a/b</span><br><span class="line">except ArithmeticError, v:</span><br><span class="line">  print v</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://bongbooski.github.io/2018/04/17/post22-python-exception-raise/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/17/post22-python-exception-raise/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-post22-python-exception-raise_eng" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/04/17/post22-python-exception-raise_eng/">python Exception Raise</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/04/17/post22-python-exception-raise_eng/">
+            <time datetime="2018-04-17T05:47:23.000Z" itemprop="datePublished">2018-04-17</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="Exception-raise"><a href="#Exception-raise" class="headerlink" title="Exception raise"></a>Exception raise</h1><h2 id="Occuring-exception-by-raise"><a href="#Occuring-exception-by-raise" class="headerlink" title="Occuring exception by raise"></a>Occuring exception by <code>raise</code></h2><ul>
+<li><code>raise</code>keyword can make an exception in specific situation</li>
+<li><p><code>IndexError</code> occurs when <code>__getitem__</code>method(which implements indexing when sequance type class is made) goes out of the index range</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class SquareSeq:</span><br><span class="line">  def __init__(self, n):</span><br><span class="line">    self.n = n</span><br><span class="line">  def __getitem__(self,k):</span><br><span class="line">    if k &gt;= self.n or k &lt; 0:</span><br><span class="line">      raise IndexError # out of index range, IndexError occurs</span><br><span class="line">    return k * k</span><br><span class="line">  def __len_(self):</span><br><span class="line">    return self.n</span><br><span class="line"></span><br><span class="line">s = SquareSeq(10)</span><br><span class="line">print s[2], s[4]</span><br><span class="line">for x in s: # repeating until IndexError occurs</span><br><span class="line">   print x,</span><br><span class="line">print s[20] # out of the index range</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h2 id="Customized-exception-class사용자-정의-예외-클래스"><a href="#Customized-exception-class사용자-정의-예외-클래스" class="headerlink" title="Customized exception class사용자 정의 예외 클래스"></a>Customized exception class사용자 정의 예외 클래스</h2><ul>
+<li>Generally It is implemented by extending <code>Exception</code>class<br>(Other exceptions are unusual)</li>
+<li>How to raise the exception<ul>
+<li>Same to built-in exception. Using <code>raise [class instance]</code></li>
+</ul>
+</li>
+<li>How to catch the exception from Customized exception class<ul>
+<li>Using the class’ name like <code>except [class name]</code></li>
+</ul>
+</li>
+<li><p>In the example below, <code>except Big</code> catches <code>Big</code>and <code>Small</code> exception<br>-&gt; Because <code>Small</code>is <code>Big</code>‘s sub-class’</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class Big(Exception):</span><br><span class="line">  pass</span><br><span class="line"></span><br><span class="line">class Small(Big):</span><br><span class="line">  pass</span><br><span class="line"></span><br><span class="line">def dosomething1():</span><br><span class="line">  x = Big()</span><br><span class="line">  raise x # x is exception object, it can use raise</span><br><span class="line"></span><br><span class="line">def dosomething2():</span><br><span class="line">  raise Small()</span><br><span class="line"></span><br><span class="line">for f in (dosomething1, dosomething2):</span><br><span class="line">  try:</span><br><span class="line">    f()</span><br><span class="line">  except Big:</span><br><span class="line">    print &quot;Exception occurs!&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h2 id="Passing-exception"><a href="#Passing-exception" class="headerlink" title="Passing exception"></a>Passing exception</h2><ul>
+<li><p>After <code>raise</code>keyword, with exception, additional message can follow</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def f():</span><br><span class="line">  raise Exception, &apos;message!!!&apos;</span><br><span class="line"></span><br><span class="line">try:</span><br><span class="line">  f()</span><br><span class="line">except Exception, a:</span><br><span class="line">  print a</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>When <code>except</code> keyword is used, exception message in initializer can be taken as 2nd parameter.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = 10</span><br><span class="line">b = 0</span><br><span class="line">try:</span><br><span class="line">  if b == 0:</span><br><span class="line">    raise ArithmeticError(&apos;you are dividing by 0&apos;)</span><br><span class="line">    a/b</span><br><span class="line">except ArithmeticError, v:</span><br><span class="line">  print v</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://bongbooski.github.io/2018/04/17/post22-python-exception-raise_eng/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/17/post22-python-exception-raise_eng/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-post21-python-exception-handling" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/04/17/post21-python-exception-handling/">python 예외처리</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/04/17/post21-python-exception-handling/">
+            <time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="Exception-Handling"><a href="#Exception-Handling" class="headerlink" title="Exception Handling"></a>Exception Handling</h1><ul>
+<li><p>구문 에러(Syntax Error)</p>
+<ul>
+<li>문법적 에러</li>
+<li>IDE에서는 구문에러 체크해줌</li>
+<li>파이썬은 상대적으로 문법이 간단해서 에러 발생 비율이 낮거나 다른 도구로 제거 가능</li>
+</ul>
+</li>
+<li><p>예외(Exception)</p>
+<ul>
+<li>구문 에러는 없으나 프로그램 실행 중 더 이상 진행할 수 없는 경우</li>
+<li>예외가 발생하면 프로그램이 종료됨</li>
+</ul>
+<ol>
+<li><p><code>NameError</code> (정의되지 않은 변수 사용)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4 + boo*3</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>ZeroDivisionError</code> (<code>0</code>으로 나누는 경우)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = 10</span><br><span class="line">b = 0</span><br><span class="line">c = a / b</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>TypeError</code> (ex: 문자열 + 수치형 자료)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;2&apos; + 2</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>IndexError</code> (참조 범위를 넘어서 인덱스 사용)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">l = [1,2]</span><br><span class="line">print l[2]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>KeyError</code> (등록되지 않은 키로 사전 검색)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;&quot;a&quot;:1, &quot;b&quot;:2&#125;</span><br><span class="line">print d[&apos;c&apos;]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>IOError</code> (존재하지 않는 파일을 열고자 할 때)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = open(&apos;aaa.txt&apos;)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+</li>
+</ul>
+<h1 id="예외-처리-방법"><a href="#예외-처리-방법" class="headerlink" title="예외 처리 방법"></a>예외 처리 방법</h1><ol>
+<li><p><code>try</code>,<code>except</code>,<code>else</code>,<code>finally</code>절 사용하기</p>
+<ul>
+<li>예외가 발생할 만한 상황을 예상하여 상황별로 전체 코드 흐름을 제어할 수 있다</li>
+<li><p><code>try</code>,<code>except</code>,<code>else</code>,<code>finally</code>절</p>
+<ul>
+<li>구조<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">  (예외 발생 가능한) 일반적인 수행문들</span><br><span class="line">except Exception:</span><br><span class="line">  예외가 발생하였을 때 수행되는 문들</span><br><span class="line">else:</span><br><span class="line">  예외가 발생하지 않았을 때 수행되는 문들</span><br><span class="line">finally:</span><br><span class="line">  예외 발생 유무와 관계없이 무조건 수행되는 문들</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p>예외 처리를 하면 예외 발생시 프로그램이 종료되지 않는다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = 0</span><br><span class="line">try:</span><br><span class="line">  print 1.0/a</span><br><span class="line">except ZeroDivisionError:</span><br><span class="line">  print &apos;zero division error!!!&apos;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>msg</code>변수: <code>ZeroDivisionError</code>를 정의한 사람이 발생될 때 주는 메시지<br>ex: float division by zero</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def division():</span><br><span class="line">  for n in range(0, 5):</span><br><span class="line">    try:</span><br><span class="line">      print 10.0 / n</span><br><span class="line">    except ZeroDivisionError, msg</span><br><span class="line">      print msg</span><br><span class="line"></span><br><span class="line">division()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>try</code>절 안에서 간접적으로 호출한 함수의 내부 예외도 처리 가능</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">  spam()</span><br><span class="line">except NameError, msg:</span><br><span class="line">  print &apos;Error -&apos;, msg</span><br></pre></td></tr></table></figure>
+<p><code>,</code>대신 <code>as</code>로도 사용가능</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 위와 동일한 예제</span><br><span class="line">try:</span><br><span class="line">  spam()</span><br><span class="line">except NameError as msg:</span><br><span class="line">  print &apos;Error -&apos;, msg</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>except</code>뒤에 예외를 명시하지 않으면 모든 예외에 대해 처리됨</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">  spam()</span><br><span class="line">  print 1.0/0.0</span><br><span class="line">except:</span><br><span class="line">  print &apos;Error&apos;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>여러 예외들 각각에 대해 <code>except</code>절로 다중처리 가능</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">b = 0.0</span><br><span class="line">name = &apos;aaa.txt&apos;</span><br><span class="line">try:</span><br><span class="line">  print 1.0 / b</span><br><span class="line">  spam()</span><br><span class="line">  f = open(name, &apos;r&apos;)</span><br><span class="line">  &apos;2&apos; + 2</span><br><span class="line">except NameError:</span><br><span class="line">  print &apos;NameError !!!&apos;</span><br><span class="line">except ZeroDivisionError:</span><br><span class="line">  print &apos;ZeroDivisionError !!!&apos;</span><br><span class="line">excpet (TypeError, IOError):</span><br><span class="line">  print &apos;TypeError or IOERror !!!&apos;</span><br><span class="line">else:</span><br><span class="line">  print &apos;No Exception&apos;</span><br><span class="line">finally</span><br><span class="line">  print &apos;Exit !!!&apos;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h1 id="같은-부류의-예외-다-잡아내기"><a href="#같은-부류의-예외-다-잡아내기" class="headerlink" title="같은 부류의 예외 다 잡아내기"></a>같은 부류의 예외 다 잡아내기</h1><ul>
+<li>예외 클래스의 상속에 의한 계층 관계를 이용하여 여러 예외들을 한꺼번에 잡을 수 있다.</li>
+<li><p>예를 들어, <code>ArithmeticError</code>의 하위 클래스로서 <code>FloatingPointError</code>, <code>OverflowError</code>, <code>ZeroDivisionError</code>가 존재하기 때문에 이들 하위 클래스 예외가 발생하면 <code>ArithmeticError</code>로 처리할 수 있다.</p>
+</li>
+<li><p>예외가 임의의 <code>except</code>에서 잡히면 다른 <code>except</code>에서는 잡히지 않는다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def dosomething():</span><br><span class="line">  a = 1/0</span><br><span class="line"></span><br><span class="line">try:</span><br><span class="line">  dosomething()</span><br><span class="line">except ZeroDivisionError:</span><br><span class="line">  print &quot;ZeroDivisionError occured&quot;</span><br><span class="line">except ArithmeticError:</span><br><span class="line">   print &quot;ArithmeticError occured&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://bongbooski.github.io/2018/04/17/post21-python-exception-handling/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/17/post21-python-exception-handling/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-post21-python-exception-handling_eng" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/04/17/post21-python-exception-handling_eng/">python Exception Handling</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/04/17/post21-python-exception-handling_eng/">
+            <time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="Exception-Handling"><a href="#Exception-Handling" class="headerlink" title="Exception Handling"></a>Exception Handling</h1><ul>
+<li><p>Syntax Error</p>
+<ul>
+<li>Grammatical error</li>
+<li>IDE checks syntax error automatically</li>
+<li>Becasue python’s grammar is simpler relatively, error occur rate is smaller and it is easy to delete errors</li>
+</ul>
+</li>
+<li><p>Exception</p>
+<ul>
+<li>the cases having no syntax errors, the program can’t progress</li>
+<li>Occuring exception, the program ends</li>
+</ul>
+<ol>
+<li><p><code>NameError</code> (Usiung undefined variable)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4 + boo*3</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>ZeroDivisionError</code> (Dividing by <code>0</code>)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = 10</span><br><span class="line">b = 0</span><br><span class="line">c = a / b</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>TypeError</code> (ex: String + Number type)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;2&apos; + 2</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>IndexError</code> (Using index over the range of index)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">l = [1,2]</span><br><span class="line">print l[2]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>KeyError</code> (Searching dictionary by unregisted key)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;&quot;a&quot;:1, &quot;b&quot;:2&#125;</span><br><span class="line">print d[&apos;c&apos;]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>IOError</code> (Opening not existing file)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = open(&apos;aaa.txt&apos;)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+</li>
+</ul>
+<h1 id="How-to-dispose-of-exceptions"><a href="#How-to-dispose-of-exceptions" class="headerlink" title="How to dispose of exceptions"></a>How to dispose of exceptions</h1><ol>
+<li><p>Using <code>try</code>,<code>except</code>,<code>else</code>,<code>finally</code> statements</p>
+<ul>
+<li>By expecting the situations making exceptions, we can control the whole code’s flow</li>
+<li><p><code>try</code>,<code>except</code>,<code>else</code>,<code>finally</code></p>
+<ul>
+<li>structure<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">  (possible to make errors) usual statements</span><br><span class="line">except Exception:</span><br><span class="line">  the statements working when error occurs</span><br><span class="line">else:</span><br><span class="line">  the statements working when error doesn&apos;t occur</span><br><span class="line">finally:</span><br><span class="line">  the statements working anyway no matter error</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p>Doing exception handling, when error occurs the program doesn’t stop</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = 0</span><br><span class="line">try:</span><br><span class="line">  print 1.0/a</span><br><span class="line">except ZeroDivisionError:</span><br><span class="line">  print &apos;zero division error!!!&apos;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>msg</code>variable: the message that the person who defined <code>ZeroDivisionError</code> gives<br>ex: float division by zero</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def division():</span><br><span class="line">  for n in range(0, 5):</span><br><span class="line">    try:</span><br><span class="line">      print 10.0 / n</span><br><span class="line">    except ZeroDivisionError, msg</span><br><span class="line">      print msg</span><br><span class="line"></span><br><span class="line">division()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>It can handle the error from the called function in <code>try</code>statement indirectly</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">  spam()</span><br><span class="line">except NameError, msg:</span><br><span class="line">  print &apos;Error -&apos;, msg</span><br></pre></td></tr></table></figure>
+<p><code>,</code> can be replaced with <code>as</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># same code with upper one</span><br><span class="line">try:</span><br><span class="line">  spam()</span><br><span class="line">except NameError as msg:</span><br><span class="line">  print &apos;Error -&apos;, msg</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>After <code>except</code>, not evincing any exceptions, it takes care of all exceptions</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">  spam()</span><br><span class="line">  print 1.0/0.0</span><br><span class="line">except:</span><br><span class="line">  print &apos;Error&apos;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>About many exceptions, they can be taked care by each <code>except</code>statement</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">b = 0.0</span><br><span class="line">name = &apos;aaa.txt&apos;</span><br><span class="line">try:</span><br><span class="line">  print 1.0 / b</span><br><span class="line">  spam()</span><br><span class="line">  f = open(name, &apos;r&apos;)</span><br><span class="line">  &apos;2&apos; + 2</span><br><span class="line">except NameError:</span><br><span class="line">  print &apos;NameError !!!&apos;</span><br><span class="line">except ZeroDivisionError:</span><br><span class="line">  print &apos;ZeroDivisionError !!!&apos;</span><br><span class="line">excpet (TypeError, IOError):</span><br><span class="line">  print &apos;TypeError or IOERror !!!&apos;</span><br><span class="line">else:</span><br><span class="line">  print &apos;No Exception&apos;</span><br><span class="line">finally</span><br><span class="line">  print &apos;Exit !!!&apos;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h1 id="Catching-All-exception-in-same-kind"><a href="#Catching-All-exception-in-same-kind" class="headerlink" title="Catching All exception in same kind"></a>Catching All exception in same kind</h1><ul>
+<li>By using the hierarchy of Inheritance of exception class, It can take care of many exceptions by once</li>
+<li><p>For example, there are <code>FloatingPointError</code>, <code>OverflowError</code>, <code>ZeroDivisionError</code> as sub-class of <code>ArithmeticError</code> so, about sub-class exceptions, <code>ArithmeticError</code> can take care of them</p>
+</li>
+<li><p>When an exception is catched by specific <code>except</code>, that one is not catched in other <code>except</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def dosomething():</span><br><span class="line">  a = 1/0</span><br><span class="line"></span><br><span class="line">try:</span><br><span class="line">  dosomething()</span><br><span class="line">except ZeroDivisionError:</span><br><span class="line">  print &quot;ZeroDivisionError occured&quot;</span><br><span class="line">except ArithmeticError:</span><br><span class="line">   print &quot;ArithmeticError occured&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://bongbooski.github.io/2018/04/17/post21-python-exception-handling_eng/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/17/post21-python-exception-handling_eng/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-post20-python-package" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -262,7 +930,7 @@ ga('send', 'pageview');
             <h1 id="패키지-Package"><a href="#패키지-Package" class="headerlink" title="패키지(Package)"></a>패키지(Package)</h1><ul>
 <li>여러 모듈들을 한데 묶어서 정리해 놓은 구조</li>
 <li>물리적으로 여러 모듈 파일을 모아 놓은 디렉토리에 해당<ul>
-<li>최상위 디렉토리 이름이 패키지 이름이 됨다</li>
+<li>최상위 디렉토리 이름이 패키지 이름이 된다.</li>
 <li>최상위 디렉토리 하위에 여러 서브 디렉토리는 해당 최상위패키지의 하위 패키지가 된다.</li>
 <li>모듈=파일, 패키지=디렉토리</li>
 </ul>
@@ -347,6 +1015,340 @@ ga('send', 'pageview');
             
     
         <a href="http://bongbooski.github.io/2018/04/15/post20-python-package/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/15/post20-python-package/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-post20-python-package_eng" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/04/15/post20-python-package_eng/">python Package</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/04/15/post20-python-package_eng/">
+            <time datetime="2018-04-15T06:48:23.000Z" itemprop="datePublished">2018-04-15</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="Package"><a href="#Package" class="headerlink" title="Package"></a>Package</h1><ul>
+<li>Structure gathering many modules in one directory physically<ul>
+<li>Top directory’s name is the package’s name</li>
+<li>Sub directories under the Top directory become sub-package of the top package</li>
+<li>Module = file, package = directory</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="Role-of-init-py"><a href="#Role-of-init-py" class="headerlink" title="Role of __init__.py"></a>Role of <code>__init__.py</code></h2><ul>
+<li>The role recognizing the directory as a package</li>
+<li>For sub-packes, this file is requried(if not, that will be usual folder)</li>
+</ul>
+<hr>
+<h2 id="Doing-import"><a href="#Doing-import" class="headerlink" title="Doing import"></a>Doing import</h2>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import Speech</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>Speech</code>directory should be one of the directories of <code>sys.path</code>(or <code>PYTHONPATH</code> environment variable)</li>
+<li>Let’s say <code>Speech/Recognition/HMM.py</code> looks like this<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def train():</span><br><span class="line">  print &quot;Train&quot;</span><br><span class="line">  pass</span><br><span class="line"></span><br><span class="line">def loadModel():</span><br><span class="line">  print &quot;LoadModel&quot;</span><br><span class="line">  pass</span><br><span class="line"></span><br><span class="line">def saveModel():</span><br><span class="line">  print &quot;SaveModel&quot;</span><br><span class="line">  pass</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="How-to-use-specific-function"><a href="#How-to-use-specific-function" class="headerlink" title="How to use specific function"></a>How to use specific function</h3>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"># can&apos;t use. from package&apos;s name, we need dot(.) for calling the module or function</span><br><span class="line">import Speech</span><br><span class="line">Speech.Recognition.HMM.train()</span><br><span class="line"></span><br><span class="line"># Proper way</span><br><span class="line">import Speech.Recognition.HMM</span><br><span class="line">Speech.Recognition.HMM.train()</span><br><span class="line"></span><br><span class="line">from Speech.Recognition import HMM</span><br><span class="line">HMM.train()</span><br><span class="line"></span><br><span class="line">from Speech.Recognition.HMM import train</span><br><span class="line">train()</span><br><span class="line"></span><br><span class="line"># Taking everything from the module. It can be used without the module&apos;s name</span><br><span class="line">from Speech.Recognition.HMM import *</span><br><span class="line">train()</span><br><span class="line">loadModel()</span><br><span class="line">saveModel()</span><br></pre></td></tr></table></figure>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://bongbooski.github.io/2018/04/15/post20-python-package_eng/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/15/post20-python-package_eng/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-post19-python-import_eng" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/04/15/post19-python-import_eng/">python module importing</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/04/15/post19-python-import_eng/">
+            <time datetime="2018-04-15T02:48:23.000Z" itemprop="datePublished">2018-04-15</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="import-module’s-name"><a href="#import-module’s-name" class="headerlink" title="import module’s name"></a>import module’s name</h1><ol>
+<li><p>Basic form</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import mymath</span><br><span class="line">print mymath.area(5)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>from module’s name import wanted object</p>
+<ul>
+<li>taking the wanted object from the module</li>
+<li>original object is lost if the name is using</li>
+<li>it can be used without the module’s name<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from mymath import area, mypi</span><br><span class="line">print area(5)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>from module’s name import *</p>
+<ul>
+<li>taking everything from the module without objects starting <code>__</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from mymath import *</span><br><span class="line">print area(5)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>import module’s name as another module name</p>
+<ul>
+<li>another name is used for calling the module</li>
+<li>It is recommended when the original name is too long or already used<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import string as chstr</span><br><span class="line">print chstr</span><br><span class="line">print</span><br><span class="line">print chstr.punctuation</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>from module’s name import original name as another name[, name2 as another name2]</p>
+<ul>
+<li>another name is used for calling the module<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">from string import replace as substitute[, upper as up]</span><br><span class="line">print substitute</span><br><span class="line">print substitute(&apos;ham chicken spam&apos;, &apos;chicke&apos;, &apos;egg&apos;)</span><br><span class="line"></span><br><span class="line">print up</span><br><span class="line">print up(&apos;abc&apos;)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><code>import</code> can be used anywhere(including in a function)</li>
+</ul>
+<hr>
+<h1 id="Compile-and-Load-time"><a href="#Compile-and-Load-time" class="headerlink" title="Compile and Load time"></a>Compile and Load time</h1><ul>
+<li><p><code>import mymath</code> works like this</p>
+<ol>
+<li>Finding <code>mymath.pyc</code></li>
+<li>If that doesn’t exist, Finding <code>mymath.py</code> and creating <code>mymath.pyc</code></li>
+<li>Loading <code>mymath.pyc</code> into memory and executing</li>
+</ol>
+</li>
+<li><p><code>.pyc</code> file</p>
+<ol>
+<li><p>Byte code file</p>
+<ul>
+<li>Kind of Object code not depending on machines or platform(OS)</li>
+<li>Python takes both executing ways of compile language and interpreter language</li>
+</ul>
+</li>
+<li><p>Deciding about creating new <code>.pyc</code>file</p>
+<ul>
+<li>When modificatin time of <code>.py</code> is more recently than modification time of <code>.pyc</code></li>
+</ul>
+</li>
+<li>Without <code>.py</code>file, <code>import</code> is available with <code>.pyc</code><ul>
+<li>It can be use as the way to hide the original code</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h1 id="Using-the-same-name-again"><a href="#Using-the-same-name-again" class="headerlink" title="Using the same name again"></a>Using the same name again</h1><ul>
+<li>Though the name’s target is changed, the module remains in memory, if we <code>import</code> the module, that takes the module existing in memory. So, we can use the thing we defined additionally in the module at the code</li>
+</ul>
+<hr>
+<h1 id="Executing-module-and-test-code"><a href="#Executing-module-and-test-code" class="headerlink" title="Executing module and test code"></a>Executing module and test code</h1><ul>
+<li><p><code>__name__</code></p>
+<ul>
+<li>It is usually used for knowing if this module is used as the root module or in other module by <code>import</code></li>
+<li>Being used as the root module -&gt; <code>__main__</code></li>
+<li><p>Being used in other module -&gt; that module’s name</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print __name__ # __main__ print</span><br><span class="line"></span><br><span class="line">import prname</span><br><span class="line">print prname.__name__ # prname print</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>How to use</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def add(a, b):</span><br><span class="line">  return a + b</span><br><span class="line"></span><br><span class="line">def f():</span><br><span class="line">  print &quot;Python is becoming popular.&quot;</span><br><span class="line"></span><br><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line">  print add(1, 10)</span><br><span class="line">  f()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Direct executing runs <code>if</code> statement</li>
+<li>Being used in other module ignores <code>if</code> statement</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://bongbooski.github.io/2018/04/15/post19-python-import_eng/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/15/post19-python-import_eng/">Comments</a>
     
 
         </footer>
@@ -460,14 +1462,15 @@ ga('send', 'pageview');
 </ul>
 <hr>
 <h1 id="같은-이름을-다시-사용할-때"><a href="#같은-이름을-다시-사용할-때" class="headerlink" title="같은 이름을 다시 사용할 때"></a>같은 이름을 다시 사용할 때</h1><ul>
-<li>같은 이름 사용하면 이전의 내용이 삭제되지만 모듈은 메모리에 남아있고, 다시 <code>import</code>하면 다시 가져오는 것이 아니라 메모리에 존재하는 모듈을 활용함</li>
+<li>같은 이름 사용하면 이전의 내용이 삭제되지만 모듈은 메모리에 남아있고, 다시 <code>import</code>하면 다시 가져오는 것이 아니라 메모리에 존재하는 모듈을 활용함. 따라서 기존에 추가 정의한 내용들 사용가능</li>
 </ul>
 <hr>
 <h1 id="모듈의-실행과-테스트-코드"><a href="#모듈의-실행과-테스트-코드" class="headerlink" title="모듈의 실행과 테스트 코드"></a>모듈의 실행과 테스트 코드</h1><ul>
 <li><p><code>__name__</code></p>
 <ul>
-<li>현재의 모듈이 최상위 모듈로서 수행되는지, 아니면다른 모듀렝 의해 <code>imort</code>되어 수행되는지를 구별하기 위해 주로 사용</li>
-<li><p>최상위 모듈에서 사용할 때 -&gt; <code>__main__</code></p>
+<li>현재의 모듈이 최상위 모듈로서 수행되는지, 아니면다른 모듈에 의해 <code>imort</code>되어 수행되는지를 구별하기 위해 주로 사용</li>
+<li>최상위 모듈에서 사용할 때 -&gt; <code>__main__</code></li>
+<li><p>다른 모듈에서 사용될 때 -&gt; 해당 모듈의 이름</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print __name__ # __main__ 출력</span><br><span class="line"></span><br><span class="line">import prname</span><br><span class="line">print prname.__name__ # prname출력</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>사용방법</p>
@@ -594,7 +1597,7 @@ ga('send', 'pageview');
         
             
             <h1 id="람다-lambda-함수-정의"><a href="#람다-lambda-함수-정의" class="headerlink" title="람다(lambda)함수 정의"></a>람다(lambda)함수 정의</h1><ul>
-<li>일반적인 함수를 한 줄의 문으로 정의할 수 있는 새로운 함수 정으 ㅣ리터럴</li>
+<li>일반적인 함수를 한 줄의 문으로 정의할 수 있는 새로운 함수 정의 리터럴</li>
 <li>일회성으로 활용할 함수 정의할 때 주로 사용</li>
 <li><code>:</code>뒤에는 식만 올 수 있음</li>
 <li>람다 함수도 하나의 객체임</li>
@@ -645,11 +1648,11 @@ ga('send', 'pageview');
 <li><code>reduce(function, seq[,initial])</code></li>
 <li><code>seq</code>자료형이 지닌 각 원소값에 대해 <code>function</code>함수를 적용하면서 하나의 값으로 매핑</li>
 <li>첫번째 인자(<code>function</code>)는 반드시 두 개의 인자(ex. x,y)를 받아야한다.<ul>
-<li><code>seq</code>의 각 원소값들이 차례로 y에 들어간다</li>
-<li>함수가 수행된 값은 차례대로 x에 들어간다</li>
+<li><code>seq</code>의 각 원소값들이 차례로 <code>y</code>에 들어간다</li>
+<li>함수가 수행된 값은 차례대로 <code>x</code>에 들어간다</li>
 </ul>
 </li>
-<li>추가적으로 제공가능한 세번재 인자인 <code>initial</code>은 첫번째 단계에서 x에 할당할 초기값으로 사용된다<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print reduce(lambda x, y: x + y, [1,2,3,4,5])</span><br><span class="line">print reduce(lambda x, y: x + y, [1,2,3,4,5], 1000)</span><br></pre></td></tr></table></figure>
+<li>추가적으로 제공가능한 세번재 인자인 <code>initial</code>은 첫번째 단계에서 <code>x</code>에 할당할 초기값으로 사용된다<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print reduce(lambda x, y: x + y, [1,2,3,4,5])</span><br><span class="line">print reduce(lambda x, y: x + y, [1,2,3,4,5], 1000)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -729,7 +1732,7 @@ ga('send', 'pageview');
 
 
 
-    <article id="post-post17_python-file,directory" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-post18-python-lambda_eng" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -737,7 +1740,7 @@ ga('send', 'pageview');
                 
     
         <h1 itemprop="name">
-            <a class="article-title" href="/2018/04/11/post17_python-file,directory/">python 파일 다루기</a>
+            <a class="article-title" href="/2018/04/12/post18-python-lambda_eng/">python lambda function</a>
         </h1>
     
 
@@ -746,8 +1749,8 @@ ga('send', 'pageview');
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2018/04/11/post17_python-file,directory/">
-            <time datetime="2018-04-11T06:38:47.000Z" itemprop="datePublished">2018-04-11</time>
+        <a href="/2018/04/12/post18-python-lambda_eng/">
+            <time datetime="2018-04-12T05:19:37.000Z" itemprop="datePublished">2018-04-12</time>
         </a>
     </div>
 
@@ -767,960 +1770,67 @@ ga('send', 'pageview');
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h1 id="파일-다루기"><a href="#파일-다루기" class="headerlink" title="파일 다루기"></a>파일 다루기</h1><h2 id="파일-목록열기"><a href="#파일-목록열기" class="headerlink" title="파일 목록열기"></a>파일 목록열기</h2><p><code>os</code>모듈 사용<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line"></span><br><span class="line">print os.listdir(&apos;.&apos;) #현재 디렉토리의 파일목록</span><br><span class="line">print</span><br><span class="line"></span><br><span class="line">print os.listdir(&apos;../&apos;) #현재 디렉토리의 부모 디렉토리의 파일 목록</span><br></pre></td></tr></table></figure></p>
-<hr>
-<h2 id="파일-종류-알아보기"><a href="#파일-종류-알아보기" class="headerlink" title="파일 종류 알아보기"></a>파일 종류 알아보기</h2><ul>
-<li><code>os.path</code> 모듈로 파일 종류 판단하여 <code>True</code>, <code>False</code> 반환<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">def filetype(fpath):</span><br><span class="line">  print fpath, &quot;:&quot;,</span><br><span class="line">  if os.path.isfile(fpath):</span><br><span class="line">    print &apos;Regular file&apos;</span><br><span class="line">  if os.path.isdir(fpath):</span><br><span class="line">    print &apos;Directory&apos;</span><br><span class="line">  if os.path.islink(fpath):</span><br><span class="line">    print &apos;Symbolic link&apos;</span><br><span class="line"></span><br><span class="line">flist = os.listdir(&apos;.&apos;)</span><br><span class="line">for fname in flist:</span><br><span class="line">  filetype(fname)</span><br></pre></td></tr></table></figure>
-</li>
+            <h1 id="the-definition-of-lambda-function"><a href="#the-definition-of-lambda-function" class="headerlink" title="the definition of lambda function"></a>the definition of lambda function</h1><ul>
+<li>new literal defining usual functions by one line</li>
+<li>usually it is used for defining one-time functions</li>
+<li>after <code>:</code>, only expression can follow</li>
+<li>lambda function is An object too</li>
 </ul>
-<hr>
-<h2 id="파일의-허가권"><a href="#파일의-허가권" class="headerlink" title="파일의 허가권"></a>파일의 허가권</h2><ol>
-<li><p>파일의 허가권 알아보기</p>
-<ul>
-<li><code>os.access(filepath, mode)</code><ul>
-<li><code>mode</code>에 들어갈 값<ul>
-<li><code>os.F_OK</code>: 파일 자체가 존재하는 것을 테스트</li>
-<li><code>os.R_OK</code>: 읽기 권한이 있는 것을 테스트</li>
-<li><code>os.W_OK</code>: 쓰기 권한이 있는 것을 테스트</li>
-<li><code>os.X_OK</code>: 실행 권한이 있는 것(또는 디렉토리인지)을 테스트</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">def fileaccess(fpath):</span><br><span class="line">  print fpath, &apos;:&apos;,</span><br><span class="line">  if os.access(fpath, os.F_OK):</span><br><span class="line">    print &apos;Exists&apos;,</span><br><span class="line">  else:</span><br><span class="line">    return</span><br><span class="line">  if os.access(fpath, os.R_OK):</span><br><span class="line">    print &apos;R&apos;,</span><br><span class="line">  if os.access(fpath, os.W_OK):</span><br><span class="line">    print &apos;W&apos;,</span><br><span class="line">  if os.access(fpath, os.X_OK):</span><br><span class="line">    print &apos;X&apos;,</span><br><span class="line">  print</span><br><span class="line"></span><br><span class="line">flist = os.listdir(&apos;.&apos;)</span><br><span class="line">for fname in flist:</span><br><span class="line">  fileaccess(fname)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>파일의 허가권 변경하기</p>
-<ul>
-<li><code>os.chmod(filepath, mode)</code></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">os.chmod(&apos;sample.txt&apos;, 0777)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<hr>
-<h2 id="파일-조작하기"><a href="#파일-조작하기" class="headerlink" title="파일 조작하기"></a>파일 조작하기</h2><ol>
-<li><p>파일 이름 변경하기</p>
-<ul>
-<li><code>os.rename(old_filepath, new_filepath)</code></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">os.rename(&apos;t.txt&apos;, &apos;t1.txt&apos;)</span><br><span class="line"></span><br><span class="line">print os.access(&apos;t.txt&apos;, os.F_OK) # 파일 존재 여부 확인</span><br><span class="line">print os.access(&apos;t1.txt&apos;, os.F_OK)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>파일 이동하기</p>
-<ul>
-<li><p><code>os.rename(oldfilepath, new_filepath)</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">os.rename(&apos;t.txt&apos;, &apos;example/t1.txt&apos;)</span><br><span class="line"></span><br><span class="line"># 파일 존재 여부 확인</span><br><span class="line">print os.access(&apos;example/t1.txt&apos;, os.F_OK)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>파일 복사하기</p>
-<ul>
-<li><code>shutil</code>모듈 활용</li>
-<li><code>shutil.copyfile(src_filepath, dest_filepath)</code></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">import shutil</span><br><span class="line">shutil.copyfile(&apos;sample.txt&apos;, &apos;sample_new.txt&apos;)</span><br><span class="line">print os.access(&apos;sample_new.txt&apos;, os.F_OK)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<hr>
-<h2 id="파일-이름-다루기"><a href="#파일-이름-다루기" class="headerlink" title="파일 이름 다루기"></a>파일 이름 다루기</h2><ol>
-<li><p>상대 경로를 절대 경로로 변환하기</p>
-<ul>
-<li><code>os.path.abspath</code> - 상대경로<ul>
-<li>실제 파일 존재와는 무관하게 절대경로로 변경<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">print os.path.abspath(&apos;o.txt&apos;)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>주어진 경로에 파일이 존재하는지 확인</p>
-<ul>
-<li><code>os.path.exists(filepath)</code></li>
-</ul>
-</li>
-</ol>
-<hr>
-<h2 id="경로명-분리하기"><a href="#경로명-분리하기" class="headerlink" title="경로명 분리하기"></a>경로명 분리하기</h2><ol>
-<li><p>경로와 파일명으로 분리</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f = &apos;/Users/booski/git/python/t.txt&apos;</span><br><span class="line"></span><br><span class="line">print os.path.basename(f) # 파일명만 추출</span><br><span class="line">print os.path.dirname(f) # 디렉토리 경로 추출</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>경로명과 파일명을 한번에 분리 - basename과 dirname을 튜플로 확인</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print os.path.split(f)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>MS윈도우즈에서 드라이브명과 파일 경로명을 분리</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print os.path.splitdrive(f)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>확장자 분리 - 경로와 확장자명으로 튜플 생성</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print os.path.splitext(f)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-    <div class="a2a_kit a2a_default_style">
-    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
-    <span class="a2a_divider"></span>
-    <a class="a2a_button_facebook"></a>
-    <a class="a2a_button_twitter"></a>
-    <a class="a2a_button_google_plus"></a>
-    <a class="a2a_button_pinterest"></a>
-    <a class="a2a_button_tumblr"></a>
-</div>
-<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
-<style>
-    .a2a_menu {
-        border-radius: 4px;
-    }
-    .a2a_menu a {
-        margin: 2px 0;
-        font-size: 14px;
-        line-height: 16px;
-        border-radius: 4px;
-        color: inherit !important;
-        font-family: 'Microsoft Yahei';
-    }
-    #a2apage_dropdown {
-        margin: 10px 0;
-    }
-    .a2a_mini_services {
-        padding: 10px;
-    }
-    a.a2a_i,
-    i.a2a_i {
-        width: 122px;
-        line-height: 16px;
-    }
-    a.a2a_i .a2a_svg,
-    a.a2a_more .a2a_svg {
-        width: 16px;
-        height: 16px;
-        line-height: 16px;
-        vertical-align: top;
-        background-size: 16px;
-    }
-    a.a2a_i {
-        border: none !important;
-    }
-    a.a2a_menu_show_more_less {
-        margin: 0;
-        padding: 10px 0;
-        line-height: 16px;
-    }
-    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
-    .a2a_mini_services{*+height:1%;}
-</style>
-
-</div>
-
-            
-    
-        <a href="http://bongbooski.github.io/2018/04/11/post17_python-file,directory/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/11/post17_python-file,directory/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-post16_standardIO" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/04/10/post16_standardIO/">python 표준 입출력</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/04/10/post16_standardIO/">
-            <time datetime="2018-04-10T09:09:17.000Z" itemprop="datePublished">2018-04-10</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/python/">python</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h2 id="sys-모듈의-표준-입출력-모니터-관련-객체"><a href="#sys-모듈의-표준-입출력-모니터-관련-객체" class="headerlink" title="sys 모듈의 표준 입출력(모니터) 관련 객체"></a>sys 모듈의 표준 입출력(모니터) 관련 객체</h2><ul>
-<li>sys.stdout: 표준 입출력</li>
-<li>sys.stderr: 표준 에러 출력</li>
-<li>sys.stdin: 표준 입력</li>
-</ul>
-<h3 id="표준-출력으로-파일-저장하기"><a href="#표준-출력으로-파일-저장하기" class="headerlink" title="표준 출력으로 파일 저장하기"></a>표준 출력으로 파일 저장하기</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">import sys</span><br><span class="line"></span><br><span class="line">f = open(&apos;t.txt&apos;,&apos;w&apos;)</span><br><span class="line">stdout = sys.stdout #표준 출력 저장</span><br><span class="line">sys.stdout = f #파일 객체로 표준 출력 변경</span><br><span class="line">print &apos;Sample output&apos;</span><br><span class="line">pirnt &apos;Good&apos;</span><br><span class="line">print &apos;Good&apos;</span><br><span class="line">f.close()</span><br><span class="line">sys.stdout = stdout #표준 출력 복원</span><br></pre></td></tr></table></figure>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-    <div class="a2a_kit a2a_default_style">
-    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
-    <span class="a2a_divider"></span>
-    <a class="a2a_button_facebook"></a>
-    <a class="a2a_button_twitter"></a>
-    <a class="a2a_button_google_plus"></a>
-    <a class="a2a_button_pinterest"></a>
-    <a class="a2a_button_tumblr"></a>
-</div>
-<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
-<style>
-    .a2a_menu {
-        border-radius: 4px;
-    }
-    .a2a_menu a {
-        margin: 2px 0;
-        font-size: 14px;
-        line-height: 16px;
-        border-radius: 4px;
-        color: inherit !important;
-        font-family: 'Microsoft Yahei';
-    }
-    #a2apage_dropdown {
-        margin: 10px 0;
-    }
-    .a2a_mini_services {
-        padding: 10px;
-    }
-    a.a2a_i,
-    i.a2a_i {
-        width: 122px;
-        line-height: 16px;
-    }
-    a.a2a_i .a2a_svg,
-    a.a2a_more .a2a_svg {
-        width: 16px;
-        height: 16px;
-        line-height: 16px;
-        vertical-align: top;
-        background-size: 16px;
-    }
-    a.a2a_i {
-        border: none !important;
-    }
-    a.a2a_menu_show_more_less {
-        margin: 0;
-        padding: 10px 0;
-        line-height: 16px;
-    }
-    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
-    .a2a_mini_services{*+height:1%;}
-</style>
-
-</div>
-
-            
-    
-        <a href="http://bongbooski.github.io/2018/04/10/post16_standardIO/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/10/post16_standardIO/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-post16_python_fileIO" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/04/09/post16_python_fileIO/">python 파일 입출력</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/04/09/post16_python_fileIO/">
-            <time datetime="2018-04-09T06:09:17.000Z" itemprop="datePublished">2018-04-09</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/python/">python</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h1 id="파일-입출력"><a href="#파일-입출력" class="headerlink" title="파일 입출력"></a>파일 입출력</h1><p><code>open</code>내장 함수 사용시 두번째 인자값으로 mode설정<br>생략시 읽기전용(r)으로 설정</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = lambda x: x + 1</span><br><span class="line">print f(1)</span><br></pre></td></tr></table></figure>
 <ol>
-<li><code>r</code> -읽기 전용 - 파일 객체를 읽기 모드로 생성, 파일 포인터를 파일 처음 위치로, 존재하지 않는 파일이면 에러발생</li>
-<li><code>w</code> - 쓰기 전용 - 새로운 파일을 생성하거나 기존 파일의 내용을 다 없애고 쓰기모드로 생성, 파일 포인터를 파일 처음 위치로</li>
-<li><code>a</code> - 파일 끝에 추가 - 이미 존재하는 파일을 쓰기모드로 생성하거나 존재하지 않으면 파일 만들고 생성, 파일 포인터를 마지막 위치에 놓음</li>
-</ol>
-<h2 id="이진파일-모드"><a href="#이진파일-모드" class="headerlink" title="이진파일 모드"></a>이진파일 모드</h2><ul>
-<li><code>rb</code></li>
-<li><code>wb</code></li>
-<li><code>ab</code></li>
-</ul>
-<hr>
-<p><code>f.close()</code>처럼 <code>close()</code>로 그때그때 닫아주는 것이 좋음</p>
-<p><code>read()</code>를 사용하면 전체를 다 읽어서 할당함</p>
-<h2 id="라인단위로-파일-읽기"><a href="#라인단위로-파일-읽기" class="headerlink" title="라인단위로 파일 읽기"></a>라인단위로 파일 읽기</h2><ol>
-<li><p><code>for</code> 반복문 활용</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">f = open(&apos;t.txt&apos;)</span><br><span class="line">i = 1</span><br><span class="line">for line in f:</span><br><span class="line">  print i, &quot;:&quot;, line,</span><br><span class="line">  i += 1</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+<li><p>Assigning variables and calling the lambda function having two parameters</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">g = lambda x,y: x + y</span><br><span class="line">print g(1,2)</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><code>readline()</code>-현재의 파일 포인터에서 개행 문자까지 읽음 = 한 라인</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">f = open(&apos;t.txt&apos;)</span><br><span class="line">line = f.readline()</span><br><span class="line">i = 1</span><br><span class="line">while line:</span><br><span class="line">  print i, &quot;:&quot;, line,</span><br><span class="line">  line = f.readline()</span><br><span class="line">  i += 1</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+<li><p>Defining the lambda function having default argument</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">g = lambda x, inc=1: x+inc</span><br><span class="line">print g(10) # default argument(inc=1) value is used</span><br><span class="line">print g(10, 5)</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><code>readlines()</code>-각 라인을 모두 읽어서 리스트로 저장, 메모리는 비효율적으로 사용<br>상황별로 다른 동작함 - <code>for in</code>구문: 전체x, 라인별로 가져옴</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">f = open(&apos;t.txt&apos;)</span><br><span class="line">print f.readlines() #리스트 나옴</span><br><span class="line"></span><br><span class="line">#파일 포인터를 맨 앞으로</span><br><span class="line">f.seek(0)</span><br><span class="line"></span><br><span class="line">i = 1</span><br><span class="line">for line in f.readlines():</span><br><span class="line">  print i, &quot;:&quot;, line,</span><br><span class="line">  i += 1</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>xreadlines()</code> - 메모리 비효율 개선</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">f = open(&apos;t.txt&apos;)</span><br><span class="line">print f.xreadlines() #파일객체 자체가 나옴</span><br><span class="line"></span><br><span class="line">#파일 포인터를 맨 앞으로</span><br><span class="line">f.seek(0)</span><br><span class="line"></span><br><span class="line">i = 1</span><br><span class="line">for line in f.xreadlines():</span><br><span class="line">  print i, &quot;:&quot;, line,</span><br><span class="line">  i += 1</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+<li><p>Defining the lambda function having variable argument</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#args is returned</span><br><span class="line">vargs = lambda x, *args: args</span><br><span class="line">print vars(1,2,3,4,5)</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p><strong><em><code>for in</code> 또는 <code>xreadlines()</code> 추천</em></strong></p>
 <hr>
-<h2 id="라인-단위로-쓰는-방법"><a href="#라인-단위로-쓰는-방법" class="headerlink" title="라인 단위로 쓰는 방법"></a>라인 단위로 쓰는 방법</h2><ol>
-<li><p><code>writelines()</code> - 라인단위로 쓰기 작업</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">lines = [&apos;1st line\n&apos;, &apos;2nd line\n&apos;, &apos;3rd line\n&apos;]</span><br><span class="line">f = open(&apos;t1.txt&apos;,&apos;w&apos;)</span><br><span class="line">f.writelines(lines)</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f = open(&apos;t1.txt&apos;)</span><br><span class="line">print f.read() #전체내용 읽음</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+<h2 id="Using-lambda-functions"><a href="#Using-lambda-functions" class="headerlink" title="Using lambda functions"></a>Using lambda functions</h2><ul>
+<li><p>Using usual function</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def f1(x):</span><br><span class="line">  return x*x + 3*x - 10</span><br><span class="line"></span><br><span class="line">def f2(x):</span><br><span class="line">  return x*x*x</span><br><span class="line"></span><br><span class="line">def g(func):</span><br><span class="line">  return [func(x) for x in range(-10, 10)]</span><br><span class="line"></span><br><span class="line">print g(f1)</span><br><span class="line">print g(f2)</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><code>write()</code> - 임의로 중간에 ‘\n’ 넣어줌</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">lines = [&apos;1st line&apos;, &apos;2nd line&apos;, &apos;3rd line&apos;]</span><br><span class="line">f = open(&apos;t1.txt&apos;,&apos;w&apos;)</span><br><span class="line">f.write(&apos;\n&apos;.join(lines))</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f = open(&apos;t1.txt&apos;)</span><br><span class="line">print f.read() #전체내용 읽음</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="기존-파일에-내용-추가"><a href="#기존-파일에-내용-추가" class="headerlink" title="기존 파일에 내용 추가"></a>기존 파일에 내용 추가</h2><ul>
-<li><code>a</code>모드 사용<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f = open(&apos;removeme.txt&apos;, &apos;a&apos;)</span><br><span class="line">f.write(&apos;3rd line\n&apos;)</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f = open(&apos;removeme.txt&apos;)</span><br><span class="line">print f.read()</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+<li><p>Usiung lambda function</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def g(func):</span><br><span class="line">  return [func(x) for x in range(-10, 10)]</span><br><span class="line"></span><br><span class="line">print g(lambda x: x*x + 3*x - 10)</span><br><span class="line">print g(lambda x: x*x*x)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="파일-내-임의-위치로-접근"><a href="#파일-내-임의-위치로-접근" class="headerlink" title="파일 내 임의 위치로 접근"></a>파일 내 임의 위치로 접근</h2><ul>
-<li>순차접근</li>
-<li>임의접근<ul>
-<li><code>seek(n)</code> - 파일의 가장 첫번째 위치에서 n번째 바이트로 포인터이동</li>
-<li><code>tell()</code> - 파일 내 현재 포인터 위치를 반환</li>
+<h2 id="Utilizing-lambda-function"><a href="#Utilizing-lambda-function" class="headerlink" title="Utilizing lambda function"></a>Utilizing lambda function</h2><ul>
+<li><code>map</code>, <code>filter</code>, <code>reduce</code> built-in functions</li>
 </ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">name = &apos;t.txt&apos;</span><br><span class="line">f = open(name, &apos;w+&apos;) # 읽고 쓰기모드</span><br><span class="line">s = &apos;0123456789asdf&apos;</span><br><span class="line">f.write(s)</span><br><span class="line"></span><br><span class="line">f.seek(5)</span><br><span class="line">print f.tell()</span><br><span class="line">print f.read(1)</span><br><span class="line">print f.tell()</span><br></pre></td></tr></table></figure>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-    <div class="a2a_kit a2a_default_style">
-    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
-    <span class="a2a_divider"></span>
-    <a class="a2a_button_facebook"></a>
-    <a class="a2a_button_twitter"></a>
-    <a class="a2a_button_google_plus"></a>
-    <a class="a2a_button_pinterest"></a>
-    <a class="a2a_button_tumblr"></a>
-</div>
-<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
-<style>
-    .a2a_menu {
-        border-radius: 4px;
-    }
-    .a2a_menu a {
-        margin: 2px 0;
-        font-size: 14px;
-        line-height: 16px;
-        border-radius: 4px;
-        color: inherit !important;
-        font-family: 'Microsoft Yahei';
-    }
-    #a2apage_dropdown {
-        margin: 10px 0;
-    }
-    .a2a_mini_services {
-        padding: 10px;
-    }
-    a.a2a_i,
-    i.a2a_i {
-        width: 122px;
-        line-height: 16px;
-    }
-    a.a2a_i .a2a_svg,
-    a.a2a_more .a2a_svg {
-        width: 16px;
-        height: 16px;
-        line-height: 16px;
-        vertical-align: top;
-        background-size: 16px;
-    }
-    a.a2a_i {
-        border: none !important;
-    }
-    a.a2a_menu_show_more_less {
-        margin: 0;
-        padding: 10px 0;
-        line-height: 16px;
-    }
-    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
-    .a2a_mini_services{*+height:1%;}
-</style>
-
-</div>
-
-            
-    
-        <a href="http://bongbooski.github.io/2018/04/09/post16_python_fileIO/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/09/post16_python_fileIO/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-post15_gitignore+config-setting" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/03/22/post15_gitignore+config-setting/">.gitignore, config파일 사용</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/03/22/post15_gitignore+config-setting/">
-            <time datetime="2018-03-22T06:09:17.000Z" itemprop="datePublished">2018-03-22</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/github/">github</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h1 id="새노트북"><a href="#새노트북" class="headerlink" title="새노트북"></a>새노트북</h1><p>여러 프로젝트를 두 노트북에서 함께 진행할 예정인데 새 노트북에 기존 코드들을 넘겨와야함</p>
-<p>데이터베이스 비밀번호 등 개인정보가 마음에 걸려서 설정파일로 빼보려고하니 일이 커짐</p>
-<p><code>.gitignore</code>사용한 것과 <code>config</code>폴더, 파일 사용법 포스팅할 예정</p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-    <div class="a2a_kit a2a_default_style">
-    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
-    <span class="a2a_divider"></span>
-    <a class="a2a_button_facebook"></a>
-    <a class="a2a_button_twitter"></a>
-    <a class="a2a_button_google_plus"></a>
-    <a class="a2a_button_pinterest"></a>
-    <a class="a2a_button_tumblr"></a>
-</div>
-<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
-<style>
-    .a2a_menu {
-        border-radius: 4px;
-    }
-    .a2a_menu a {
-        margin: 2px 0;
-        font-size: 14px;
-        line-height: 16px;
-        border-radius: 4px;
-        color: inherit !important;
-        font-family: 'Microsoft Yahei';
-    }
-    #a2apage_dropdown {
-        margin: 10px 0;
-    }
-    .a2a_mini_services {
-        padding: 10px;
-    }
-    a.a2a_i,
-    i.a2a_i {
-        width: 122px;
-        line-height: 16px;
-    }
-    a.a2a_i .a2a_svg,
-    a.a2a_more .a2a_svg {
-        width: 16px;
-        height: 16px;
-        line-height: 16px;
-        vertical-align: top;
-        background-size: 16px;
-    }
-    a.a2a_i {
-        border: none !important;
-    }
-    a.a2a_menu_show_more_less {
-        margin: 0;
-        padding: 10px 0;
-        line-height: 16px;
-    }
-    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
-    .a2a_mini_services{*+height:1%;}
-</style>
-
-</div>
-
-            
-    
-        <a href="http://bongbooski.github.io/2018/03/22/post15_gitignore+config-setting/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/03/22/post15_gitignore+config-setting/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/03/22/hello-world/">Hello World</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/03/22/hello-world/">
-            <time datetime="2018-03-22T06:09:16.793Z" itemprop="datePublished">2018-03-22</time>
-        </a>
-    </div>
-
-
-                        
-                        
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-    <div class="a2a_kit a2a_default_style">
-    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
-    <span class="a2a_divider"></span>
-    <a class="a2a_button_facebook"></a>
-    <a class="a2a_button_twitter"></a>
-    <a class="a2a_button_google_plus"></a>
-    <a class="a2a_button_pinterest"></a>
-    <a class="a2a_button_tumblr"></a>
-</div>
-<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
-<style>
-    .a2a_menu {
-        border-radius: 4px;
-    }
-    .a2a_menu a {
-        margin: 2px 0;
-        font-size: 14px;
-        line-height: 16px;
-        border-radius: 4px;
-        color: inherit !important;
-        font-family: 'Microsoft Yahei';
-    }
-    #a2apage_dropdown {
-        margin: 10px 0;
-    }
-    .a2a_mini_services {
-        padding: 10px;
-    }
-    a.a2a_i,
-    i.a2a_i {
-        width: 122px;
-        line-height: 16px;
-    }
-    a.a2a_i .a2a_svg,
-    a.a2a_more .a2a_svg {
-        width: 16px;
-        height: 16px;
-        line-height: 16px;
-        vertical-align: top;
-        background-size: 16px;
-    }
-    a.a2a_i {
-        border: none !important;
-    }
-    a.a2a_menu_show_more_less {
-        margin: 0;
-        padding: 10px 0;
-        line-height: 16px;
-    }
-    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
-    .a2a_mini_services{*+height:1%;}
-</style>
-
-</div>
-
-            
-    
-        <a href="http://bongbooski.github.io/2018/03/22/hello-world/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/03/22/hello-world/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-post14_nodejs-bulletin-board_kr" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/03/07/post14_nodejs-bulletin-board_kr/">node.js 게시판 만들기 첫 포스팅</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/03/07/post14_nodejs-bulletin-board_kr/">
-            <time datetime="2018-03-07T09:09:17.000Z" itemprop="datePublished">2018-03-07</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/node-js/">node.js</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h1 id="시작"><a href="#시작" class="headerlink" title="시작"></a>시작</h1><p><code>node.js</code>의 전반적인 내용을 훑고 공부할 겸 게시판만들기 프로젝트를 시작했다.<br>이것저것 생각하며 만들다보니 영 속도도 안나고 삽질만 하고있지만..</p>
-<hr>
-<h1 id="삽질"><a href="#삽질" class="headerlink" title="삽질"></a>삽질</h1><p>어제까지 <code>route</code>와 <code>module</code>들을 하나하나 잡으며 고생했는데 알고보니<br><code>express framework</code>쓰니까 내가 이틀 고생해서 만든 것보다 더 깔끔하고 알찬 형태로<br>구성해 주더라..</p>
-<hr>
-<h1 id="local-mySQL"><a href="#local-mySQL" class="headerlink" title="local mySQL"></a>local mySQL</h1><p>로컬 <code>mySQL</code>로 <code>database</code>를 연동시키려고 했는데 웬걸, 실행이 안되고 있었다.<br>이전에 일하던 회사에서 익숙해진김에 <code>hediSQL</code>을 사용하는데 로그인이 안됐다.</p>
-<p>알고보니 내 컴퓨터의 <code>mySQL</code>서비스가 꺼져있던것!<br>내컴퓨터 - 왼쪽에 있는 <code>내 PC</code>를 우클릭하면 나오는 <code>관리</code> - <code>서비스 및 응용 프로그램</code> - <code>서비스</code> - <code>mySQL</code>또는 <code>mySQL56</code>(버전마다 다를듯)을 실행하고나서 다시 <code>hediSQL</code>접속 시도하니까 접속가능!</p>
-<hr>
-<h1 id="routing-문제"><a href="#routing-문제" class="headerlink" title="routing 문제"></a>routing 문제</h1><p>게시판 종류를 두 개로 하려다보니 각각의 CRUD용 페이지를 구성하는게 고민이다.<br>어떤 부분을 하나로 쓰고 어떤 부분을 나누는게 가장 효율적일지는 좀더 생각해봐야 할 것 같다.</p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-    <div class="a2a_kit a2a_default_style">
-    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
-    <span class="a2a_divider"></span>
-    <a class="a2a_button_facebook"></a>
-    <a class="a2a_button_twitter"></a>
-    <a class="a2a_button_google_plus"></a>
-    <a class="a2a_button_pinterest"></a>
-    <a class="a2a_button_tumblr"></a>
-</div>
-<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
-<style>
-    .a2a_menu {
-        border-radius: 4px;
-    }
-    .a2a_menu a {
-        margin: 2px 0;
-        font-size: 14px;
-        line-height: 16px;
-        border-radius: 4px;
-        color: inherit !important;
-        font-family: 'Microsoft Yahei';
-    }
-    #a2apage_dropdown {
-        margin: 10px 0;
-    }
-    .a2a_mini_services {
-        padding: 10px;
-    }
-    a.a2a_i,
-    i.a2a_i {
-        width: 122px;
-        line-height: 16px;
-    }
-    a.a2a_i .a2a_svg,
-    a.a2a_more .a2a_svg {
-        width: 16px;
-        height: 16px;
-        line-height: 16px;
-        vertical-align: top;
-        background-size: 16px;
-    }
-    a.a2a_i {
-        border: none !important;
-    }
-    a.a2a_menu_show_more_less {
-        margin: 0;
-        padding: 10px 0;
-        line-height: 16px;
-    }
-    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
-    .a2a_mini_services{*+height:1%;}
-</style>
-
-</div>
-
-            
-    
-        <a href="http://bongbooski.github.io/2018/03/07/post14_nodejs-bulletin-board_kr/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/03/07/post14_nodejs-bulletin-board_kr/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-post13_okky_seminor_kr" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/02/28/post13_okky_seminor_kr/">OKKY세미나 IT회사 탐방기 - 18.02.27</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/02/28/post13_okky_seminor_kr/">
-            <time datetime="2018-02-28T04:48:17.000Z" itemprop="datePublished">2018-02-28</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/okky/">okky</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>TGL경복빌딩의 eBrain에서 있었던 OKKY세미나에 형들과 다녀왔다.<br>마이다스 아이티에서 10년 3개월 5일(?) 일하다가 나오신 황후순님이 세미나를 해주셨고,<br>주제는 <strong>IT회사 탐방기</strong> 였다.</p>
-<p>황후순님의 이력에 대한 간단한 설명을 듣고<br>(안전도 시뮬레이션등을 하는 회사, 인공지능 면접 솔루션 개발 등),</p>
-<p>어떻게 많은 회사들을 다녀오실 수 있었는지도말씀해주셨는데,<br><code>facebook</code>등과 같은 SNS를 활용하신다고 한다.</p>
-<p>예를 들면 회사는 내가 누구인지 모르니 나를 알려야 하므로, 그 회사에 다니는 사람 등의<br>게시물에 댓글을 달거나 하는 식으로 인맥을 확장해 나가는 방식!<br>SNS에서 소통하다가 방문하는 방식이라고 한다.</p>
-<hr>
-<p>연사님은 개발자로 10년을 일을 하셨는데 퇴사를 하게 된 계기는 두가지라고 했다.</p>
 <ol>
-<li><strong>데이터 사이언스</strong>, <strong>AI</strong> 에 흥미가 있었고, <strong>TensorFlow</strong> 등에서 가져다 쓰는것보다는 직접 개발해보고 싶었다</li>
-<li>영어를 활용하는 환경</li>
-</ol>
-<p><strong><em>싱가폴로!</em></strong></p>
-<hr>
-<h2 id="기업탐방-해외-싱가폴"><a href="#기업탐방-해외-싱가폴" class="headerlink" title="기업탐방 - 해외(싱가폴)"></a>기업탐방 - 해외(싱가폴)</h2><h3 id="싱가폴-페이스북"><a href="#싱가폴-페이스북" class="headerlink" title="싱가폴 페이스북"></a>싱가폴 페이스북</h3><ul>
-<li>식당이 좋다, 다양한 종류의 사람들이 있으므로 음식도 종류별로 준비된다.</li>
-<li>성과위주이기에 업무에 도움이 되거나 휴식을 위해 음주가 가능하지만 대부분 안함</li>
-<li>모니터에 코드만 안찍히면 구경가서 사진촬영도 가능</li>
-<li>모든 층이 계단으로 연결되어있고, <strong>face to face</strong> 를 선호한다 - 전화 잘 안울림</li>
-<li>포토존이 많다. <em>왜..?</em></li>
-<li>면접<ol>
-<li>길다 - 한두달걸림</li>
-<li>기술면접을 분야별로 본다</li>
-<li>면접마다 평가해서 회사가 연봉을 측정</li>
-<li>통과하면 면접자에게 희망연봉을 묻는다</li>
-<li>측정치랑 일치하거나 측정치보다 낮으면 계약서, 측정치보다 높으면 협상<br><em>일단 한 10억 던지고 협상ㄱㄱ</em></li>
-</ol>
+<li><p><code>map</code> built-in function</p>
+<ul>
+<li><p><code>map(function, seq)</code>: taking item by item in <code>seq</code> and running <code>function</code> with the item and returning the result as the type of <code>seq</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def f(x):</span><br><span class="line">  return x * x</span><br><span class="line">X - [1,2,3,4,5]</span><br><span class="line">Y = map(f, X)</span><br><span class="line">print Y</span><br></pre></td></tr></table></figure>
 </li>
-<li><strong>몸값을 제대로 받아야 일도 제대로함 - 연봉만큼의 일이 들어옴</strong></li>
-<li>순수개발자의 비중이 생각보다 작음 - <strong>로컬화</strong> 위주이기 때문</li>
+<li><p>Using <code>map</code> and lambda function - most recommended</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">X = [1,2,3,4,5]</span><br><span class="line">print map(lambda x: x * x, X)</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<p><br></p>
-<h3 id="WeWork-stashaway-이주원님"><a href="#WeWork-stashaway-이주원님" class="headerlink" title="WeWork, stashaway(이주원님)"></a>WeWork, stashaway(이주원님)</h3><ul>
-<li>면접<ol>
-<li>페이스북과 다르다</li>
-<li>면접자가 연봉을 먼저 제시하고</li>
-<li>그 금액에 맞는 면접을 회사가 준비해온다 - 통과하면 처음 부른 액수 그대로 받는다</li>
+</li>
+<li><p><code>filter</code> built-in function</p>
+<ul>
+<li>taking item by item in <code>seq</code> and running <code>function</code> with the item and returning the result as the type of <code>seq</code> if the result is <code>True</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print filter(lambda x: x&gt;2, [1,2,3,45])</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>reduce</code> built-in function</p>
+<ul>
+<li><code>reduce(function, seq[,initial])</code></li>
+<li>about each items in <code>seq</code>, applying <code>function</code> and mapping as A value</li>
+<li>the 1st paremeter(<code>function</code>) should take two values(ex: x,y)<ol>
+<li>the items of <code>seq</code> get into <code>y</code></li>
+<li>the result after calling the function gets into <code>x</code></li>
 </ol>
 </li>
-<li>한국: 신입은 개발좋아하는 사람, 경력은 필요한 스택에 맞는사람</li>
-<li>싱가폴: 지원자가 잘하는 언어로 면접봄(연봉에 맞춘 난이도로), 나머지 언어는 들어와서 배우면됨</li>
-<li>개발자에 대한 대우가 다르다 - 대졸4년차 기본연봉1억</li>
-<li>회사보다는 가족 - 남들 쉴 때 일하는 것은 혼자 미꾸라지되겠다는 의미로 받아들임</li>
-</ul>
-<p><br></p>
-<h3 id="Grab-아시아버전-우버-그랩"><a href="#Grab-아시아버전-우버-그랩" class="headerlink" title="Grab(아시아버전 우버) 그랩"></a>Grab(아시아버전 우버) 그랩</h3><ul>
-<li>연사님이 만나신 분은 <code>Google Developer</code>신분(?)이셔서 코딩테스트 패스하셨고 화상면접, 라이브코딩 여러번을 거치셨다고 한다.</li>
-<li>카카오 입사도 통과하셔서 그 연봉의 2.5배를 제시했는데 바로 계약서가 왔다(회사가 자체 평가한 금액을 넘지 못했다는 의미..)</li>
-<li>입사연봉기준으로 다음 연봉협상 이뤄지기 때문에, 첫 연봉이 중요하다.</li>
-</ul>
-<p><br></p>
-<h3 id="황후순님이-알려주신-팁"><a href="#황후순님이-알려주신-팁" class="headerlink" title="황후순님이 알려주신 팁!"></a>황후순님이 알려주신 팁!</h3><ul>
-<li>혼자 공부하는건 오픈소스외에는 큰 프로젝트보기힘들다 따라서 회사에들어가서 배우는게 빠르다.</li>
-<li>면접여러번 보다보면 언어도 늘기 때문에 영어에 너무 좌절하지 말것!</li>
-<li>영어 회사들어가서 해라</li>
-<li>기술을 보고, 사람을 본다</li>
-<li>개발자는 개발에도 두려움을 가질 필요가 없다. 배우면되기에!</li>
-</ul>
-<p><em>싱가폴-&gt; 개발자가 일하기 좋은 나라</em><br><br></p>
-<hr>
-<h2 id="기업탐방-국내"><a href="#기업탐방-국내" class="headerlink" title="기업탐방(국내)"></a>기업탐방(국내)</h2><h3 id="Clova-naver"><a href="#Clova-naver" class="headerlink" title="Clova(naver)"></a>Clova(naver)</h3><ul>
-<li>네이버의 인공지능분야 담당</li>
-<li>AI관련해서는 면접자가 기여할 부분이 있다면 학사도 뽑음(싱가폴은 학사면 서류에서 이미 거른다고함)</li>
-<li>성과중심 - 본인 업무를 다했다면 출근카드 찍기만 하면된다.<br><br><h3 id="우아한-형제들-배달의-민족"><a href="#우아한-형제들-배달의-민족" class="headerlink" title="우아한 형제들(배달의 민족)"></a>우아한 형제들(배달의 민족)</h3></li>
-<li>평생직장따윈 없다, 최고가 되어 떠나라<br><br><h3 id="카카오"><a href="#카카오" class="headerlink" title="카카오"></a>카카오</h3></li>
-<li>대부분 어떻게든 관리자가 되지 않으려고함. 개발자로 남으려함<br><br><h3 id="구글코리아"><a href="#구글코리아" class="headerlink" title="구글코리아"></a>구글코리아</h3></li>
-<li>영어 중요하다, 아주 잘해야함</li>
-<li>자유로운 문화 - 익히 아는 딱 그 문화</li>
-<li>영어보다 소통능력이 더중요함 - 공감능력, 소통, 성과를 잘보여주는 능력</li>
-<li>인사평가는 자기PR로 함</li>
-<li>구글에 천재가 많음, 하고싶어서 하는 천재, 노력하는 천재가 많다.<br><br><h3 id="삼성SDS-애자일-코어팀"><a href="#삼성SDS-애자일-코어팀" class="headerlink" title="삼성SDS - 애자일 코어팀"></a>삼성SDS - 애자일 코어팀</h3></li>
-<li>si회사로 볼 수 있지만 애자일 코어팀은 변화를 이끌고자 하는 조직</li>
-<li>삼성의 새로운 문화를 이끌려는 조직<br><br><h3 id="셈웨어"><a href="#셈웨어" class="headerlink" title="셈웨어"></a>셈웨어</h3></li>
-<li>서울대에 있는 회사</li>
-<li>math tool개발</li>
-<li>mathFreeOn</li>
-<li><code>실패</code>라는 단어를 사용하지 않고 <code>실수</code>로 여김, <code>실수</code>는 <code>성공</code>하기 위한 과정임</li>
-<li>우주의 움직임도 그래픽으로 물리, 지구과학등으로 분야 넒히려고 함 - 동현이?<br><br><h3 id="데일리-인텔리전스"><a href="#데일리-인텔리전스" class="headerlink" title="데일리 인텔리전스"></a>데일리 인텔리전스</h3></li>
-<li>AI플랫폼 - 다빈치(DaVinCi)</li>
-<li>은행 및 보험사</li>
-</ul>
-<ul>
-<li>더루프 - 루프체인</li>
-<li>인프런 - 강사와 사람들을 연결해주는 서비스<br><br><h3 id="오마이랩"><a href="#오마이랩" class="headerlink" title="오마이랩"></a>오마이랩</h3></li>
-</ul>
-<ul>
-<li>잔디 시작한 개발자(최영근), 이규원 - c#개발자 오마이랩CTO<br><br><h3 id="코더블-상상충전소"><a href="#코더블-상상충전소" class="headerlink" title="코더블/ 상상충전소"></a>코더블/ 상상충전소</h3></li>
-<li>교육커리큘럼, 책만듦<br><br></li>
-</ul>
-<hr>
-<h1 id="프로vs-고수"><a href="#프로vs-고수" class="headerlink" title="프로vs 고수"></a>프로vs 고수</h1><p>나는 어느 쪽을 추구하는지 고민해볼 부분</p>
-<ul>
-<li>프로<ul>
-<li>돈에 움직이는 사람,</li>
-<li>회사에서 원하는 방향을 따르거나 맞는 곳을 찾아감</li>
-<li>고객의 니즈를 맞춰줄 수 있는 사람</li>
-<li>자신의 가치를 돈으로 판단<br><br></li>
+<li>optionally, the 3rd parameter <code>initial</code> is used as default value of <code>x</code> at the 1st step<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print reduce(lambda x, y: x + y, [1,2,3,4,5])</span><br><span class="line">print reduce(lambda x, y: x + y, [1,2,3,4,5], 1000)</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 </li>
-<li>고수<ul>
-<li>일은 프로처럼함(고객의 니즈) + 자기의 생각을 담음</li>
-<li>고객의 니즈를 바꾸지 않고 자신의 생각이 추가됨</li>
-<li>자신에 대한 가치를 기술적인 것으로 판단<br><br></li>
-</ul>
-</li>
-<li>은거하면서 아트하는데 그걸로돈도 들어오는…??</li>
-</ul>
-<h2 id="개발자-테크트리의-끝은"><a href="#개발자-테크트리의-끝은" class="headerlink" title="개발자 테크트리의 끝은?"></a>개발자 테크트리의 끝은?</h2><ul>
-<li>관리자냐 테크니션이냐… 고민할 필요없다</li>
-<li>회사에 필요한 기술을 공부하면됨 <strong>필요</strong> 한것을 공부</li>
-<li>현재는 선택할 것이 많다(두갈래가 아니다)</li>
-</ul>
-<hr>
-<p><strong><em>공부는 공부의 결과를 낳는다.</em></strong></p>
-<ul>
-<li>언어는 도구다!</li>
-<li>책보다는 도큐먼트!</li>
-<li>책은 모르고 쓰는 사람도 많다 - 책을 볼때는 다 코드짜보고 맞는지도 확인할것!</li>
-<li>기술공부도 좋지만 시야와 그릇을 넓힐것.</li>
-</ul>
-<p><strong>개발은 80까지!!</strong></p>
+</ol>
 
         
         </div>
@@ -1786,7 +1896,7 @@ ga('send', 'pageview');
 
             
     
-        <a href="http://bongbooski.github.io/2018/02/28/post13_okky_seminor_kr/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/28/post13_okky_seminor_kr/">Comments</a>
+        <a href="http://bongbooski.github.io/2018/04/12/post18-python-lambda_eng/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/12/post18-python-lambda_eng/">Comments</a>
     
 
         </footer>
@@ -1813,6 +1923,82 @@ ga('send', 'pageview');
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2018/04/17/post22-python-exception-raise/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/17/post22-python-exception-raise/" class="title">python 예외 발생시키기</a></p>
+                            <p class="item-date"><time datetime="2018-04-17T05:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/17/post22-python-exception-raise_eng/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/17/post22-python-exception-raise_eng/" class="title">python Exception Raise</a></p>
+                            <p class="item-date"><time datetime="2018-04-17T05:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/17/post21-python-exception-handling/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling/" class="title">python 예외처리</a></p>
+                            <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/17/post21-python-exception-handling_eng/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling_eng/" class="title">python Exception Handling</a></p>
+                            <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2018/04/15/post20-python-package/" class="thumbnail">
     
     
@@ -1829,82 +2015,6 @@ ga('send', 'pageview');
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/04/15/post19-python-import/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/04/15/post19-python-import/" class="title">python 모듈 import하기</a></p>
-                            <p class="item-date"><time datetime="2018-04-15T02:48:23.000Z" itemprop="datePublished">2018-04-15</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/04/12/post18-python-lambda/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/04/12/post18-python-lambda/" class="title">python 람다(lambda) 함수</a></p>
-                            <p class="item-date"><time datetime="2018-04-12T05:19:37.000Z" itemprop="datePublished">2018-04-12</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/04/11/post17_python-file,directory/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/04/11/post17_python-file,directory/" class="title">python 파일 다루기</a></p>
-                            <p class="item-date"><time datetime="2018-04-11T06:38:47.000Z" itemprop="datePublished">2018-04-11</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/04/10/post16_standardIO/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/04/10/post16_standardIO/" class="title">python 표준 입출력</a></p>
-                            <p class="item-date"><time datetime="2018-04-10T09:09:17.000Z" itemprop="datePublished">2018-04-10</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1916,7 +2026,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">13</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">13</span></li></ul>
         </div>
     </div>
 
@@ -1925,7 +2035,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySql/">MySql</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/okky/">okky</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">6</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySql/">MySql</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/okky/">okky</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">14</span></li></ul>
         </div>
     </div>
 
@@ -1934,7 +2044,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/MySql/" style="font-size: 13.33px;">MySql</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/okky/" style="font-size: 10px;">okky</a> <a href="/tags/python/" style="font-size: 16.67px;">python</a>
+            <a href="/tags/MySql/" style="font-size: 13.33px;">MySql</a> <a href="/tags/Node-js/" style="font-size: 16.67px;">Node.js</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/okky/" style="font-size: 10px;">okky</a> <a href="/tags/python/" style="font-size: 20px;">python</a>
         </div>
     </div>
 

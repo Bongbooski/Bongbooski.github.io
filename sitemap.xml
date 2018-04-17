@@ -2,23 +2,93 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://bongbooski.github.io/2018/04/17/post22-python-exception-raise/</loc>
+    
+    <lastmod>2018-04-17T12:49:59.875Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://bongbooski.github.io/2018/04/17/post22-python-exception-raise_eng/</loc>
+    
+    <lastmod>2018-04-17T12:49:58.710Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://bongbooski.github.io/2018/04/17/post21-python-exception-handling_eng/</loc>
+    
+    <lastmod>2018-04-17T12:07:17.499Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://bongbooski.github.io/2018/04/17/post21-python-exception-handling/</loc>
+    
+    <lastmod>2018-04-17T09:56:50.201Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://bongbooski.github.io/2018/04/15/post20-python-package_eng/</loc>
+    
+    <lastmod>2018-04-17T09:46:35.835Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://bongbooski.github.io/2018/04/15/post20-python-package/</loc>
     
-    <lastmod>2018-04-15T07:31:55.462Z</lastmod>
+    <lastmod>2018-04-17T09:32:26.712Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://bongbooski.github.io/2018/04/15/post19-python-import_eng/</loc>
+    
+    <lastmod>2018-04-17T09:30:57.002Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://bongbooski.github.io/2018/04/15/post19-python-import/</loc>
     
-    <lastmod>2018-04-15T07:03:29.772Z</lastmod>
+    <lastmod>2018-04-17T09:26:27.193Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://bongbooski.github.io/2018/04/12/post18-python-lambda_eng/</loc>
+    
+    <lastmod>2018-04-17T08:00:45.070Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://bongbooski.github.io/2018/04/12/post18-python-lambda/</loc>
     
-    <lastmod>2018-04-15T02:56:27.291Z</lastmod>
+    <lastmod>2018-04-17T08:00:44.120Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://bongbooski.github.io/2018/04/11/post17_python-file,directory_eng/</loc>
+    
+    <lastmod>2018-04-17T07:33:44.727Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://bongbooski.github.io/2018/04/09/post16_python_fileIO_eng/</loc>
+    
+    <lastmod>2018-04-17T07:16:11.574Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://bongbooski.github.io/2018/04/09/post16_python_fileIO/</loc>
+    
+    <lastmod>2018-04-17T06:28:48.872Z</lastmod>
     
   </url>
   
@@ -26,20 +96,6 @@
     <loc>http://bongbooski.github.io/2018/04/11/post17_python-file,directory/</loc>
     
     <lastmod>2018-04-11T07:36:37.593Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://bongbooski.github.io/2018/04/09/post16_python_fileIO/</loc>
-    
-    <lastmod>2018-04-10T14:26:10.730Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://bongbooski.github.io/2018/04/10/post16_standardIO/</loc>
-    
-    <lastmod>2018-04-10T09:42:21.949Z</lastmod>
     
   </url>
   

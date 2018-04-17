@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Booski&#39;s programming">
 <meta property="og:description" content="import 모듈명 기본적인 형태 12import mymathprint mymath.area(5)  from 모듈명 import 가져올 대상  해당 모듈에 존재하는 대상을 가져옴 기존에 존재하던 이름이면 기존 객체가 상실됨 모듈 이름 없이 바로 사용 가능12from mymath import area, mypiprint area(5)    from 모듈명 i">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-04-15T07:03:29.772Z">
+<meta property="og:updated_time" content="2018-04-17T09:26:27.193Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python 모듈 import하기">
 <meta name="twitter:description" content="import 모듈명 기본적인 형태 12import mymathprint mymath.area(5)  from 모듈명 import 가져올 대상  해당 모듈에 존재하는 대상을 가져옴 기존에 존재하던 이름이면 기존 객체가 상실됨 모듈 이름 없이 바로 사용 가능12from mymath import area, mypiprint area(5)    from 모듈명 i">
@@ -179,7 +179,7 @@ ga('send', 'pageview');
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                22
+                30
                 <span>posts</span>
             </div>
             <div class="article-info-block">
@@ -329,14 +329,15 @@ ga('send', 'pageview');
 </ul>
 <hr>
 <h1 id="같은-이름을-다시-사용할-때"><a href="#같은-이름을-다시-사용할-때" class="headerlink" title="같은 이름을 다시 사용할 때"></a>같은 이름을 다시 사용할 때</h1><ul>
-<li>같은 이름 사용하면 이전의 내용이 삭제되지만 모듈은 메모리에 남아있고, 다시 <code>import</code>하면 다시 가져오는 것이 아니라 메모리에 존재하는 모듈을 활용함</li>
+<li>같은 이름 사용하면 이전의 내용이 삭제되지만 모듈은 메모리에 남아있고, 다시 <code>import</code>하면 다시 가져오는 것이 아니라 메모리에 존재하는 모듈을 활용함. 따라서 기존에 추가 정의한 내용들 사용가능</li>
 </ul>
 <hr>
 <h1 id="모듈의-실행과-테스트-코드"><a href="#모듈의-실행과-테스트-코드" class="headerlink" title="모듈의 실행과 테스트 코드"></a>모듈의 실행과 테스트 코드</h1><ul>
 <li><p><code>__name__</code></p>
 <ul>
-<li>현재의 모듈이 최상위 모듈로서 수행되는지, 아니면다른 모듀렝 의해 <code>imort</code>되어 수행되는지를 구별하기 위해 주로 사용</li>
-<li><p>최상위 모듈에서 사용할 때 -&gt; <code>__main__</code></p>
+<li>현재의 모듈이 최상위 모듈로서 수행되는지, 아니면다른 모듈에 의해 <code>imort</code>되어 수행되는지를 구별하기 위해 주로 사용</li>
+<li>최상위 모듈에서 사용할 때 -&gt; <code>__main__</code></li>
+<li><p>다른 모듈에서 사용될 때 -&gt; 해당 모듈의 이름</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print __name__ # __main__ 출력</span><br><span class="line"></span><br><span class="line">import prname</span><br><span class="line">print prname.__name__ # prname출력</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>사용방법</p>
@@ -423,11 +424,11 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2018/04/15/post20-python-package/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2018/04/15/post19-python-import_eng/" id="article-nav-newer" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Newer</strong>
             <div class="article-nav-title">
                 
-                    python 패키지
+                    python module importing
                 
             </div>
         </a>
@@ -468,6 +469,82 @@ ga('send', 'pageview');
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2018/04/17/post22-python-exception-raise/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/17/post22-python-exception-raise/" class="title">python 예외 발생시키기</a></p>
+                            <p class="item-date"><time datetime="2018-04-17T05:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/17/post22-python-exception-raise_eng/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/17/post22-python-exception-raise_eng/" class="title">python Exception Raise</a></p>
+                            <p class="item-date"><time datetime="2018-04-17T05:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/17/post21-python-exception-handling/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling/" class="title">python 예외처리</a></p>
+                            <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/17/post21-python-exception-handling_eng/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling_eng/" class="title">python Exception Handling</a></p>
+                            <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2018/04/15/post20-python-package/" class="thumbnail">
     
     
@@ -484,82 +561,6 @@ ga('send', 'pageview');
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/04/15/post19-python-import/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/04/15/post19-python-import/" class="title">python 모듈 import하기</a></p>
-                            <p class="item-date"><time datetime="2018-04-15T02:48:23.000Z" itemprop="datePublished">2018-04-15</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/04/12/post18-python-lambda/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/04/12/post18-python-lambda/" class="title">python 람다(lambda) 함수</a></p>
-                            <p class="item-date"><time datetime="2018-04-12T05:19:37.000Z" itemprop="datePublished">2018-04-12</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/04/11/post17_python-file,directory/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/04/11/post17_python-file,directory/" class="title">python 파일 다루기</a></p>
-                            <p class="item-date"><time datetime="2018-04-11T06:38:47.000Z" itemprop="datePublished">2018-04-11</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/04/10/post16_standardIO/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/04/10/post16_standardIO/" class="title">python 표준 입출력</a></p>
-                            <p class="item-date"><time datetime="2018-04-10T09:09:17.000Z" itemprop="datePublished">2018-04-10</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -571,7 +572,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">13</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">13</span></li></ul>
         </div>
     </div>
 
@@ -580,7 +581,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySql/">MySql</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/okky/">okky</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">6</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySql/">MySql</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/okky/">okky</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">14</span></li></ul>
         </div>
     </div>
 
@@ -589,7 +590,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/MySql/" style="font-size: 13.33px;">MySql</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/okky/" style="font-size: 10px;">okky</a> <a href="/tags/python/" style="font-size: 16.67px;">python</a>
+            <a href="/tags/MySql/" style="font-size: 13.33px;">MySql</a> <a href="/tags/Node-js/" style="font-size: 16.67px;">Node.js</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/okky/" style="font-size: 10px;">okky</a> <a href="/tags/python/" style="font-size: 20px;">python</a>
         </div>
     </div>
 

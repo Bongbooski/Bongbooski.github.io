@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <meta charset="utf-8">
+    
+    <title>python 예외처리 | Booski&#39;s programming</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Exception Handling 구문 에러(Syntax Error)  문법적 에러 IDE에서는 구문에러 체크해줌 파이썬은 상대적으로 문법이 간단해서 에러 발생 비율이 낮거나 다른 도구로 제거 가능   예외(Exception)  구문 에러는 없으나 프로그램 실행 중 더 이상 진행할 수 없는 경우 예외가 발생하면 프로그램이 종료됨   NameError (정의">
+<meta name="keywords" content="python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python 예외처리">
+<meta property="og:url" content="http://bongbooski.github.io/2018/04/17/post21-python-exception-handling/index.html">
+<meta property="og:site_name" content="Booski&#39;s programming">
+<meta property="og:description" content="Exception Handling 구문 에러(Syntax Error)  문법적 에러 IDE에서는 구문에러 체크해줌 파이썬은 상대적으로 문법이 간단해서 에러 발생 비율이 낮거나 다른 도구로 제거 가능   예외(Exception)  구문 에러는 없으나 프로그램 실행 중 더 이상 진행할 수 없는 경우 예외가 발생하면 프로그램이 종료됨   NameError (정의">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-04-17T09:56:50.201Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python 예외처리">
+<meta name="twitter:description" content="Exception Handling 구문 에러(Syntax Error)  문법적 에러 IDE에서는 구문에러 체크해줌 파이썬은 상대적으로 문법이 간단해서 에러 발생 비율이 낮거나 다른 도구로 제거 가능   예외(Exception)  구문 에러는 없으나 프로그램 실행 중 더 이상 진행할 수 없는 경우 예외가 발생하면 프로그램이 종료됨   NameError (정의">
+<meta property="fb:app_id" content="965647770265499">
+    
+
+    
+        <link rel="alternate" href="/" title="Booski&#39;s programming" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+        <script type="text/javascript">
+(function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-114448314-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+    
+    
+    
+
+
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({
+        google_ad_client: "ca-pub-8051644177521790",
+        enable_page_level_ads: true
+      });
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">Booski&#39;s programming</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/profile_2016.11.15.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/profile_2016.11.15.png" />
+            <h2 id="name">Bongbooski</h2>
+            <h3 id="title">Web Developer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Daejeon, South Korea</span>
+            <a id="follow" target="_blank" href="https://github.com/bongbooski/">FOLLOW</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                30
+                <span>posts</span>
+            </div>
+            <div class="article-info-block">
+                7
+                <span>tags</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="http://github.com/bongbooski" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://www.facebook.com/byunghun.park.1" target="_blank" title="facebook" class=tooltip>
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="https://www.linkedin.com/in/booski" target="_blank" title="linkedin" class=tooltip>
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="rss" class=tooltip>
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-post21-python-exception-handling" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            python 예외처리
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/04/17/post21-python-exception-handling/">
+            <time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="Exception-Handling"><a href="#Exception-Handling" class="headerlink" title="Exception Handling"></a>Exception Handling</h1><ul>
+<li><p>구문 에러(Syntax Error)</p>
+<ul>
+<li>문법적 에러</li>
+<li>IDE에서는 구문에러 체크해줌</li>
+<li>파이썬은 상대적으로 문법이 간단해서 에러 발생 비율이 낮거나 다른 도구로 제거 가능</li>
+</ul>
+</li>
+<li><p>예외(Exception)</p>
+<ul>
+<li>구문 에러는 없으나 프로그램 실행 중 더 이상 진행할 수 없는 경우</li>
+<li>예외가 발생하면 프로그램이 종료됨</li>
+</ul>
+<ol>
+<li><p><code>NameError</code> (정의되지 않은 변수 사용)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4 + boo*3</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>ZeroDivisionError</code> (<code>0</code>으로 나누는 경우)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = 10</span><br><span class="line">b = 0</span><br><span class="line">c = a / b</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>TypeError</code> (ex: 문자열 + 수치형 자료)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;2&apos; + 2</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>IndexError</code> (참조 범위를 넘어서 인덱스 사용)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">l = [1,2]</span><br><span class="line">print l[2]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>KeyError</code> (등록되지 않은 키로 사전 검색)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;&quot;a&quot;:1, &quot;b&quot;:2&#125;</span><br><span class="line">print d[&apos;c&apos;]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>IOError</code> (존재하지 않는 파일을 열고자 할 때)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = open(&apos;aaa.txt&apos;)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+</li>
+</ul>
+<h1 id="예외-처리-방법"><a href="#예외-처리-방법" class="headerlink" title="예외 처리 방법"></a>예외 처리 방법</h1><ol>
+<li><p><code>try</code>,<code>except</code>,<code>else</code>,<code>finally</code>절 사용하기</p>
+<ul>
+<li>예외가 발생할 만한 상황을 예상하여 상황별로 전체 코드 흐름을 제어할 수 있다</li>
+<li><p><code>try</code>,<code>except</code>,<code>else</code>,<code>finally</code>절</p>
+<ul>
+<li>구조<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">  (예외 발생 가능한) 일반적인 수행문들</span><br><span class="line">except Exception:</span><br><span class="line">  예외가 발생하였을 때 수행되는 문들</span><br><span class="line">else:</span><br><span class="line">  예외가 발생하지 않았을 때 수행되는 문들</span><br><span class="line">finally:</span><br><span class="line">  예외 발생 유무와 관계없이 무조건 수행되는 문들</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p>예외 처리를 하면 예외 발생시 프로그램이 종료되지 않는다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = 0</span><br><span class="line">try:</span><br><span class="line">  print 1.0/a</span><br><span class="line">except ZeroDivisionError:</span><br><span class="line">  print &apos;zero division error!!!&apos;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>msg</code>변수: <code>ZeroDivisionError</code>를 정의한 사람이 발생될 때 주는 메시지<br>ex: float division by zero</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def division():</span><br><span class="line">  for n in range(0, 5):</span><br><span class="line">    try:</span><br><span class="line">      print 10.0 / n</span><br><span class="line">    except ZeroDivisionError, msg</span><br><span class="line">      print msg</span><br><span class="line"></span><br><span class="line">division()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>try</code>절 안에서 간접적으로 호출한 함수의 내부 예외도 처리 가능</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">  spam()</span><br><span class="line">except NameError, msg:</span><br><span class="line">  print &apos;Error -&apos;, msg</span><br></pre></td></tr></table></figure>
+<p><code>,</code>대신 <code>as</code>로도 사용가능</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 위와 동일한 예제</span><br><span class="line">try:</span><br><span class="line">  spam()</span><br><span class="line">except NameError as msg:</span><br><span class="line">  print &apos;Error -&apos;, msg</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>except</code>뒤에 예외를 명시하지 않으면 모든 예외에 대해 처리됨</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">  spam()</span><br><span class="line">  print 1.0/0.0</span><br><span class="line">except:</span><br><span class="line">  print &apos;Error&apos;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>여러 예외들 각각에 대해 <code>except</code>절로 다중처리 가능</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">b = 0.0</span><br><span class="line">name = &apos;aaa.txt&apos;</span><br><span class="line">try:</span><br><span class="line">  print 1.0 / b</span><br><span class="line">  spam()</span><br><span class="line">  f = open(name, &apos;r&apos;)</span><br><span class="line">  &apos;2&apos; + 2</span><br><span class="line">except NameError:</span><br><span class="line">  print &apos;NameError !!!&apos;</span><br><span class="line">except ZeroDivisionError:</span><br><span class="line">  print &apos;ZeroDivisionError !!!&apos;</span><br><span class="line">excpet (TypeError, IOError):</span><br><span class="line">  print &apos;TypeError or IOERror !!!&apos;</span><br><span class="line">else:</span><br><span class="line">  print &apos;No Exception&apos;</span><br><span class="line">finally</span><br><span class="line">  print &apos;Exit !!!&apos;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h1 id="같은-부류의-예외-다-잡아내기"><a href="#같은-부류의-예외-다-잡아내기" class="headerlink" title="같은 부류의 예외 다 잡아내기"></a>같은 부류의 예외 다 잡아내기</h1><ul>
+<li>예외 클래스의 상속에 의한 계층 관계를 이용하여 여러 예외들을 한꺼번에 잡을 수 있다.</li>
+<li><p>예를 들어, <code>ArithmeticError</code>의 하위 클래스로서 <code>FloatingPointError</code>, <code>OverflowError</code>, <code>ZeroDivisionError</code>가 존재하기 때문에 이들 하위 클래스 예외가 발생하면 <code>ArithmeticError</code>로 처리할 수 있다.</p>
+</li>
+<li><p>예외가 임의의 <code>except</code>에서 잡히면 다른 <code>except</code>에서는 잡히지 않는다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def dosomething():</span><br><span class="line">  a = 1/0</span><br><span class="line"></span><br><span class="line">try:</span><br><span class="line">  dosomething()</span><br><span class="line">except ZeroDivisionError:</span><br><span class="line">  print &quot;ZeroDivisionError occured&quot;</span><br><span class="line">except ArithmeticError:</span><br><span class="line">   print &quot;ArithmeticError occured&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://bongbooski.github.io/2018/04/17/post21-python-exception-handling/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/17/post21-python-exception-handling/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/04/17/post22-python-exception-raise_eng/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    python Exception Raise
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2018/04/17/post21-python-exception-handling_eng/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">python Exception Handling</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+</section>
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">recent</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/17/post22-python-exception-raise/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/17/post22-python-exception-raise/" class="title">python 예외 발생시키기</a></p>
+                            <p class="item-date"><time datetime="2018-04-17T05:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/17/post22-python-exception-raise_eng/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/17/post22-python-exception-raise_eng/" class="title">python Exception Raise</a></p>
+                            <p class="item-date"><time datetime="2018-04-17T05:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/17/post21-python-exception-handling/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling/" class="title">python 예외처리</a></p>
+                            <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/17/post21-python-exception-handling_eng/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling_eng/" class="title">python Exception Handling</a></p>
+                            <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/15/post20-python-package/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/15/post20-python-package/" class="title">python 패키지</a></p>
+                            <p class="item-date"><time datetime="2018-04-15T06:48:23.000Z" itemprop="datePublished">2018-04-15</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">13</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySql/">MySql</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/okky/">okky</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">14</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/MySql/" style="font-size: 13.33px;">MySql</a> <a href="/tags/Node-js/" style="font-size: 16.67px;">Node.js</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/okky/" style="font-size: 10px;">okky</a> <a href="/tags/python/" style="font-size: 20px;">python</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2018 Booski<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_config = function () {
+        
+            this.page.url = 'http://bongbooski.github.io/2018/04/17/post21-python-exception-handling/';
+        
+        this.page.identifier = 'post21-python-exception-handling';
+    };
+    (function() { 
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'https-bongbooski-github-io' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
