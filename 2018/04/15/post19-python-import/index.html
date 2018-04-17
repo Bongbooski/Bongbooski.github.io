@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Booski&#39;s programming">
 <meta property="og:description" content="import 모듈명 기본적인 형태 12import mymathprint mymath.area(5)  from 모듈명 import 가져올 대상  해당 모듈에 존재하는 대상을 가져옴 기존에 존재하던 이름이면 기존 객체가 상실됨 모듈 이름 없이 바로 사용 가능12from mymath import area, mypiprint area(5)    from 모듈명 i">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-04-17T09:26:27.193Z">
+<meta property="og:updated_time" content="2018-04-17T13:44:06.448Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python 모듈 import하기">
 <meta name="twitter:description" content="import 모듈명 기본적인 형태 12import mymathprint mymath.area(5)  from 모듈명 import 가져올 대상  해당 모듈에 존재하는 대상을 가져옴 기존에 존재하던 이름이면 기존 객체가 상실됨 모듈 이름 없이 바로 사용 가능12from mymath import area, mypiprint area(5)    from 모듈명 i">
@@ -265,32 +265,32 @@ ga('send', 'pageview');
             
             <h1 id="import-모듈명"><a href="#import-모듈명" class="headerlink" title="import 모듈명"></a>import 모듈명</h1><ol>
 <li><p>기본적인 형태</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import mymath</span><br><span class="line">print mymath.area(5)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> mymath</span><br><span class="line"><span class="keyword">print</span> mymath.area(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>from 모듈명 import 가져올 대상</p>
 <ul>
 <li>해당 모듈에 존재하는 대상을 가져옴</li>
 <li>기존에 존재하던 이름이면 기존 객체가 상실됨</li>
-<li>모듈 이름 없이 바로 사용 가능<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from mymath import area, mypi</span><br><span class="line">print area(5)</span><br></pre></td></tr></table></figure>
+<li>모듈 이름 없이 바로 사용 가능<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> mymath <span class="keyword">import</span> area, mypi</span><br><span class="line"><span class="keyword">print</span> area(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 <li><p>from 모듈명 import *</p>
 <ul>
-<li>해당 모듈에 존재하는 <code>__</code>로 시작되는 것들을 제외한 모든 대상을 가져옴<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from mymath import *</span><br><span class="line">print area(5)</span><br></pre></td></tr></table></figure>
+<li>해당 모듈에 존재하는 <code>__</code>로 시작되는 것들을 제외한 모든 대상을 가져옴<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> mymath <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">print</span> area(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 <li><p>import 모듈명 as 새로운 모듈 이름</p>
 <ul>
 <li>해당 모듈을 다른 이름으로 사용하고자 할 때 사용</li>
-<li>기존 모듈 이름이 너무 길거나 현재 사용중인 이름인 경우 유용<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import string as chstr</span><br><span class="line">print chstr</span><br><span class="line">print</span><br><span class="line">print chstr.punctuation</span><br></pre></td></tr></table></figure>
+<li>기존 모듈 이름이 너무 길거나 현재 사용중인 이름인 경우 유용<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> string <span class="keyword">as</span> chstr</span><br><span class="line"><span class="keyword">print</span> chstr</span><br><span class="line"><span class="keyword">print</span></span><br><span class="line"><span class="keyword">print</span> chstr.punctuation</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 <li><p>from 모듈명 import 이름 as 새로운 이름[, 이름 as 새로운 이름]</p>
 <ul>
-<li>해당 모듈 내에 정의된 이름을 새로운 이름으로 사용하고자 할 때<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">from string import replace as substitute[, upper as up]</span><br><span class="line">print substitute</span><br><span class="line">print substitute(&apos;ham chicken spam&apos;, &apos;chicke&apos;, &apos;egg&apos;)</span><br><span class="line"></span><br><span class="line">print up</span><br><span class="line">print up(&apos;abc&apos;)</span><br></pre></td></tr></table></figure>
+<li>해당 모듈 내에 정의된 이름을 새로운 이름으로 사용하고자 할 때<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> string <span class="keyword">import</span> replace <span class="keyword">as</span> substitute[, upper <span class="keyword">as</span> up]</span><br><span class="line"><span class="keyword">print</span> substitute</span><br><span class="line"><span class="keyword">print</span> substitute(<span class="string">'ham chicken spam'</span>, <span class="string">'chicke'</span>, <span class="string">'egg'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> up</span><br><span class="line"><span class="keyword">print</span> up(<span class="string">'abc'</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -338,10 +338,10 @@ ga('send', 'pageview');
 <li>현재의 모듈이 최상위 모듈로서 수행되는지, 아니면다른 모듈에 의해 <code>imort</code>되어 수행되는지를 구별하기 위해 주로 사용</li>
 <li>최상위 모듈에서 사용할 때 -&gt; <code>__main__</code></li>
 <li><p>다른 모듈에서 사용될 때 -&gt; 해당 모듈의 이름</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print __name__ # __main__ 출력</span><br><span class="line"></span><br><span class="line">import prname</span><br><span class="line">print prname.__name__ # prname출력</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> __name__ <span class="comment"># __main__ 출력</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> prname</span><br><span class="line"><span class="keyword">print</span> prname.__name__ <span class="comment"># prname출력</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>사용방법</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def add(a, b):</span><br><span class="line">  return a + b</span><br><span class="line"></span><br><span class="line">def f():</span><br><span class="line">  print &quot;Python is becoming popular.&quot;</span><br><span class="line"></span><br><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line">  print add(1, 10)</span><br><span class="line">  f()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(a, b)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> a + b</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"Python is becoming popular."</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">  <span class="keyword">print</span> add(<span class="number">1</span>, <span class="number">10</span>)</span><br><span class="line">  f()</span><br></pre></td></tr></table></figure>
 <ul>
 <li>직접 실행할 때는 <code>if</code>절 동작</li>
 <li>다른 곳에서 활용할 경우 <code>if</code>절 무시</li>
@@ -434,9 +434,9 @@ ga('send', 'pageview');
         </a>
     
     
-        <a href="/2018/04/12/post18-python-lambda/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/04/12/post18-python-lambda_eng/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">python 람다(lambda) 함수</div>
+            <div class="article-nav-title">python lambda function</div>
         </a>
     
 </nav>
@@ -507,25 +507,6 @@ ga('send', 'pageview');
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/04/17/post21-python-exception-handling/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling/" class="title">python 예외처리</a></p>
-                            <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
                             <a href="/2018/04/17/post21-python-exception-handling_eng/" class="thumbnail">
     
     
@@ -538,6 +519,25 @@ ga('send', 'pageview');
                         <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling_eng/" class="title">python Exception Handling</a></p>
+                            <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/17/post21-python-exception-handling/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling/" class="title">python 예외처리</a></p>
                             <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
                         </div>
                     </li>

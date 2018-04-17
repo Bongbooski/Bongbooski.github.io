@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Booski&#39;s programming">
 <meta property="og:description" content="the definition of lambda function new literal defining usual functions by one line usually it is used for defining one-time functions after :, only expression can follow lambda function is An object t">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-04-17T08:00:45.070Z">
+<meta property="og:updated_time" content="2018-04-17T13:42:59.760Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python lambda function">
 <meta name="twitter:description" content="the definition of lambda function new literal defining usual functions by one line usually it is used for defining one-time functions after :, only expression can follow lambda function is An object t">
@@ -269,25 +269,25 @@ ga('send', 'pageview');
 <li>after <code>:</code>, only expression can follow</li>
 <li>lambda function is An object too</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = lambda x: x + 1</span><br><span class="line">print f(1)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="keyword">lambda</span> x: x + <span class="number">1</span></span><br><span class="line"><span class="keyword">print</span> f(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 <ol>
 <li><p>Assigning variables and calling the lambda function having two parameters</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">g = lambda x,y: x + y</span><br><span class="line">print g(1,2)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">g = <span class="keyword">lambda</span> x,y: x + y</span><br><span class="line"><span class="keyword">print</span> g(<span class="number">1</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Defining the lambda function having default argument</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">g = lambda x, inc=1: x+inc</span><br><span class="line">print g(10) # default argument(inc=1) value is used</span><br><span class="line">print g(10, 5)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">g = <span class="keyword">lambda</span> x, inc=<span class="number">1</span>: x+inc</span><br><span class="line"><span class="keyword">print</span> g(<span class="number">10</span>) <span class="comment"># default argument(inc=1) value is used</span></span><br><span class="line"><span class="keyword">print</span> g(<span class="number">10</span>, <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Defining the lambda function having variable argument</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#args is returned</span><br><span class="line">vargs = lambda x, *args: args</span><br><span class="line">print vars(1,2,3,4,5)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#args is returned</span></span><br><span class="line">vargs = <span class="keyword">lambda</span> x, *args: args</span><br><span class="line"><span class="keyword">print</span> vars(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <hr>
 <h2 id="Using-lambda-functions"><a href="#Using-lambda-functions" class="headerlink" title="Using lambda functions"></a>Using lambda functions</h2><ul>
 <li><p>Using usual function</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def f1(x):</span><br><span class="line">  return x*x + 3*x - 10</span><br><span class="line"></span><br><span class="line">def f2(x):</span><br><span class="line">  return x*x*x</span><br><span class="line"></span><br><span class="line">def g(func):</span><br><span class="line">  return [func(x) for x in range(-10, 10)]</span><br><span class="line"></span><br><span class="line">print g(f1)</span><br><span class="line">print g(f2)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">(x)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> x*x + <span class="number">3</span>*x - <span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">(x)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> x*x*x</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">g</span><span class="params">(func)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> [func(x) <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">-10</span>, <span class="number">10</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> g(f1)</span><br><span class="line"><span class="keyword">print</span> g(f2)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Usiung lambda function</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def g(func):</span><br><span class="line">  return [func(x) for x in range(-10, 10)]</span><br><span class="line"></span><br><span class="line">print g(lambda x: x*x + 3*x - 10)</span><br><span class="line">print g(lambda x: x*x*x)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">g</span><span class="params">(func)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> [func(x) <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">-10</span>, <span class="number">10</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> g(<span class="keyword">lambda</span> x: x*x + <span class="number">3</span>*x - <span class="number">10</span>)</span><br><span class="line"><span class="keyword">print</span> g(<span class="keyword">lambda</span> x: x*x*x)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="Utilizing-lambda-function"><a href="#Utilizing-lambda-function" class="headerlink" title="Utilizing lambda function"></a>Utilizing lambda function</h2><ul>
@@ -297,16 +297,16 @@ ga('send', 'pageview');
 <li><p><code>map</code> built-in function</p>
 <ul>
 <li><p><code>map(function, seq)</code>: taking item by item in <code>seq</code> and running <code>function</code> with the item and returning the result as the type of <code>seq</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def f(x):</span><br><span class="line">  return x * x</span><br><span class="line">X - [1,2,3,4,5]</span><br><span class="line">Y = map(f, X)</span><br><span class="line">print Y</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(x)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> x * x</span><br><span class="line">X - [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">Y = map(f, X)</span><br><span class="line"><span class="keyword">print</span> Y</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Using <code>map</code> and lambda function - most recommended</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">X = [1,2,3,4,5]</span><br><span class="line">print map(lambda x: x * x, X)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">X = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">print</span> map(<span class="keyword">lambda</span> x: x * x, X)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 <li><p><code>filter</code> built-in function</p>
 <ul>
-<li>taking item by item in <code>seq</code> and running <code>function</code> with the item and returning the result as the type of <code>seq</code> if the result is <code>True</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print filter(lambda x: x&gt;2, [1,2,3,45])</span><br></pre></td></tr></table></figure>
+<li>taking item by item in <code>seq</code> and running <code>function</code> with the item and returning the result as the type of <code>seq</code> if the result is <code>True</code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> filter(<span class="keyword">lambda</span> x: x&gt;<span class="number">2</span>, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">45</span>])</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -319,7 +319,7 @@ ga('send', 'pageview');
 <li>the result after calling the function gets into <code>x</code></li>
 </ol>
 </li>
-<li>optionally, the 3rd parameter <code>initial</code> is used as default value of <code>x</code> at the 1st step<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print reduce(lambda x, y: x + y, [1,2,3,4,5])</span><br><span class="line">print reduce(lambda x, y: x + y, [1,2,3,4,5], 1000)</span><br></pre></td></tr></table></figure>
+<li>optionally, the 3rd parameter <code>initial</code> is used as default value of <code>x</code> at the 1st step<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> reduce(<span class="keyword">lambda</span> x, y: x + y, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>])</span><br><span class="line"><span class="keyword">print</span> reduce(<span class="keyword">lambda</span> x, y: x + y, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>], <span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -398,19 +398,19 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2018/04/12/post18-python-lambda/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2018/04/15/post19-python-import/" id="article-nav-newer" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Newer</strong>
             <div class="article-nav-title">
                 
-                    python 람다(lambda) 함수
+                    python 모듈 import하기
                 
             </div>
         </a>
     
     
-        <a href="/2018/04/11/post17_python-file,directory_eng/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/04/12/post18-python-lambda/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">python operating files</div>
+            <div class="article-nav-title">python 람다(lambda) 함수</div>
         </a>
     
 </nav>
@@ -481,25 +481,6 @@ ga('send', 'pageview');
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/04/17/post21-python-exception-handling/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling/" class="title">python 예외처리</a></p>
-                            <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
                             <a href="/2018/04/17/post21-python-exception-handling_eng/" class="thumbnail">
     
     
@@ -512,6 +493,25 @@ ga('send', 'pageview');
                         <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling_eng/" class="title">python Exception Handling</a></p>
+                            <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/17/post21-python-exception-handling/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling/" class="title">python 예외처리</a></p>
                             <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
                         </div>
                     </li>

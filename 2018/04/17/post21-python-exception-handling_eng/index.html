@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Booski&#39;s programming">
 <meta property="og:description" content="Exception Handling Syntax Error  Grammatical error IDE checks syntax error automatically Becasue python’s grammar is simpler relatively, error occur rate is smaller and it is easy to delete errors   E">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-04-17T12:07:17.499Z">
+<meta property="og:updated_time" content="2018-04-17T13:46:10.336Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python Exception Handling">
 <meta name="twitter:description" content="Exception Handling Syntax Error  Grammatical error IDE checks syntax error automatically Becasue python’s grammar is simpler relatively, error occur rate is smaller and it is easy to delete errors   E">
@@ -278,22 +278,22 @@ ga('send', 'pageview');
 </ul>
 <ol>
 <li><p><code>NameError</code> (Usiung undefined variable)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4 + boo*3</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">4</span> + boo*<span class="number">3</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><code>ZeroDivisionError</code> (Dividing by <code>0</code>)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = 10</span><br><span class="line">b = 0</span><br><span class="line">c = a / b</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10</span></span><br><span class="line">b = <span class="number">0</span></span><br><span class="line">c = a / b</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><code>TypeError</code> (ex: String + Number type)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;2&apos; + 2</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'2'</span> + <span class="number">2</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><code>IndexError</code> (Using index over the range of index)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">l = [1,2]</span><br><span class="line">print l[2]</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><code>KeyError</code> (Searching dictionary by unregisted key)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;&quot;a&quot;:1, &quot;b&quot;:2&#125;</span><br><span class="line">print d[&apos;c&apos;]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">"a"</span>:<span class="number">1</span>, <span class="string">"b"</span>:<span class="number">2</span>&#125;</span><br><span class="line"><span class="keyword">print</span> d[<span class="string">'c'</span>]</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><code>IOError</code> (Opening not existing file)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = open(&apos;aaa.txt&apos;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = open(<span class="string">'aaa.txt'</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <hr>
@@ -305,7 +305,7 @@ ga('send', 'pageview');
 <li>By expecting the situations making exceptions, we can control the whole code’s flow</li>
 <li><p><code>try</code>,<code>except</code>,<code>else</code>,<code>finally</code></p>
 <ul>
-<li>structure<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">  (possible to make errors) usual statements</span><br><span class="line">except Exception:</span><br><span class="line">  the statements working when error occurs</span><br><span class="line">else:</span><br><span class="line">  the statements working when error doesn&apos;t occur</span><br><span class="line">finally:</span><br><span class="line">  the statements working anyway no matter error</span><br></pre></td></tr></table></figure>
+<li>structure<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  (possible to make errors) usual statements</span><br><span class="line"><span class="keyword">except</span> Exception:</span><br><span class="line">  the statements working when error occurs</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">  the statements working when error doesn<span class="string">'t occur</span></span><br><span class="line"><span class="string">finally:</span></span><br><span class="line"><span class="string">  the statements working anyway no matter error</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <hr>
@@ -315,21 +315,21 @@ ga('send', 'pageview');
 </ol>
 <ul>
 <li><p>Doing exception handling, when error occurs the program doesn’t stop</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = 0</span><br><span class="line">try:</span><br><span class="line">  print 1.0/a</span><br><span class="line">except ZeroDivisionError:</span><br><span class="line">  print &apos;zero division error!!!&apos;</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">0</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="number">1.0</span>/a</span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'zero division error!!!'</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><code>msg</code>variable: the message that the person who defined <code>ZeroDivisionError</code> gives<br>ex: float division by zero</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def division():</span><br><span class="line">  for n in range(0, 5):</span><br><span class="line">    try:</span><br><span class="line">      print 10.0 / n</span><br><span class="line">    except ZeroDivisionError, msg</span><br><span class="line">      print msg</span><br><span class="line"></span><br><span class="line">division()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">division</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">5</span>):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">      <span class="keyword">print</span> <span class="number">10.0</span> / n</span><br><span class="line">    <span class="keyword">except</span> ZeroDivisionError, msg</span><br><span class="line">      <span class="keyword">print</span> msg</span><br><span class="line"></span><br><span class="line">division()</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>It can handle the error from the called function in <code>try</code>statement indirectly</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">  spam()</span><br><span class="line">except NameError, msg:</span><br><span class="line">  print &apos;Error -&apos;, msg</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  spam()</span><br><span class="line"><span class="keyword">except</span> NameError, msg:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Error -'</span>, msg</span><br></pre></td></tr></table></figure>
 <p><code>,</code> can be replaced with <code>as</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># same code with upper one</span><br><span class="line">try:</span><br><span class="line">  spam()</span><br><span class="line">except NameError as msg:</span><br><span class="line">  print &apos;Error -&apos;, msg</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># same code with upper one</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  spam()</span><br><span class="line"><span class="keyword">except</span> NameError <span class="keyword">as</span> msg:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Error -'</span>, msg</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>After <code>except</code>, not evincing any exceptions, it takes care of all exceptions</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">  spam()</span><br><span class="line">  print 1.0/0.0</span><br><span class="line">except:</span><br><span class="line">  print &apos;Error&apos;</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  spam()</span><br><span class="line">  <span class="keyword">print</span> <span class="number">1.0</span>/<span class="number">0.0</span></span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Error'</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>About many exceptions, they can be taked care by each <code>except</code>statement</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">b = 0.0</span><br><span class="line">name = &apos;aaa.txt&apos;</span><br><span class="line">try:</span><br><span class="line">  print 1.0 / b</span><br><span class="line">  spam()</span><br><span class="line">  f = open(name, &apos;r&apos;)</span><br><span class="line">  &apos;2&apos; + 2</span><br><span class="line">except NameError:</span><br><span class="line">  print &apos;NameError !!!&apos;</span><br><span class="line">except ZeroDivisionError:</span><br><span class="line">  print &apos;ZeroDivisionError !!!&apos;</span><br><span class="line">excpet (TypeError, IOError):</span><br><span class="line">  print &apos;TypeError or IOERror !!!&apos;</span><br><span class="line">else:</span><br><span class="line">  print &apos;No Exception&apos;</span><br><span class="line">finally</span><br><span class="line">  print &apos;Exit !!!&apos;</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">b = <span class="number">0.0</span></span><br><span class="line">name = <span class="string">'aaa.txt'</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="number">1.0</span> / b</span><br><span class="line">  spam()</span><br><span class="line">  f = open(name, <span class="string">'r'</span>)</span><br><span class="line">  <span class="string">'2'</span> + <span class="number">2</span></span><br><span class="line"><span class="keyword">except</span> NameError:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'NameError !!!'</span></span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'ZeroDivisionError !!!'</span></span><br><span class="line">excpet (TypeError, IOError):</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'TypeError or IOERror !!!'</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'No Exception'</span></span><br><span class="line"><span class="keyword">finally</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Exit !!!'</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <hr>
@@ -338,7 +338,7 @@ ga('send', 'pageview');
 <li><p>For example, there are <code>FloatingPointError</code>, <code>OverflowError</code>, <code>ZeroDivisionError</code> as sub-class of <code>ArithmeticError</code> so, about sub-class exceptions, <code>ArithmeticError</code> can take care of them</p>
 </li>
 <li><p>When an exception is catched by specific <code>except</code>, that one is not catched in other <code>except</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def dosomething():</span><br><span class="line">  a = 1/0</span><br><span class="line"></span><br><span class="line">try:</span><br><span class="line">  dosomething()</span><br><span class="line">except ZeroDivisionError:</span><br><span class="line">  print &quot;ZeroDivisionError occured&quot;</span><br><span class="line">except ArithmeticError:</span><br><span class="line">   print &quot;ArithmeticError occured&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dosomething</span><span class="params">()</span>:</span></span><br><span class="line">  a = <span class="number">1</span>/<span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  dosomething()</span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">"ZeroDivisionError occured"</span></span><br><span class="line"><span class="keyword">except</span> ArithmeticError:</span><br><span class="line">   <span class="keyword">print</span> <span class="string">"ArithmeticError occured"</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
@@ -415,19 +415,19 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2018/04/17/post21-python-exception-handling/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2018/04/17/post22-python-exception-raise_eng/" id="article-nav-newer" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Newer</strong>
             <div class="article-nav-title">
                 
-                    python 예외처리
+                    python Exception Raise
                 
             </div>
         </a>
     
     
-        <a href="/2018/04/15/post20-python-package/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/04/17/post21-python-exception-handling/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">python 패키지</div>
+            <div class="article-nav-title">python 예외처리</div>
         </a>
     
 </nav>
@@ -498,25 +498,6 @@ ga('send', 'pageview');
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/04/17/post21-python-exception-handling/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling/" class="title">python 예외처리</a></p>
-                            <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
                             <a href="/2018/04/17/post21-python-exception-handling_eng/" class="thumbnail">
     
     
@@ -529,6 +510,25 @@ ga('send', 'pageview');
                         <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling_eng/" class="title">python Exception Handling</a></p>
+                            <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/17/post21-python-exception-handling/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling/" class="title">python 예외처리</a></p>
                             <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
                         </div>
                     </li>

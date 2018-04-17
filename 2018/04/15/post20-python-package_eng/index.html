@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Booski&#39;s programming">
 <meta property="og:description" content="Package Structure gathering many modules in one directory physically Top directory’s name is the package’s name Sub directories under the Top directory become sub-package of the top package Module = f">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-04-17T09:46:35.835Z">
+<meta property="og:updated_time" content="2018-04-17T13:44:32.768Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python Package">
 <meta name="twitter:description" content="Package Structure gathering many modules in one directory physically Top directory’s name is the package’s name Sub directories under the Top directory become sub-package of the top package Module = f">
@@ -277,13 +277,13 @@ ga('send', 'pageview');
 <li>For sub-packes, this file is requried(if not, that will be usual folder)</li>
 </ul>
 <hr>
-<h2 id="Doing-import"><a href="#Doing-import" class="headerlink" title="Doing import"></a>Doing import</h2>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import Speech</span><br></pre></td></tr></table></figure>
+<h2 id="Doing-import"><a href="#Doing-import" class="headerlink" title="Doing import"></a>Doing import</h2>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Speech</span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>Speech</code>directory should be one of the directories of <code>sys.path</code>(or <code>PYTHONPATH</code> environment variable)</li>
-<li>Let’s say <code>Speech/Recognition/HMM.py</code> looks like this<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def train():</span><br><span class="line">  print &quot;Train&quot;</span><br><span class="line">  pass</span><br><span class="line"></span><br><span class="line">def loadModel():</span><br><span class="line">  print &quot;LoadModel&quot;</span><br><span class="line">  pass</span><br><span class="line"></span><br><span class="line">def saveModel():</span><br><span class="line">  print &quot;SaveModel&quot;</span><br><span class="line">  pass</span><br></pre></td></tr></table></figure>
+<li>Let’s say <code>Speech/Recognition/HMM.py</code> looks like this<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">train</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"Train"</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">loadModel</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"LoadModel"</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">saveModel</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"SaveModel"</span></span><br><span class="line">  <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="How-to-use-specific-function"><a href="#How-to-use-specific-function" class="headerlink" title="How to use specific function"></a>How to use specific function</h3>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"># can&apos;t use. from package&apos;s name, we need dot(.) for calling the module or function</span><br><span class="line">import Speech</span><br><span class="line">Speech.Recognition.HMM.train()</span><br><span class="line"></span><br><span class="line"># Proper way</span><br><span class="line">import Speech.Recognition.HMM</span><br><span class="line">Speech.Recognition.HMM.train()</span><br><span class="line"></span><br><span class="line">from Speech.Recognition import HMM</span><br><span class="line">HMM.train()</span><br><span class="line"></span><br><span class="line">from Speech.Recognition.HMM import train</span><br><span class="line">train()</span><br><span class="line"></span><br><span class="line"># Taking everything from the module. It can be used without the module&apos;s name</span><br><span class="line">from Speech.Recognition.HMM import *</span><br><span class="line">train()</span><br><span class="line">loadModel()</span><br><span class="line">saveModel()</span><br></pre></td></tr></table></figure>
+<h3 id="How-to-use-specific-function"><a href="#How-to-use-specific-function" class="headerlink" title="How to use specific function"></a>How to use specific function</h3>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># can't use. from package's name, we need dot(.) for calling the module or function</span></span><br><span class="line"><span class="keyword">import</span> Speech</span><br><span class="line">Speech.Recognition.HMM.train()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Proper way</span></span><br><span class="line"><span class="keyword">import</span> Speech.Recognition.HMM</span><br><span class="line">Speech.Recognition.HMM.train()</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> Speech.Recognition <span class="keyword">import</span> HMM</span><br><span class="line">HMM.train()</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> Speech.Recognition.HMM <span class="keyword">import</span> train</span><br><span class="line">train()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Taking everything from the module. It can be used without the module's name</span></span><br><span class="line"><span class="keyword">from</span> Speech.Recognition.HMM <span class="keyword">import</span> *</span><br><span class="line">train()</span><br><span class="line">loadModel()</span><br><span class="line">saveModel()</span><br></pre></td></tr></table></figure>
 
         
         </div>
@@ -441,25 +441,6 @@ ga('send', 'pageview');
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/04/17/post21-python-exception-handling/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling/" class="title">python 예외처리</a></p>
-                            <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
                             <a href="/2018/04/17/post21-python-exception-handling_eng/" class="thumbnail">
     
     
@@ -472,6 +453,25 @@ ga('send', 'pageview');
                         <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling_eng/" class="title">python Exception Handling</a></p>
+                            <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/17/post21-python-exception-handling/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling/" class="title">python 예외처리</a></p>
                             <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
                         </div>
                     </li>

@@ -5,18 +5,18 @@
     
     <title>python operating files | Booski&#39;s programming</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Operating filesOpening file listUsing osmodule123456import osprint os.listdir(&amp;apos;.&amp;apos;) # file list of present directoryprintprint os.listdir(&amp;apos;../&amp;apos;) # file list of parent directory  Rec">
+    <meta name="description" content="Operating filesOpening file listUsing osmodule123456import osprint os.listdir(&apos;.&apos;) # file list of present directoryprintprint os.listdir(&apos;../&apos;) # file list of parent directory  Recognizing file’s cate">
 <meta name="keywords" content="python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python operating files">
 <meta property="og:url" content="http://bongbooski.github.io/2018/04/11/post17_python-file,directory_eng/index.html">
 <meta property="og:site_name" content="Booski&#39;s programming">
-<meta property="og:description" content="Operating filesOpening file listUsing osmodule123456import osprint os.listdir(&amp;apos;.&amp;apos;) # file list of present directoryprintprint os.listdir(&amp;apos;../&amp;apos;) # file list of parent directory  Rec">
+<meta property="og:description" content="Operating filesOpening file listUsing osmodule123456import osprint os.listdir(&apos;.&apos;) # file list of present directoryprintprint os.listdir(&apos;../&apos;) # file list of parent directory  Recognizing file’s cate">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-04-17T07:33:44.727Z">
+<meta property="og:updated_time" content="2018-04-17T13:30:28.259Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python operating files">
-<meta name="twitter:description" content="Operating filesOpening file listUsing osmodule123456import osprint os.listdir(&amp;apos;.&amp;apos;) # file list of present directoryprintprint os.listdir(&amp;apos;../&amp;apos;) # file list of parent directory  Rec">
+<meta name="twitter:description" content="Operating filesOpening file listUsing osmodule123456import osprint os.listdir(&apos;.&apos;) # file list of present directoryprintprint os.listdir(&apos;../&apos;) # file list of parent directory  Recognizing file’s cate">
 <meta property="fb:app_id" content="965647770265499">
     
 
@@ -263,10 +263,10 @@ ga('send', 'pageview');
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h1 id="Operating-files"><a href="#Operating-files" class="headerlink" title="Operating files"></a>Operating files</h1><h2 id="Opening-file-list"><a href="#Opening-file-list" class="headerlink" title="Opening file list"></a>Opening file list</h2><p>Using <code>os</code>module<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line"></span><br><span class="line">print os.listdir(&apos;.&apos;) # file list of present directory</span><br><span class="line">print</span><br><span class="line"></span><br><span class="line">print os.listdir(&apos;../&apos;) # file list of parent directory</span><br></pre></td></tr></table></figure></p>
+            <h1 id="Operating-files"><a href="#Operating-files" class="headerlink" title="Operating files"></a>Operating files</h1><h2 id="Opening-file-list"><a href="#Opening-file-list" class="headerlink" title="Opening file list"></a>Opening file list</h2><p>Using <code>os</code>module<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> os.listdir(<span class="string">'.'</span>) <span class="comment"># file list of present directory</span></span><br><span class="line"><span class="keyword">print</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> os.listdir(<span class="string">'../'</span>) <span class="comment"># file list of parent directory</span></span><br></pre></td></tr></table></figure></p>
 <hr>
 <h2 id="Recognizing-file’s-category"><a href="#Recognizing-file’s-category" class="headerlink" title="Recognizing file’s category"></a>Recognizing file’s category</h2><ul>
-<li><code>os.path</code>module recognizes and returns <code>True</code> or <code>False</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">def filetype(fpath):</span><br><span class="line">  print fpath, &quot;:&quot;,</span><br><span class="line">  if os.path.isfile(fpath):</span><br><span class="line">    print &apos;Regular file&apos;</span><br><span class="line">  if os.path.isdir(fpath):</span><br><span class="line">    print &apos;Directory&apos;</span><br><span class="line">  if os.path.islink(fpath):</span><br><span class="line">    print &apos;Symbolic link&apos;</span><br><span class="line"></span><br><span class="line">flist = os.listdir(&apos;.&apos;)</span><br><span class="line">for fname in flist:</span><br><span class="line">  filetype(fname)</span><br></pre></td></tr></table></figure>
+<li><code>os.path</code>module recognizes and returns <code>True</code> or <code>False</code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">filetype</span><span class="params">(fpath)</span>:</span></span><br><span class="line">  <span class="keyword">print</span> fpath, <span class="string">":"</span>,</span><br><span class="line">  <span class="keyword">if</span> os.path.isfile(fpath):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'Regular file'</span></span><br><span class="line">  <span class="keyword">if</span> os.path.isdir(fpath):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'Directory'</span></span><br><span class="line">  <span class="keyword">if</span> os.path.islink(fpath):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'Symbolic link'</span></span><br><span class="line"></span><br><span class="line">flist = os.listdir(<span class="string">'.'</span>)</span><br><span class="line"><span class="keyword">for</span> fname <span class="keyword">in</span> flist:</span><br><span class="line">  filetype(fname)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <hr>
@@ -284,13 +284,13 @@ ga('send', 'pageview');
 </ul>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">def fileaccess(fpath):</span><br><span class="line">  print fpath, &apos;:&apos;,</span><br><span class="line">  if os.access(fpath, os.F_OK):</span><br><span class="line">    print &apos;Exists&apos;,</span><br><span class="line">  else:</span><br><span class="line">    return</span><br><span class="line">  if os.access(fpath, os.R_OK):</span><br><span class="line">    print &apos;R&apos;,</span><br><span class="line">  if os.access(fpath, os.W_OK):</span><br><span class="line">    print &apos;W&apos;,</span><br><span class="line">  if os.access(fpath, os.X_OK):</span><br><span class="line">    print &apos;X&apos;,</span><br><span class="line">  print</span><br><span class="line"></span><br><span class="line">flist = os.listdir(&apos;.&apos;)</span><br><span class="line">for fname in flist:</span><br><span class="line">  fileaccess(fname)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fileaccess</span><span class="params">(fpath)</span>:</span></span><br><span class="line">  <span class="keyword">print</span> fpath, <span class="string">':'</span>,</span><br><span class="line">  <span class="keyword">if</span> os.access(fpath, os.F_OK):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'Exists'</span>,</span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">  <span class="keyword">if</span> os.access(fpath, os.R_OK):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'R'</span>,</span><br><span class="line">  <span class="keyword">if</span> os.access(fpath, os.W_OK):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'W'</span>,</span><br><span class="line">  <span class="keyword">if</span> os.access(fpath, os.X_OK):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'X'</span>,</span><br><span class="line">  <span class="keyword">print</span></span><br><span class="line"></span><br><span class="line">flist = os.listdir(<span class="string">'.'</span>)</span><br><span class="line"><span class="keyword">for</span> fname <span class="keyword">in</span> flist:</span><br><span class="line">  fileaccess(fname)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Chagning the Permission for the file</p>
 <ul>
 <li><code>os.chmod(filepath, mode)</code></li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">os.chmod(&apos;sample.txt&apos;, 0777)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.chmod(<span class="string">'sample.txt'</span>, <span class="number">0777</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <hr>
@@ -299,12 +299,12 @@ ga('send', 'pageview');
 <ul>
 <li><code>os.rename(old_filepath, new_filepath)</code></li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">os.rename(&apos;t.txt&apos;, &apos;t1.txt&apos;)</span><br><span class="line"></span><br><span class="line">print os.access(&apos;t.txt&apos;, os.F_OK) # checking if the file exists</span><br><span class="line">print os.access(&apos;t1.txt&apos;, os.F_OK)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.rename(<span class="string">'t.txt'</span>, <span class="string">'t1.txt'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> os.access(<span class="string">'t.txt'</span>, os.F_OK) <span class="comment"># checking if the file exists</span></span><br><span class="line"><span class="keyword">print</span> os.access(<span class="string">'t1.txt'</span>, os.F_OK)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Moving the file</p>
 <ul>
 <li><p><code>os.rename(oldfilepath, new_filepath)</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">os.rename(&apos;t.txt&apos;, &apos;example/t1.txt&apos;)</span><br><span class="line"></span><br><span class="line"># checking if the file exists</span><br><span class="line">print os.access(&apos;example/t1.txt&apos;, os.F_OK)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.rename(<span class="string">'t.txt'</span>, <span class="string">'example/t1.txt'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># checking if the file exists</span></span><br><span class="line"><span class="keyword">print</span> os.access(<span class="string">'example/t1.txt'</span>, os.F_OK)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -313,7 +313,7 @@ ga('send', 'pageview');
 <li><code>shutil</code>module is used</li>
 <li><code>shutil.copyfile(src_filepath, dest_filepath)</code></li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">import shutil</span><br><span class="line">shutil.copyfile(&apos;sample.txt&apos;, &apos;sample_new.txt&apos;)</span><br><span class="line">print os.access(&apos;sample_new.txt&apos;, os.F_OK)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> shutil</span><br><span class="line">shutil.copyfile(<span class="string">'sample.txt'</span>, <span class="string">'sample_new.txt'</span>)</span><br><span class="line"><span class="keyword">print</span> os.access(<span class="string">'sample_new.txt'</span>, os.F_OK)</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <hr>
@@ -321,7 +321,7 @@ ga('send', 'pageview');
 <li><p>Changing relative path to absolute path</p>
 <ul>
 <li><code>os.path.abspath</code> - relative path<ul>
-<li>no matter the existance of the file, it changes the path to absolute path<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">print os.path.abspath(&apos;o.txt&apos;)</span><br></pre></td></tr></table></figure>
+<li>no matter the existance of the file, it changes the path to absolute path<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">print</span> os.path.abspath(<span class="string">'o.txt'</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -336,16 +336,16 @@ ga('send', 'pageview');
 <hr>
 <h2 id="Dividing-path-name"><a href="#Dividing-path-name" class="headerlink" title="Dividing path name"></a>Dividing path name</h2><ol>
 <li><p>Dividing path and file’s name</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f = &apos;/Users/booski/git/python/t.txt&apos;</span><br><span class="line"></span><br><span class="line">print os.path.basename(f) # extracting only the file&apos;s name</span><br><span class="line">print os.path.dirname(f) # extracting the directory&apos;s name</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="string">'/Users/booski/git/python/t.txt'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> os.path.basename(f) <span class="comment"># extracting only the file's name</span></span><br><span class="line"><span class="keyword">print</span> os.path.dirname(f) <span class="comment"># extracting the directory's name</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Dividing path and file’s name by one line - <code>basename</code> and <code>dirname</code> are made in a tuple</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print os.path.split(f)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> os.path.split(f)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Dividing drive’s name and file path in MS windows</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print os.path.splitdrive(f)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> os.path.splitdrive(f)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Dividing extension - <code>path</code> and <code>extension</code> are made in a tuple</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print os.path.splitext(f)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> os.path.splitext(f)</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 
@@ -422,19 +422,19 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2018/04/12/post18-python-lambda_eng/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2018/04/11/post17_python-file,directory/" id="article-nav-newer" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Newer</strong>
             <div class="article-nav-title">
                 
-                    python lambda function
+                    python 파일 다루기
                 
             </div>
         </a>
     
     
-        <a href="/2018/04/11/post17_python-file,directory/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/04/09/post16_python_fileIO_eng/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">python 파일 다루기</div>
+            <div class="article-nav-title">python File Input&amp;Output</div>
         </a>
     
 </nav>
@@ -505,25 +505,6 @@ ga('send', 'pageview');
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/04/17/post21-python-exception-handling/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling/" class="title">python 예외처리</a></p>
-                            <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
                             <a href="/2018/04/17/post21-python-exception-handling_eng/" class="thumbnail">
     
     
@@ -536,6 +517,25 @@ ga('send', 'pageview');
                         <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling_eng/" class="title">python Exception Handling</a></p>
+                            <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/17/post21-python-exception-handling/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling/" class="title">python 예외처리</a></p>
                             <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
                         </div>
                     </li>

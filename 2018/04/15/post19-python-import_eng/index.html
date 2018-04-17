@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Booski&#39;s programming">
 <meta property="og:description" content="import module’s name Basic form 12import mymathprint mymath.area(5)  from module’s name import wanted object  taking the wanted object from the module original object is lost if the name is using it c">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-04-17T09:30:57.002Z">
+<meta property="og:updated_time" content="2018-04-17T13:44:07.242Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python module importing">
 <meta name="twitter:description" content="import module’s name Basic form 12import mymathprint mymath.area(5)  from module’s name import wanted object  taking the wanted object from the module original object is lost if the name is using it c">
@@ -265,32 +265,32 @@ ga('send', 'pageview');
             
             <h1 id="import-module’s-name"><a href="#import-module’s-name" class="headerlink" title="import module’s name"></a>import module’s name</h1><ol>
 <li><p>Basic form</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import mymath</span><br><span class="line">print mymath.area(5)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> mymath</span><br><span class="line"><span class="keyword">print</span> mymath.area(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>from module’s name import wanted object</p>
 <ul>
 <li>taking the wanted object from the module</li>
 <li>original object is lost if the name is using</li>
-<li>it can be used without the module’s name<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from mymath import area, mypi</span><br><span class="line">print area(5)</span><br></pre></td></tr></table></figure>
+<li>it can be used without the module’s name<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> mymath <span class="keyword">import</span> area, mypi</span><br><span class="line"><span class="keyword">print</span> area(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 <li><p>from module’s name import *</p>
 <ul>
-<li>taking everything from the module without objects starting <code>__</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from mymath import *</span><br><span class="line">print area(5)</span><br></pre></td></tr></table></figure>
+<li>taking everything from the module without objects starting <code>__</code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> mymath <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">print</span> area(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 <li><p>import module’s name as another module name</p>
 <ul>
 <li>another name is used for calling the module</li>
-<li>It is recommended when the original name is too long or already used<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import string as chstr</span><br><span class="line">print chstr</span><br><span class="line">print</span><br><span class="line">print chstr.punctuation</span><br></pre></td></tr></table></figure>
+<li>It is recommended when the original name is too long or already used<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> string <span class="keyword">as</span> chstr</span><br><span class="line"><span class="keyword">print</span> chstr</span><br><span class="line"><span class="keyword">print</span></span><br><span class="line"><span class="keyword">print</span> chstr.punctuation</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 <li><p>from module’s name import original name as another name[, name2 as another name2]</p>
 <ul>
-<li>another name is used for calling the module<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">from string import replace as substitute[, upper as up]</span><br><span class="line">print substitute</span><br><span class="line">print substitute(&apos;ham chicken spam&apos;, &apos;chicke&apos;, &apos;egg&apos;)</span><br><span class="line"></span><br><span class="line">print up</span><br><span class="line">print up(&apos;abc&apos;)</span><br></pre></td></tr></table></figure>
+<li>another name is used for calling the module<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> string <span class="keyword">import</span> replace <span class="keyword">as</span> substitute[, upper <span class="keyword">as</span> up]</span><br><span class="line"><span class="keyword">print</span> substitute</span><br><span class="line"><span class="keyword">print</span> substitute(<span class="string">'ham chicken spam'</span>, <span class="string">'chicke'</span>, <span class="string">'egg'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> up</span><br><span class="line"><span class="keyword">print</span> up(<span class="string">'abc'</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -338,10 +338,10 @@ ga('send', 'pageview');
 <li>It is usually used for knowing if this module is used as the root module or in other module by <code>import</code></li>
 <li>Being used as the root module -&gt; <code>__main__</code></li>
 <li><p>Being used in other module -&gt; that module’s name</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print __name__ # __main__ print</span><br><span class="line"></span><br><span class="line">import prname</span><br><span class="line">print prname.__name__ # prname print</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> __name__ <span class="comment"># __main__ print</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> prname</span><br><span class="line"><span class="keyword">print</span> prname.__name__ <span class="comment"># prname print</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>How to use</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def add(a, b):</span><br><span class="line">  return a + b</span><br><span class="line"></span><br><span class="line">def f():</span><br><span class="line">  print &quot;Python is becoming popular.&quot;</span><br><span class="line"></span><br><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line">  print add(1, 10)</span><br><span class="line">  f()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(a, b)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> a + b</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"Python is becoming popular."</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">  <span class="keyword">print</span> add(<span class="number">1</span>, <span class="number">10</span>)</span><br><span class="line">  f()</span><br></pre></td></tr></table></figure>
 <ul>
 <li>Direct executing runs <code>if</code> statement</li>
 <li>Being used in other module ignores <code>if</code> statement</li>
@@ -507,25 +507,6 @@ ga('send', 'pageview');
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/04/17/post21-python-exception-handling/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling/" class="title">python 예외처리</a></p>
-                            <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
                             <a href="/2018/04/17/post21-python-exception-handling_eng/" class="thumbnail">
     
     
@@ -538,6 +519,25 @@ ga('send', 'pageview');
                         <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling_eng/" class="title">python Exception Handling</a></p>
+                            <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/17/post21-python-exception-handling/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling/" class="title">python 예외처리</a></p>
                             <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
                         </div>
                     </li>

@@ -262,7 +262,7 @@ ga('send', 'pageview');
             <h1 id="Exception-raise"><a href="#Exception-raise" class="headerlink" title="Exception raise"></a>Exception raise</h1><h2 id="raise로-예외-발생하기"><a href="#raise로-예외-발생하기" class="headerlink" title="raise로 예외 발생하기"></a><code>raise</code>로 예외 발생하기</h2><ul>
 <li>예외를 특정 상황 조건에서 <code>raise</code>키워드를 통해 발생시킬 수 있다.</li>
 <li><p>아래 예는 시퀀스 형 클래스를 설계할 때 인덱싱을 구현하는 <code>__getitem__</code>메소드에서 인덱스가 범위를 넘을 때 <code>IndexError</code>를 발생시킨다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class SquareSeq:</span><br><span class="line">  def __init__(self, n):</span><br><span class="line">    self.n = n</span><br><span class="line">  def __getitem__(self,k):</span><br><span class="line">    if k &gt;= self.n or k &lt; 0:</span><br><span class="line">      raise IndexError # 인덱스 범위를 벗어나나면 IndexError발생</span><br><span class="line">    return k * k</span><br><span class="line">  def __len_(self):</span><br><span class="line">    return self.n</span><br><span class="line"></span><br><span class="line">s = SquareSeq(10)</span><br><span class="line">print s[2], s[4]</span><br><span class="line">for x in s: # IndexError가 발생하는 시점까지 반복</span><br><span class="line">   print x,</span><br><span class="line">print s[20] # 인덱스 범위를 넘음</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SquareSeq</span>:</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, n)</span>:</span></span><br><span class="line">    self.n = n</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span><span class="params">(self,k)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> k &gt;= self.n <span class="keyword">or</span> k &lt; <span class="number">0</span>:</span><br><span class="line">      <span class="keyword">raise</span> IndexError <span class="comment"># 인덱스 범위를 벗어나나면 IndexError발생</span></span><br><span class="line">    <span class="keyword">return</span> k * k</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__len_</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> self.n</span><br><span class="line"></span><br><span class="line">s = SquareSeq(<span class="number">10</span>)</span><br><span class="line"><span class="keyword">print</span> s[<span class="number">2</span>], s[<span class="number">4</span>]</span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> s: <span class="comment"># IndexError가 발생하는 시점까지 반복</span></span><br><span class="line">   <span class="keyword">print</span> x,</span><br><span class="line"><span class="keyword">print</span> s[<span class="number">20</span>] <span class="comment"># 인덱스 범위를 넘음</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <hr>
@@ -277,16 +277,16 @@ ga('send', 'pageview');
 </ul>
 </li>
 <li><p>아래 예에서 <code>except Big</code>이 잡는 예외는 <code>Big</code>과 <code>Small</code>이다<br>-&gt; <code>Small</code>은 <code>Big</code>의 하위 클래스 이기 때문</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class Big(Exception):</span><br><span class="line">  pass</span><br><span class="line"></span><br><span class="line">class Small(Big):</span><br><span class="line">  pass</span><br><span class="line"></span><br><span class="line">def dosomething1():</span><br><span class="line">  x = Big()</span><br><span class="line">  raise x # x는 예외객체이므로 raise가능</span><br><span class="line"></span><br><span class="line">def dosomething2():</span><br><span class="line">  raise Small()</span><br><span class="line"></span><br><span class="line">for f in (dosomething1, dosomething2):</span><br><span class="line">  try:</span><br><span class="line">    f()</span><br><span class="line">  except Big:</span><br><span class="line">    print &quot;Exception occurs!&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Big</span><span class="params">(Exception)</span>:</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Small</span><span class="params">(Big)</span>:</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dosomething1</span><span class="params">()</span>:</span></span><br><span class="line">  x = Big()</span><br><span class="line">  <span class="keyword">raise</span> x <span class="comment"># x는 예외객체이므로 raise가능</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dosomething2</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">raise</span> Small()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> (dosomething1, dosomething2):</span><br><span class="line">  <span class="keyword">try</span>:</span><br><span class="line">    f()</span><br><span class="line">  <span class="keyword">except</span> Big:</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"Exception occurs!"</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <hr>
 <h2 id="예외값-전달하기"><a href="#예외값-전달하기" class="headerlink" title="예외값 전달하기"></a>예외값 전달하기</h2><ul>
 <li><p><code>raise</code>키워드 뒤에 예외와 함께, 추가 메시지를 함께 던질 수 있다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def f():</span><br><span class="line">  raise Exception, &apos;message!!!&apos;</span><br><span class="line"></span><br><span class="line">try:</span><br><span class="line">  f()</span><br><span class="line">except Exception, a:</span><br><span class="line">  print a</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">raise</span> Exception, <span class="string">'message!!!'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  f()</span><br><span class="line"><span class="keyword">except</span> Exception, a:</span><br><span class="line">  <span class="keyword">print</span> a</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>생성자 안에 넣어준 에러 메시지는 <code>except</code>키워드 사용시에 두 번째 인자로 해당 메시지를 받을 수 있다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = 10</span><br><span class="line">b = 0</span><br><span class="line">try:</span><br><span class="line">  if b == 0:</span><br><span class="line">    raise ArithmeticError(&apos;0으로 나누고 있습니다.&apos;)</span><br><span class="line">    a/b</span><br><span class="line">except ArithmeticError, v:</span><br><span class="line">  print v</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10</span></span><br><span class="line">b = <span class="number">0</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  <span class="keyword">if</span> b == <span class="number">0</span>:</span><br><span class="line">    <span class="keyword">raise</span> ArithmeticError(<span class="string">'0으로 나누고 있습니다.'</span>)</span><br><span class="line">    a/b</span><br><span class="line"><span class="keyword">except</span> ArithmeticError, v:</span><br><span class="line">  <span class="keyword">print</span> v</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
@@ -405,11 +405,11 @@ ga('send', 'pageview');
             <h1 id="Exception-raise"><a href="#Exception-raise" class="headerlink" title="Exception raise"></a>Exception raise</h1><h2 id="Occuring-exception-by-raise"><a href="#Occuring-exception-by-raise" class="headerlink" title="Occuring exception by raise"></a>Occuring exception by <code>raise</code></h2><ul>
 <li><code>raise</code>keyword can make an exception in specific situation</li>
 <li><p><code>IndexError</code> occurs when <code>__getitem__</code>method(which implements indexing when sequance type class is made) goes out of the index range</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class SquareSeq:</span><br><span class="line">  def __init__(self, n):</span><br><span class="line">    self.n = n</span><br><span class="line">  def __getitem__(self,k):</span><br><span class="line">    if k &gt;= self.n or k &lt; 0:</span><br><span class="line">      raise IndexError # out of index range, IndexError occurs</span><br><span class="line">    return k * k</span><br><span class="line">  def __len_(self):</span><br><span class="line">    return self.n</span><br><span class="line"></span><br><span class="line">s = SquareSeq(10)</span><br><span class="line">print s[2], s[4]</span><br><span class="line">for x in s: # repeating until IndexError occurs</span><br><span class="line">   print x,</span><br><span class="line">print s[20] # out of the index range</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SquareSeq</span>:</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, n)</span>:</span></span><br><span class="line">    self.n = n</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span><span class="params">(self,k)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> k &gt;= self.n <span class="keyword">or</span> k &lt; <span class="number">0</span>:</span><br><span class="line">      <span class="keyword">raise</span> IndexError <span class="comment"># out of index range, IndexError occurs</span></span><br><span class="line">    <span class="keyword">return</span> k * k</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__len_</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> self.n</span><br><span class="line"></span><br><span class="line">s = SquareSeq(<span class="number">10</span>)</span><br><span class="line"><span class="keyword">print</span> s[<span class="number">2</span>], s[<span class="number">4</span>]</span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> s: <span class="comment"># repeating until IndexError occurs</span></span><br><span class="line">   <span class="keyword">print</span> x,</span><br><span class="line"><span class="keyword">print</span> s[<span class="number">20</span>] <span class="comment"># out of the index range</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <hr>
-<h2 id="Customized-exception-class사용자-정의-예외-클래스"><a href="#Customized-exception-class사용자-정의-예외-클래스" class="headerlink" title="Customized exception class사용자 정의 예외 클래스"></a>Customized exception class사용자 정의 예외 클래스</h2><ul>
+<h2 id="Customized-exception-class"><a href="#Customized-exception-class" class="headerlink" title="Customized exception class"></a>Customized exception class</h2><ul>
 <li>Generally It is implemented by extending <code>Exception</code>class<br>(Other exceptions are unusual)</li>
 <li>How to raise the exception<ul>
 <li>Same to built-in exception. Using <code>raise [class instance]</code></li>
@@ -420,16 +420,16 @@ ga('send', 'pageview');
 </ul>
 </li>
 <li><p>In the example below, <code>except Big</code> catches <code>Big</code>and <code>Small</code> exception<br>-&gt; Because <code>Small</code>is <code>Big</code>‘s sub-class’</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class Big(Exception):</span><br><span class="line">  pass</span><br><span class="line"></span><br><span class="line">class Small(Big):</span><br><span class="line">  pass</span><br><span class="line"></span><br><span class="line">def dosomething1():</span><br><span class="line">  x = Big()</span><br><span class="line">  raise x # x is exception object, it can use raise</span><br><span class="line"></span><br><span class="line">def dosomething2():</span><br><span class="line">  raise Small()</span><br><span class="line"></span><br><span class="line">for f in (dosomething1, dosomething2):</span><br><span class="line">  try:</span><br><span class="line">    f()</span><br><span class="line">  except Big:</span><br><span class="line">    print &quot;Exception occurs!&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Big</span><span class="params">(Exception)</span>:</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Small</span><span class="params">(Big)</span>:</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dosomething1</span><span class="params">()</span>:</span></span><br><span class="line">  x = Big()</span><br><span class="line">  <span class="keyword">raise</span> x <span class="comment"># x is exception object, it can use raise</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dosomething2</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">raise</span> Small()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> (dosomething1, dosomething2):</span><br><span class="line">  <span class="keyword">try</span>:</span><br><span class="line">    f()</span><br><span class="line">  <span class="keyword">except</span> Big:</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"Exception occurs!"</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <hr>
 <h2 id="Passing-exception"><a href="#Passing-exception" class="headerlink" title="Passing exception"></a>Passing exception</h2><ul>
 <li><p>After <code>raise</code>keyword, with exception, additional message can follow</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def f():</span><br><span class="line">  raise Exception, &apos;message!!!&apos;</span><br><span class="line"></span><br><span class="line">try:</span><br><span class="line">  f()</span><br><span class="line">except Exception, a:</span><br><span class="line">  print a</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">raise</span> Exception, <span class="string">'message!!!'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  f()</span><br><span class="line"><span class="keyword">except</span> Exception, a:</span><br><span class="line">  <span class="keyword">print</span> a</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>When <code>except</code> keyword is used, exception message in initializer can be taken as 2nd parameter.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = 10</span><br><span class="line">b = 0</span><br><span class="line">try:</span><br><span class="line">  if b == 0:</span><br><span class="line">    raise ArithmeticError(&apos;you are dividing by 0&apos;)</span><br><span class="line">    a/b</span><br><span class="line">except ArithmeticError, v:</span><br><span class="line">  print v</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10</span></span><br><span class="line">b = <span class="number">0</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  <span class="keyword">if</span> b == <span class="number">0</span>:</span><br><span class="line">    <span class="keyword">raise</span> ArithmeticError(<span class="string">'you are dividing by 0'</span>)</span><br><span class="line">    a/b</span><br><span class="line"><span class="keyword">except</span> ArithmeticError, v:</span><br><span class="line">  <span class="keyword">print</span> v</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
@@ -507,197 +507,6 @@ ga('send', 'pageview');
 
 
 
-    <article id="post-post21-python-exception-handling" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/04/17/post21-python-exception-handling/">python 예외처리</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/04/17/post21-python-exception-handling/">
-            <time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/python/">python</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h1 id="Exception-Handling"><a href="#Exception-Handling" class="headerlink" title="Exception Handling"></a>Exception Handling</h1><ul>
-<li><p>구문 에러(Syntax Error)</p>
-<ul>
-<li>문법적 에러</li>
-<li>IDE에서는 구문에러 체크해줌</li>
-<li>파이썬은 상대적으로 문법이 간단해서 에러 발생 비율이 낮거나 다른 도구로 제거 가능</li>
-</ul>
-</li>
-<li><p>예외(Exception)</p>
-<ul>
-<li>구문 에러는 없으나 프로그램 실행 중 더 이상 진행할 수 없는 경우</li>
-<li>예외가 발생하면 프로그램이 종료됨</li>
-</ul>
-<ol>
-<li><p><code>NameError</code> (정의되지 않은 변수 사용)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4 + boo*3</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>ZeroDivisionError</code> (<code>0</code>으로 나누는 경우)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = 10</span><br><span class="line">b = 0</span><br><span class="line">c = a / b</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>TypeError</code> (ex: 문자열 + 수치형 자료)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;2&apos; + 2</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>IndexError</code> (참조 범위를 넘어서 인덱스 사용)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">l = [1,2]</span><br><span class="line">print l[2]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>KeyError</code> (등록되지 않은 키로 사전 검색)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;&quot;a&quot;:1, &quot;b&quot;:2&#125;</span><br><span class="line">print d[&apos;c&apos;]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>IOError</code> (존재하지 않는 파일을 열고자 할 때)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = open(&apos;aaa.txt&apos;)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<hr>
-</li>
-</ul>
-<h1 id="예외-처리-방법"><a href="#예외-처리-방법" class="headerlink" title="예외 처리 방법"></a>예외 처리 방법</h1><ol>
-<li><p><code>try</code>,<code>except</code>,<code>else</code>,<code>finally</code>절 사용하기</p>
-<ul>
-<li>예외가 발생할 만한 상황을 예상하여 상황별로 전체 코드 흐름을 제어할 수 있다</li>
-<li><p><code>try</code>,<code>except</code>,<code>else</code>,<code>finally</code>절</p>
-<ul>
-<li>구조<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">  (예외 발생 가능한) 일반적인 수행문들</span><br><span class="line">except Exception:</span><br><span class="line">  예외가 발생하였을 때 수행되는 문들</span><br><span class="line">else:</span><br><span class="line">  예외가 발생하지 않았을 때 수행되는 문들</span><br><span class="line">finally:</span><br><span class="line">  예외 발생 유무와 관계없이 무조건 수행되는 문들</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<hr>
-</li>
-</ul>
-</li>
-</ol>
-<ul>
-<li><p>예외 처리를 하면 예외 발생시 프로그램이 종료되지 않는다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = 0</span><br><span class="line">try:</span><br><span class="line">  print 1.0/a</span><br><span class="line">except ZeroDivisionError:</span><br><span class="line">  print &apos;zero division error!!!&apos;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>msg</code>변수: <code>ZeroDivisionError</code>를 정의한 사람이 발생될 때 주는 메시지<br>ex: float division by zero</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def division():</span><br><span class="line">  for n in range(0, 5):</span><br><span class="line">    try:</span><br><span class="line">      print 10.0 / n</span><br><span class="line">    except ZeroDivisionError, msg</span><br><span class="line">      print msg</span><br><span class="line"></span><br><span class="line">division()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>try</code>절 안에서 간접적으로 호출한 함수의 내부 예외도 처리 가능</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">  spam()</span><br><span class="line">except NameError, msg:</span><br><span class="line">  print &apos;Error -&apos;, msg</span><br></pre></td></tr></table></figure>
-<p><code>,</code>대신 <code>as</code>로도 사용가능</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 위와 동일한 예제</span><br><span class="line">try:</span><br><span class="line">  spam()</span><br><span class="line">except NameError as msg:</span><br><span class="line">  print &apos;Error -&apos;, msg</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>except</code>뒤에 예외를 명시하지 않으면 모든 예외에 대해 처리됨</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">  spam()</span><br><span class="line">  print 1.0/0.0</span><br><span class="line">except:</span><br><span class="line">  print &apos;Error&apos;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>여러 예외들 각각에 대해 <code>except</code>절로 다중처리 가능</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">b = 0.0</span><br><span class="line">name = &apos;aaa.txt&apos;</span><br><span class="line">try:</span><br><span class="line">  print 1.0 / b</span><br><span class="line">  spam()</span><br><span class="line">  f = open(name, &apos;r&apos;)</span><br><span class="line">  &apos;2&apos; + 2</span><br><span class="line">except NameError:</span><br><span class="line">  print &apos;NameError !!!&apos;</span><br><span class="line">except ZeroDivisionError:</span><br><span class="line">  print &apos;ZeroDivisionError !!!&apos;</span><br><span class="line">excpet (TypeError, IOError):</span><br><span class="line">  print &apos;TypeError or IOERror !!!&apos;</span><br><span class="line">else:</span><br><span class="line">  print &apos;No Exception&apos;</span><br><span class="line">finally</span><br><span class="line">  print &apos;Exit !!!&apos;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<hr>
-<h1 id="같은-부류의-예외-다-잡아내기"><a href="#같은-부류의-예외-다-잡아내기" class="headerlink" title="같은 부류의 예외 다 잡아내기"></a>같은 부류의 예외 다 잡아내기</h1><ul>
-<li>예외 클래스의 상속에 의한 계층 관계를 이용하여 여러 예외들을 한꺼번에 잡을 수 있다.</li>
-<li><p>예를 들어, <code>ArithmeticError</code>의 하위 클래스로서 <code>FloatingPointError</code>, <code>OverflowError</code>, <code>ZeroDivisionError</code>가 존재하기 때문에 이들 하위 클래스 예외가 발생하면 <code>ArithmeticError</code>로 처리할 수 있다.</p>
-</li>
-<li><p>예외가 임의의 <code>except</code>에서 잡히면 다른 <code>except</code>에서는 잡히지 않는다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def dosomething():</span><br><span class="line">  a = 1/0</span><br><span class="line"></span><br><span class="line">try:</span><br><span class="line">  dosomething()</span><br><span class="line">except ZeroDivisionError:</span><br><span class="line">  print &quot;ZeroDivisionError occured&quot;</span><br><span class="line">except ArithmeticError:</span><br><span class="line">   print &quot;ArithmeticError occured&quot;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-    <div class="a2a_kit a2a_default_style">
-    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
-    <span class="a2a_divider"></span>
-    <a class="a2a_button_facebook"></a>
-    <a class="a2a_button_twitter"></a>
-    <a class="a2a_button_google_plus"></a>
-    <a class="a2a_button_pinterest"></a>
-    <a class="a2a_button_tumblr"></a>
-</div>
-<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
-<style>
-    .a2a_menu {
-        border-radius: 4px;
-    }
-    .a2a_menu a {
-        margin: 2px 0;
-        font-size: 14px;
-        line-height: 16px;
-        border-radius: 4px;
-        color: inherit !important;
-        font-family: 'Microsoft Yahei';
-    }
-    #a2apage_dropdown {
-        margin: 10px 0;
-    }
-    .a2a_mini_services {
-        padding: 10px;
-    }
-    a.a2a_i,
-    i.a2a_i {
-        width: 122px;
-        line-height: 16px;
-    }
-    a.a2a_i .a2a_svg,
-    a.a2a_more .a2a_svg {
-        width: 16px;
-        height: 16px;
-        line-height: 16px;
-        vertical-align: top;
-        background-size: 16px;
-    }
-    a.a2a_i {
-        border: none !important;
-    }
-    a.a2a_menu_show_more_less {
-        margin: 0;
-        padding: 10px 0;
-        line-height: 16px;
-    }
-    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
-    .a2a_mini_services{*+height:1%;}
-</style>
-
-</div>
-
-            
-    
-        <a href="http://bongbooski.github.io/2018/04/17/post21-python-exception-handling/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/17/post21-python-exception-handling/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <article id="post-post21-python-exception-handling_eng" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -751,22 +560,22 @@ ga('send', 'pageview');
 </ul>
 <ol>
 <li><p><code>NameError</code> (Usiung undefined variable)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4 + boo*3</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">4</span> + boo*<span class="number">3</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><code>ZeroDivisionError</code> (Dividing by <code>0</code>)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = 10</span><br><span class="line">b = 0</span><br><span class="line">c = a / b</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10</span></span><br><span class="line">b = <span class="number">0</span></span><br><span class="line">c = a / b</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><code>TypeError</code> (ex: String + Number type)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;2&apos; + 2</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'2'</span> + <span class="number">2</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><code>IndexError</code> (Using index over the range of index)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">l = [1,2]</span><br><span class="line">print l[2]</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><code>KeyError</code> (Searching dictionary by unregisted key)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;&quot;a&quot;:1, &quot;b&quot;:2&#125;</span><br><span class="line">print d[&apos;c&apos;]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">"a"</span>:<span class="number">1</span>, <span class="string">"b"</span>:<span class="number">2</span>&#125;</span><br><span class="line"><span class="keyword">print</span> d[<span class="string">'c'</span>]</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><code>IOError</code> (Opening not existing file)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = open(&apos;aaa.txt&apos;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = open(<span class="string">'aaa.txt'</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <hr>
@@ -778,7 +587,7 @@ ga('send', 'pageview');
 <li>By expecting the situations making exceptions, we can control the whole code’s flow</li>
 <li><p><code>try</code>,<code>except</code>,<code>else</code>,<code>finally</code></p>
 <ul>
-<li>structure<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">  (possible to make errors) usual statements</span><br><span class="line">except Exception:</span><br><span class="line">  the statements working when error occurs</span><br><span class="line">else:</span><br><span class="line">  the statements working when error doesn&apos;t occur</span><br><span class="line">finally:</span><br><span class="line">  the statements working anyway no matter error</span><br></pre></td></tr></table></figure>
+<li>structure<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  (possible to make errors) usual statements</span><br><span class="line"><span class="keyword">except</span> Exception:</span><br><span class="line">  the statements working when error occurs</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">  the statements working when error doesn<span class="string">'t occur</span></span><br><span class="line"><span class="string">finally:</span></span><br><span class="line"><span class="string">  the statements working anyway no matter error</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <hr>
@@ -788,21 +597,21 @@ ga('send', 'pageview');
 </ol>
 <ul>
 <li><p>Doing exception handling, when error occurs the program doesn’t stop</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = 0</span><br><span class="line">try:</span><br><span class="line">  print 1.0/a</span><br><span class="line">except ZeroDivisionError:</span><br><span class="line">  print &apos;zero division error!!!&apos;</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">0</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="number">1.0</span>/a</span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'zero division error!!!'</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p><code>msg</code>variable: the message that the person who defined <code>ZeroDivisionError</code> gives<br>ex: float division by zero</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def division():</span><br><span class="line">  for n in range(0, 5):</span><br><span class="line">    try:</span><br><span class="line">      print 10.0 / n</span><br><span class="line">    except ZeroDivisionError, msg</span><br><span class="line">      print msg</span><br><span class="line"></span><br><span class="line">division()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">division</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">5</span>):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">      <span class="keyword">print</span> <span class="number">10.0</span> / n</span><br><span class="line">    <span class="keyword">except</span> ZeroDivisionError, msg</span><br><span class="line">      <span class="keyword">print</span> msg</span><br><span class="line"></span><br><span class="line">division()</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>It can handle the error from the called function in <code>try</code>statement indirectly</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">  spam()</span><br><span class="line">except NameError, msg:</span><br><span class="line">  print &apos;Error -&apos;, msg</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  spam()</span><br><span class="line"><span class="keyword">except</span> NameError, msg:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Error -'</span>, msg</span><br></pre></td></tr></table></figure>
 <p><code>,</code> can be replaced with <code>as</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># same code with upper one</span><br><span class="line">try:</span><br><span class="line">  spam()</span><br><span class="line">except NameError as msg:</span><br><span class="line">  print &apos;Error -&apos;, msg</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># same code with upper one</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  spam()</span><br><span class="line"><span class="keyword">except</span> NameError <span class="keyword">as</span> msg:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Error -'</span>, msg</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>After <code>except</code>, not evincing any exceptions, it takes care of all exceptions</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">try:</span><br><span class="line">  spam()</span><br><span class="line">  print 1.0/0.0</span><br><span class="line">except:</span><br><span class="line">  print &apos;Error&apos;</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  spam()</span><br><span class="line">  <span class="keyword">print</span> <span class="number">1.0</span>/<span class="number">0.0</span></span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Error'</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>About many exceptions, they can be taked care by each <code>except</code>statement</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">b = 0.0</span><br><span class="line">name = &apos;aaa.txt&apos;</span><br><span class="line">try:</span><br><span class="line">  print 1.0 / b</span><br><span class="line">  spam()</span><br><span class="line">  f = open(name, &apos;r&apos;)</span><br><span class="line">  &apos;2&apos; + 2</span><br><span class="line">except NameError:</span><br><span class="line">  print &apos;NameError !!!&apos;</span><br><span class="line">except ZeroDivisionError:</span><br><span class="line">  print &apos;ZeroDivisionError !!!&apos;</span><br><span class="line">excpet (TypeError, IOError):</span><br><span class="line">  print &apos;TypeError or IOERror !!!&apos;</span><br><span class="line">else:</span><br><span class="line">  print &apos;No Exception&apos;</span><br><span class="line">finally</span><br><span class="line">  print &apos;Exit !!!&apos;</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">b = <span class="number">0.0</span></span><br><span class="line">name = <span class="string">'aaa.txt'</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="number">1.0</span> / b</span><br><span class="line">  spam()</span><br><span class="line">  f = open(name, <span class="string">'r'</span>)</span><br><span class="line">  <span class="string">'2'</span> + <span class="number">2</span></span><br><span class="line"><span class="keyword">except</span> NameError:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'NameError !!!'</span></span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'ZeroDivisionError !!!'</span></span><br><span class="line">excpet (TypeError, IOError):</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'TypeError or IOERror !!!'</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'No Exception'</span></span><br><span class="line"><span class="keyword">finally</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Exit !!!'</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <hr>
@@ -811,7 +620,7 @@ ga('send', 'pageview');
 <li><p>For example, there are <code>FloatingPointError</code>, <code>OverflowError</code>, <code>ZeroDivisionError</code> as sub-class of <code>ArithmeticError</code> so, about sub-class exceptions, <code>ArithmeticError</code> can take care of them</p>
 </li>
 <li><p>When an exception is catched by specific <code>except</code>, that one is not catched in other <code>except</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def dosomething():</span><br><span class="line">  a = 1/0</span><br><span class="line"></span><br><span class="line">try:</span><br><span class="line">  dosomething()</span><br><span class="line">except ZeroDivisionError:</span><br><span class="line">  print &quot;ZeroDivisionError occured&quot;</span><br><span class="line">except ArithmeticError:</span><br><span class="line">   print &quot;ArithmeticError occured&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dosomething</span><span class="params">()</span>:</span></span><br><span class="line">  a = <span class="number">1</span>/<span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  dosomething()</span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">"ZeroDivisionError occured"</span></span><br><span class="line"><span class="keyword">except</span> ArithmeticError:</span><br><span class="line">   <span class="keyword">print</span> <span class="string">"ArithmeticError occured"</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
@@ -889,6 +698,197 @@ ga('send', 'pageview');
 
 
 
+    <article id="post-post21-python-exception-handling" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/04/17/post21-python-exception-handling/">python 예외처리</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/04/17/post21-python-exception-handling/">
+            <time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="Exception-Handling"><a href="#Exception-Handling" class="headerlink" title="Exception Handling"></a>Exception Handling</h1><ul>
+<li><p>구문 에러(Syntax Error)</p>
+<ul>
+<li>문법적 에러</li>
+<li>IDE에서는 구문에러 체크해줌</li>
+<li>파이썬은 상대적으로 문법이 간단해서 에러 발생 비율이 낮거나 다른 도구로 제거 가능</li>
+</ul>
+</li>
+<li><p>예외(Exception)</p>
+<ul>
+<li>구문 에러는 없으나 프로그램 실행 중 더 이상 진행할 수 없는 경우</li>
+<li>예외가 발생하면 프로그램이 종료됨</li>
+</ul>
+<ol>
+<li><p><code>NameError</code> (정의되지 않은 변수 사용)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">4</span> + boo*<span class="number">3</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>ZeroDivisionError</code> (<code>0</code>으로 나누는 경우)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10</span></span><br><span class="line">b = <span class="number">0</span></span><br><span class="line">c = a / b</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>TypeError</code> (ex: 문자열 + 수치형 자료)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'2'</span> + <span class="number">2</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>IndexError</code> (참조 범위를 넘어서 인덱스 사용)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">l = [<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line"><span class="keyword">print</span> l[<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>KeyError</code> (등록되지 않은 키로 사전 검색)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">"a"</span>:<span class="number">1</span>, <span class="string">"b"</span>:<span class="number">2</span>&#125;</span><br><span class="line"><span class="keyword">print</span> d[<span class="string">'c'</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>IOError</code> (존재하지 않는 파일을 열고자 할 때)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = open(<span class="string">'aaa.txt'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+</li>
+</ul>
+<h1 id="예외-처리-방법"><a href="#예외-처리-방법" class="headerlink" title="예외 처리 방법"></a>예외 처리 방법</h1><ol>
+<li><p><code>try</code>,<code>except</code>,<code>else</code>,<code>finally</code>절 사용하기</p>
+<ul>
+<li>예외가 발생할 만한 상황을 예상하여 상황별로 전체 코드 흐름을 제어할 수 있다</li>
+<li><p><code>try</code>,<code>except</code>,<code>else</code>,<code>finally</code>절</p>
+<ul>
+<li>구조<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  (예외 발생 가능한) 일반적인 수행문들</span><br><span class="line"><span class="keyword">except</span> Exception:</span><br><span class="line">  예외가 발생하였을 때 수행되는 문들</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">  예외가 발생하지 않았을 때 수행되는 문들</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">  예외 발생 유무와 관계없이 무조건 수행되는 문들</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p>예외 처리를 하면 예외 발생시 프로그램이 종료되지 않는다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">0</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="number">1.0</span>/a</span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'zero division error!!!'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>msg</code>변수: <code>ZeroDivisionError</code>를 정의한 사람이 발생될 때 주는 메시지<br>ex: float division by zero</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">division</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">5</span>):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">      <span class="keyword">print</span> <span class="number">10.0</span> / n</span><br><span class="line">    <span class="keyword">except</span> ZeroDivisionError, msg</span><br><span class="line">      <span class="keyword">print</span> msg</span><br><span class="line"></span><br><span class="line">division()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>try</code>절 안에서 간접적으로 호출한 함수의 내부 예외도 처리 가능</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  spam()</span><br><span class="line"><span class="keyword">except</span> NameError, msg:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Error -'</span>, msg</span><br></pre></td></tr></table></figure>
+<p><code>,</code>대신 <code>as</code>로도 사용가능</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 위와 동일한 예제</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  spam()</span><br><span class="line"><span class="keyword">except</span> NameError <span class="keyword">as</span> msg:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Error -'</span>, msg</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>except</code>뒤에 예외를 명시하지 않으면 모든 예외에 대해 처리됨</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  spam()</span><br><span class="line">  <span class="keyword">print</span> <span class="number">1.0</span>/<span class="number">0.0</span></span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Error'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>여러 예외들 각각에 대해 <code>except</code>절로 다중처리 가능</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">b = <span class="number">0.0</span></span><br><span class="line">name = <span class="string">'aaa.txt'</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="number">1.0</span> / b</span><br><span class="line">  spam()</span><br><span class="line">  f = open(name, <span class="string">'r'</span>)</span><br><span class="line">  <span class="string">'2'</span> + <span class="number">2</span></span><br><span class="line"><span class="keyword">except</span> NameError:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'NameError !!!'</span></span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'ZeroDivisionError !!!'</span></span><br><span class="line">excpet (TypeError, IOError):</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'TypeError or IOERror !!!'</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'No Exception'</span></span><br><span class="line"><span class="keyword">finally</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Exit !!!'</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h1 id="같은-부류의-예외-다-잡아내기"><a href="#같은-부류의-예외-다-잡아내기" class="headerlink" title="같은 부류의 예외 다 잡아내기"></a>같은 부류의 예외 다 잡아내기</h1><ul>
+<li>예외 클래스의 상속에 의한 계층 관계를 이용하여 여러 예외들을 한꺼번에 잡을 수 있다.</li>
+<li><p>예를 들어, <code>ArithmeticError</code>의 하위 클래스로서 <code>FloatingPointError</code>, <code>OverflowError</code>, <code>ZeroDivisionError</code>가 존재하기 때문에 이들 하위 클래스 예외가 발생하면 <code>ArithmeticError</code>로 처리할 수 있다.</p>
+</li>
+<li><p>예외가 임의의 <code>except</code>에서 잡히면 다른 <code>except</code>에서는 잡히지 않는다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dosomething</span><span class="params">()</span>:</span></span><br><span class="line">  a = <span class="number">1</span>/<span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  dosomething()</span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">"ZeroDivisionError occured"</span></span><br><span class="line"><span class="keyword">except</span> ArithmeticError:</span><br><span class="line">   <span class="keyword">print</span> <span class="string">"ArithmeticError occured"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://bongbooski.github.io/2018/04/17/post21-python-exception-handling/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/17/post21-python-exception-handling/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-post20-python-package" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -942,13 +942,13 @@ ga('send', 'pageview');
 <li>서브 패키지에도 패키지와 마찬가지로 필요(없으면 단순 폴더역할)</li>
 </ul>
 <hr>
-<h2 id="import하기"><a href="#import하기" class="headerlink" title="import하기"></a>import하기</h2>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import Speech</span><br></pre></td></tr></table></figure>
+<h2 id="import하기"><a href="#import하기" class="headerlink" title="import하기"></a>import하기</h2>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Speech</span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>Speech</code>디렉토리가 <code>sys.path</code>(또는 <code>PYTHONPATH</code>환경변수)에 열거된 폴더 중 하나에 위치해야함</li>
-<li><code>Speech/Recognition/HMM.py</code>코드 내용<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def train():</span><br><span class="line">  print &quot;Train&quot;</span><br><span class="line">  pass</span><br><span class="line"></span><br><span class="line">def loadModel():</span><br><span class="line">  print &quot;LoadModel&quot;</span><br><span class="line">  pass</span><br><span class="line"></span><br><span class="line">def saveModel():</span><br><span class="line">  print &quot;SaveModel&quot;</span><br><span class="line">  pass</span><br></pre></td></tr></table></figure>
+<li><code>Speech/Recognition/HMM.py</code>코드 내용<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">train</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"Train"</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">loadModel</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"LoadModel"</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">saveModel</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"SaveModel"</span></span><br><span class="line">  <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="특정-함수-사용하는-방법"><a href="#특정-함수-사용하는-방법" class="headerlink" title="특정 함수 사용하는 방법"></a>특정 함수 사용하는 방법</h3>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"># 사용불가. 패키지명에서 .으로 특정 모듈, 함수 가져와야함</span><br><span class="line">import Speech</span><br><span class="line">Speech.Recognition.HMM.train()</span><br><span class="line"></span><br><span class="line"># 적절한 방법</span><br><span class="line">import Speech.Recognition.HMM</span><br><span class="line">Speech.Recognition.HMM.train()</span><br><span class="line"></span><br><span class="line">from Speech.Recognition import HMM</span><br><span class="line">HMM.train()</span><br><span class="line"></span><br><span class="line">from Speech.Recognition.HMM import train</span><br><span class="line">train()</span><br><span class="line"></span><br><span class="line"># 모듈 내의 변수 전부 다 가져옴, 모듈이름 없이 사용가능</span><br><span class="line">from Speech.Recognition.HMM import *</span><br><span class="line">train()</span><br><span class="line">loadModel()</span><br><span class="line">saveModel()</span><br></pre></td></tr></table></figure>
+<h3 id="특정-함수-사용하는-방법"><a href="#특정-함수-사용하는-방법" class="headerlink" title="특정 함수 사용하는 방법"></a>특정 함수 사용하는 방법</h3>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 사용불가. 패키지명에서 .으로 특정 모듈, 함수 가져와야함</span></span><br><span class="line"><span class="keyword">import</span> Speech</span><br><span class="line">Speech.Recognition.HMM.train()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 적절한 방법</span></span><br><span class="line"><span class="keyword">import</span> Speech.Recognition.HMM</span><br><span class="line">Speech.Recognition.HMM.train()</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> Speech.Recognition <span class="keyword">import</span> HMM</span><br><span class="line">HMM.train()</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> Speech.Recognition.HMM <span class="keyword">import</span> train</span><br><span class="line">train()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 모듈 내의 변수 전부 다 가져옴, 모듈이름 없이 사용가능</span></span><br><span class="line"><span class="keyword">from</span> Speech.Recognition.HMM <span class="keyword">import</span> *</span><br><span class="line">train()</span><br><span class="line">loadModel()</span><br><span class="line">saveModel()</span><br></pre></td></tr></table></figure>
 
         
         </div>
@@ -1076,13 +1076,13 @@ ga('send', 'pageview');
 <li>For sub-packes, this file is requried(if not, that will be usual folder)</li>
 </ul>
 <hr>
-<h2 id="Doing-import"><a href="#Doing-import" class="headerlink" title="Doing import"></a>Doing import</h2>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import Speech</span><br></pre></td></tr></table></figure>
+<h2 id="Doing-import"><a href="#Doing-import" class="headerlink" title="Doing import"></a>Doing import</h2>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Speech</span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>Speech</code>directory should be one of the directories of <code>sys.path</code>(or <code>PYTHONPATH</code> environment variable)</li>
-<li>Let’s say <code>Speech/Recognition/HMM.py</code> looks like this<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def train():</span><br><span class="line">  print &quot;Train&quot;</span><br><span class="line">  pass</span><br><span class="line"></span><br><span class="line">def loadModel():</span><br><span class="line">  print &quot;LoadModel&quot;</span><br><span class="line">  pass</span><br><span class="line"></span><br><span class="line">def saveModel():</span><br><span class="line">  print &quot;SaveModel&quot;</span><br><span class="line">  pass</span><br></pre></td></tr></table></figure>
+<li>Let’s say <code>Speech/Recognition/HMM.py</code> looks like this<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">train</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"Train"</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">loadModel</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"LoadModel"</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">saveModel</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"SaveModel"</span></span><br><span class="line">  <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="How-to-use-specific-function"><a href="#How-to-use-specific-function" class="headerlink" title="How to use specific function"></a>How to use specific function</h3>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"># can&apos;t use. from package&apos;s name, we need dot(.) for calling the module or function</span><br><span class="line">import Speech</span><br><span class="line">Speech.Recognition.HMM.train()</span><br><span class="line"></span><br><span class="line"># Proper way</span><br><span class="line">import Speech.Recognition.HMM</span><br><span class="line">Speech.Recognition.HMM.train()</span><br><span class="line"></span><br><span class="line">from Speech.Recognition import HMM</span><br><span class="line">HMM.train()</span><br><span class="line"></span><br><span class="line">from Speech.Recognition.HMM import train</span><br><span class="line">train()</span><br><span class="line"></span><br><span class="line"># Taking everything from the module. It can be used without the module&apos;s name</span><br><span class="line">from Speech.Recognition.HMM import *</span><br><span class="line">train()</span><br><span class="line">loadModel()</span><br><span class="line">saveModel()</span><br></pre></td></tr></table></figure>
+<h3 id="How-to-use-specific-function"><a href="#How-to-use-specific-function" class="headerlink" title="How to use specific function"></a>How to use specific function</h3>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># can't use. from package's name, we need dot(.) for calling the module or function</span></span><br><span class="line"><span class="keyword">import</span> Speech</span><br><span class="line">Speech.Recognition.HMM.train()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Proper way</span></span><br><span class="line"><span class="keyword">import</span> Speech.Recognition.HMM</span><br><span class="line">Speech.Recognition.HMM.train()</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> Speech.Recognition <span class="keyword">import</span> HMM</span><br><span class="line">HMM.train()</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> Speech.Recognition.HMM <span class="keyword">import</span> train</span><br><span class="line">train()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Taking everything from the module. It can be used without the module's name</span></span><br><span class="line"><span class="keyword">from</span> Speech.Recognition.HMM <span class="keyword">import</span> *</span><br><span class="line">train()</span><br><span class="line">loadModel()</span><br><span class="line">saveModel()</span><br></pre></td></tr></table></figure>
 
         
         </div>
@@ -1198,32 +1198,32 @@ ga('send', 'pageview');
             
             <h1 id="import-module’s-name"><a href="#import-module’s-name" class="headerlink" title="import module’s name"></a>import module’s name</h1><ol>
 <li><p>Basic form</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import mymath</span><br><span class="line">print mymath.area(5)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> mymath</span><br><span class="line"><span class="keyword">print</span> mymath.area(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>from module’s name import wanted object</p>
 <ul>
 <li>taking the wanted object from the module</li>
 <li>original object is lost if the name is using</li>
-<li>it can be used without the module’s name<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from mymath import area, mypi</span><br><span class="line">print area(5)</span><br></pre></td></tr></table></figure>
+<li>it can be used without the module’s name<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> mymath <span class="keyword">import</span> area, mypi</span><br><span class="line"><span class="keyword">print</span> area(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 <li><p>from module’s name import *</p>
 <ul>
-<li>taking everything from the module without objects starting <code>__</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from mymath import *</span><br><span class="line">print area(5)</span><br></pre></td></tr></table></figure>
+<li>taking everything from the module without objects starting <code>__</code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> mymath <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">print</span> area(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 <li><p>import module’s name as another module name</p>
 <ul>
 <li>another name is used for calling the module</li>
-<li>It is recommended when the original name is too long or already used<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import string as chstr</span><br><span class="line">print chstr</span><br><span class="line">print</span><br><span class="line">print chstr.punctuation</span><br></pre></td></tr></table></figure>
+<li>It is recommended when the original name is too long or already used<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> string <span class="keyword">as</span> chstr</span><br><span class="line"><span class="keyword">print</span> chstr</span><br><span class="line"><span class="keyword">print</span></span><br><span class="line"><span class="keyword">print</span> chstr.punctuation</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 <li><p>from module’s name import original name as another name[, name2 as another name2]</p>
 <ul>
-<li>another name is used for calling the module<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">from string import replace as substitute[, upper as up]</span><br><span class="line">print substitute</span><br><span class="line">print substitute(&apos;ham chicken spam&apos;, &apos;chicke&apos;, &apos;egg&apos;)</span><br><span class="line"></span><br><span class="line">print up</span><br><span class="line">print up(&apos;abc&apos;)</span><br></pre></td></tr></table></figure>
+<li>another name is used for calling the module<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> string <span class="keyword">import</span> replace <span class="keyword">as</span> substitute[, upper <span class="keyword">as</span> up]</span><br><span class="line"><span class="keyword">print</span> substitute</span><br><span class="line"><span class="keyword">print</span> substitute(<span class="string">'ham chicken spam'</span>, <span class="string">'chicke'</span>, <span class="string">'egg'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> up</span><br><span class="line"><span class="keyword">print</span> up(<span class="string">'abc'</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -1271,10 +1271,10 @@ ga('send', 'pageview');
 <li>It is usually used for knowing if this module is used as the root module or in other module by <code>import</code></li>
 <li>Being used as the root module -&gt; <code>__main__</code></li>
 <li><p>Being used in other module -&gt; that module’s name</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print __name__ # __main__ print</span><br><span class="line"></span><br><span class="line">import prname</span><br><span class="line">print prname.__name__ # prname print</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> __name__ <span class="comment"># __main__ print</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> prname</span><br><span class="line"><span class="keyword">print</span> prname.__name__ <span class="comment"># prname print</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>How to use</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def add(a, b):</span><br><span class="line">  return a + b</span><br><span class="line"></span><br><span class="line">def f():</span><br><span class="line">  print &quot;Python is becoming popular.&quot;</span><br><span class="line"></span><br><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line">  print add(1, 10)</span><br><span class="line">  f()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(a, b)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> a + b</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"Python is becoming popular."</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">  <span class="keyword">print</span> add(<span class="number">1</span>, <span class="number">10</span>)</span><br><span class="line">  f()</span><br></pre></td></tr></table></figure>
 <ul>
 <li>Direct executing runs <code>if</code> statement</li>
 <li>Being used in other module ignores <code>if</code> statement</li>
@@ -1398,32 +1398,32 @@ ga('send', 'pageview');
             
             <h1 id="import-모듈명"><a href="#import-모듈명" class="headerlink" title="import 모듈명"></a>import 모듈명</h1><ol>
 <li><p>기본적인 형태</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import mymath</span><br><span class="line">print mymath.area(5)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> mymath</span><br><span class="line"><span class="keyword">print</span> mymath.area(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>from 모듈명 import 가져올 대상</p>
 <ul>
 <li>해당 모듈에 존재하는 대상을 가져옴</li>
 <li>기존에 존재하던 이름이면 기존 객체가 상실됨</li>
-<li>모듈 이름 없이 바로 사용 가능<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from mymath import area, mypi</span><br><span class="line">print area(5)</span><br></pre></td></tr></table></figure>
+<li>모듈 이름 없이 바로 사용 가능<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> mymath <span class="keyword">import</span> area, mypi</span><br><span class="line"><span class="keyword">print</span> area(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 <li><p>from 모듈명 import *</p>
 <ul>
-<li>해당 모듈에 존재하는 <code>__</code>로 시작되는 것들을 제외한 모든 대상을 가져옴<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">from mymath import *</span><br><span class="line">print area(5)</span><br></pre></td></tr></table></figure>
+<li>해당 모듈에 존재하는 <code>__</code>로 시작되는 것들을 제외한 모든 대상을 가져옴<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> mymath <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">print</span> area(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 <li><p>import 모듈명 as 새로운 모듈 이름</p>
 <ul>
 <li>해당 모듈을 다른 이름으로 사용하고자 할 때 사용</li>
-<li>기존 모듈 이름이 너무 길거나 현재 사용중인 이름인 경우 유용<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import string as chstr</span><br><span class="line">print chstr</span><br><span class="line">print</span><br><span class="line">print chstr.punctuation</span><br></pre></td></tr></table></figure>
+<li>기존 모듈 이름이 너무 길거나 현재 사용중인 이름인 경우 유용<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> string <span class="keyword">as</span> chstr</span><br><span class="line"><span class="keyword">print</span> chstr</span><br><span class="line"><span class="keyword">print</span></span><br><span class="line"><span class="keyword">print</span> chstr.punctuation</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 <li><p>from 모듈명 import 이름 as 새로운 이름[, 이름 as 새로운 이름]</p>
 <ul>
-<li>해당 모듈 내에 정의된 이름을 새로운 이름으로 사용하고자 할 때<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">from string import replace as substitute[, upper as up]</span><br><span class="line">print substitute</span><br><span class="line">print substitute(&apos;ham chicken spam&apos;, &apos;chicke&apos;, &apos;egg&apos;)</span><br><span class="line"></span><br><span class="line">print up</span><br><span class="line">print up(&apos;abc&apos;)</span><br></pre></td></tr></table></figure>
+<li>해당 모듈 내에 정의된 이름을 새로운 이름으로 사용하고자 할 때<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> string <span class="keyword">import</span> replace <span class="keyword">as</span> substitute[, upper <span class="keyword">as</span> up]</span><br><span class="line"><span class="keyword">print</span> substitute</span><br><span class="line"><span class="keyword">print</span> substitute(<span class="string">'ham chicken spam'</span>, <span class="string">'chicke'</span>, <span class="string">'egg'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> up</span><br><span class="line"><span class="keyword">print</span> up(<span class="string">'abc'</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -1471,10 +1471,10 @@ ga('send', 'pageview');
 <li>현재의 모듈이 최상위 모듈로서 수행되는지, 아니면다른 모듈에 의해 <code>imort</code>되어 수행되는지를 구별하기 위해 주로 사용</li>
 <li>최상위 모듈에서 사용할 때 -&gt; <code>__main__</code></li>
 <li><p>다른 모듈에서 사용될 때 -&gt; 해당 모듈의 이름</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print __name__ # __main__ 출력</span><br><span class="line"></span><br><span class="line">import prname</span><br><span class="line">print prname.__name__ # prname출력</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> __name__ <span class="comment"># __main__ 출력</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> prname</span><br><span class="line"><span class="keyword">print</span> prname.__name__ <span class="comment"># prname출력</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>사용방법</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def add(a, b):</span><br><span class="line">  return a + b</span><br><span class="line"></span><br><span class="line">def f():</span><br><span class="line">  print &quot;Python is becoming popular.&quot;</span><br><span class="line"></span><br><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line">  print add(1, 10)</span><br><span class="line">  f()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(a, b)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> a + b</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"Python is becoming popular."</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">  <span class="keyword">print</span> add(<span class="number">1</span>, <span class="number">10</span>)</span><br><span class="line">  f()</span><br></pre></td></tr></table></figure>
 <ul>
 <li>직접 실행할 때는 <code>if</code>절 동작</li>
 <li>다른 곳에서 활용할 경우 <code>if</code>절 무시</li>
@@ -1558,180 +1558,6 @@ ga('send', 'pageview');
 
 
 
-    <article id="post-post18-python-lambda" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/04/12/post18-python-lambda/">python 람다(lambda) 함수</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/04/12/post18-python-lambda/">
-            <time datetime="2018-04-12T05:19:37.000Z" itemprop="datePublished">2018-04-12</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/python/">python</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h1 id="람다-lambda-함수-정의"><a href="#람다-lambda-함수-정의" class="headerlink" title="람다(lambda)함수 정의"></a>람다(lambda)함수 정의</h1><ul>
-<li>일반적인 함수를 한 줄의 문으로 정의할 수 있는 새로운 함수 정의 리터럴</li>
-<li>일회성으로 활용할 함수 정의할 때 주로 사용</li>
-<li><code>:</code>뒤에는 식만 올 수 있음</li>
-<li>람다 함수도 하나의 객체임</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = lambda x: x + 1</span><br><span class="line">print f(1)</span><br></pre></td></tr></table></figure>
-<ol>
-<li><p>인수가 두 개 있는 람다 함수를 지니는 변수 지정 및 함수 호출</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">g = lambda x,y: x + y</span><br><span class="line">print g(1,2)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>기본 인수를 지니는 람다 함수 정의</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">g = lambda x, inc=1: x+inc</span><br><span class="line">print g(10) # inc기본 인수 값으로 1사용</span><br><span class="line">print g(10, 5)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>가변 인수를 지니는 람다 함수 정의</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vargs = lambda x, *args: args #args가 리턴됨</span><br><span class="line">print vars(1,2,3,4,5)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<hr>
-<h2 id="람다-함수-사용하기"><a href="#람다-함수-사용하기" class="headerlink" title="람다 함수 사용하기"></a>람다 함수 사용하기</h2><ul>
-<li><p>일반 함수 사용</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def f1(x):</span><br><span class="line">  return x*x + 3*x - 10</span><br><span class="line"></span><br><span class="line">def f2(x):</span><br><span class="line">  return x*x*x</span><br><span class="line"></span><br><span class="line">def g(func):</span><br><span class="line">  return [func(x) for x in range(-10, 10)]</span><br><span class="line"></span><br><span class="line">print g(f1)</span><br><span class="line">print g(f2)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>람다 함수 사용</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def g(func):</span><br><span class="line">  return [func(x) for x in range(-10, 10)]</span><br><span class="line"></span><br><span class="line">print g(lambda x: x*x + 3*x - 10)</span><br><span class="line">print g(lambda x: x*x*x)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="람다-함수-활용"><a href="#람다-함수-활용" class="headerlink" title="람다 함수 활용"></a>람다 함수 활용</h2><ul>
-<li><code>map</code>, <code>filter</code>, <code>reduce</code> 내장 함수</li>
-</ul>
-<ol>
-<li><p><code>map</code> 내장 함수</p>
-<ul>
-<li><p><code>map(function, seq)</code>: <code>seq</code>의 원소를 차례로 돌면서 <code>function</code>에 적용한 결과를 <code>seq</code>의 자료형으로 반환</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def f(x):</span><br><span class="line">  return x * x</span><br><span class="line">X - [1,2,3,4,5]</span><br><span class="line">Y = map(f, X)</span><br><span class="line">print Y</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>map</code>과 람다 함수를 동시에 사용 - 가장 추천</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">X = [1,2,3,4,5]</span><br><span class="line">print map(lambda x: x * x, X)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p><code>filter</code> 내장 함수</p>
-<ul>
-<li><code>seq</code>자료형이 지닌 각 원소값에 대해 <code>function</code>에 적용한 결과가 참인 원소값들만을 동일 시퀀스 자료형으로 반환<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print filter(lambda x: x&gt;2, [1,2,3,45])</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p><code>reduce</code> 내장 함수</p>
-<ul>
-<li><code>reduce(function, seq[,initial])</code></li>
-<li><code>seq</code>자료형이 지닌 각 원소값에 대해 <code>function</code>함수를 적용하면서 하나의 값으로 매핑</li>
-<li>첫번째 인자(<code>function</code>)는 반드시 두 개의 인자(ex. x,y)를 받아야한다.<ul>
-<li><code>seq</code>의 각 원소값들이 차례로 <code>y</code>에 들어간다</li>
-<li>함수가 수행된 값은 차례대로 <code>x</code>에 들어간다</li>
-</ul>
-</li>
-<li>추가적으로 제공가능한 세번재 인자인 <code>initial</code>은 첫번째 단계에서 <code>x</code>에 할당할 초기값으로 사용된다<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print reduce(lambda x, y: x + y, [1,2,3,4,5])</span><br><span class="line">print reduce(lambda x, y: x + y, [1,2,3,4,5], 1000)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ol>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-    <div class="a2a_kit a2a_default_style">
-    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
-    <span class="a2a_divider"></span>
-    <a class="a2a_button_facebook"></a>
-    <a class="a2a_button_twitter"></a>
-    <a class="a2a_button_google_plus"></a>
-    <a class="a2a_button_pinterest"></a>
-    <a class="a2a_button_tumblr"></a>
-</div>
-<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
-<style>
-    .a2a_menu {
-        border-radius: 4px;
-    }
-    .a2a_menu a {
-        margin: 2px 0;
-        font-size: 14px;
-        line-height: 16px;
-        border-radius: 4px;
-        color: inherit !important;
-        font-family: 'Microsoft Yahei';
-    }
-    #a2apage_dropdown {
-        margin: 10px 0;
-    }
-    .a2a_mini_services {
-        padding: 10px;
-    }
-    a.a2a_i,
-    i.a2a_i {
-        width: 122px;
-        line-height: 16px;
-    }
-    a.a2a_i .a2a_svg,
-    a.a2a_more .a2a_svg {
-        width: 16px;
-        height: 16px;
-        line-height: 16px;
-        vertical-align: top;
-        background-size: 16px;
-    }
-    a.a2a_i {
-        border: none !important;
-    }
-    a.a2a_menu_show_more_less {
-        margin: 0;
-        padding: 10px 0;
-        line-height: 16px;
-    }
-    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
-    .a2a_mini_services{*+height:1%;}
-</style>
-
-</div>
-
-            
-    
-        <a href="http://bongbooski.github.io/2018/04/12/post18-python-lambda/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/12/post18-python-lambda/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <article id="post-post18-python-lambda_eng" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -1776,25 +1602,25 @@ ga('send', 'pageview');
 <li>after <code>:</code>, only expression can follow</li>
 <li>lambda function is An object too</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = lambda x: x + 1</span><br><span class="line">print f(1)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="keyword">lambda</span> x: x + <span class="number">1</span></span><br><span class="line"><span class="keyword">print</span> f(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 <ol>
 <li><p>Assigning variables and calling the lambda function having two parameters</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">g = lambda x,y: x + y</span><br><span class="line">print g(1,2)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">g = <span class="keyword">lambda</span> x,y: x + y</span><br><span class="line"><span class="keyword">print</span> g(<span class="number">1</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Defining the lambda function having default argument</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">g = lambda x, inc=1: x+inc</span><br><span class="line">print g(10) # default argument(inc=1) value is used</span><br><span class="line">print g(10, 5)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">g = <span class="keyword">lambda</span> x, inc=<span class="number">1</span>: x+inc</span><br><span class="line"><span class="keyword">print</span> g(<span class="number">10</span>) <span class="comment"># default argument(inc=1) value is used</span></span><br><span class="line"><span class="keyword">print</span> g(<span class="number">10</span>, <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Defining the lambda function having variable argument</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#args is returned</span><br><span class="line">vargs = lambda x, *args: args</span><br><span class="line">print vars(1,2,3,4,5)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#args is returned</span></span><br><span class="line">vargs = <span class="keyword">lambda</span> x, *args: args</span><br><span class="line"><span class="keyword">print</span> vars(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <hr>
 <h2 id="Using-lambda-functions"><a href="#Using-lambda-functions" class="headerlink" title="Using lambda functions"></a>Using lambda functions</h2><ul>
 <li><p>Using usual function</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def f1(x):</span><br><span class="line">  return x*x + 3*x - 10</span><br><span class="line"></span><br><span class="line">def f2(x):</span><br><span class="line">  return x*x*x</span><br><span class="line"></span><br><span class="line">def g(func):</span><br><span class="line">  return [func(x) for x in range(-10, 10)]</span><br><span class="line"></span><br><span class="line">print g(f1)</span><br><span class="line">print g(f2)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">(x)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> x*x + <span class="number">3</span>*x - <span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">(x)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> x*x*x</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">g</span><span class="params">(func)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> [func(x) <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">-10</span>, <span class="number">10</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> g(f1)</span><br><span class="line"><span class="keyword">print</span> g(f2)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Usiung lambda function</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def g(func):</span><br><span class="line">  return [func(x) for x in range(-10, 10)]</span><br><span class="line"></span><br><span class="line">print g(lambda x: x*x + 3*x - 10)</span><br><span class="line">print g(lambda x: x*x*x)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">g</span><span class="params">(func)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> [func(x) <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">-10</span>, <span class="number">10</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> g(<span class="keyword">lambda</span> x: x*x + <span class="number">3</span>*x - <span class="number">10</span>)</span><br><span class="line"><span class="keyword">print</span> g(<span class="keyword">lambda</span> x: x*x*x)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="Utilizing-lambda-function"><a href="#Utilizing-lambda-function" class="headerlink" title="Utilizing lambda function"></a>Utilizing lambda function</h2><ul>
@@ -1804,16 +1630,16 @@ ga('send', 'pageview');
 <li><p><code>map</code> built-in function</p>
 <ul>
 <li><p><code>map(function, seq)</code>: taking item by item in <code>seq</code> and running <code>function</code> with the item and returning the result as the type of <code>seq</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def f(x):</span><br><span class="line">  return x * x</span><br><span class="line">X - [1,2,3,4,5]</span><br><span class="line">Y = map(f, X)</span><br><span class="line">print Y</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(x)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> x * x</span><br><span class="line">X - [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">Y = map(f, X)</span><br><span class="line"><span class="keyword">print</span> Y</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Using <code>map</code> and lambda function - most recommended</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">X = [1,2,3,4,5]</span><br><span class="line">print map(lambda x: x * x, X)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">X = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">print</span> map(<span class="keyword">lambda</span> x: x * x, X)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 <li><p><code>filter</code> built-in function</p>
 <ul>
-<li>taking item by item in <code>seq</code> and running <code>function</code> with the item and returning the result as the type of <code>seq</code> if the result is <code>True</code><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print filter(lambda x: x&gt;2, [1,2,3,45])</span><br></pre></td></tr></table></figure>
+<li>taking item by item in <code>seq</code> and running <code>function</code> with the item and returning the result as the type of <code>seq</code> if the result is <code>True</code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> filter(<span class="keyword">lambda</span> x: x&gt;<span class="number">2</span>, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">45</span>])</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -1826,7 +1652,7 @@ ga('send', 'pageview');
 <li>the result after calling the function gets into <code>x</code></li>
 </ol>
 </li>
-<li>optionally, the 3rd parameter <code>initial</code> is used as default value of <code>x</code> at the 1st step<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print reduce(lambda x, y: x + y, [1,2,3,4,5])</span><br><span class="line">print reduce(lambda x, y: x + y, [1,2,3,4,5], 1000)</span><br></pre></td></tr></table></figure>
+<li>optionally, the 3rd parameter <code>initial</code> is used as default value of <code>x</code> at the 1st step<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> reduce(<span class="keyword">lambda</span> x, y: x + y, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>])</span><br><span class="line"><span class="keyword">print</span> reduce(<span class="keyword">lambda</span> x, y: x + y, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>], <span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -1906,6 +1732,180 @@ ga('send', 'pageview');
 
 
 
+    <article id="post-post18-python-lambda" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/04/12/post18-python-lambda/">python 람다(lambda) 함수</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/04/12/post18-python-lambda/">
+            <time datetime="2018-04-12T05:19:37.000Z" itemprop="datePublished">2018-04-12</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="람다-lambda-함수-정의"><a href="#람다-lambda-함수-정의" class="headerlink" title="람다(lambda)함수 정의"></a>람다(lambda)함수 정의</h1><ul>
+<li>일반적인 함수를 한 줄의 문으로 정의할 수 있는 새로운 함수 정의 리터럴</li>
+<li>일회성으로 활용할 함수 정의할 때 주로 사용</li>
+<li><code>:</code>뒤에는 식만 올 수 있음</li>
+<li>람다 함수도 하나의 객체임</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="keyword">lambda</span> x: x + <span class="number">1</span></span><br><span class="line"><span class="keyword">print</span> f(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>인수가 두 개 있는 람다 함수를 지니는 변수 지정 및 함수 호출</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">g = <span class="keyword">lambda</span> x,y: x + y</span><br><span class="line"><span class="keyword">print</span> g(<span class="number">1</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>기본 인수를 지니는 람다 함수 정의</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">g = <span class="keyword">lambda</span> x, inc=<span class="number">1</span>: x+inc</span><br><span class="line"><span class="keyword">print</span> g(<span class="number">10</span>) <span class="comment"># inc기본 인수 값으로 1사용</span></span><br><span class="line"><span class="keyword">print</span> g(<span class="number">10</span>, <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>가변 인수를 지니는 람다 함수 정의</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vargs = <span class="keyword">lambda</span> x, *args: args <span class="comment">#args가 리턴됨</span></span><br><span class="line"><span class="keyword">print</span> vars(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h2 id="람다-함수-사용하기"><a href="#람다-함수-사용하기" class="headerlink" title="람다 함수 사용하기"></a>람다 함수 사용하기</h2><ul>
+<li><p>일반 함수 사용</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">(x)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> x*x + <span class="number">3</span>*x - <span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">(x)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> x*x*x</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">g</span><span class="params">(func)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> [func(x) <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">-10</span>, <span class="number">10</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> g(f1)</span><br><span class="line"><span class="keyword">print</span> g(f2)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>람다 함수 사용</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">g</span><span class="params">(func)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> [func(x) <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">-10</span>, <span class="number">10</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> g(<span class="keyword">lambda</span> x: x*x + <span class="number">3</span>*x - <span class="number">10</span>)</span><br><span class="line"><span class="keyword">print</span> g(<span class="keyword">lambda</span> x: x*x*x)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="람다-함수-활용"><a href="#람다-함수-활용" class="headerlink" title="람다 함수 활용"></a>람다 함수 활용</h2><ul>
+<li><code>map</code>, <code>filter</code>, <code>reduce</code> 내장 함수</li>
+</ul>
+<ol>
+<li><p><code>map</code> 내장 함수</p>
+<ul>
+<li><p><code>map(function, seq)</code>: <code>seq</code>의 원소를 차례로 돌면서 <code>function</code>에 적용한 결과를 <code>seq</code>의 자료형으로 반환</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(x)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> x * x</span><br><span class="line">X - [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">Y = map(f, X)</span><br><span class="line"><span class="keyword">print</span> Y</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>map</code>과 람다 함수를 동시에 사용 - 가장 추천</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">X = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">print</span> map(<span class="keyword">lambda</span> x: x * x, X)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>filter</code> 내장 함수</p>
+<ul>
+<li><code>seq</code>자료형이 지닌 각 원소값에 대해 <code>function</code>에 적용한 결과가 참인 원소값들만을 동일 시퀀스 자료형으로 반환<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> filter(<span class="keyword">lambda</span> x: x&gt;<span class="number">2</span>, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">45</span>])</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>reduce</code> 내장 함수</p>
+<ul>
+<li><code>reduce(function, seq[,initial])</code></li>
+<li><code>seq</code>자료형이 지닌 각 원소값에 대해 <code>function</code>함수를 적용하면서 하나의 값으로 매핑</li>
+<li>첫번째 인자(<code>function</code>)는 반드시 두 개의 인자(ex. x,y)를 받아야한다.<ul>
+<li><code>seq</code>의 각 원소값들이 차례로 <code>y</code>에 들어간다</li>
+<li>함수가 수행된 값은 차례대로 <code>x</code>에 들어간다</li>
+</ul>
+</li>
+<li>추가적으로 제공가능한 세번재 인자인 <code>initial</code>은 첫번째 단계에서 <code>x</code>에 할당할 초기값으로 사용된다<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> reduce(<span class="keyword">lambda</span> x, y: x + y, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>])</span><br><span class="line"><span class="keyword">print</span> reduce(<span class="keyword">lambda</span> x, y: x + y, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>], <span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://bongbooski.github.io/2018/04/12/post18-python-lambda/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/12/post18-python-lambda/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <nav id="page-nav">
         <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
@@ -1961,25 +1961,6 @@ ga('send', 'pageview');
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/04/17/post21-python-exception-handling/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling/" class="title">python 예외처리</a></p>
-                            <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
                             <a href="/2018/04/17/post21-python-exception-handling_eng/" class="thumbnail">
     
     
@@ -1992,6 +1973,25 @@ ga('send', 'pageview');
                         <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling_eng/" class="title">python Exception Handling</a></p>
+                            <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/17/post21-python-exception-handling/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling/" class="title">python 예외처리</a></p>
                             <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
                         </div>
                     </li>

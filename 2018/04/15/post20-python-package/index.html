@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Booski&#39;s programming">
 <meta property="og:description" content="패키지(Package) 여러 모듈들을 한데 묶어서 정리해 놓은 구조 물리적으로 여러 모듈 파일을 모아 놓은 디렉토리에 해당 최상위 디렉토리 이름이 패키지 이름이 된다. 최상위 디렉토리 하위에 여러 서브 디렉토리는 해당 최상위패키지의 하위 패키지가 된다. 모듈=파일, 패키지=디렉토리     __init__.py의 역할 디렉토리를 패키지로 인식시키는 역할 서브">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-04-17T09:32:26.712Z">
+<meta property="og:updated_time" content="2018-04-17T13:44:32.128Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python 패키지">
 <meta name="twitter:description" content="패키지(Package) 여러 모듈들을 한데 묶어서 정리해 놓은 구조 물리적으로 여러 모듈 파일을 모아 놓은 디렉토리에 해당 최상위 디렉토리 이름이 패키지 이름이 된다. 최상위 디렉토리 하위에 여러 서브 디렉토리는 해당 최상위패키지의 하위 패키지가 된다. 모듈=파일, 패키지=디렉토리     __init__.py의 역할 디렉토리를 패키지로 인식시키는 역할 서브">
@@ -278,13 +278,13 @@ ga('send', 'pageview');
 <li>서브 패키지에도 패키지와 마찬가지로 필요(없으면 단순 폴더역할)</li>
 </ul>
 <hr>
-<h2 id="import하기"><a href="#import하기" class="headerlink" title="import하기"></a>import하기</h2>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">import Speech</span><br></pre></td></tr></table></figure>
+<h2 id="import하기"><a href="#import하기" class="headerlink" title="import하기"></a>import하기</h2>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Speech</span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>Speech</code>디렉토리가 <code>sys.path</code>(또는 <code>PYTHONPATH</code>환경변수)에 열거된 폴더 중 하나에 위치해야함</li>
-<li><code>Speech/Recognition/HMM.py</code>코드 내용<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def train():</span><br><span class="line">  print &quot;Train&quot;</span><br><span class="line">  pass</span><br><span class="line"></span><br><span class="line">def loadModel():</span><br><span class="line">  print &quot;LoadModel&quot;</span><br><span class="line">  pass</span><br><span class="line"></span><br><span class="line">def saveModel():</span><br><span class="line">  print &quot;SaveModel&quot;</span><br><span class="line">  pass</span><br></pre></td></tr></table></figure>
+<li><code>Speech/Recognition/HMM.py</code>코드 내용<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">train</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"Train"</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">loadModel</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"LoadModel"</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">saveModel</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"SaveModel"</span></span><br><span class="line">  <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="특정-함수-사용하는-방법"><a href="#특정-함수-사용하는-방법" class="headerlink" title="특정 함수 사용하는 방법"></a>특정 함수 사용하는 방법</h3>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"># 사용불가. 패키지명에서 .으로 특정 모듈, 함수 가져와야함</span><br><span class="line">import Speech</span><br><span class="line">Speech.Recognition.HMM.train()</span><br><span class="line"></span><br><span class="line"># 적절한 방법</span><br><span class="line">import Speech.Recognition.HMM</span><br><span class="line">Speech.Recognition.HMM.train()</span><br><span class="line"></span><br><span class="line">from Speech.Recognition import HMM</span><br><span class="line">HMM.train()</span><br><span class="line"></span><br><span class="line">from Speech.Recognition.HMM import train</span><br><span class="line">train()</span><br><span class="line"></span><br><span class="line"># 모듈 내의 변수 전부 다 가져옴, 모듈이름 없이 사용가능</span><br><span class="line">from Speech.Recognition.HMM import *</span><br><span class="line">train()</span><br><span class="line">loadModel()</span><br><span class="line">saveModel()</span><br></pre></td></tr></table></figure>
+<h3 id="특정-함수-사용하는-방법"><a href="#특정-함수-사용하는-방법" class="headerlink" title="특정 함수 사용하는 방법"></a>특정 함수 사용하는 방법</h3>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 사용불가. 패키지명에서 .으로 특정 모듈, 함수 가져와야함</span></span><br><span class="line"><span class="keyword">import</span> Speech</span><br><span class="line">Speech.Recognition.HMM.train()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 적절한 방법</span></span><br><span class="line"><span class="keyword">import</span> Speech.Recognition.HMM</span><br><span class="line">Speech.Recognition.HMM.train()</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> Speech.Recognition <span class="keyword">import</span> HMM</span><br><span class="line">HMM.train()</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> Speech.Recognition.HMM <span class="keyword">import</span> train</span><br><span class="line">train()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 모듈 내의 변수 전부 다 가져옴, 모듈이름 없이 사용가능</span></span><br><span class="line"><span class="keyword">from</span> Speech.Recognition.HMM <span class="keyword">import</span> *</span><br><span class="line">train()</span><br><span class="line">loadModel()</span><br><span class="line">saveModel()</span><br></pre></td></tr></table></figure>
 
         
         </div>
@@ -359,11 +359,11 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2018/04/17/post21-python-exception-handling_eng/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2018/04/17/post21-python-exception-handling/" id="article-nav-newer" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Newer</strong>
             <div class="article-nav-title">
                 
-                    python Exception Handling
+                    python 예외처리
                 
             </div>
         </a>
@@ -442,25 +442,6 @@ ga('send', 'pageview');
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/04/17/post21-python-exception-handling/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling/" class="title">python 예외처리</a></p>
-                            <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
                             <a href="/2018/04/17/post21-python-exception-handling_eng/" class="thumbnail">
     
     
@@ -473,6 +454,25 @@ ga('send', 'pageview');
                         <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling_eng/" class="title">python Exception Handling</a></p>
+                            <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/17/post21-python-exception-handling/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling/" class="title">python 예외처리</a></p>
                             <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
                         </div>
                     </li>

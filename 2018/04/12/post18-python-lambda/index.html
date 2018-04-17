@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Booski&#39;s programming">
 <meta property="og:description" content="람다(lambda)함수 정의 일반적인 함수를 한 줄의 문으로 정의할 수 있는 새로운 함수 정의 리터럴 일회성으로 활용할 함수 정의할 때 주로 사용 :뒤에는 식만 올 수 있음 람다 함수도 하나의 객체임  12f = lambda x: x + 1print f(1)  인수가 두 개 있는 람다 함수를 지니는 변수 지정 및 함수 호출 12g = lambda x,y:">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-04-17T08:00:44.120Z">
+<meta property="og:updated_time" content="2018-04-17T13:42:59.231Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python 람다(lambda) 함수">
 <meta name="twitter:description" content="람다(lambda)함수 정의 일반적인 함수를 한 줄의 문으로 정의할 수 있는 새로운 함수 정의 리터럴 일회성으로 활용할 함수 정의할 때 주로 사용 :뒤에는 식만 올 수 있음 람다 함수도 하나의 객체임  12f = lambda x: x + 1print f(1)  인수가 두 개 있는 람다 함수를 지니는 변수 지정 및 함수 호출 12g = lambda x,y:">
@@ -269,25 +269,25 @@ ga('send', 'pageview');
 <li><code>:</code>뒤에는 식만 올 수 있음</li>
 <li>람다 함수도 하나의 객체임</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = lambda x: x + 1</span><br><span class="line">print f(1)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="keyword">lambda</span> x: x + <span class="number">1</span></span><br><span class="line"><span class="keyword">print</span> f(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 <ol>
 <li><p>인수가 두 개 있는 람다 함수를 지니는 변수 지정 및 함수 호출</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">g = lambda x,y: x + y</span><br><span class="line">print g(1,2)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">g = <span class="keyword">lambda</span> x,y: x + y</span><br><span class="line"><span class="keyword">print</span> g(<span class="number">1</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>기본 인수를 지니는 람다 함수 정의</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">g = lambda x, inc=1: x+inc</span><br><span class="line">print g(10) # inc기본 인수 값으로 1사용</span><br><span class="line">print g(10, 5)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">g = <span class="keyword">lambda</span> x, inc=<span class="number">1</span>: x+inc</span><br><span class="line"><span class="keyword">print</span> g(<span class="number">10</span>) <span class="comment"># inc기본 인수 값으로 1사용</span></span><br><span class="line"><span class="keyword">print</span> g(<span class="number">10</span>, <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>가변 인수를 지니는 람다 함수 정의</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vargs = lambda x, *args: args #args가 리턴됨</span><br><span class="line">print vars(1,2,3,4,5)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vargs = <span class="keyword">lambda</span> x, *args: args <span class="comment">#args가 리턴됨</span></span><br><span class="line"><span class="keyword">print</span> vars(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <hr>
 <h2 id="람다-함수-사용하기"><a href="#람다-함수-사용하기" class="headerlink" title="람다 함수 사용하기"></a>람다 함수 사용하기</h2><ul>
 <li><p>일반 함수 사용</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def f1(x):</span><br><span class="line">  return x*x + 3*x - 10</span><br><span class="line"></span><br><span class="line">def f2(x):</span><br><span class="line">  return x*x*x</span><br><span class="line"></span><br><span class="line">def g(func):</span><br><span class="line">  return [func(x) for x in range(-10, 10)]</span><br><span class="line"></span><br><span class="line">print g(f1)</span><br><span class="line">print g(f2)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">(x)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> x*x + <span class="number">3</span>*x - <span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">(x)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> x*x*x</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">g</span><span class="params">(func)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> [func(x) <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">-10</span>, <span class="number">10</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> g(f1)</span><br><span class="line"><span class="keyword">print</span> g(f2)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>람다 함수 사용</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def g(func):</span><br><span class="line">  return [func(x) for x in range(-10, 10)]</span><br><span class="line"></span><br><span class="line">print g(lambda x: x*x + 3*x - 10)</span><br><span class="line">print g(lambda x: x*x*x)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">g</span><span class="params">(func)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> [func(x) <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">-10</span>, <span class="number">10</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> g(<span class="keyword">lambda</span> x: x*x + <span class="number">3</span>*x - <span class="number">10</span>)</span><br><span class="line"><span class="keyword">print</span> g(<span class="keyword">lambda</span> x: x*x*x)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="람다-함수-활용"><a href="#람다-함수-활용" class="headerlink" title="람다 함수 활용"></a>람다 함수 활용</h2><ul>
@@ -297,16 +297,16 @@ ga('send', 'pageview');
 <li><p><code>map</code> 내장 함수</p>
 <ul>
 <li><p><code>map(function, seq)</code>: <code>seq</code>의 원소를 차례로 돌면서 <code>function</code>에 적용한 결과를 <code>seq</code>의 자료형으로 반환</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def f(x):</span><br><span class="line">  return x * x</span><br><span class="line">X - [1,2,3,4,5]</span><br><span class="line">Y = map(f, X)</span><br><span class="line">print Y</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(x)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> x * x</span><br><span class="line">X - [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">Y = map(f, X)</span><br><span class="line"><span class="keyword">print</span> Y</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><code>map</code>과 람다 함수를 동시에 사용 - 가장 추천</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">X = [1,2,3,4,5]</span><br><span class="line">print map(lambda x: x * x, X)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">X = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">print</span> map(<span class="keyword">lambda</span> x: x * x, X)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 <li><p><code>filter</code> 내장 함수</p>
 <ul>
-<li><code>seq</code>자료형이 지닌 각 원소값에 대해 <code>function</code>에 적용한 결과가 참인 원소값들만을 동일 시퀀스 자료형으로 반환<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print filter(lambda x: x&gt;2, [1,2,3,45])</span><br></pre></td></tr></table></figure>
+<li><code>seq</code>자료형이 지닌 각 원소값에 대해 <code>function</code>에 적용한 결과가 참인 원소값들만을 동일 시퀀스 자료형으로 반환<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> filter(<span class="keyword">lambda</span> x: x&gt;<span class="number">2</span>, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">45</span>])</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -319,7 +319,7 @@ ga('send', 'pageview');
 <li>함수가 수행된 값은 차례대로 <code>x</code>에 들어간다</li>
 </ul>
 </li>
-<li>추가적으로 제공가능한 세번재 인자인 <code>initial</code>은 첫번째 단계에서 <code>x</code>에 할당할 초기값으로 사용된다<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print reduce(lambda x, y: x + y, [1,2,3,4,5])</span><br><span class="line">print reduce(lambda x, y: x + y, [1,2,3,4,5], 1000)</span><br></pre></td></tr></table></figure>
+<li>추가적으로 제공가능한 세번재 인자인 <code>initial</code>은 첫번째 단계에서 <code>x</code>에 할당할 초기값으로 사용된다<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> reduce(<span class="keyword">lambda</span> x, y: x + y, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>])</span><br><span class="line"><span class="keyword">print</span> reduce(<span class="keyword">lambda</span> x, y: x + y, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>], <span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
@@ -398,19 +398,19 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/2018/04/15/post19-python-import/" id="article-nav-newer" class="article-nav-link-wrap">
+        <a href="/2018/04/12/post18-python-lambda_eng/" id="article-nav-newer" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Newer</strong>
             <div class="article-nav-title">
                 
-                    python 모듈 import하기
+                    python lambda function
                 
             </div>
         </a>
     
     
-        <a href="/2018/04/12/post18-python-lambda_eng/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2018/04/11/post17_python-file,directory/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">python lambda function</div>
+            <div class="article-nav-title">python 파일 다루기</div>
         </a>
     
 </nav>
@@ -481,25 +481,6 @@ ga('send', 'pageview');
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/04/17/post21-python-exception-handling/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling/" class="title">python 예외처리</a></p>
-                            <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
                             <a href="/2018/04/17/post21-python-exception-handling_eng/" class="thumbnail">
     
     
@@ -512,6 +493,25 @@ ga('send', 'pageview');
                         <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling_eng/" class="title">python Exception Handling</a></p>
+                            <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/17/post21-python-exception-handling/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling/" class="title">python 예외처리</a></p>
                             <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
                         </div>
                     </li>

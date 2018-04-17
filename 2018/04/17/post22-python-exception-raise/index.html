@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Booski&#39;s programming">
 <meta property="og:description" content="Exception raiseraise로 예외 발생하기 예외를 특정 상황 조건에서 raise키워드를 통해 발생시킬 수 있다. 아래 예는 시퀀스 형 클래스를 설계할 때 인덱싱을 구현하는 __getitem__메소드에서 인덱스가 범위를 넘을 때 IndexError를 발생시킨다. 123456789101112131415class SquareSeq:  def __ini">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-04-17T12:49:59.875Z">
+<meta property="og:updated_time" content="2018-04-17T13:44:56.436Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python 예외 발생시키기">
 <meta name="twitter:description" content="Exception raiseraise로 예외 발생하기 예외를 특정 상황 조건에서 raise키워드를 통해 발생시킬 수 있다. 아래 예는 시퀀스 형 클래스를 설계할 때 인덱싱을 구현하는 __getitem__메소드에서 인덱스가 범위를 넘을 때 IndexError를 발생시킨다. 123456789101112131415class SquareSeq:  def __ini">
@@ -266,7 +266,7 @@ ga('send', 'pageview');
             <h1 id="Exception-raise"><a href="#Exception-raise" class="headerlink" title="Exception raise"></a>Exception raise</h1><h2 id="raise로-예외-발생하기"><a href="#raise로-예외-발생하기" class="headerlink" title="raise로 예외 발생하기"></a><code>raise</code>로 예외 발생하기</h2><ul>
 <li>예외를 특정 상황 조건에서 <code>raise</code>키워드를 통해 발생시킬 수 있다.</li>
 <li><p>아래 예는 시퀀스 형 클래스를 설계할 때 인덱싱을 구현하는 <code>__getitem__</code>메소드에서 인덱스가 범위를 넘을 때 <code>IndexError</code>를 발생시킨다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">class SquareSeq:</span><br><span class="line">  def __init__(self, n):</span><br><span class="line">    self.n = n</span><br><span class="line">  def __getitem__(self,k):</span><br><span class="line">    if k &gt;= self.n or k &lt; 0:</span><br><span class="line">      raise IndexError # 인덱스 범위를 벗어나나면 IndexError발생</span><br><span class="line">    return k * k</span><br><span class="line">  def __len_(self):</span><br><span class="line">    return self.n</span><br><span class="line"></span><br><span class="line">s = SquareSeq(10)</span><br><span class="line">print s[2], s[4]</span><br><span class="line">for x in s: # IndexError가 발생하는 시점까지 반복</span><br><span class="line">   print x,</span><br><span class="line">print s[20] # 인덱스 범위를 넘음</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SquareSeq</span>:</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, n)</span>:</span></span><br><span class="line">    self.n = n</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span><span class="params">(self,k)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> k &gt;= self.n <span class="keyword">or</span> k &lt; <span class="number">0</span>:</span><br><span class="line">      <span class="keyword">raise</span> IndexError <span class="comment"># 인덱스 범위를 벗어나나면 IndexError발생</span></span><br><span class="line">    <span class="keyword">return</span> k * k</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__len_</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> self.n</span><br><span class="line"></span><br><span class="line">s = SquareSeq(<span class="number">10</span>)</span><br><span class="line"><span class="keyword">print</span> s[<span class="number">2</span>], s[<span class="number">4</span>]</span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> s: <span class="comment"># IndexError가 발생하는 시점까지 반복</span></span><br><span class="line">   <span class="keyword">print</span> x,</span><br><span class="line"><span class="keyword">print</span> s[<span class="number">20</span>] <span class="comment"># 인덱스 범위를 넘음</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <hr>
@@ -281,16 +281,16 @@ ga('send', 'pageview');
 </ul>
 </li>
 <li><p>아래 예에서 <code>except Big</code>이 잡는 예외는 <code>Big</code>과 <code>Small</code>이다<br>-&gt; <code>Small</code>은 <code>Big</code>의 하위 클래스 이기 때문</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">class Big(Exception):</span><br><span class="line">  pass</span><br><span class="line"></span><br><span class="line">class Small(Big):</span><br><span class="line">  pass</span><br><span class="line"></span><br><span class="line">def dosomething1():</span><br><span class="line">  x = Big()</span><br><span class="line">  raise x # x는 예외객체이므로 raise가능</span><br><span class="line"></span><br><span class="line">def dosomething2():</span><br><span class="line">  raise Small()</span><br><span class="line"></span><br><span class="line">for f in (dosomething1, dosomething2):</span><br><span class="line">  try:</span><br><span class="line">    f()</span><br><span class="line">  except Big:</span><br><span class="line">    print &quot;Exception occurs!&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Big</span><span class="params">(Exception)</span>:</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Small</span><span class="params">(Big)</span>:</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dosomething1</span><span class="params">()</span>:</span></span><br><span class="line">  x = Big()</span><br><span class="line">  <span class="keyword">raise</span> x <span class="comment"># x는 예외객체이므로 raise가능</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dosomething2</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">raise</span> Small()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> (dosomething1, dosomething2):</span><br><span class="line">  <span class="keyword">try</span>:</span><br><span class="line">    f()</span><br><span class="line">  <span class="keyword">except</span> Big:</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"Exception occurs!"</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <hr>
 <h2 id="예외값-전달하기"><a href="#예외값-전달하기" class="headerlink" title="예외값 전달하기"></a>예외값 전달하기</h2><ul>
 <li><p><code>raise</code>키워드 뒤에 예외와 함께, 추가 메시지를 함께 던질 수 있다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def f():</span><br><span class="line">  raise Exception, &apos;message!!!&apos;</span><br><span class="line"></span><br><span class="line">try:</span><br><span class="line">  f()</span><br><span class="line">except Exception, a:</span><br><span class="line">  print a</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">raise</span> Exception, <span class="string">'message!!!'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  f()</span><br><span class="line"><span class="keyword">except</span> Exception, a:</span><br><span class="line">  <span class="keyword">print</span> a</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>생성자 안에 넣어준 에러 메시지는 <code>except</code>키워드 사용시에 두 번째 인자로 해당 메시지를 받을 수 있다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = 10</span><br><span class="line">b = 0</span><br><span class="line">try:</span><br><span class="line">  if b == 0:</span><br><span class="line">    raise ArithmeticError(&apos;0으로 나누고 있습니다.&apos;)</span><br><span class="line">    a/b</span><br><span class="line">except ArithmeticError, v:</span><br><span class="line">  print v</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10</span></span><br><span class="line">b = <span class="number">0</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  <span class="keyword">if</span> b == <span class="number">0</span>:</span><br><span class="line">    <span class="keyword">raise</span> ArithmeticError(<span class="string">'0으로 나누고 있습니다.'</span>)</span><br><span class="line">    a/b</span><br><span class="line"><span class="keyword">except</span> ArithmeticError, v:</span><br><span class="line">  <span class="keyword">print</span> v</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
@@ -441,25 +441,6 @@ ga('send', 'pageview');
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/04/17/post21-python-exception-handling/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling/" class="title">python 예외처리</a></p>
-                            <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
                             <a href="/2018/04/17/post21-python-exception-handling_eng/" class="thumbnail">
     
     
@@ -472,6 +453,25 @@ ga('send', 'pageview');
                         <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling_eng/" class="title">python Exception Handling</a></p>
+                            <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/17/post21-python-exception-handling/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling/" class="title">python 예외처리</a></p>
                             <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
                         </div>
                     </li>

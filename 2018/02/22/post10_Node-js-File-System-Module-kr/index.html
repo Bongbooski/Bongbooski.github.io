@@ -5,18 +5,18 @@
     
     <title>Node.js File System 모듈 | Booski&#39;s programming</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="모든 HTML 페이지를 자바스크립트로 작성하기는 힘들다.file system모듈은 서버에 있는 HTML페이지를 사용자들에게 보여줄 수 있게 해준다. HTML페이지(HTMLPage.html)을 사용자에게 제공하기 위해서 자바스크립트 파일을 다음과 같이 작성해보았다. 1234567891011const fs = require(&amp;quot;fs&amp;quot;);cons">
+    <meta name="description" content="모든 HTML 페이지를 자바스크립트로 작성하기는 힘들다.file system모듈은 서버에 있는 HTML페이지를 사용자들에게 보여줄 수 있게 해준다. HTML페이지(HTMLPage.html)을 사용자에게 제공하기 위해서 자바스크립트 파일을 다음과 같이 작성해보았다. 1234567891011const fs = require(&quot;fs&quot;);const http = r">
 <meta name="keywords" content="Node.js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Node.js File System 모듈">
 <meta property="og:url" content="http://bongbooski.github.io/2018/02/22/post10_Node-js-File-System-Module-kr/index.html">
 <meta property="og:site_name" content="Booski&#39;s programming">
-<meta property="og:description" content="모든 HTML 페이지를 자바스크립트로 작성하기는 힘들다.file system모듈은 서버에 있는 HTML페이지를 사용자들에게 보여줄 수 있게 해준다. HTML페이지(HTMLPage.html)을 사용자에게 제공하기 위해서 자바스크립트 파일을 다음과 같이 작성해보았다. 1234567891011const fs = require(&amp;quot;fs&amp;quot;);cons">
+<meta property="og:description" content="모든 HTML 페이지를 자바스크립트로 작성하기는 힘들다.file system모듈은 서버에 있는 HTML페이지를 사용자들에게 보여줄 수 있게 해준다. HTML페이지(HTMLPage.html)을 사용자에게 제공하기 위해서 자바스크립트 파일을 다음과 같이 작성해보았다. 1234567891011const fs = require(&quot;fs&quot;);const http = r">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-02-22T12:07:04.000Z">
+<meta property="og:updated_time" content="2018-04-17T13:50:55.373Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node.js File System 모듈">
-<meta name="twitter:description" content="모든 HTML 페이지를 자바스크립트로 작성하기는 힘들다.file system모듈은 서버에 있는 HTML페이지를 사용자들에게 보여줄 수 있게 해준다. HTML페이지(HTMLPage.html)을 사용자에게 제공하기 위해서 자바스크립트 파일을 다음과 같이 작성해보았다. 1234567891011const fs = require(&amp;quot;fs&amp;quot;);cons">
+<meta name="twitter:description" content="모든 HTML 페이지를 자바스크립트로 작성하기는 힘들다.file system모듈은 서버에 있는 HTML페이지를 사용자들에게 보여줄 수 있게 해준다. HTML페이지(HTMLPage.html)을 사용자에게 제공하기 위해서 자바스크립트 파일을 다음과 같이 작성해보았다. 1234567891011const fs = require(&quot;fs&quot;);const http = r">
 <meta property="fb:app_id" content="965647770265499">
     
 
@@ -265,7 +265,7 @@ ga('send', 'pageview');
             
             <p>모든 <code>HTML</code> 페이지를 자바스크립트로 작성하기는 힘들다.<br><code>file system</code>모듈은 서버에 있는 <code>HTML</code>페이지를 사용자들에게 보여줄 수 있게 해준다.</p>
 <p>HTML페이지(<code>HTMLPage.html</code>)을 사용자에게 제공하기 위해서 자바스크립트 파일을 다음과 같이 작성해보았다.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const fs = require(&quot;fs&quot;);</span><br><span class="line">const http = require(&quot;http&quot;);</span><br><span class="line"></span><br><span class="line">http.createServer(function(request, response)&#123;</span><br><span class="line">  fs.readFile(&quot;HTMLPage.html&quot;, function(error, data)&#123;</span><br><span class="line">    response.writeHead(200, &#123;&quot;Content-Type:&quot;:&quot;text/html&quot;&#125;);</span><br><span class="line">    response.end(data);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;).listen(52273, function()&#123;</span><br><span class="line">  console.log(&quot;server running at http://127.0.0.1:52273/&quot;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</span><br><span class="line"></span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">request, response</span>)</span>&#123;</span><br><span class="line">  fs.readFile(<span class="string">"HTMLPage.html"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">error, data</span>)</span>&#123;</span><br><span class="line">    response.writeHead(<span class="number">200</span>, &#123;<span class="string">"Content-Type:"</span>:<span class="string">"text/html"</span>&#125;);</span><br><span class="line">    response.end(data);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;).listen(<span class="number">52273</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"server running at http://127.0.0.1:52273/"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>만약 다른 종류의 파일을 제공하고 싶다면, 5번째 줄의 <code>MIME</code>타입을 바꿔서 제공할 수 있다.<br>예를 들어 <code>jpeg</code>파일의 경우는 <code>text/html</code>을 <code>image/jpeg</code>로 변경하여 제공할 수 있다.<br>또한 다른 <code>MIME</code> 타입들도 동일한 방식을 적용할 수 있다.</p>
 <h3 id="MIME-타입들-예시"><a href="#MIME-타입들-예시" class="headerlink" title="MIME 타입들 예시"></a>MIME 타입들 예시</h3><ul>
 <li><code>text/plain</code> — 기본 텍스트</li>
@@ -434,25 +434,6 @@ ga('send', 'pageview');
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/04/17/post21-python-exception-handling/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling/" class="title">python 예외처리</a></p>
-                            <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
                             <a href="/2018/04/17/post21-python-exception-handling_eng/" class="thumbnail">
     
     
@@ -465,6 +446,25 @@ ga('send', 'pageview');
                         <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling_eng/" class="title">python Exception Handling</a></p>
+                            <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/17/post21-python-exception-handling/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling/" class="title">python 예외처리</a></p>
                             <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
                         </div>
                     </li>

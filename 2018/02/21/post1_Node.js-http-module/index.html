@@ -14,7 +14,7 @@
 <meta property="og:description" content="When we order chicken, we say ‘it is A apartment in B area, … please deliver us a chicken’ then we get a chicken after some time in the right place where we talked. In this situation, putting URL on w">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://bongbooski.github.io/images/http_module.png">
-<meta property="og:updated_time" content="2018-02-22T02:47:26.000Z">
+<meta property="og:updated_time" content="2018-04-17T13:51:29.668Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node.js http module">
 <meta name="twitter:description" content="When we order chicken, we say ‘it is A apartment in B area, … please deliver us a chicken’ then we get a chicken after some time in the right place where we talked. In this situation, putting URL on w">
@@ -268,10 +268,10 @@ ga('send', 'pageview');
             <p>When we order chicken, we say ‘it is A apartment in B area, … please deliver us a chicken’ then we get a chicken after some time in the right place where we talked.</p>
 <p>In this situation, putting URL on web browser is ordering chicken and getting the web page from the web server is getting the chicken from the restaurant. It’s the basic understanding about request and response</p>
 <p>Depending on the way to send the ordering, we can call the server as <code>HTTP</code> web server or <code>HTTPS</code> web server etc.<br>When we use <code>request</code> message, we get proper web page for users.<br>When we use <code>response</code> message, we can save and take <code>cookies</code> and force to move the page.<br>In http module, the most important object is <code>server</code>. we can declare <code>server</code> by using <code>createServer()</code> method.</p>
-<h3 id="Server-object’s-method"><a href="#Server-object’s-method" class="headerlink" title="Server object’s method"></a>Server object’s method</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">listen(port[, callback]) — Start server</span><br><span class="line">close([callback]) — Stop server</span><br></pre></td></tr></table></figure>
+<h3 id="Server-object’s-method"><a href="#Server-object’s-method" class="headerlink" title="Server object’s method"></a>Server object’s method</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">listen(port[, callback]) — Start server</span><br><span class="line">close([callback]) — Stop server</span><br></pre></td></tr></table></figure>
 <h3 id="Server-object’s-event"><a href="#Server-object’s-event" class="headerlink" title="Server object’s event"></a>Server object’s event</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">request — when client asks something</span><br><span class="line">connection — when client opens the server</span><br><span class="line">close — when the server is closed</span><br><span class="line">checkContinue — when client keeps connecting the server</span><br><span class="line">upgrade — when client asks HTTP upgrade</span><br><span class="line">clientError — when client makes errors</span><br></pre></td></tr></table></figure>
 <p>When we want to provide an web page, we need to write response message. And at that time, we use response object which is the 2nd parameter from request event listener.</p>
-<h3 id="Response-object’s-method"><a href="#Response-object’s-method" class="headerlink" title="Response object’s method"></a>Response object’s method</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">writeHead(statusCode[, statusMessage][, headers]) — write down the response header</span><br><span class="line">end([data][, encoding][, callback]) — write the main response content</span><br></pre></td></tr></table></figure>
+<h3 id="Response-object’s-method"><a href="#Response-object’s-method" class="headerlink" title="Response object’s method"></a>Response object’s method</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">writeHead(statusCode[, statusMessage][, headers]) — write down the response header</span><br><span class="line">end([data][, encoding][, callback]) — write the main response content</span><br></pre></td></tr></table></figure>
 <p><img src="/images/http_module.png" alt=""></p>
 
         
@@ -425,25 +425,6 @@ ga('send', 'pageview');
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/04/17/post21-python-exception-handling/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling/" class="title">python 예외처리</a></p>
-                            <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
                             <a href="/2018/04/17/post21-python-exception-handling_eng/" class="thumbnail">
     
     
@@ -456,6 +437,25 @@ ga('send', 'pageview');
                         <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling_eng/" class="title">python Exception Handling</a></p>
+                            <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/17/post21-python-exception-handling/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling/" class="title">python 예외처리</a></p>
                             <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
                         </div>
                     </li>

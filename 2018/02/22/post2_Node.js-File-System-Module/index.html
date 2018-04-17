@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Booski&#39;s programming">
 <meta property="og:description" content="Because we can’t write down all HTML page in Javascript file, we use file system module for provide HTML page which exists in server to clients. For providing HTML page(HTMLPage.html), we need to make">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-02-22T04:32:52.000Z">
+<meta property="og:updated_time" content="2018-04-17T13:47:42.211Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node.js File System Module">
 <meta name="twitter:description" content="Because we can’t write down all HTML page in Javascript file, we use file system module for provide HTML page which exists in server to clients. For providing HTML page(HTMLPage.html), we need to make">
@@ -264,7 +264,7 @@ ga('send', 'pageview');
         
             
             <p>Because we can’t write down all <code>HTML</code> page in <code>Javascript</code> file, we use <code>file system module</code> for provide <code>HTML</code> page which exists in server to clients.</p>
-<p>For providing HTML page(<code>HTMLPage.html</code>), we need to make server <code>javascript</code> file like this.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const fs = require(&quot;fs&quot;);</span><br><span class="line">const http = require(&quot;http&quot;);</span><br><span class="line"></span><br><span class="line">http.createServer(function(request, response)&#123;</span><br><span class="line">  fs.readFile(&quot;HTMLPage.html&quot;, function(error, data)&#123;</span><br><span class="line">    response.writeHead(200, &#123;&quot;Content-Type:&quot;:&quot;text/html&quot;&#125;);</span><br><span class="line">    response.end(data);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;).listen(52273, function()&#123;</span><br><span class="line">  console.log(&quot;server running at http://127.0.0.1:52273/&quot;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>For providing HTML page(<code>HTMLPage.html</code>), we need to make server <code>javascript</code> file like this.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"><span class="keyword">const</span> http = <span class="built_in">require</span>(<span class="string">"http"</span>);</span><br><span class="line"></span><br><span class="line">http.createServer(<span class="function"><span class="keyword">function</span>(<span class="params">request, response</span>)</span>&#123;</span><br><span class="line">  fs.readFile(<span class="string">"HTMLPage.html"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">error, data</span>)</span>&#123;</span><br><span class="line">    response.writeHead(<span class="number">200</span>, &#123;<span class="string">"Content-Type:"</span>:<span class="string">"text/html"</span>&#125;);</span><br><span class="line">    response.end(data);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;).listen(<span class="number">52273</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"server running at http://127.0.0.1:52273/"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 <p>If we want to provide another kind of file, we can change <code>MIME</code> type in 5th line.<br>For example, in jpeg case, we change <code>text/html</code> to <code>image/jpeg</code>.<br>It is same to other MIME types.</p>
 <h3 id="Examples-of-MIME"><a href="#Examples-of-MIME" class="headerlink" title="Examples of MIME"></a>Examples of MIME</h3><ul>
 <li>text/plain — basic text</li>
@@ -433,25 +433,6 @@ ga('send', 'pageview');
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/04/17/post21-python-exception-handling/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling/" class="title">python 예외처리</a></p>
-                            <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
                             <a href="/2018/04/17/post21-python-exception-handling_eng/" class="thumbnail">
     
     
@@ -464,6 +445,25 @@ ga('send', 'pageview');
                         <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling_eng/" class="title">python Exception Handling</a></p>
+                            <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/04/17/post21-python-exception-handling/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/04/17/post21-python-exception-handling/" class="title">python 예외처리</a></p>
                             <p class="item-date"><time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
                         </div>
                     </li>
