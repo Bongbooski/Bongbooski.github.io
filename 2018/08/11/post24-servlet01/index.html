@@ -3,15 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Archive: 2018 | Booski&#39;s programming</title>
+    <title>Servlet | Booski&#39;s programming</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Booski&#39;s programming">
-<meta property="og:url" content="http://bongbooski.github.io/archives/2018/page/6/index.html">
+    <meta name="description" content="Servlet특징 동적 웹애플리케이션 컴포넌트 .java확장자 응답은 html 이용 java thread이용하여 동작 MVC패턴에서 controller로 이용됨  Mapping하는 방법 .java - @WebServlet으로 매핑 12345@WebServlet(&quot;/Hworld&quot;)   &amp;lt;-- 여기!public class Helloworld extends">
+<meta name="keywords" content="Servlet">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Servlet">
+<meta property="og:url" content="http://bongbooski.github.io/2018/08/11/post24-servlet01/index.html">
 <meta property="og:site_name" content="Booski&#39;s programming">
+<meta property="og:description" content="Servlet특징 동적 웹애플리케이션 컴포넌트 .java확장자 응답은 html 이용 java thread이용하여 동작 MVC패턴에서 controller로 이용됨  Mapping하는 방법 .java - @WebServlet으로 매핑 12345@WebServlet(&quot;/Hworld&quot;)   &amp;lt;-- 여기!public class Helloworld extends">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-08-11T04:32:45.999Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Booski&#39;s programming">
+<meta name="twitter:title" content="Servlet">
+<meta name="twitter:description" content="Servlet특징 동적 웹애플리케이션 컴포넌트 .java확장자 응답은 html 이용 java thread이용하여 동작 MVC패턴에서 controller로 이용됨  Mapping하는 방법 .java - @WebServlet으로 매핑 12345@WebServlet(&quot;/Hworld&quot;)   &amp;lt;-- 여기!public class Helloworld extends">
 <meta property="fb:app_id" content="965647770265499">
     
 
@@ -220,173 +225,164 @@ ga('send', 'pageview');
 </aside>
 
             
-            <section id="main"><div class="timeline timeline-wrap">
-    
-            <div class="timeline-row timeline-row-major">
-                <span class="node"><i class="fa fa-calendar"></i></span>
-                <h1 class="title">2018</h1>
-            </div>
+            <section id="main"><article id="post-post24-servlet01" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/02/22/post9_Node-js-http-module-kr/">Node.js http 모듈</a>
+        <h1 class="article-title" itemprop="name">
+            Servlet
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2018/02/22/post9_Node-js-http-module-kr/">
-            <time datetime="2018-02-22T10:24:22.000Z" itemprop="datePublished">2018-02-22</time>
+        <a href="/2018/08/11/post24-servlet01/">
+            <time datetime="2018-08-11T03:38:20.000Z" itemprop="datePublished">2018-08-11</time>
         </a>
     </div>
 
 
-                    
-                    
+                        
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Node-js/">Node.js</a>
+        <a class="tag-link" href="/tags/Servlet/">Servlet</a>
     </div>
 
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+                    </div>
                 
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/02/22/post8_Node-js-ejs-jade-module-basic-kr/">Node.js ejs, jade module basic 템플릿 모듈 기본</a>
-        </h1>
-    
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="Servlet특징"><a href="#Servlet특징" class="headerlink" title="Servlet특징"></a>Servlet특징</h1><ul>
+<li>동적 웹애플리케이션 컴포넌트</li>
+<li><code>.java</code>확장자</li>
+<li>응답은 <code>html</code> 이용</li>
+<li><code>java thread</code>이용하여 동작</li>
+<li><code>MVC</code>패턴에서 <code>controller</code>로 이용됨</li>
+</ul>
+<h2 id="Mapping하는-방법"><a href="#Mapping하는-방법" class="headerlink" title="Mapping하는 방법"></a>Mapping하는 방법</h2><ol>
+<li><p><code>.java</code> - <code>@WebServlet</code>으로 매핑</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@WebServlet</span>(<span class="string">"/Hworld"</span>)   &lt;-- 여기!</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Helloworld</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>web.xml</code> - <code>web.xml</code> 파일에 매핑 정보 추가</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;servlet&gt;</span><br><span class="line">  	&lt;servlet-name&gt;helloworld&lt;/servlet-name&gt;</span><br><span class="line">  	&lt;servlet-<span class="class"><span class="keyword">class</span>&gt;<span class="title">com</span>.<span class="title">javalec</span>.<span class="title">ex</span>.<span class="title">Helloworld</span>&lt;/<span class="title">servlet</span>-<span class="title">class</span>&gt;</span></span><br><span class="line"><span class="class">&lt;/<span class="title">servlet</span>&gt;</span></span><br><span class="line"><span class="class">&lt;<span class="title">servlet</span>-<span class="title">mapping</span>&gt;</span></span><br><span class="line"><span class="class">	&lt;<span class="title">servlet</span>-<span class="title">name</span>&gt;<span class="title">helloworld</span>&lt;/<span class="title">servlet</span>-<span class="title">name</span>&gt;</span></span><br><span class="line"><span class="class">	&lt;<span class="title">url</span>-<span class="title">pattern</span>&gt;/<span class="title">hw</span>&lt;/<span class="title">url</span>-<span class="title">pattern</span>&gt;</span></span><br><span class="line"><span class="class">&lt;/<span class="title">servlet</span>-<span class="title">mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/02/22/post8_Node-js-ejs-jade-module-basic-kr/">
-            <time datetime="2018-02-22T10:12:05.000Z" itemprop="datePublished">2018-02-22</time>
-        </a>
-    </div>
-
-
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Node-js/">Node.js</a>
-    </div>
-
-                </div>
-            </div>
+        
         </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/02/22/post7_MySql-updating-many-columns-by-A-query/">MySql updating many columns by A query</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/02/22/post7_MySql-updating-many-columns-by-A-query/">
-            <time datetime="2018-02-22T10:00:10.000Z" itemprop="datePublished">2018-02-22</time>
-        </a>
-    </div>
+        <footer class="article-footer">
+            <div class="share-container">
 
 
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/MySql/">MySql</a>
-    </div>
 
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/02/22/post6_MySql-adding-or-subtracting-value-by-update-statement/">MySql adding or subtracting value by update statement</a>
-        </h1>
-    
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
 
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/02/22/post6_MySql-adding-or-subtracting-value-by-update-statement/">
-            <time datetime="2018-02-22T09:51:04.000Z" itemprop="datePublished">2018-02-22</time>
-        </a>
-    </div>
-
-
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/MySql/">MySql</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/02/22/post5_Node.js-ejs,-jade-module-basic/">Node.js ejs, jade module basic</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/02/22/post5_Node.js-ejs,-jade-module-basic/">
-            <time datetime="2018-02-22T06:49:06.000Z" itemprop="datePublished">2018-02-22</time>
-        </a>
-    </div>
-
-
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Node-js/">Node.js</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
 </div>
 
-    <nav id="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/2018/page/5/">&laquo; Prev</a><a class="page-number" href="/archives/2018/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2018/page/4/">4</a><a class="page-number" href="/archives/2018/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/archives/2018/page/7/">7</a><a class="extend next" rel="next" href="/archives/2018/page/7/">Next &raquo;</a>
-    </nav>
+            
+    
+        <a href="http://bongbooski.github.io/2018/08/11/post24-servlet01/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/08/11/post24-servlet01/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/08/11/post25-servlet02/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    Servlet start
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2018/08/09/post23-jsp1/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">JSP</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+</section>
+    
+
 </section>
             
                 
@@ -561,11 +557,13 @@ ga('send', 'pageview');
     <script>
     var disqus_config = function () {
         
-        this.page.identifier = '';
+            this.page.url = 'http://bongbooski.github.io/2018/08/11/post24-servlet01/';
+        
+        this.page.identifier = 'post24-servlet01';
     };
     (function() { 
         var d = document, s = d.createElement('script');  
-        s.src = '//' + 'https-bongbooski-github-io' + '.disqus.com/count.js';
+        s.src = '//' + 'https-bongbooski-github-io' + '.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();
