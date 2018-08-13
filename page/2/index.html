@@ -174,7 +174,7 @@ ga('send', 'pageview');
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                34
+                40
                 <span>posts</span>
             </div>
             <div class="article-info-block">
@@ -221,7 +221,7 @@ ga('send', 'pageview');
 
             
             <section id="main">
-    <article id="post-post19-python-import" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-post22-python-exception-raise_eng" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -229,7 +229,7 @@ ga('send', 'pageview');
                 
     
         <h1 itemprop="name">
-            <a class="article-title" href="/2018/04/15/post19-python-import/">python 모듈 import하기</a>
+            <a class="article-title" href="/2018/04/17/post22-python-exception-raise_eng/">python Exception Raise</a>
         </h1>
     
 
@@ -238,8 +238,8 @@ ga('send', 'pageview');
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2018/04/15/post19-python-import/">
-            <time datetime="2018-04-15T02:48:23.000Z" itemprop="datePublished">2018-04-15</time>
+        <a href="/2018/04/17/post22-python-exception-raise_eng/">
+            <time datetime="2018-04-17T05:47:23.000Z" itemprop="datePublished">2018-04-17</time>
         </a>
     </div>
 
@@ -259,91 +259,34 @@ ga('send', 'pageview');
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h1 id="import-모듈명"><a href="#import-모듈명" class="headerlink" title="import 모듈명"></a>import 모듈명</h1><ol>
-<li><p>기본적인 형태</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> mymath</span><br><span class="line"><span class="keyword">print</span> mymath.area(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>from 모듈명 import 가져올 대상</p>
-<ul>
-<li>해당 모듈에 존재하는 대상을 가져옴</li>
-<li>기존에 존재하던 이름이면 기존 객체가 상실됨</li>
-<li>모듈 이름 없이 바로 사용 가능<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> mymath <span class="keyword">import</span> area, mypi</span><br><span class="line"><span class="keyword">print</span> area(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>from 모듈명 import *</p>
-<ul>
-<li>해당 모듈에 존재하는 <code>__</code>로 시작되는 것들을 제외한 모든 대상을 가져옴<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> mymath <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">print</span> area(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>import 모듈명 as 새로운 모듈 이름</p>
-<ul>
-<li>해당 모듈을 다른 이름으로 사용하고자 할 때 사용</li>
-<li>기존 모듈 이름이 너무 길거나 현재 사용중인 이름인 경우 유용<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> string <span class="keyword">as</span> chstr</span><br><span class="line"><span class="keyword">print</span> chstr</span><br><span class="line"><span class="keyword">print</span></span><br><span class="line"><span class="keyword">print</span> chstr.punctuation</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>from 모듈명 import 이름 as 새로운 이름[, 이름 as 새로운 이름]</p>
-<ul>
-<li>해당 모듈 내에 정의된 이름을 새로운 이름으로 사용하고자 할 때<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> string <span class="keyword">import</span> replace <span class="keyword">as</span> substitute[, upper <span class="keyword">as</span> up]</span><br><span class="line"><span class="keyword">print</span> substitute</span><br><span class="line"><span class="keyword">print</span> substitute(<span class="string">'ham chicken spam'</span>, <span class="string">'chicke'</span>, <span class="string">'egg'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> up</span><br><span class="line"><span class="keyword">print</span> up(<span class="string">'abc'</span>)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ol>
-<ul>
-<li>import문은 어디에서나 사용가능(함수 내에서도 가능)</li>
-</ul>
-<hr>
-<h1 id="컴파일과-적재시간"><a href="#컴파일과-적재시간" class="headerlink" title="컴파일과 적재시간"></a>컴파일과 적재시간</h1><ul>
-<li><p><code>import mymath</code>를 수행할 때 발생하는 일</p>
-<ol>
-<li><code>mymath.pyc</code>를 찾는다</li>
-<li>없다면 <code>mymath.py</code>를 찾아서 <code>mymath.pyc</code>를 생성한다</li>
-<li><code>mymath.pyc</code>를 메모리로 읽어들여 수행한다</li>
-</ol>
-</li>
-<li><p><code>.pyc</code>파일</p>
-<ol>
-<li><p>바이트 코드 파일</p>
-<ul>
-<li>기계나 플랫폼(운영체제 등)에 의존하지 않도록 만들어진 일종의 목적 코드(Object code)</li>
-<li>파이썬은 컴파일 언어이면서 동시에 인터프리터 언어의 수행 방식을 취함</li>
-</ul>
-</li>
-<li><p>새로운 <code>.pyc</code>파일 생성에 대한 판단</p>
-<ul>
-<li><code>.py</code>수정시간이 <code>.pyc</code>수정 시간보다 더 최근일 때</li>
-</ul>
-</li>
-<li><code>.py</code>가 없이 <code>.pyc</code>파일만 있어도 <code>import</code>가능<ul>
-<li>코드를 숨기는 방법으로 활용 가능</li>
-</ul>
-</li>
-</ol>
+            <h1 id="Exception-raise"><a href="#Exception-raise" class="headerlink" title="Exception raise"></a>Exception raise</h1><h2 id="Occuring-exception-by-raise"><a href="#Occuring-exception-by-raise" class="headerlink" title="Occuring exception by raise"></a>Occuring exception by <code>raise</code></h2><ul>
+<li><code>raise</code>keyword can make an exception in specific situation</li>
+<li><p><code>IndexError</code> occurs when <code>__getitem__</code>method(which implements indexing when sequance type class is made) goes out of the index range</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SquareSeq</span>:</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, n)</span>:</span></span><br><span class="line">    self.n = n</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span><span class="params">(self,k)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> k &gt;= self.n <span class="keyword">or</span> k &lt; <span class="number">0</span>:</span><br><span class="line">      <span class="keyword">raise</span> IndexError <span class="comment"># out of index range, IndexError occurs</span></span><br><span class="line">    <span class="keyword">return</span> k * k</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__len_</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> self.n</span><br><span class="line"></span><br><span class="line">s = SquareSeq(<span class="number">10</span>)</span><br><span class="line"><span class="keyword">print</span> s[<span class="number">2</span>], s[<span class="number">4</span>]</span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> s: <span class="comment"># repeating until IndexError occurs</span></span><br><span class="line">   <span class="keyword">print</span> x,</span><br><span class="line"><span class="keyword">print</span> s[<span class="number">20</span>] <span class="comment"># out of the index range</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <hr>
-<h1 id="같은-이름을-다시-사용할-때"><a href="#같은-이름을-다시-사용할-때" class="headerlink" title="같은 이름을 다시 사용할 때"></a>같은 이름을 다시 사용할 때</h1><ul>
-<li>같은 이름 사용하면 이전의 내용이 삭제되지만 모듈은 메모리에 남아있고, 다시 <code>import</code>하면 다시 가져오는 것이 아니라 메모리에 존재하는 모듈을 활용함. 따라서 기존에 추가 정의한 내용들 사용가능</li>
+<h2 id="Customized-exception-class"><a href="#Customized-exception-class" class="headerlink" title="Customized exception class"></a>Customized exception class</h2><ul>
+<li>Generally It is implemented by extending <code>Exception</code>class<br>(Other exceptions are unusual)</li>
+<li>How to raise the exception<ul>
+<li>Same to built-in exception. Using <code>raise [class instance]</code></li>
+</ul>
+</li>
+<li>How to catch the exception from Customized exception class<ul>
+<li>Using the class’ name like <code>except [class name]</code></li>
+</ul>
+</li>
+<li><p>In the example below, <code>except Big</code> catches <code>Big</code>and <code>Small</code> exception<br>-&gt; Because <code>Small</code>is <code>Big</code>‘s sub-class’</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Big</span><span class="params">(Exception)</span>:</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Small</span><span class="params">(Big)</span>:</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dosomething1</span><span class="params">()</span>:</span></span><br><span class="line">  x = Big()</span><br><span class="line">  <span class="keyword">raise</span> x <span class="comment"># x is exception object, it can use raise</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dosomething2</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">raise</span> Small()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> (dosomething1, dosomething2):</span><br><span class="line">  <span class="keyword">try</span>:</span><br><span class="line">    f()</span><br><span class="line">  <span class="keyword">except</span> Big:</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"Exception occurs!"</span></span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <hr>
-<h1 id="모듈의-실행과-테스트-코드"><a href="#모듈의-실행과-테스트-코드" class="headerlink" title="모듈의 실행과 테스트 코드"></a>모듈의 실행과 테스트 코드</h1><ul>
-<li><p><code>__name__</code></p>
-<ul>
-<li>현재의 모듈이 최상위 모듈로서 수행되는지, 아니면다른 모듈에 의해 <code>imort</code>되어 수행되는지를 구별하기 위해 주로 사용</li>
-<li>최상위 모듈에서 사용할 때 -&gt; <code>__main__</code></li>
-<li><p>다른 모듈에서 사용될 때 -&gt; 해당 모듈의 이름</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> __name__ <span class="comment"># __main__ 출력</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> prname</span><br><span class="line"><span class="keyword">print</span> prname.__name__ <span class="comment"># prname출력</span></span><br></pre></td></tr></table></figure>
+<h2 id="Passing-exception"><a href="#Passing-exception" class="headerlink" title="Passing exception"></a>Passing exception</h2><ul>
+<li><p>After <code>raise</code>keyword, with exception, additional message can follow</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">raise</span> Exception, <span class="string">'message!!!'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  f()</span><br><span class="line"><span class="keyword">except</span> Exception, a:</span><br><span class="line">  <span class="keyword">print</span> a</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>사용방법</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(a, b)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> a + b</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"Python is becoming popular."</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">  <span class="keyword">print</span> add(<span class="number">1</span>, <span class="number">10</span>)</span><br><span class="line">  f()</span><br></pre></td></tr></table></figure>
-<ul>
-<li>직접 실행할 때는 <code>if</code>절 동작</li>
-<li>다른 곳에서 활용할 경우 <code>if</code>절 무시</li>
-</ul>
-</li>
-</ul>
+<li><p>When <code>except</code> keyword is used, exception message in initializer can be taken as 2nd parameter.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10</span></span><br><span class="line">b = <span class="number">0</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  <span class="keyword">if</span> b == <span class="number">0</span>:</span><br><span class="line">    <span class="keyword">raise</span> ArithmeticError(<span class="string">'you are dividing by 0'</span>)</span><br><span class="line">    a/b</span><br><span class="line"><span class="keyword">except</span> ArithmeticError, v:</span><br><span class="line">  <span class="keyword">print</span> v</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
@@ -411,7 +354,801 @@ ga('send', 'pageview');
 
             
     
-        <a href="http://bongbooski.github.io/2018/04/15/post19-python-import/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/15/post19-python-import/">Comments</a>
+        <a href="http://bongbooski.github.io/2018/04/17/post22-python-exception-raise_eng/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/17/post22-python-exception-raise_eng/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-post22-python-exception-raise" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/04/17/post22-python-exception-raise/">python 예외 발생시키기</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/04/17/post22-python-exception-raise/">
+            <time datetime="2018-04-17T05:47:23.000Z" itemprop="datePublished">2018-04-17</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="Exception-raise"><a href="#Exception-raise" class="headerlink" title="Exception raise"></a>Exception raise</h1><h2 id="raise로-예외-발생하기"><a href="#raise로-예외-발생하기" class="headerlink" title="raise로 예외 발생하기"></a><code>raise</code>로 예외 발생하기</h2><ul>
+<li>예외를 특정 상황 조건에서 <code>raise</code>키워드를 통해 발생시킬 수 있다.</li>
+<li><p>아래 예는 시퀀스 형 클래스를 설계할 때 인덱싱을 구현하는 <code>__getitem__</code>메소드에서 인덱스가 범위를 넘을 때 <code>IndexError</code>를 발생시킨다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SquareSeq</span>:</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, n)</span>:</span></span><br><span class="line">    self.n = n</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span><span class="params">(self,k)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> k &gt;= self.n <span class="keyword">or</span> k &lt; <span class="number">0</span>:</span><br><span class="line">      <span class="keyword">raise</span> IndexError <span class="comment"># 인덱스 범위를 벗어나나면 IndexError발생</span></span><br><span class="line">    <span class="keyword">return</span> k * k</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__len_</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> self.n</span><br><span class="line"></span><br><span class="line">s = SquareSeq(<span class="number">10</span>)</span><br><span class="line"><span class="keyword">print</span> s[<span class="number">2</span>], s[<span class="number">4</span>]</span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> s: <span class="comment"># IndexError가 발생하는 시점까지 반복</span></span><br><span class="line">   <span class="keyword">print</span> x,</span><br><span class="line"><span class="keyword">print</span> s[<span class="number">20</span>] <span class="comment"># 인덱스 범위를 넘음</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h2 id="사용자-정의-예외-클래스"><a href="#사용자-정의-예외-클래스" class="headerlink" title="사용자 정의 예외 클래스"></a>사용자 정의 예외 클래스</h2><ul>
+<li>일반적으로 <code>Exception</code>클래스를 상속 받아 구현<br>(나머지 예외들은 일반적으로 나타나기 힘든 예외들이다)</li>
+<li>예외 발생 방법<ul>
+<li>내장 예외 발생 방법과 동일하게 <code>raise [클래스 인스턴스]</code>와 같이 해당 예외 클래스의 인스턴스를 던진다</li>
+</ul>
+</li>
+<li>사용자 정의 예외를 잡는 방법<ul>
+<li><code>except [클래스이름]</code>과 같이 해당 예외 클래스의 이름을 사용한다.</li>
+</ul>
+</li>
+<li><p>아래 예에서 <code>except Big</code>이 잡는 예외는 <code>Big</code>과 <code>Small</code>이다<br>-&gt; <code>Small</code>은 <code>Big</code>의 하위 클래스 이기 때문</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Big</span><span class="params">(Exception)</span>:</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Small</span><span class="params">(Big)</span>:</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dosomething1</span><span class="params">()</span>:</span></span><br><span class="line">  x = Big()</span><br><span class="line">  <span class="keyword">raise</span> x <span class="comment"># x는 예외객체이므로 raise가능</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dosomething2</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">raise</span> Small()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> (dosomething1, dosomething2):</span><br><span class="line">  <span class="keyword">try</span>:</span><br><span class="line">    f()</span><br><span class="line">  <span class="keyword">except</span> Big:</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"Exception occurs!"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h2 id="예외값-전달하기"><a href="#예외값-전달하기" class="headerlink" title="예외값 전달하기"></a>예외값 전달하기</h2><ul>
+<li><p><code>raise</code>키워드 뒤에 예외와 함께, 추가 메시지를 함께 던질 수 있다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">raise</span> Exception, <span class="string">'message!!!'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  f()</span><br><span class="line"><span class="keyword">except</span> Exception, a:</span><br><span class="line">  <span class="keyword">print</span> a</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>생성자 안에 넣어준 에러 메시지는 <code>except</code>키워드 사용시에 두 번째 인자로 해당 메시지를 받을 수 있다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10</span></span><br><span class="line">b = <span class="number">0</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  <span class="keyword">if</span> b == <span class="number">0</span>:</span><br><span class="line">    <span class="keyword">raise</span> ArithmeticError(<span class="string">'0으로 나누고 있습니다.'</span>)</span><br><span class="line">    a/b</span><br><span class="line"><span class="keyword">except</span> ArithmeticError, v:</span><br><span class="line">  <span class="keyword">print</span> v</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://bongbooski.github.io/2018/04/17/post22-python-exception-raise/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/17/post22-python-exception-raise/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-post21-python-exception-handling" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/04/17/post21-python-exception-handling/">python 예외처리</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/04/17/post21-python-exception-handling/">
+            <time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="Exception-Handling"><a href="#Exception-Handling" class="headerlink" title="Exception Handling"></a>Exception Handling</h1><ul>
+<li><p>구문 에러(Syntax Error)</p>
+<ul>
+<li>문법적 에러</li>
+<li>IDE에서는 구문에러 체크해줌</li>
+<li>파이썬은 상대적으로 문법이 간단해서 에러 발생 비율이 낮거나 다른 도구로 제거 가능</li>
+</ul>
+</li>
+<li><p>예외(Exception)</p>
+<ul>
+<li>구문 에러는 없으나 프로그램 실행 중 더 이상 진행할 수 없는 경우</li>
+<li>예외가 발생하면 프로그램이 종료됨</li>
+</ul>
+<ol>
+<li><p><code>NameError</code> (정의되지 않은 변수 사용)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">4</span> + boo*<span class="number">3</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>ZeroDivisionError</code> (<code>0</code>으로 나누는 경우)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10</span></span><br><span class="line">b = <span class="number">0</span></span><br><span class="line">c = a / b</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>TypeError</code> (ex: 문자열 + 수치형 자료)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'2'</span> + <span class="number">2</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>IndexError</code> (참조 범위를 넘어서 인덱스 사용)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">l = [<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line"><span class="keyword">print</span> l[<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>KeyError</code> (등록되지 않은 키로 사전 검색)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">"a"</span>:<span class="number">1</span>, <span class="string">"b"</span>:<span class="number">2</span>&#125;</span><br><span class="line"><span class="keyword">print</span> d[<span class="string">'c'</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>IOError</code> (존재하지 않는 파일을 열고자 할 때)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = open(<span class="string">'aaa.txt'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+</li>
+</ul>
+<h1 id="예외-처리-방법"><a href="#예외-처리-방법" class="headerlink" title="예외 처리 방법"></a>예외 처리 방법</h1><ol>
+<li><p><code>try</code>,<code>except</code>,<code>else</code>,<code>finally</code>절 사용하기</p>
+<ul>
+<li>예외가 발생할 만한 상황을 예상하여 상황별로 전체 코드 흐름을 제어할 수 있다</li>
+<li><p><code>try</code>,<code>except</code>,<code>else</code>,<code>finally</code>절</p>
+<ul>
+<li>구조<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  (예외 발생 가능한) 일반적인 수행문들</span><br><span class="line"><span class="keyword">except</span> Exception:</span><br><span class="line">  예외가 발생하였을 때 수행되는 문들</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">  예외가 발생하지 않았을 때 수행되는 문들</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">  예외 발생 유무와 관계없이 무조건 수행되는 문들</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p>예외 처리를 하면 예외 발생시 프로그램이 종료되지 않는다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">0</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="number">1.0</span>/a</span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'zero division error!!!'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>msg</code>변수: <code>ZeroDivisionError</code>를 정의한 사람이 발생될 때 주는 메시지<br>ex: float division by zero</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">division</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">5</span>):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">      <span class="keyword">print</span> <span class="number">10.0</span> / n</span><br><span class="line">    <span class="keyword">except</span> ZeroDivisionError, msg</span><br><span class="line">      <span class="keyword">print</span> msg</span><br><span class="line"></span><br><span class="line">division()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>try</code>절 안에서 간접적으로 호출한 함수의 내부 예외도 처리 가능</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  spam()</span><br><span class="line"><span class="keyword">except</span> NameError, msg:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Error -'</span>, msg</span><br></pre></td></tr></table></figure>
+<p><code>,</code>대신 <code>as</code>로도 사용가능</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 위와 동일한 예제</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  spam()</span><br><span class="line"><span class="keyword">except</span> NameError <span class="keyword">as</span> msg:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Error -'</span>, msg</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>except</code>뒤에 예외를 명시하지 않으면 모든 예외에 대해 처리됨</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  spam()</span><br><span class="line">  <span class="keyword">print</span> <span class="number">1.0</span>/<span class="number">0.0</span></span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Error'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>여러 예외들 각각에 대해 <code>except</code>절로 다중처리 가능</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">b = <span class="number">0.0</span></span><br><span class="line">name = <span class="string">'aaa.txt'</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="number">1.0</span> / b</span><br><span class="line">  spam()</span><br><span class="line">  f = open(name, <span class="string">'r'</span>)</span><br><span class="line">  <span class="string">'2'</span> + <span class="number">2</span></span><br><span class="line"><span class="keyword">except</span> NameError:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'NameError !!!'</span></span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'ZeroDivisionError !!!'</span></span><br><span class="line">excpet (TypeError, IOError):</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'TypeError or IOERror !!!'</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'No Exception'</span></span><br><span class="line"><span class="keyword">finally</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Exit !!!'</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h1 id="같은-부류의-예외-다-잡아내기"><a href="#같은-부류의-예외-다-잡아내기" class="headerlink" title="같은 부류의 예외 다 잡아내기"></a>같은 부류의 예외 다 잡아내기</h1><ul>
+<li>예외 클래스의 상속에 의한 계층 관계를 이용하여 여러 예외들을 한꺼번에 잡을 수 있다.</li>
+<li><p>예를 들어, <code>ArithmeticError</code>의 하위 클래스로서 <code>FloatingPointError</code>, <code>OverflowError</code>, <code>ZeroDivisionError</code>가 존재하기 때문에 이들 하위 클래스 예외가 발생하면 <code>ArithmeticError</code>로 처리할 수 있다.</p>
+</li>
+<li><p>예외가 임의의 <code>except</code>에서 잡히면 다른 <code>except</code>에서는 잡히지 않는다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dosomething</span><span class="params">()</span>:</span></span><br><span class="line">  a = <span class="number">1</span>/<span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  dosomething()</span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">"ZeroDivisionError occured"</span></span><br><span class="line"><span class="keyword">except</span> ArithmeticError:</span><br><span class="line">   <span class="keyword">print</span> <span class="string">"ArithmeticError occured"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://bongbooski.github.io/2018/04/17/post21-python-exception-handling/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/17/post21-python-exception-handling/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-post21-python-exception-handling_eng" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/04/17/post21-python-exception-handling_eng/">python Exception Handling</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/04/17/post21-python-exception-handling_eng/">
+            <time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="Exception-Handling"><a href="#Exception-Handling" class="headerlink" title="Exception Handling"></a>Exception Handling</h1><ul>
+<li><p>Syntax Error</p>
+<ul>
+<li>Grammatical error</li>
+<li>IDE checks syntax error automatically</li>
+<li>Becasue python’s grammar is simpler relatively, error occur rate is smaller and it is easy to delete errors</li>
+</ul>
+</li>
+<li><p>Exception</p>
+<ul>
+<li>the cases having no syntax errors, the program can’t progress</li>
+<li>Occuring exception, the program ends</li>
+</ul>
+<ol>
+<li><p><code>NameError</code> (Usiung undefined variable)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">4</span> + boo*<span class="number">3</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>ZeroDivisionError</code> (Dividing by <code>0</code>)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10</span></span><br><span class="line">b = <span class="number">0</span></span><br><span class="line">c = a / b</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>TypeError</code> (ex: String + Number type)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'2'</span> + <span class="number">2</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>IndexError</code> (Using index over the range of index)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">l = [1,2]</span><br><span class="line">print l[2]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>KeyError</code> (Searching dictionary by unregisted key)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">"a"</span>:<span class="number">1</span>, <span class="string">"b"</span>:<span class="number">2</span>&#125;</span><br><span class="line"><span class="keyword">print</span> d[<span class="string">'c'</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>IOError</code> (Opening not existing file)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = open(<span class="string">'aaa.txt'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+</li>
+</ul>
+<h1 id="How-to-dispose-of-exceptions"><a href="#How-to-dispose-of-exceptions" class="headerlink" title="How to dispose of exceptions"></a>How to dispose of exceptions</h1><ol>
+<li><p>Using <code>try</code>,<code>except</code>,<code>else</code>,<code>finally</code> statements</p>
+<ul>
+<li>By expecting the situations making exceptions, we can control the whole code’s flow</li>
+<li><p><code>try</code>,<code>except</code>,<code>else</code>,<code>finally</code></p>
+<ul>
+<li>structure<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  (possible to make errors) usual statements</span><br><span class="line"><span class="keyword">except</span> Exception:</span><br><span class="line">  the statements working when error occurs</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">  the statements working when error doesn<span class="string">'t occur</span></span><br><span class="line"><span class="string">finally:</span></span><br><span class="line"><span class="string">  the statements working anyway no matter error</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p>Doing exception handling, when error occurs the program doesn’t stop</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">0</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="number">1.0</span>/a</span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'zero division error!!!'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>msg</code>variable: the message that the person who defined <code>ZeroDivisionError</code> gives<br>ex: float division by zero</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">division</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">5</span>):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">      <span class="keyword">print</span> <span class="number">10.0</span> / n</span><br><span class="line">    <span class="keyword">except</span> ZeroDivisionError, msg</span><br><span class="line">      <span class="keyword">print</span> msg</span><br><span class="line"></span><br><span class="line">division()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>It can handle the error from the called function in <code>try</code>statement indirectly</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  spam()</span><br><span class="line"><span class="keyword">except</span> NameError, msg:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Error -'</span>, msg</span><br></pre></td></tr></table></figure>
+<p><code>,</code> can be replaced with <code>as</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># same code with upper one</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  spam()</span><br><span class="line"><span class="keyword">except</span> NameError <span class="keyword">as</span> msg:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Error -'</span>, msg</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>After <code>except</code>, not evincing any exceptions, it takes care of all exceptions</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  spam()</span><br><span class="line">  <span class="keyword">print</span> <span class="number">1.0</span>/<span class="number">0.0</span></span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Error'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>About many exceptions, they can be taked care by each <code>except</code>statement</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">b = <span class="number">0.0</span></span><br><span class="line">name = <span class="string">'aaa.txt'</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="number">1.0</span> / b</span><br><span class="line">  spam()</span><br><span class="line">  f = open(name, <span class="string">'r'</span>)</span><br><span class="line">  <span class="string">'2'</span> + <span class="number">2</span></span><br><span class="line"><span class="keyword">except</span> NameError:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'NameError !!!'</span></span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'ZeroDivisionError !!!'</span></span><br><span class="line">excpet (TypeError, IOError):</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'TypeError or IOERror !!!'</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'No Exception'</span></span><br><span class="line"><span class="keyword">finally</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Exit !!!'</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h1 id="Catching-All-exception-in-same-kind"><a href="#Catching-All-exception-in-same-kind" class="headerlink" title="Catching All exception in same kind"></a>Catching All exception in same kind</h1><ul>
+<li>By using the hierarchy of Inheritance of exception class, It can take care of many exceptions by once</li>
+<li><p>For example, there are <code>FloatingPointError</code>, <code>OverflowError</code>, <code>ZeroDivisionError</code> as sub-class of <code>ArithmeticError</code> so, about sub-class exceptions, <code>ArithmeticError</code> can take care of them</p>
+</li>
+<li><p>When an exception is catched by specific <code>except</code>, that one is not catched in other <code>except</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dosomething</span><span class="params">()</span>:</span></span><br><span class="line">  a = <span class="number">1</span>/<span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  dosomething()</span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">"ZeroDivisionError occured"</span></span><br><span class="line"><span class="keyword">except</span> ArithmeticError:</span><br><span class="line">   <span class="keyword">print</span> <span class="string">"ArithmeticError occured"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://bongbooski.github.io/2018/04/17/post21-python-exception-handling_eng/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/17/post21-python-exception-handling_eng/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-post20-python-package_eng" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/04/15/post20-python-package_eng/">python Package</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/04/15/post20-python-package_eng/">
+            <time datetime="2018-04-15T06:48:23.000Z" itemprop="datePublished">2018-04-15</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="Package"><a href="#Package" class="headerlink" title="Package"></a>Package</h1><ul>
+<li>Structure gathering many modules in one directory physically<ul>
+<li>Top directory’s name is the package’s name</li>
+<li>Sub directories under the Top directory become sub-package of the top package</li>
+<li>Module = file, package = directory</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="Role-of-init-py"><a href="#Role-of-init-py" class="headerlink" title="Role of __init__.py"></a>Role of <code>__init__.py</code></h2><ul>
+<li>The role recognizing the directory as a package</li>
+<li>For sub-packes, this file is requried(if not, that will be usual folder)</li>
+</ul>
+<hr>
+<h2 id="Doing-import"><a href="#Doing-import" class="headerlink" title="Doing import"></a>Doing import</h2>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Speech</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>Speech</code>directory should be one of the directories of <code>sys.path</code>(or <code>PYTHONPATH</code> environment variable)</li>
+<li>Let’s say <code>Speech/Recognition/HMM.py</code> looks like this<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">train</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"Train"</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">loadModel</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"LoadModel"</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">saveModel</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"SaveModel"</span></span><br><span class="line">  <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="How-to-use-specific-function"><a href="#How-to-use-specific-function" class="headerlink" title="How to use specific function"></a>How to use specific function</h3>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># can't use. from package's name, we need dot(.) for calling the module or function</span></span><br><span class="line"><span class="keyword">import</span> Speech</span><br><span class="line">Speech.Recognition.HMM.train()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Proper way</span></span><br><span class="line"><span class="keyword">import</span> Speech.Recognition.HMM</span><br><span class="line">Speech.Recognition.HMM.train()</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> Speech.Recognition <span class="keyword">import</span> HMM</span><br><span class="line">HMM.train()</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> Speech.Recognition.HMM <span class="keyword">import</span> train</span><br><span class="line">train()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Taking everything from the module. It can be used without the module's name</span></span><br><span class="line"><span class="keyword">from</span> Speech.Recognition.HMM <span class="keyword">import</span> *</span><br><span class="line">train()</span><br><span class="line">loadModel()</span><br><span class="line">saveModel()</span><br></pre></td></tr></table></figure>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://bongbooski.github.io/2018/04/15/post20-python-package_eng/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/15/post20-python-package_eng/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-post20-python-package" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/04/15/post20-python-package/">python 패키지</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/04/15/post20-python-package/">
+            <time datetime="2018-04-15T06:48:23.000Z" itemprop="datePublished">2018-04-15</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="패키지-Package"><a href="#패키지-Package" class="headerlink" title="패키지(Package)"></a>패키지(Package)</h1><ul>
+<li>여러 모듈들을 한데 묶어서 정리해 놓은 구조</li>
+<li>물리적으로 여러 모듈 파일을 모아 놓은 디렉토리에 해당<ul>
+<li>최상위 디렉토리 이름이 패키지 이름이 된다.</li>
+<li>최상위 디렉토리 하위에 여러 서브 디렉토리는 해당 최상위패키지의 하위 패키지가 된다.</li>
+<li>모듈=파일, 패키지=디렉토리</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="init-py의-역할"><a href="#init-py의-역할" class="headerlink" title="__init__.py의 역할"></a><code>__init__.py</code>의 역할</h2><ul>
+<li>디렉토리를 패키지로 인식시키는 역할</li>
+<li>서브 패키지에도 패키지와 마찬가지로 필요(없으면 단순 폴더역할)</li>
+</ul>
+<hr>
+<h2 id="import하기"><a href="#import하기" class="headerlink" title="import하기"></a>import하기</h2>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Speech</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>Speech</code>디렉토리가 <code>sys.path</code>(또는 <code>PYTHONPATH</code>환경변수)에 열거된 폴더 중 하나에 위치해야함</li>
+<li><code>Speech/Recognition/HMM.py</code>코드 내용<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">train</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"Train"</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">loadModel</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"LoadModel"</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">saveModel</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"SaveModel"</span></span><br><span class="line">  <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="특정-함수-사용하는-방법"><a href="#특정-함수-사용하는-방법" class="headerlink" title="특정 함수 사용하는 방법"></a>특정 함수 사용하는 방법</h3>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 사용불가. 패키지명에서 .으로 특정 모듈, 함수 가져와야함</span></span><br><span class="line"><span class="keyword">import</span> Speech</span><br><span class="line">Speech.Recognition.HMM.train()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 적절한 방법</span></span><br><span class="line"><span class="keyword">import</span> Speech.Recognition.HMM</span><br><span class="line">Speech.Recognition.HMM.train()</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> Speech.Recognition <span class="keyword">import</span> HMM</span><br><span class="line">HMM.train()</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> Speech.Recognition.HMM <span class="keyword">import</span> train</span><br><span class="line">train()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 모듈 내의 변수 전부 다 가져옴, 모듈이름 없이 사용가능</span></span><br><span class="line"><span class="keyword">from</span> Speech.Recognition.HMM <span class="keyword">import</span> *</span><br><span class="line">train()</span><br><span class="line">loadModel()</span><br><span class="line">saveModel()</span><br></pre></td></tr></table></figure>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://bongbooski.github.io/2018/04/15/post20-python-package/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/15/post20-python-package/">Comments</a>
     
 
         </footer>
@@ -612,6 +1349,206 @@ ga('send', 'pageview');
             
     
         <a href="http://bongbooski.github.io/2018/04/15/post19-python-import_eng/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/15/post19-python-import_eng/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-post19-python-import" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/04/15/post19-python-import/">python 모듈 import하기</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/04/15/post19-python-import/">
+            <time datetime="2018-04-15T02:48:23.000Z" itemprop="datePublished">2018-04-15</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="import-모듈명"><a href="#import-모듈명" class="headerlink" title="import 모듈명"></a>import 모듈명</h1><ol>
+<li><p>기본적인 형태</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> mymath</span><br><span class="line"><span class="keyword">print</span> mymath.area(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>from 모듈명 import 가져올 대상</p>
+<ul>
+<li>해당 모듈에 존재하는 대상을 가져옴</li>
+<li>기존에 존재하던 이름이면 기존 객체가 상실됨</li>
+<li>모듈 이름 없이 바로 사용 가능<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> mymath <span class="keyword">import</span> area, mypi</span><br><span class="line"><span class="keyword">print</span> area(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>from 모듈명 import *</p>
+<ul>
+<li>해당 모듈에 존재하는 <code>__</code>로 시작되는 것들을 제외한 모든 대상을 가져옴<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> mymath <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">print</span> area(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>import 모듈명 as 새로운 모듈 이름</p>
+<ul>
+<li>해당 모듈을 다른 이름으로 사용하고자 할 때 사용</li>
+<li>기존 모듈 이름이 너무 길거나 현재 사용중인 이름인 경우 유용<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> string <span class="keyword">as</span> chstr</span><br><span class="line"><span class="keyword">print</span> chstr</span><br><span class="line"><span class="keyword">print</span></span><br><span class="line"><span class="keyword">print</span> chstr.punctuation</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>from 모듈명 import 이름 as 새로운 이름[, 이름 as 새로운 이름]</p>
+<ul>
+<li>해당 모듈 내에 정의된 이름을 새로운 이름으로 사용하고자 할 때<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> string <span class="keyword">import</span> replace <span class="keyword">as</span> substitute[, upper <span class="keyword">as</span> up]</span><br><span class="line"><span class="keyword">print</span> substitute</span><br><span class="line"><span class="keyword">print</span> substitute(<span class="string">'ham chicken spam'</span>, <span class="string">'chicke'</span>, <span class="string">'egg'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> up</span><br><span class="line"><span class="keyword">print</span> up(<span class="string">'abc'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>import문은 어디에서나 사용가능(함수 내에서도 가능)</li>
+</ul>
+<hr>
+<h1 id="컴파일과-적재시간"><a href="#컴파일과-적재시간" class="headerlink" title="컴파일과 적재시간"></a>컴파일과 적재시간</h1><ul>
+<li><p><code>import mymath</code>를 수행할 때 발생하는 일</p>
+<ol>
+<li><code>mymath.pyc</code>를 찾는다</li>
+<li>없다면 <code>mymath.py</code>를 찾아서 <code>mymath.pyc</code>를 생성한다</li>
+<li><code>mymath.pyc</code>를 메모리로 읽어들여 수행한다</li>
+</ol>
+</li>
+<li><p><code>.pyc</code>파일</p>
+<ol>
+<li><p>바이트 코드 파일</p>
+<ul>
+<li>기계나 플랫폼(운영체제 등)에 의존하지 않도록 만들어진 일종의 목적 코드(Object code)</li>
+<li>파이썬은 컴파일 언어이면서 동시에 인터프리터 언어의 수행 방식을 취함</li>
+</ul>
+</li>
+<li><p>새로운 <code>.pyc</code>파일 생성에 대한 판단</p>
+<ul>
+<li><code>.py</code>수정시간이 <code>.pyc</code>수정 시간보다 더 최근일 때</li>
+</ul>
+</li>
+<li><code>.py</code>가 없이 <code>.pyc</code>파일만 있어도 <code>import</code>가능<ul>
+<li>코드를 숨기는 방법으로 활용 가능</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h1 id="같은-이름을-다시-사용할-때"><a href="#같은-이름을-다시-사용할-때" class="headerlink" title="같은 이름을 다시 사용할 때"></a>같은 이름을 다시 사용할 때</h1><ul>
+<li>같은 이름 사용하면 이전의 내용이 삭제되지만 모듈은 메모리에 남아있고, 다시 <code>import</code>하면 다시 가져오는 것이 아니라 메모리에 존재하는 모듈을 활용함. 따라서 기존에 추가 정의한 내용들 사용가능</li>
+</ul>
+<hr>
+<h1 id="모듈의-실행과-테스트-코드"><a href="#모듈의-실행과-테스트-코드" class="headerlink" title="모듈의 실행과 테스트 코드"></a>모듈의 실행과 테스트 코드</h1><ul>
+<li><p><code>__name__</code></p>
+<ul>
+<li>현재의 모듈이 최상위 모듈로서 수행되는지, 아니면다른 모듈에 의해 <code>imort</code>되어 수행되는지를 구별하기 위해 주로 사용</li>
+<li>최상위 모듈에서 사용할 때 -&gt; <code>__main__</code></li>
+<li><p>다른 모듈에서 사용될 때 -&gt; 해당 모듈의 이름</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> __name__ <span class="comment"># __main__ 출력</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> prname</span><br><span class="line"><span class="keyword">print</span> prname.__name__ <span class="comment"># prname출력</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>사용방법</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(a, b)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> a + b</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"Python is becoming popular."</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">  <span class="keyword">print</span> add(<span class="number">1</span>, <span class="number">10</span>)</span><br><span class="line">  f()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>직접 실행할 때는 <code>if</code>절 동작</li>
+<li>다른 곳에서 활용할 경우 <code>if</code>절 무시</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://bongbooski.github.io/2018/04/15/post19-python-import/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/15/post19-python-import/">Comments</a>
     
 
         </footer>
@@ -969,979 +1906,6 @@ ga('send', 'pageview');
 
 
 
-    <article id="post-post17_python-file,directory_eng" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/04/11/post17_python-file,directory_eng/">python operating files</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/04/11/post17_python-file,directory_eng/">
-            <time datetime="2018-04-11T06:38:47.000Z" itemprop="datePublished">2018-04-11</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/python/">python</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h1 id="Operating-files"><a href="#Operating-files" class="headerlink" title="Operating files"></a>Operating files</h1><h2 id="Opening-file-list"><a href="#Opening-file-list" class="headerlink" title="Opening file list"></a>Opening file list</h2><p>Using <code>os</code>module<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> os.listdir(<span class="string">'.'</span>) <span class="comment"># file list of present directory</span></span><br><span class="line"><span class="keyword">print</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> os.listdir(<span class="string">'../'</span>) <span class="comment"># file list of parent directory</span></span><br></pre></td></tr></table></figure></p>
-<hr>
-<h2 id="Recognizing-file’s-category"><a href="#Recognizing-file’s-category" class="headerlink" title="Recognizing file’s category"></a>Recognizing file’s category</h2><ul>
-<li><code>os.path</code>module recognizes and returns <code>True</code> or <code>False</code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">filetype</span><span class="params">(fpath)</span>:</span></span><br><span class="line">  <span class="keyword">print</span> fpath, <span class="string">":"</span>,</span><br><span class="line">  <span class="keyword">if</span> os.path.isfile(fpath):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'Regular file'</span></span><br><span class="line">  <span class="keyword">if</span> os.path.isdir(fpath):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'Directory'</span></span><br><span class="line">  <span class="keyword">if</span> os.path.islink(fpath):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'Symbolic link'</span></span><br><span class="line"></span><br><span class="line">flist = os.listdir(<span class="string">'.'</span>)</span><br><span class="line"><span class="keyword">for</span> fname <span class="keyword">in</span> flist:</span><br><span class="line">  filetype(fname)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<hr>
-<h2 id="Permission-about-file"><a href="#Permission-about-file" class="headerlink" title="Permission about file"></a>Permission about file</h2><ol>
-<li><p>Learning permission about file</p>
-<ul>
-<li><code>os.access(filepath, mode)</code><ul>
-<li>the values we can put for <code>mode</code><ul>
-<li><code>os.F_OK</code>: testing if the file exists</li>
-<li><code>os.R_OK</code>: testing about reading permission</li>
-<li><code>os.W_OK</code>: testing about writing permission</li>
-<li><code>os.X_OK</code>: testing about opening or executing permission</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fileaccess</span><span class="params">(fpath)</span>:</span></span><br><span class="line">  <span class="keyword">print</span> fpath, <span class="string">':'</span>,</span><br><span class="line">  <span class="keyword">if</span> os.access(fpath, os.F_OK):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'Exists'</span>,</span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">  <span class="keyword">if</span> os.access(fpath, os.R_OK):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'R'</span>,</span><br><span class="line">  <span class="keyword">if</span> os.access(fpath, os.W_OK):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'W'</span>,</span><br><span class="line">  <span class="keyword">if</span> os.access(fpath, os.X_OK):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'X'</span>,</span><br><span class="line">  <span class="keyword">print</span></span><br><span class="line"></span><br><span class="line">flist = os.listdir(<span class="string">'.'</span>)</span><br><span class="line"><span class="keyword">for</span> fname <span class="keyword">in</span> flist:</span><br><span class="line">  fileaccess(fname)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Chagning the Permission for the file</p>
-<ul>
-<li><code>os.chmod(filepath, mode)</code></li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.chmod(<span class="string">'sample.txt'</span>, <span class="number">0777</span>)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<hr>
-<h2 id="Manipulating-files"><a href="#Manipulating-files" class="headerlink" title="Manipulating files"></a>Manipulating files</h2><ol>
-<li><p>Chagning the name of the file</p>
-<ul>
-<li><code>os.rename(old_filepath, new_filepath)</code></li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.rename(<span class="string">'t.txt'</span>, <span class="string">'t1.txt'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> os.access(<span class="string">'t.txt'</span>, os.F_OK) <span class="comment"># checking if the file exists</span></span><br><span class="line"><span class="keyword">print</span> os.access(<span class="string">'t1.txt'</span>, os.F_OK)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Moving the file</p>
-<ul>
-<li><p><code>os.rename(oldfilepath, new_filepath)</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.rename(<span class="string">'t.txt'</span>, <span class="string">'example/t1.txt'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># checking if the file exists</span></span><br><span class="line"><span class="keyword">print</span> os.access(<span class="string">'example/t1.txt'</span>, os.F_OK)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>Copying the file</p>
-<ul>
-<li><code>shutil</code>module is used</li>
-<li><code>shutil.copyfile(src_filepath, dest_filepath)</code></li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> shutil</span><br><span class="line">shutil.copyfile(<span class="string">'sample.txt'</span>, <span class="string">'sample_new.txt'</span>)</span><br><span class="line"><span class="keyword">print</span> os.access(<span class="string">'sample_new.txt'</span>, os.F_OK)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<hr>
-<h2 id="Manipulating-the-path-of-the-file"><a href="#Manipulating-the-path-of-the-file" class="headerlink" title="Manipulating the path of the file"></a>Manipulating the path of the file</h2><ol>
-<li><p>Changing relative path to absolute path</p>
-<ul>
-<li><code>os.path.abspath</code> - relative path<ul>
-<li>no matter the existance of the file, it changes the path to absolute path<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">print</span> os.path.abspath(<span class="string">'o.txt'</span>)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Checking if the file exists in the given path</p>
-<ul>
-<li><code>os.path.exists(filepath)</code></li>
-</ul>
-</li>
-</ol>
-<hr>
-<h2 id="Dividing-path-name"><a href="#Dividing-path-name" class="headerlink" title="Dividing path name"></a>Dividing path name</h2><ol>
-<li><p>Dividing path and file’s name</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="string">'/Users/booski/git/python/t.txt'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> os.path.basename(f) <span class="comment"># extracting only the file's name</span></span><br><span class="line"><span class="keyword">print</span> os.path.dirname(f) <span class="comment"># extracting the directory's name</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Dividing path and file’s name by one line - <code>basename</code> and <code>dirname</code> are made in a tuple</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> os.path.split(f)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Dividing drive’s name and file path in MS windows</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> os.path.splitdrive(f)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Dividing extension - <code>path</code> and <code>extension</code> are made in a tuple</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> os.path.splitext(f)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-    <div class="a2a_kit a2a_default_style">
-    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
-    <span class="a2a_divider"></span>
-    <a class="a2a_button_facebook"></a>
-    <a class="a2a_button_twitter"></a>
-    <a class="a2a_button_google_plus"></a>
-    <a class="a2a_button_pinterest"></a>
-    <a class="a2a_button_tumblr"></a>
-</div>
-<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
-<style>
-    .a2a_menu {
-        border-radius: 4px;
-    }
-    .a2a_menu a {
-        margin: 2px 0;
-        font-size: 14px;
-        line-height: 16px;
-        border-radius: 4px;
-        color: inherit !important;
-        font-family: 'Microsoft Yahei';
-    }
-    #a2apage_dropdown {
-        margin: 10px 0;
-    }
-    .a2a_mini_services {
-        padding: 10px;
-    }
-    a.a2a_i,
-    i.a2a_i {
-        width: 122px;
-        line-height: 16px;
-    }
-    a.a2a_i .a2a_svg,
-    a.a2a_more .a2a_svg {
-        width: 16px;
-        height: 16px;
-        line-height: 16px;
-        vertical-align: top;
-        background-size: 16px;
-    }
-    a.a2a_i {
-        border: none !important;
-    }
-    a.a2a_menu_show_more_less {
-        margin: 0;
-        padding: 10px 0;
-        line-height: 16px;
-    }
-    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
-    .a2a_mini_services{*+height:1%;}
-</style>
-
-</div>
-
-            
-    
-        <a href="http://bongbooski.github.io/2018/04/11/post17_python-file,directory_eng/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/11/post17_python-file,directory_eng/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-post17_python-file,directory" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/04/11/post17_python-file,directory/">python 파일 다루기</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/04/11/post17_python-file,directory/">
-            <time datetime="2018-04-11T06:38:47.000Z" itemprop="datePublished">2018-04-11</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/python/">python</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h1 id="파일-다루기"><a href="#파일-다루기" class="headerlink" title="파일 다루기"></a>파일 다루기</h1><h2 id="파일-목록열기"><a href="#파일-목록열기" class="headerlink" title="파일 목록열기"></a>파일 목록열기</h2><p><code>os</code>모듈 사용<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> os.listdir(<span class="string">'.'</span>) <span class="comment">#현재 디렉토리의 파일목록</span></span><br><span class="line"><span class="keyword">print</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> os.listdir(<span class="string">'../'</span>) <span class="comment">#현재 디렉토리의 부모 디렉토리의 파일 목록</span></span><br></pre></td></tr></table></figure></p>
-<hr>
-<h2 id="파일-종류-알아보기"><a href="#파일-종류-알아보기" class="headerlink" title="파일 종류 알아보기"></a>파일 종류 알아보기</h2><ul>
-<li><code>os.path</code> 모듈로 파일 종류 판단하여 <code>True</code>, <code>False</code> 반환<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">filetype</span><span class="params">(fpath)</span>:</span></span><br><span class="line">  <span class="keyword">print</span> fpath, <span class="string">":"</span>,</span><br><span class="line">  <span class="keyword">if</span> os.path.isfile(fpath):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'Regular file'</span></span><br><span class="line">  <span class="keyword">if</span> os.path.isdir(fpath):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'Directory'</span></span><br><span class="line">  <span class="keyword">if</span> os.path.islink(fpath):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'Symbolic link'</span></span><br><span class="line"></span><br><span class="line">flist = os.listdir(<span class="string">'.'</span>)</span><br><span class="line"><span class="keyword">for</span> fname <span class="keyword">in</span> flist:</span><br><span class="line">  filetype(fname)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<hr>
-<h2 id="파일의-허가권"><a href="#파일의-허가권" class="headerlink" title="파일의 허가권"></a>파일의 허가권</h2><ol>
-<li><p>파일의 허가권 알아보기</p>
-<ul>
-<li><code>os.access(filepath, mode)</code><ul>
-<li><code>mode</code>에 들어갈 값<ul>
-<li><code>os.F_OK</code>: 파일 자체가 존재하는 것을 테스트</li>
-<li><code>os.R_OK</code>: 읽기 권한이 있는 것을 테스트</li>
-<li><code>os.W_OK</code>: 쓰기 권한이 있는 것을 테스트</li>
-<li><code>os.X_OK</code>: 실행 권한이 있는 것(또는 디렉토리인지)을 테스트</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fileaccess</span><span class="params">(fpath)</span>:</span></span><br><span class="line">  <span class="keyword">print</span> fpath, <span class="string">':'</span>,</span><br><span class="line">  <span class="keyword">if</span> os.access(fpath, os.F_OK):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'Exists'</span>,</span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">  <span class="keyword">if</span> os.access(fpath, os.R_OK):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'R'</span>,</span><br><span class="line">  <span class="keyword">if</span> os.access(fpath, os.W_OK):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'W'</span>,</span><br><span class="line">  <span class="keyword">if</span> os.access(fpath, os.X_OK):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'X'</span>,</span><br><span class="line">  <span class="keyword">print</span></span><br><span class="line"></span><br><span class="line">flist = os.listdir(<span class="string">'.'</span>)</span><br><span class="line"><span class="keyword">for</span> fname <span class="keyword">in</span> flist:</span><br><span class="line">  fileaccess(fname)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>파일의 허가권 변경하기</p>
-<ul>
-<li><code>os.chmod(filepath, mode)</code></li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.chmod(<span class="string">'sample.txt'</span>, <span class="number">0777</span>)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<hr>
-<h2 id="파일-조작하기"><a href="#파일-조작하기" class="headerlink" title="파일 조작하기"></a>파일 조작하기</h2><ol>
-<li><p>파일 이름 변경하기</p>
-<ul>
-<li><code>os.rename(old_filepath, new_filepath)</code></li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.rename(<span class="string">'t.txt'</span>, <span class="string">'t1.txt'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> os.access(<span class="string">'t.txt'</span>, os.F_OK) <span class="comment"># 파일 존재 여부 확인</span></span><br><span class="line"><span class="keyword">print</span> os.access(<span class="string">'t1.txt'</span>, os.F_OK)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>파일 이동하기</p>
-<ul>
-<li><p><code>os.rename(oldfilepath, new_filepath)</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.rename(<span class="string">'t.txt'</span>, <span class="string">'example/t1.txt'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 파일 존재 여부 확인</span></span><br><span class="line"><span class="keyword">print</span> os.access(<span class="string">'example/t1.txt'</span>, os.F_OK)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>파일 복사하기</p>
-<ul>
-<li><code>shutil</code>모듈 활용</li>
-<li><code>shutil.copyfile(src_filepath, dest_filepath)</code></li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> shutil</span><br><span class="line">shutil.copyfile(<span class="string">'sample.txt'</span>, <span class="string">'sample_new.txt'</span>)</span><br><span class="line"><span class="keyword">print</span> os.access(<span class="string">'sample_new.txt'</span>, os.F_OK)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<hr>
-<h2 id="파일-이름-다루기"><a href="#파일-이름-다루기" class="headerlink" title="파일 이름 다루기"></a>파일 이름 다루기</h2><ol>
-<li><p>상대 경로를 절대 경로로 변환하기</p>
-<ul>
-<li><code>os.path.abspath</code> - 상대경로<ul>
-<li>실제 파일 존재와는 무관하게 절대경로로 변경<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">print</span> os.path.abspath(<span class="string">'o.txt'</span>)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>주어진 경로에 파일이 존재하는지 확인</p>
-<ul>
-<li><code>os.path.exists(filepath)</code></li>
-</ul>
-</li>
-</ol>
-<hr>
-<h2 id="경로명-분리하기"><a href="#경로명-분리하기" class="headerlink" title="경로명 분리하기"></a>경로명 분리하기</h2><ol>
-<li><p>경로와 파일명으로 분리</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="string">'/Users/booski/git/python/t.txt'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> os.path.basename(f) <span class="comment"># 파일명만 추출</span></span><br><span class="line"><span class="keyword">print</span> os.path.dirname(f) <span class="comment"># 디렉토리 경로 추출</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>경로명과 파일명을 한번에 분리 - basename과 dirname을 튜플로 확인</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> os.path.split(f)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>MS윈도우즈에서 드라이브명과 파일 경로명을 분리</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> os.path.splitdrive(f)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>확장자 분리 - 경로와 확장자명으로 튜플 생성</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> os.path.splitext(f)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-    <div class="a2a_kit a2a_default_style">
-    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
-    <span class="a2a_divider"></span>
-    <a class="a2a_button_facebook"></a>
-    <a class="a2a_button_twitter"></a>
-    <a class="a2a_button_google_plus"></a>
-    <a class="a2a_button_pinterest"></a>
-    <a class="a2a_button_tumblr"></a>
-</div>
-<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
-<style>
-    .a2a_menu {
-        border-radius: 4px;
-    }
-    .a2a_menu a {
-        margin: 2px 0;
-        font-size: 14px;
-        line-height: 16px;
-        border-radius: 4px;
-        color: inherit !important;
-        font-family: 'Microsoft Yahei';
-    }
-    #a2apage_dropdown {
-        margin: 10px 0;
-    }
-    .a2a_mini_services {
-        padding: 10px;
-    }
-    a.a2a_i,
-    i.a2a_i {
-        width: 122px;
-        line-height: 16px;
-    }
-    a.a2a_i .a2a_svg,
-    a.a2a_more .a2a_svg {
-        width: 16px;
-        height: 16px;
-        line-height: 16px;
-        vertical-align: top;
-        background-size: 16px;
-    }
-    a.a2a_i {
-        border: none !important;
-    }
-    a.a2a_menu_show_more_less {
-        margin: 0;
-        padding: 10px 0;
-        line-height: 16px;
-    }
-    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
-    .a2a_mini_services{*+height:1%;}
-</style>
-
-</div>
-
-            
-    
-        <a href="http://bongbooski.github.io/2018/04/11/post17_python-file,directory/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/11/post17_python-file,directory/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-post16_python_fileIO" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/04/09/post16_python_fileIO/">python 파일 입출력</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/04/09/post16_python_fileIO/">
-            <time datetime="2018-04-09T06:09:17.000Z" itemprop="datePublished">2018-04-09</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/python/">python</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h1 id="파일-입출력"><a href="#파일-입출력" class="headerlink" title="파일 입출력"></a>파일 입출력</h1><p><code>open</code>내장 함수 사용시 두번째 인자값으로 mode설정<br>생략시 읽기전용(r)으로 설정</p>
-<ol>
-<li><code>r</code> -읽기 전용 - 파일 객체를 읽기 모드로 생성, 파일 포인터를 파일 처음 위치로, 존재하지 않는 파일이면 에러발생</li>
-<li><code>w</code> - 쓰기 전용 - 새로운 파일을 생성하거나 기존 파일의 내용을 다 없애고 쓰기모드로 생성, 파일 포인터를 파일 처음 위치로</li>
-<li><code>a</code> - 파일 끝에 추가 - 이미 존재하는 파일을 쓰기모드로 생성하거나 존재하지 않으면 파일 만들고 생성, 파일 포인터를 마지막 위치에 놓음</li>
-</ol>
-<h2 id="이진파일-모드"><a href="#이진파일-모드" class="headerlink" title="이진파일 모드"></a>이진파일 모드</h2><ul>
-<li><code>rb</code></li>
-<li><code>wb</code></li>
-<li><code>ab</code></li>
-</ul>
-<hr>
-<p><code>f.close()</code>처럼 <code>close()</code>로 그때그때 닫아주는 것이 좋음</p>
-<p><code>read()</code>를 사용하면 전체를 다 읽어서 할당함</p>
-<h2 id="라인단위로-파일-읽기"><a href="#라인단위로-파일-읽기" class="headerlink" title="라인단위로 파일 읽기"></a>라인단위로 파일 읽기</h2><ol>
-<li><p><code>for</code> 반복문 활용</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'t.txt'</span>)</span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">  <span class="keyword">print</span> i, <span class="string">":"</span>, line,</span><br><span class="line">  i += <span class="number">1</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>readline()</code>-현재의 파일 포인터에서 개행 문자까지 읽음 = 한 라인</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'t.txt'</span>)</span><br><span class="line">line = f.readline()</span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> line:</span><br><span class="line">  <span class="keyword">print</span> i, <span class="string">":"</span>, line,</span><br><span class="line">  line = f.readline()</span><br><span class="line">  i += <span class="number">1</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>readlines()</code>-각 라인을 모두 읽어서 리스트로 저장, 메모리는 비효율적으로 사용<br>상황별로 다른 동작함 - <code>for in</code>구문: 전체x, 라인별로 가져옴</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'t.txt'</span>)</span><br><span class="line"><span class="keyword">print</span> f.readlines() <span class="comment">#리스트 나옴</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#파일 포인터를 맨 앞으로</span></span><br><span class="line">f.seek(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> f.readlines():</span><br><span class="line">  <span class="keyword">print</span> i, <span class="string">":"</span>, line,</span><br><span class="line">  i += <span class="number">1</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>xreadlines()</code> - 메모리 비효율 개선</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'t.txt'</span>)</span><br><span class="line"><span class="keyword">print</span> f.xreadlines() <span class="comment">#파일객체 자체가 나옴</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#파일 포인터를 맨 앞으로</span></span><br><span class="line">f.seek(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> f.xreadlines():</span><br><span class="line">  <span class="keyword">print</span> i, <span class="string">":"</span>, line,</span><br><span class="line">  i += <span class="number">1</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p><strong><em><code>for in</code> 또는 <code>xreadlines()</code> 추천</em></strong></p>
-<hr>
-<h2 id="라인-단위로-쓰는-방법"><a href="#라인-단위로-쓰는-방법" class="headerlink" title="라인 단위로 쓰는 방법"></a>라인 단위로 쓰는 방법</h2><ol>
-<li><p><code>writelines()</code> - 라인단위로 쓰기 작업</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">lines = [<span class="string">'1st line\n'</span>, <span class="string">'2nd line\n'</span>, <span class="string">'3rd line\n'</span>]</span><br><span class="line">f = open(<span class="string">'t1.txt'</span>,<span class="string">'w'</span>)</span><br><span class="line">f.writelines(lines)</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f = open(<span class="string">'t1.txt'</span>)</span><br><span class="line"><span class="keyword">print</span> f.read() <span class="comment">#전체내용 읽음</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>write()</code> - 임의로 중간에 ‘\n’ 넣어줌</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">lines = [<span class="string">'1st line'</span>, <span class="string">'2nd line'</span>, <span class="string">'3rd line'</span>]</span><br><span class="line">f = open(<span class="string">'t1.txt'</span>,<span class="string">'w'</span>)</span><br><span class="line">f.write(<span class="string">'\n'</span>.join(lines))</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f = open(<span class="string">'t1.txt'</span>)</span><br><span class="line"><span class="keyword">print</span> f.read() <span class="comment">#전체내용 읽음</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="기존-파일에-내용-추가"><a href="#기존-파일에-내용-추가" class="headerlink" title="기존 파일에 내용 추가"></a>기존 파일에 내용 추가</h2><ul>
-<li><code>a</code>모드 사용<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'removeme.txt'</span>, <span class="string">'a'</span>)</span><br><span class="line">f.write(<span class="string">'3rd line\n'</span>)</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f = open(<span class="string">'removeme.txt'</span>)</span><br><span class="line"><span class="keyword">print</span> f.read()</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="파일-내-임의-위치로-접근"><a href="#파일-내-임의-위치로-접근" class="headerlink" title="파일 내 임의 위치로 접근"></a>파일 내 임의 위치로 접근</h2><ul>
-<li>순차접근</li>
-<li>임의접근<ul>
-<li><code>seek(n)</code> - 파일의 가장 첫번째 위치에서 n번째 바이트로 포인터이동</li>
-<li><code>tell()</code> - 파일 내 현재 포인터 위치를 반환</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">'t.txt'</span></span><br><span class="line">f = open(name, <span class="string">'w+'</span>) <span class="comment"># 읽고 쓰기모드</span></span><br><span class="line">s = <span class="string">'0123456789asdf'</span></span><br><span class="line">f.write(s)</span><br><span class="line"></span><br><span class="line">f.seek(<span class="number">5</span>)</span><br><span class="line"><span class="keyword">print</span> f.tell()</span><br><span class="line"><span class="keyword">print</span> f.read(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">print</span> f.tell()</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="sys-모듈의-표준-입출력-모니터-관련-객체"><a href="#sys-모듈의-표준-입출력-모니터-관련-객체" class="headerlink" title="sys 모듈의 표준 입출력(모니터) 관련 객체"></a>sys 모듈의 표준 입출력(모니터) 관련 객체</h2><ul>
-<li>sys.stdout: 표준 입출력</li>
-<li>sys.stderr: 표준 에러 출력</li>
-<li>sys.stdin: 표준 입력</li>
-</ul>
-<h3 id="표준-출력으로-파일-저장하기"><a href="#표준-출력으로-파일-저장하기" class="headerlink" title="표준 출력으로 파일 저장하기"></a>표준 출력으로 파일 저장하기</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">f = open(<span class="string">'t.txt'</span>,<span class="string">'w'</span>)</span><br><span class="line">stdout = sys.stdout <span class="comment">#표준 출력 저장</span></span><br><span class="line">sys.stdout = f <span class="comment">#파일 객체로 표준 출력 변경</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">'Sample output'</span></span><br><span class="line">pirnt <span class="string">'Good'</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">'Good'</span></span><br><span class="line">f.close()</span><br><span class="line">sys.stdout = stdout <span class="comment">#표준 출력 복원</span></span><br></pre></td></tr></table></figure>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-    <div class="a2a_kit a2a_default_style">
-    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
-    <span class="a2a_divider"></span>
-    <a class="a2a_button_facebook"></a>
-    <a class="a2a_button_twitter"></a>
-    <a class="a2a_button_google_plus"></a>
-    <a class="a2a_button_pinterest"></a>
-    <a class="a2a_button_tumblr"></a>
-</div>
-<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
-<style>
-    .a2a_menu {
-        border-radius: 4px;
-    }
-    .a2a_menu a {
-        margin: 2px 0;
-        font-size: 14px;
-        line-height: 16px;
-        border-radius: 4px;
-        color: inherit !important;
-        font-family: 'Microsoft Yahei';
-    }
-    #a2apage_dropdown {
-        margin: 10px 0;
-    }
-    .a2a_mini_services {
-        padding: 10px;
-    }
-    a.a2a_i,
-    i.a2a_i {
-        width: 122px;
-        line-height: 16px;
-    }
-    a.a2a_i .a2a_svg,
-    a.a2a_more .a2a_svg {
-        width: 16px;
-        height: 16px;
-        line-height: 16px;
-        vertical-align: top;
-        background-size: 16px;
-    }
-    a.a2a_i {
-        border: none !important;
-    }
-    a.a2a_menu_show_more_less {
-        margin: 0;
-        padding: 10px 0;
-        line-height: 16px;
-    }
-    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
-    .a2a_mini_services{*+height:1%;}
-</style>
-
-</div>
-
-            
-    
-        <a href="http://bongbooski.github.io/2018/04/09/post16_python_fileIO/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/09/post16_python_fileIO/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-post16_python_fileIO_eng" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/04/09/post16_python_fileIO_eng/">python File Input&amp;Output</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/04/09/post16_python_fileIO_eng/">
-            <time datetime="2018-04-09T06:09:17.000Z" itemprop="datePublished">2018-04-09</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/python/">python</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h1 id="File-IO"><a href="#File-IO" class="headerlink" title="File IO"></a>File IO</h1><ul>
-<li>mode can be set as the Second parameter of <code>open</code>built-in function<br>default value is <code>read only(r)</code></li>
-</ul>
-<ol>
-<li><code>r</code> - read only - file object is created in <code>read only</code>, file pointer moves to the beginning of the file, Error occurs if the file doesn’t exists</li>
-<li><code>w</code> - write only - creating new file or creating new file object in <code>write only</code> after removing original file’s content, file pointer moves to the beginning of the file</li>
-<li><code>a</code> - addding content at the bottom - creating file object in <code>write only</code> or creating new file if the file doesn’t exist and then putting the file pointer to the end of the file</li>
-</ol>
-<h2 id="Binary-file-mode"><a href="#Binary-file-mode" class="headerlink" title="Binary file mode"></a>Binary file mode</h2><ul>
-<li><code>rb</code></li>
-<li><code>wb</code></li>
-<li><code>ab</code></li>
-</ul>
-<hr>
-<p>It is recommended to close the file object by <code>close()</code> immediately like <code>f.close()</code></p>
-<p>Using <code>read()</code> assigns whole content after reading everything</p>
-<h2 id="Reading-file-line-by-line"><a href="#Reading-file-line-by-line" class="headerlink" title="Reading file line by line"></a>Reading file line by line</h2><ol>
-<li><p>Using <code>for</code>loof statement</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'t.txt'</span>)</span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">  <span class="keyword">print</span> i, <span class="string">":"</span>, line,</span><br><span class="line">  i += <span class="number">1</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>readline()</code> - from present file pointer to new line character = A line</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'t.txt'</span>)</span><br><span class="line">line = f.readline()</span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> line:</span><br><span class="line">  <span class="keyword">print</span> i, <span class="string">":"</span>, line,</span><br><span class="line">  line = f.readline()</span><br><span class="line">  i += <span class="number">1</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>readlines()</code> - Saving line by line in a list, memory is used inefficiently<br>It works differently depending on each cases - <code>for in</code>statement: not reading everything, taking line by line</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'t.txt'</span>)</span><br><span class="line"><span class="keyword">print</span> f.readlines() <span class="comment"># returning a list</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># file pointer moves to the beginning of the file</span></span><br><span class="line">f.seek(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> f.readlines():</span><br><span class="line">  <span class="keyword">print</span> i, <span class="string">":"</span>, line,</span><br><span class="line">  i += <span class="number">1</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>xreadlines()</code> - memory inefficiency improved</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'t.txt'</span>)</span><br><span class="line"><span class="keyword">print</span> f.xreadlines() <span class="comment"># returning file object</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># file pointer moves to the beginning of the file</span></span><br><span class="line">f.seek(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> f.xreadlines():</span><br><span class="line">  <span class="keyword">print</span> i, <span class="string">":"</span>, line,</span><br><span class="line">  i += <span class="number">1</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p><strong><em><code>for in</code> or <code>xreadlines()</code> are recommended</em></strong></p>
-<hr>
-<h2 id="the-way-to-write-down-line-by-line"><a href="#the-way-to-write-down-line-by-line" class="headerlink" title="the way to write down line by line"></a>the way to write down line by line</h2><ol>
-<li><p><code>writelines()</code> - for writing line by line</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">lines = [<span class="string">'1st line\n'</span>, <span class="string">'2nd line\n'</span>, <span class="string">'3rd line\n'</span>]</span><br><span class="line">f = open(<span class="string">'t1.txt'</span>,<span class="string">'w'</span>)</span><br><span class="line">f.writelines(lines)</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f = open(<span class="string">'t1.txt'</span>)</span><br><span class="line"><span class="keyword">print</span> f.read() <span class="comment"># reading whole content</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>write()</code> - putting <code>\n</code> between items</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">lines = [<span class="string">'1st line'</span>, <span class="string">'2nd line'</span>, <span class="string">'3rd line'</span>]</span><br><span class="line">f = open(<span class="string">'t1.txt'</span>,<span class="string">'w'</span>)</span><br><span class="line">f.write(<span class="string">'\n'</span>.join(lines))</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f = open(<span class="string">'t1.txt'</span>)</span><br><span class="line"><span class="keyword">print</span> f.read() <span class="comment"># reading whole content</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="Adding-content-in-the-existing-file-existing"><a href="#Adding-content-in-the-existing-file-existing" class="headerlink" title="Adding content in the existing file existing"></a>Adding content in the existing file existing</h2><ul>
-<li>Using mode <code>a</code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'removeme.txt'</span>, <span class="string">'a'</span>)</span><br><span class="line">f.write(<span class="string">'3rd line\n'</span>)</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f = open(<span class="string">'removeme.txt'</span>)</span><br><span class="line"><span class="keyword">print</span> f.read()</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="Seeking-specific-file-pointer"><a href="#Seeking-specific-file-pointer" class="headerlink" title="Seeking specific file pointer"></a>Seeking specific file pointer</h2><ul>
-<li>Sequential access</li>
-<li>specific access<ul>
-<li><code>seek(n)</code> - moving file pointer to the point which is n byte far from the beginning of the file</li>
-<li><code>tell()</code> - returning present file pointer in the file</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">'t.txt'</span></span><br><span class="line">f = open(name, <span class="string">'w+'</span>) <span class="comment"># read and write mode</span></span><br><span class="line">s = <span class="string">'0123456789asdf'</span></span><br><span class="line">f.write(s)</span><br><span class="line"></span><br><span class="line">f.seek(<span class="number">5</span>)</span><br><span class="line"><span class="keyword">print</span> f.tell()</span><br><span class="line"><span class="keyword">print</span> f.read(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">print</span> f.tell()</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="sys-module’s-standard-IO-monitor-object"><a href="#sys-module’s-standard-IO-monitor-object" class="headerlink" title="sys module’s standard IO(monitor) object"></a>sys module’s standard IO(monitor) object</h2><ul>
-<li>sys.stdout: standard Input and Output</li>
-<li>sys.stderr: standard error Output</li>
-<li>sys.stdin: standard Input</li>
-</ul>
-<h3 id="Saving-a-file-by-standard-output"><a href="#Saving-a-file-by-standard-output" class="headerlink" title="Saving a file by standard output"></a>Saving a file by standard output</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">f = open(<span class="string">'t.txt'</span>,<span class="string">'w'</span>)</span><br><span class="line">stdout = sys.stdout <span class="comment"># saving standard output</span></span><br><span class="line">sys.stdout = f <span class="comment"># changing standard output to file object</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">'Sample output'</span></span><br><span class="line">pirnt <span class="string">'Good'</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">'Good'</span></span><br><span class="line">f.close()</span><br><span class="line">sys.stdout = stdout <span class="comment"># restoring standard output</span></span><br></pre></td></tr></table></figure>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-    <div class="a2a_kit a2a_default_style">
-    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
-    <span class="a2a_divider"></span>
-    <a class="a2a_button_facebook"></a>
-    <a class="a2a_button_twitter"></a>
-    <a class="a2a_button_google_plus"></a>
-    <a class="a2a_button_pinterest"></a>
-    <a class="a2a_button_tumblr"></a>
-</div>
-<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
-<style>
-    .a2a_menu {
-        border-radius: 4px;
-    }
-    .a2a_menu a {
-        margin: 2px 0;
-        font-size: 14px;
-        line-height: 16px;
-        border-radius: 4px;
-        color: inherit !important;
-        font-family: 'Microsoft Yahei';
-    }
-    #a2apage_dropdown {
-        margin: 10px 0;
-    }
-    .a2a_mini_services {
-        padding: 10px;
-    }
-    a.a2a_i,
-    i.a2a_i {
-        width: 122px;
-        line-height: 16px;
-    }
-    a.a2a_i .a2a_svg,
-    a.a2a_more .a2a_svg {
-        width: 16px;
-        height: 16px;
-        line-height: 16px;
-        vertical-align: top;
-        background-size: 16px;
-    }
-    a.a2a_i {
-        border: none !important;
-    }
-    a.a2a_menu_show_more_less {
-        margin: 0;
-        padding: 10px 0;
-        line-height: 16px;
-    }
-    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
-    .a2a_mini_services{*+height:1%;}
-</style>
-
-</div>
-
-            
-    
-        <a href="http://bongbooski.github.io/2018/04/09/post16_python_fileIO_eng/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/09/post16_python_fileIO_eng/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-post15_gitignore+config-setting" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/03/22/post15_gitignore+config-setting/">.gitignore, config파일 사용</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/03/22/post15_gitignore+config-setting/">
-            <time datetime="2018-03-22T06:09:17.000Z" itemprop="datePublished">2018-03-22</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/github/">github</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h1 id="새노트북"><a href="#새노트북" class="headerlink" title="새노트북"></a>새노트북</h1><p>여러 프로젝트를 두 노트북에서 함께 진행할 예정인데 새 노트북에 기존 코드들을 넘겨와야함</p>
-<p>데이터베이스 비밀번호 등 개인정보가 마음에 걸려서 설정파일로 빼보려고하니 일이 커짐</p>
-<p><code>.gitignore</code>사용한 것과 <code>config</code>폴더, 파일 사용법 포스팅할 예정</p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-    <div class="a2a_kit a2a_default_style">
-    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
-    <span class="a2a_divider"></span>
-    <a class="a2a_button_facebook"></a>
-    <a class="a2a_button_twitter"></a>
-    <a class="a2a_button_google_plus"></a>
-    <a class="a2a_button_pinterest"></a>
-    <a class="a2a_button_tumblr"></a>
-</div>
-<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
-<style>
-    .a2a_menu {
-        border-radius: 4px;
-    }
-    .a2a_menu a {
-        margin: 2px 0;
-        font-size: 14px;
-        line-height: 16px;
-        border-radius: 4px;
-        color: inherit !important;
-        font-family: 'Microsoft Yahei';
-    }
-    #a2apage_dropdown {
-        margin: 10px 0;
-    }
-    .a2a_mini_services {
-        padding: 10px;
-    }
-    a.a2a_i,
-    i.a2a_i {
-        width: 122px;
-        line-height: 16px;
-    }
-    a.a2a_i .a2a_svg,
-    a.a2a_more .a2a_svg {
-        width: 16px;
-        height: 16px;
-        line-height: 16px;
-        vertical-align: top;
-        background-size: 16px;
-    }
-    a.a2a_i {
-        border: none !important;
-    }
-    a.a2a_menu_show_more_less {
-        margin: 0;
-        padding: 10px 0;
-        line-height: 16px;
-    }
-    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
-    .a2a_mini_services{*+height:1%;}
-</style>
-
-</div>
-
-            
-    
-        <a href="http://bongbooski.github.io/2018/03/22/post15_gitignore+config-setting/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/03/22/post15_gitignore+config-setting/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/03/22/hello-world/">Hello World</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/03/22/hello-world/">
-            <time datetime="2018-03-22T06:09:16.793Z" itemprop="datePublished">2018-03-22</time>
-        </a>
-    </div>
-
-
-                        
-                        
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-    <div class="a2a_kit a2a_default_style">
-    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
-    <span class="a2a_divider"></span>
-    <a class="a2a_button_facebook"></a>
-    <a class="a2a_button_twitter"></a>
-    <a class="a2a_button_google_plus"></a>
-    <a class="a2a_button_pinterest"></a>
-    <a class="a2a_button_tumblr"></a>
-</div>
-<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
-<style>
-    .a2a_menu {
-        border-radius: 4px;
-    }
-    .a2a_menu a {
-        margin: 2px 0;
-        font-size: 14px;
-        line-height: 16px;
-        border-radius: 4px;
-        color: inherit !important;
-        font-family: 'Microsoft Yahei';
-    }
-    #a2apage_dropdown {
-        margin: 10px 0;
-    }
-    .a2a_mini_services {
-        padding: 10px;
-    }
-    a.a2a_i,
-    i.a2a_i {
-        width: 122px;
-        line-height: 16px;
-    }
-    a.a2a_i .a2a_svg,
-    a.a2a_more .a2a_svg {
-        width: 16px;
-        height: 16px;
-        line-height: 16px;
-        vertical-align: top;
-        background-size: 16px;
-    }
-    a.a2a_i {
-        border: none !important;
-    }
-    a.a2a_menu_show_more_less {
-        margin: 0;
-        padding: 10px 0;
-        line-height: 16px;
-    }
-    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
-    .a2a_mini_services{*+height:1%;}
-</style>
-
-</div>
-
-            
-    
-        <a href="http://bongbooski.github.io/2018/03/22/hello-world/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/03/22/hello-world/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <nav id="page-nav">
         <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
@@ -1959,7 +1923,7 @@ ga('send', 'pageview');
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/08/11/post26-servlet03/" class="thumbnail">
+                            <a href="/2018/08/13/post32-jsp actionTag/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -1970,15 +1934,15 @@ ga('send', 'pageview');
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/08/11/post26-servlet03/" class="title">Servlet&#39;s way to run</a></p>
-                            <p class="item-date"><time datetime="2018-08-11T08:24:20.000Z" itemprop="datePublished">2018-08-11</time></p>
+                            <p class="item-title"><a href="/2018/08/13/post32-jsp actionTag/" class="title">JSP action tag</a></p>
+                            <p class="item-date"><time datetime="2018-08-13T13:22:20.000Z" itemprop="datePublished">2018-08-13</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/08/11/post25-servlet02/" class="thumbnail">
+                            <a href="/2018/08/12/post31-jsp request,response/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -1989,15 +1953,15 @@ ga('send', 'pageview');
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/08/11/post25-servlet02/" class="title">Servlet start</a></p>
-                            <p class="item-date"><time datetime="2018-08-11T04:34:20.000Z" itemprop="datePublished">2018-08-11</time></p>
+                            <p class="item-title"><a href="/2018/08/12/post31-jsp request,response/" class="title">JSP request, response object</a></p>
+                            <p class="item-date"><time datetime="2018-08-12T06:29:20.000Z" itemprop="datePublished">2018-08-12</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/08/11/post24-servlet01/" class="thumbnail">
+                            <a href="/2018/08/12/post30-jsp expression/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -2008,15 +1972,15 @@ ga('send', 'pageview');
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/08/11/post24-servlet01/" class="title">Servlet</a></p>
-                            <p class="item-date"><time datetime="2018-08-11T03:38:20.000Z" itemprop="datePublished">2018-08-11</time></p>
+                            <p class="item-title"><a href="/2018/08/12/post30-jsp expression/" class="title">JSP Scriptlet, declaration, expression, 지시자, comment</a></p>
+                            <p class="item-date"><time datetime="2018-08-12T05:48:20.000Z" itemprop="datePublished">2018-08-12</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/08/09/post23-jsp1/" class="thumbnail">
+                            <a href="/2018/08/12/post29-jsp tag/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -2027,15 +1991,15 @@ ga('send', 'pageview');
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/08/09/post23-jsp1/" class="title">JSP</a></p>
-                            <p class="item-date"><time datetime="2018-08-09T12:19:20.000Z" itemprop="datePublished">2018-08-09</time></p>
+                            <p class="item-title"><a href="/2018/08/12/post29-jsp tag/" class="title">JSP tags, way to run, internal object</a></p>
+                            <p class="item-date"><time datetime="2018-08-12T04:26:20.000Z" itemprop="datePublished">2018-08-12</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2018/04/17/post22-python-exception-raise_eng/" class="thumbnail">
+                            <a href="/2018/08/12/post27-servlet04/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -2046,8 +2010,8 @@ ga('send', 'pageview');
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/04/17/post22-python-exception-raise_eng/" class="title">python Exception Raise</a></p>
-                            <p class="item-date"><time datetime="2018-04-17T05:47:23.000Z" itemprop="datePublished">2018-04-17</time></p>
+                            <p class="item-title"><a href="/2018/08/12/post27-servlet04/" class="title">Servlet parameter, korean handling</a></p>
+                            <p class="item-date"><time datetime="2018-08-12T03:26:20.000Z" itemprop="datePublished">2018-08-12</time></p>
                         </div>
                     </li>
                 
@@ -2062,7 +2026,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">13</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">10</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">13</span></li></ul>
         </div>
     </div>
 
@@ -2071,7 +2035,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSP/">JSP</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySql/">MySql</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Servlet/">Servlet</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/okky/">okky</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">14</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSP/">JSP</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySql/">MySql</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Servlet/">Servlet</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/okky/">okky</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">14</span></li></ul>
         </div>
     </div>
 
@@ -2080,7 +2044,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/JSP/" style="font-size: 10px;">JSP</a> <a href="/tags/MySql/" style="font-size: 15px;">MySql</a> <a href="/tags/Node-js/" style="font-size: 17.5px;">Node.js</a> <a href="/tags/Servlet/" style="font-size: 12.5px;">Servlet</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/okky/" style="font-size: 10px;">okky</a> <a href="/tags/python/" style="font-size: 20px;">python</a>
+            <a href="/tags/JSP/" style="font-size: 15px;">JSP</a> <a href="/tags/MySql/" style="font-size: 12.5px;">MySql</a> <a href="/tags/Node-js/" style="font-size: 17.5px;">Node.js</a> <a href="/tags/Servlet/" style="font-size: 15px;">Servlet</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/okky/" style="font-size: 10px;">okky</a> <a href="/tags/python/" style="font-size: 20px;">python</a>
         </div>
     </div>
 
