@@ -3,15 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Tag: python | Booski&#39;s programming</title>
+    <title>Session | Booski&#39;s programming</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Booski&#39;s programming">
-<meta property="og:url" content="http://bongbooski.github.io/tags/python/page/3/index.html">
+    <meta name="description" content="Session Cookie처럼 웹브라우저와의 관계를 유지하기 위한 수단 서버상의 객체로 존재 Cf)Cookie는 클라이언트의 특정 위치에 저장 따라서 Session은 서버에서만 접근 가능하여 보안이 좋고, 저장할 수 있는 데이터의 한계가 없음   클라이언트 요청 - 웹브라우저 Session 자동 생성 Session 속성 설정 - session내부 객체의 메">
+<meta name="keywords" content="JSP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Session">
+<meta property="og:url" content="http://bongbooski.github.io/2018/08/16/post34-Session/index.html">
 <meta property="og:site_name" content="Booski&#39;s programming">
+<meta property="og:description" content="Session Cookie처럼 웹브라우저와의 관계를 유지하기 위한 수단 서버상의 객체로 존재 Cf)Cookie는 클라이언트의 특정 위치에 저장 따라서 Session은 서버에서만 접근 가능하여 보안이 좋고, 저장할 수 있는 데이터의 한계가 없음   클라이언트 요청 - 웹브라우저 Session 자동 생성 Session 속성 설정 - session내부 객체의 메">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-08-16T13:24:57.341Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Booski&#39;s programming">
+<meta name="twitter:title" content="Session">
+<meta name="twitter:description" content="Session Cookie처럼 웹브라우저와의 관계를 유지하기 위한 수단 서버상의 객체로 존재 Cf)Cookie는 클라이언트의 특정 위치에 저장 따라서 Session은 서버에서만 접근 가능하여 보안이 좋고, 저장할 수 있는 데이터의 한계가 없음   클라이언트 요청 - 웹브라우저 Session 자동 생성 Session 속성 설정 - session내부 객체의 메">
 <meta property="fb:app_id" content="965647770265499">
     
 
@@ -220,142 +225,164 @@ ga('send', 'pageview');
 </aside>
 
             
-            <section id="main">
-<div class="timeline timeline-wrap">
-    <div class="timeline-row timeline-row-major">
-        <span class="node"><i class="fa fa-tag"></i></span>
-        <h1 class="title">#python</h1>
-    </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+            <section id="main"><article id="post-post34-Session" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/04/11/post17_python-file,directory/">python 파일 다루기</a>
+        <h1 class="article-title" itemprop="name">
+            Session
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2018/04/11/post17_python-file,directory/">
-            <time datetime="2018-04-11T06:38:47.000Z" itemprop="datePublished">2018-04-11</time>
+        <a href="/2018/08/16/post34-Session/">
+            <time datetime="2018-08-16T12:45:20.000Z" itemprop="datePublished">2018-08-16</time>
         </a>
     </div>
 
 
-                    
-                    
+                        
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/python/">python</a>
+        <a class="tag-link" href="/tags/JSP/">JSP</a>
     </div>
 
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+                    </div>
                 
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/04/11/post17_python-file,directory_eng/">python operating files</a>
-        </h1>
-    
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h1><ul>
+<li><code>Cookie</code>처럼 웹브라우저와의 관계를 유지하기 위한 수단</li>
+<li>서버상의 객체로 존재 Cf)<code>Cookie</code>는 클라이언트의 특정 위치에 저장</li>
+<li>따라서 <code>Session</code>은 서버에서만 접근 가능하여 보안이 좋고, 저장할 수 있는 데이터의 한계가 없음</li>
+</ul>
+<ol>
+<li>클라이언트 요청 - 웹브라우저</li>
+<li><code>Session</code> 자동 생성</li>
+<li><code>Session</code> 속성 설정 - <code>session</code>내부 객체의 메소드 이용</li>
+</ol>
+<ul>
+<li>각 브라우저마다 세션 생성됨</li>
+</ul>
+<hr>
+<h2 id="Session-관련-메소드"><a href="#Session-관련-메소드" class="headerlink" title="Session 관련 메소드"></a>Session 관련 메소드</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">setAttribute() - 세션에 데이터 저장</span><br><span class="line">getAttribute() - 세션에서 데이터 획득</span><br><span class="line">getAttributeNames() - 세셔넹 저장되어 있는 모든 데이터의 이름(유니크한 키값)을 획득</span><br><span class="line">getId() - 자동 생성된 세션의 유니크한 아이디 획득</span><br><span class="line">isNew() - 세션이 최초 생성되었는지, 이전에 생성된 세션인지 구분</span><br><span class="line">getMaxInactiveInterval() - 세션의 유효시간 획득, 가장 최근 요청시점을 기준으로 카운트</span><br><span class="line">removeAttribute() - 세션에서 특정 데이터 제거</span><br><span class="line">inValidate() - 세션의 모든 데이터를 삭제</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h1><ul>
+<li><p>sessionInit.jsp</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">  session.setAttribute(<span class="string">"mySessionName"</span>,<span class="string">"mySessionData"</span>);</span><br><span class="line">  sessoin.setAttribute(<span class="string">"myNum"</span>,<span class="number">12345</span>);</span><br><span class="line">%&gt;</span><br><span class="line"></span><br><span class="line">&lt;a href="sessionGet.jsp"&gt;session get&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>sessoinGet.jsp</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">  Object obj1 = session.getAttribute(<span class="string">"mySessionName"</span>);</span><br><span class="line">  <span class="comment">// 이때 반환 값은 무조건 Object형임***</span></span><br><span class="line">  String mySessionName = (String)obj1;</span><br><span class="line">  out.println(mySessionName + <span class="string">"&lt;br/&gt;"</span>);</span><br><span class="line"></span><br><span class="line">  Object obj2 = session.getAttribute(<span class="string">"myNum"</span>);</span><br><span class="line">  Integer myNum = (Integer)obj2;</span><br><span class="line">  out.println(myNum + <span class="string">"&lt;br/&gt;"</span>);</span><br><span class="line"></span><br><span class="line">  out.println(<span class="string">"****************************** &lt;br/&gt;"</span>);</span><br><span class="line"></span><br><span class="line">  String sName;</span><br><span class="line">  String sValue;</span><br><span class="line">  Enumeration enumeration = session.getAttributeNames();</span><br><span class="line">  <span class="comment">// 모든 세션 값들 가져옴</span></span><br><span class="line">  <span class="keyword">while</span>(enumeration.hasMoreElements())&#123;</span><br><span class="line">    sName = enumeration.nextElement().toString();</span><br><span class="line">    sValue = session.getAttribute(sName).toString();</span><br><span class="line"></span><br><span class="line">    out.println(<span class="string">"sName: "</span> + sName + <span class="string">"&lt;br/&gt;"</span>);</span><br><span class="line">    out.println(<span class="string">"sValue: "</span> + sValue + <span class="string">"&lt;br/&gt;"</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  out.println(<span class="string">"****************************** &lt;br/&gt;"</span>);</span><br><span class="line"></span><br><span class="line">  String sessionId = session.getId(); <span class="comment">//세션 아이디 획득</span></span><br><span class="line">  out.pringln(<span class="string">"sessionId: "</span> + sessionId);</span><br><span class="line">  <span class="keyword">int</span> sessionInter = session.getMaxInactiveInterval();</span><br><span class="line">  out.pringln(<span class="string">"sessionInter: "</span> + sessionInter);</span><br><span class="line"></span><br><span class="line">  out.println(<span class="string">"****************************** &lt;br/&gt;"</span>);</span><br><span class="line"></span><br><span class="line">  session.removeAttribute(<span class="string">"mySessionData"</span>); <span class="comment">//특정 데이터를 삭제</span></span><br><span class="line">  Enumeration enumeration1 = session.getAttributeNames();</span><br><span class="line">  <span class="keyword">while</span>(enumeration1.hasMoreElements())&#123;</span><br><span class="line">    sName = enumeration1.nextElement().toString();</span><br><span class="line">    sValue = session.getAttribute(sName).toString();</span><br><span class="line"></span><br><span class="line">    out.println(<span class="string">"sName: "</span> + sName + <span class="string">"&lt;br/&gt;"</span>);</span><br><span class="line">    out.println(<span class="string">"sValue: "</span> + sValue + <span class="string">"&lt;br/&gt;"</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  out.println(<span class="string">"****************************** &lt;br/&gt;"</span>);</span><br><span class="line"></span><br><span class="line">  session.inValidate(); <span class="comment">//세션 자체를 삭제</span></span><br><span class="line">  <span class="keyword">if</span>(request.isRequestedSessionIdValid())&#123;</span><br><span class="line">    out.println(<span class="string">"session valid"</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    out.println(<span class="string">"session invalid"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/04/11/post17_python-file,directory_eng/">
-            <time datetime="2018-04-11T06:38:47.000Z" itemprop="datePublished">2018-04-11</time>
-        </a>
-    </div>
-
-
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/python/">python</a>
-    </div>
-
-                </div>
-            </div>
+        
         </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/04/09/post16_python_fileIO_eng/">python File Input&amp;Output</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/04/09/post16_python_fileIO_eng/">
-            <time datetime="2018-04-09T06:09:17.000Z" itemprop="datePublished">2018-04-09</time>
-        </a>
-    </div>
+        <footer class="article-footer">
+            <div class="share-container">
 
 
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/python/">python</a>
-    </div>
 
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/04/09/post16_python_fileIO/">python 파일 입출력</a>
-        </h1>
-    
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
 
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/04/09/post16_python_fileIO/">
-            <time datetime="2018-04-09T06:09:17.000Z" itemprop="datePublished">2018-04-09</time>
-        </a>
-    </div>
-
-
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/python/">python</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
 </div>
 
-    <nav id="page-nav">
-        <a class="extend prev" rel="prev" href="/tags/python/page/2/">&laquo; Prev</a><a class="page-number" href="/tags/python/">1</a><a class="page-number" href="/tags/python/page/2/">2</a><span class="page-number current">3</span>
-    </nav>
+            
+    
+        <a href="http://bongbooski.github.io/2018/08/16/post34-Session/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/08/16/post34-Session/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2018/08/15/post33-Cookie/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">Cookie</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+</section>
+    
+
 </section>
             
                 
@@ -530,11 +557,13 @@ ga('send', 'pageview');
     <script>
     var disqus_config = function () {
         
-        this.page.identifier = '';
+            this.page.url = 'http://bongbooski.github.io/2018/08/16/post34-Session/';
+        
+        this.page.identifier = 'post34-Session';
     };
     (function() { 
         var d = document, s = d.createElement('script');  
-        s.src = '//' + 'https-bongbooski-github-io' + '.disqus.com/count.js';
+        s.src = '//' + 'https-bongbooski-github-io' + '.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();

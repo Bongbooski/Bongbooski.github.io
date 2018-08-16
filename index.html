@@ -174,7 +174,7 @@ ga('send', 'pageview');
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                41
+                42
                 <span>posts</span>
             </div>
             <div class="article-info-block">
@@ -221,6 +221,143 @@ ga('send', 'pageview');
 
             
             <section id="main">
+    <article id="post-post34-Session" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/08/16/post34-Session/">Session</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/08/16/post34-Session/">
+            <time datetime="2018-08-16T12:45:20.000Z" itemprop="datePublished">2018-08-16</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/JSP/">JSP</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h1><ul>
+<li><code>Cookie</code>처럼 웹브라우저와의 관계를 유지하기 위한 수단</li>
+<li>서버상의 객체로 존재 Cf)<code>Cookie</code>는 클라이언트의 특정 위치에 저장</li>
+<li>따라서 <code>Session</code>은 서버에서만 접근 가능하여 보안이 좋고, 저장할 수 있는 데이터의 한계가 없음</li>
+</ul>
+<ol>
+<li>클라이언트 요청 - 웹브라우저</li>
+<li><code>Session</code> 자동 생성</li>
+<li><code>Session</code> 속성 설정 - <code>session</code>내부 객체의 메소드 이용</li>
+</ol>
+<ul>
+<li>각 브라우저마다 세션 생성됨</li>
+</ul>
+<hr>
+<h2 id="Session-관련-메소드"><a href="#Session-관련-메소드" class="headerlink" title="Session 관련 메소드"></a>Session 관련 메소드</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">setAttribute() - 세션에 데이터 저장</span><br><span class="line">getAttribute() - 세션에서 데이터 획득</span><br><span class="line">getAttributeNames() - 세셔넹 저장되어 있는 모든 데이터의 이름(유니크한 키값)을 획득</span><br><span class="line">getId() - 자동 생성된 세션의 유니크한 아이디 획득</span><br><span class="line">isNew() - 세션이 최초 생성되었는지, 이전에 생성된 세션인지 구분</span><br><span class="line">getMaxInactiveInterval() - 세션의 유효시간 획득, 가장 최근 요청시점을 기준으로 카운트</span><br><span class="line">removeAttribute() - 세션에서 특정 데이터 제거</span><br><span class="line">inValidate() - 세션의 모든 데이터를 삭제</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h1><ul>
+<li><p>sessionInit.jsp</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">  session.setAttribute(<span class="string">"mySessionName"</span>,<span class="string">"mySessionData"</span>);</span><br><span class="line">  sessoin.setAttribute(<span class="string">"myNum"</span>,<span class="number">12345</span>);</span><br><span class="line">%&gt;</span><br><span class="line"></span><br><span class="line">&lt;a href="sessionGet.jsp"&gt;session get&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>sessoinGet.jsp</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">&lt;%</span><br><span class="line">  Object obj1 = session.getAttribute(<span class="string">"mySessionName"</span>);</span><br><span class="line">  <span class="comment">// 이때 반환 값은 무조건 Object형임***</span></span><br><span class="line">  String mySessionName = (String)obj1;</span><br><span class="line">  out.println(mySessionName + <span class="string">"&lt;br/&gt;"</span>);</span><br><span class="line"></span><br><span class="line">  Object obj2 = session.getAttribute(<span class="string">"myNum"</span>);</span><br><span class="line">  Integer myNum = (Integer)obj2;</span><br><span class="line">  out.println(myNum + <span class="string">"&lt;br/&gt;"</span>);</span><br><span class="line"></span><br><span class="line">  out.println(<span class="string">"****************************** &lt;br/&gt;"</span>);</span><br><span class="line"></span><br><span class="line">  String sName;</span><br><span class="line">  String sValue;</span><br><span class="line">  Enumeration enumeration = session.getAttributeNames();</span><br><span class="line">  <span class="comment">// 모든 세션 값들 가져옴</span></span><br><span class="line">  <span class="keyword">while</span>(enumeration.hasMoreElements())&#123;</span><br><span class="line">    sName = enumeration.nextElement().toString();</span><br><span class="line">    sValue = session.getAttribute(sName).toString();</span><br><span class="line"></span><br><span class="line">    out.println(<span class="string">"sName: "</span> + sName + <span class="string">"&lt;br/&gt;"</span>);</span><br><span class="line">    out.println(<span class="string">"sValue: "</span> + sValue + <span class="string">"&lt;br/&gt;"</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  out.println(<span class="string">"****************************** &lt;br/&gt;"</span>);</span><br><span class="line"></span><br><span class="line">  String sessionId = session.getId(); <span class="comment">//세션 아이디 획득</span></span><br><span class="line">  out.pringln(<span class="string">"sessionId: "</span> + sessionId);</span><br><span class="line">  <span class="keyword">int</span> sessionInter = session.getMaxInactiveInterval();</span><br><span class="line">  out.pringln(<span class="string">"sessionInter: "</span> + sessionInter);</span><br><span class="line"></span><br><span class="line">  out.println(<span class="string">"****************************** &lt;br/&gt;"</span>);</span><br><span class="line"></span><br><span class="line">  session.removeAttribute(<span class="string">"mySessionData"</span>); <span class="comment">//특정 데이터를 삭제</span></span><br><span class="line">  Enumeration enumeration1 = session.getAttributeNames();</span><br><span class="line">  <span class="keyword">while</span>(enumeration1.hasMoreElements())&#123;</span><br><span class="line">    sName = enumeration1.nextElement().toString();</span><br><span class="line">    sValue = session.getAttribute(sName).toString();</span><br><span class="line"></span><br><span class="line">    out.println(<span class="string">"sName: "</span> + sName + <span class="string">"&lt;br/&gt;"</span>);</span><br><span class="line">    out.println(<span class="string">"sValue: "</span> + sValue + <span class="string">"&lt;br/&gt;"</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  out.println(<span class="string">"****************************** &lt;br/&gt;"</span>);</span><br><span class="line"></span><br><span class="line">  session.inValidate(); <span class="comment">//세션 자체를 삭제</span></span><br><span class="line">  <span class="keyword">if</span>(request.isRequestedSessionIdValid())&#123;</span><br><span class="line">    out.println(<span class="string">"session valid"</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    out.println(<span class="string">"session invalid"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">%&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://bongbooski.github.io/2018/08/16/post34-Session/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/08/16/post34-Session/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-post33-Cookie" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -1473,134 +1610,6 @@ ga('send', 'pageview');
 
 
 
-    <article id="post-post24-servlet01" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/08/11/post24-servlet01/">Servlet</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/08/11/post24-servlet01/">
-            <time datetime="2018-08-11T03:38:20.000Z" itemprop="datePublished">2018-08-11</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Servlet/">Servlet</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h1 id="Servlet특징"><a href="#Servlet특징" class="headerlink" title="Servlet특징"></a>Servlet특징</h1><ul>
-<li>동적 웹애플리케이션 컴포넌트</li>
-<li><code>.java</code>확장자</li>
-<li>응답은 <code>html</code> 이용</li>
-<li><code>java thread</code>이용하여 동작</li>
-<li><code>MVC</code>패턴에서 <code>controller</code>로 이용됨</li>
-</ul>
-<h2 id="Mapping하는-방법"><a href="#Mapping하는-방법" class="headerlink" title="Mapping하는 방법"></a>Mapping하는 방법</h2><ol>
-<li><p><code>.java</code> - <code>@WebServlet</code>으로 매핑</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@WebServlet</span>(<span class="string">"/Hworld"</span>)   &lt;-- 여기!</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Helloworld</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>web.xml</code> - <code>web.xml</code> 파일에 매핑 정보 추가</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;servlet&gt;</span><br><span class="line">  	&lt;servlet-name&gt;helloworld&lt;/servlet-name&gt;</span><br><span class="line">  	&lt;servlet-<span class="class"><span class="keyword">class</span>&gt;<span class="title">com</span>.<span class="title">javalec</span>.<span class="title">ex</span>.<span class="title">Helloworld</span>&lt;/<span class="title">servlet</span>-<span class="title">class</span>&gt;</span></span><br><span class="line"><span class="class">&lt;/<span class="title">servlet</span>&gt;</span></span><br><span class="line"><span class="class">&lt;<span class="title">servlet</span>-<span class="title">mapping</span>&gt;</span></span><br><span class="line"><span class="class">	&lt;<span class="title">servlet</span>-<span class="title">name</span>&gt;<span class="title">helloworld</span>&lt;/<span class="title">servlet</span>-<span class="title">name</span>&gt;</span></span><br><span class="line"><span class="class">	&lt;<span class="title">url</span>-<span class="title">pattern</span>&gt;/<span class="title">hw</span>&lt;/<span class="title">url</span>-<span class="title">pattern</span>&gt;</span></span><br><span class="line"><span class="class">&lt;/<span class="title">servlet</span>-<span class="title">mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-    <div class="a2a_kit a2a_default_style">
-    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
-    <span class="a2a_divider"></span>
-    <a class="a2a_button_facebook"></a>
-    <a class="a2a_button_twitter"></a>
-    <a class="a2a_button_google_plus"></a>
-    <a class="a2a_button_pinterest"></a>
-    <a class="a2a_button_tumblr"></a>
-</div>
-<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
-<style>
-    .a2a_menu {
-        border-radius: 4px;
-    }
-    .a2a_menu a {
-        margin: 2px 0;
-        font-size: 14px;
-        line-height: 16px;
-        border-radius: 4px;
-        color: inherit !important;
-        font-family: 'Microsoft Yahei';
-    }
-    #a2apage_dropdown {
-        margin: 10px 0;
-    }
-    .a2a_mini_services {
-        padding: 10px;
-    }
-    a.a2a_i,
-    i.a2a_i {
-        width: 122px;
-        line-height: 16px;
-    }
-    a.a2a_i .a2a_svg,
-    a.a2a_more .a2a_svg {
-        width: 16px;
-        height: 16px;
-        line-height: 16px;
-        vertical-align: top;
-        background-size: 16px;
-    }
-    a.a2a_i {
-        border: none !important;
-    }
-    a.a2a_menu_show_more_less {
-        margin: 0;
-        padding: 10px 0;
-        line-height: 16px;
-    }
-    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
-    .a2a_mini_services{*+height:1%;}
-</style>
-
-</div>
-
-            
-    
-        <a href="http://bongbooski.github.io/2018/08/11/post24-servlet01/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/08/11/post24-servlet01/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <nav id="page-nav">
         <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
@@ -1614,6 +1623,25 @@ ga('send', 'pageview');
         <h3 class="widget-title">recent</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/08/16/post34-Session/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/08/16/post34-Session/" class="title">Session</a></p>
+                            <p class="item-date"><time datetime="2018-08-16T12:45:20.000Z" itemprop="datePublished">2018-08-16</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1691,25 +1719,6 @@ ga('send', 'pageview');
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/08/12/post29-jsp tag/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/08/12/post29-jsp tag/" class="title">JSP tags, way to run, internal object</a></p>
-                            <p class="item-date"><time datetime="2018-08-12T04:26:20.000Z" itemprop="datePublished">2018-08-12</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1721,7 +1730,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">13</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">13</span></li></ul>
         </div>
     </div>
 
@@ -1730,7 +1739,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSP/">JSP</a><span class="tag-list-count">6</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySql/">MySql</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Servlet/">Servlet</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/okky/">okky</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">14</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSP/">JSP</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySql/">MySql</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Servlet/">Servlet</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/okky/">okky</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">14</span></li></ul>
         </div>
     </div>
 
@@ -1739,7 +1748,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/JSP/" style="font-size: 16px;">JSP</a> <a href="/tags/MySql/" style="font-size: 12px;">MySql</a> <a href="/tags/Node-js/" style="font-size: 18px;">Node.js</a> <a href="/tags/Servlet/" style="font-size: 14px;">Servlet</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/okky/" style="font-size: 10px;">okky</a> <a href="/tags/python/" style="font-size: 20px;">python</a>
+            <a href="/tags/JSP/" style="font-size: 17.5px;">JSP</a> <a href="/tags/MySql/" style="font-size: 12.5px;">MySql</a> <a href="/tags/Node-js/" style="font-size: 17.5px;">Node.js</a> <a href="/tags/Servlet/" style="font-size: 15px;">Servlet</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/okky/" style="font-size: 10px;">okky</a> <a href="/tags/python/" style="font-size: 20px;">python</a>
         </div>
     </div>
 
