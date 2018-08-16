@@ -221,180 +221,6 @@ ga('send', 'pageview');
 
             
             <section id="main">
-    <article id="post-post18-python-lambda_eng" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/04/12/post18-python-lambda_eng/">python lambda function</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/04/12/post18-python-lambda_eng/">
-            <time datetime="2018-04-12T05:19:37.000Z" itemprop="datePublished">2018-04-12</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/python/">python</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h1 id="the-definition-of-lambda-function"><a href="#the-definition-of-lambda-function" class="headerlink" title="the definition of lambda function"></a>the definition of lambda function</h1><ul>
-<li>new literal defining usual functions by one line</li>
-<li>usually it is used for defining one-time functions</li>
-<li>after <code>:</code>, only expression can follow</li>
-<li>lambda function is An object too</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="keyword">lambda</span> x: x + <span class="number">1</span></span><br><span class="line"><span class="keyword">print</span> f(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-<ol>
-<li><p>Assigning variables and calling the lambda function having two parameters</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">g = <span class="keyword">lambda</span> x,y: x + y</span><br><span class="line"><span class="keyword">print</span> g(<span class="number">1</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Defining the lambda function having default argument</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">g = <span class="keyword">lambda</span> x, inc=<span class="number">1</span>: x+inc</span><br><span class="line"><span class="keyword">print</span> g(<span class="number">10</span>) <span class="comment"># default argument(inc=1) value is used</span></span><br><span class="line"><span class="keyword">print</span> g(<span class="number">10</span>, <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Defining the lambda function having variable argument</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#args is returned</span></span><br><span class="line">vargs = <span class="keyword">lambda</span> x, *args: args</span><br><span class="line"><span class="keyword">print</span> vars(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<hr>
-<h2 id="Using-lambda-functions"><a href="#Using-lambda-functions" class="headerlink" title="Using lambda functions"></a>Using lambda functions</h2><ul>
-<li><p>Using usual function</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">(x)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> x*x + <span class="number">3</span>*x - <span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">(x)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> x*x*x</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">g</span><span class="params">(func)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> [func(x) <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">-10</span>, <span class="number">10</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> g(f1)</span><br><span class="line"><span class="keyword">print</span> g(f2)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Usiung lambda function</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">g</span><span class="params">(func)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> [func(x) <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">-10</span>, <span class="number">10</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> g(<span class="keyword">lambda</span> x: x*x + <span class="number">3</span>*x - <span class="number">10</span>)</span><br><span class="line"><span class="keyword">print</span> g(<span class="keyword">lambda</span> x: x*x*x)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="Utilizing-lambda-function"><a href="#Utilizing-lambda-function" class="headerlink" title="Utilizing lambda function"></a>Utilizing lambda function</h2><ul>
-<li><code>map</code>, <code>filter</code>, <code>reduce</code> built-in functions</li>
-</ul>
-<ol>
-<li><p><code>map</code> built-in function</p>
-<ul>
-<li><p><code>map(function, seq)</code>: taking item by item in <code>seq</code> and running <code>function</code> with the item and returning the result as the type of <code>seq</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(x)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> x * x</span><br><span class="line">X - [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">Y = map(f, X)</span><br><span class="line"><span class="keyword">print</span> Y</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Using <code>map</code> and lambda function - most recommended</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">X = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">print</span> map(<span class="keyword">lambda</span> x: x * x, X)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p><code>filter</code> built-in function</p>
-<ul>
-<li>taking item by item in <code>seq</code> and running <code>function</code> with the item and returning the result as the type of <code>seq</code> if the result is <code>True</code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> filter(<span class="keyword">lambda</span> x: x&gt;<span class="number">2</span>, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">45</span>])</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p><code>reduce</code> built-in function</p>
-<ul>
-<li><code>reduce(function, seq[,initial])</code></li>
-<li>about each items in <code>seq</code>, applying <code>function</code> and mapping as A value</li>
-<li>the 1st paremeter(<code>function</code>) should take two values(ex: x,y)<ol>
-<li>the items of <code>seq</code> get into <code>y</code></li>
-<li>the result after calling the function gets into <code>x</code></li>
-</ol>
-</li>
-<li>optionally, the 3rd parameter <code>initial</code> is used as default value of <code>x</code> at the 1st step<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> reduce(<span class="keyword">lambda</span> x, y: x + y, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>])</span><br><span class="line"><span class="keyword">print</span> reduce(<span class="keyword">lambda</span> x, y: x + y, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>], <span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ol>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-    <div class="a2a_kit a2a_default_style">
-    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
-    <span class="a2a_divider"></span>
-    <a class="a2a_button_facebook"></a>
-    <a class="a2a_button_twitter"></a>
-    <a class="a2a_button_google_plus"></a>
-    <a class="a2a_button_pinterest"></a>
-    <a class="a2a_button_tumblr"></a>
-</div>
-<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
-<style>
-    .a2a_menu {
-        border-radius: 4px;
-    }
-    .a2a_menu a {
-        margin: 2px 0;
-        font-size: 14px;
-        line-height: 16px;
-        border-radius: 4px;
-        color: inherit !important;
-        font-family: 'Microsoft Yahei';
-    }
-    #a2apage_dropdown {
-        margin: 10px 0;
-    }
-    .a2a_mini_services {
-        padding: 10px;
-    }
-    a.a2a_i,
-    i.a2a_i {
-        width: 122px;
-        line-height: 16px;
-    }
-    a.a2a_i .a2a_svg,
-    a.a2a_more .a2a_svg {
-        width: 16px;
-        height: 16px;
-        line-height: 16px;
-        vertical-align: top;
-        background-size: 16px;
-    }
-    a.a2a_i {
-        border: none !important;
-    }
-    a.a2a_menu_show_more_less {
-        margin: 0;
-        padding: 10px 0;
-        line-height: 16px;
-    }
-    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
-    .a2a_mini_services{*+height:1%;}
-</style>
-
-</div>
-
-            
-    
-        <a href="http://bongbooski.github.io/2018/04/12/post18-python-lambda_eng/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/12/post18-python-lambda_eng/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <article id="post-post18-python-lambda" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -569,7 +395,7 @@ ga('send', 'pageview');
 
 
 
-    <article id="post-post17_python-file,directory" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-post18-python-lambda_eng" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -577,7 +403,7 @@ ga('send', 'pageview');
                 
     
         <h1 itemprop="name">
-            <a class="article-title" href="/2018/04/11/post17_python-file,directory/">python 파일 다루기</a>
+            <a class="article-title" href="/2018/04/12/post18-python-lambda_eng/">python lambda function</a>
         </h1>
     
 
@@ -586,8 +412,8 @@ ga('send', 'pageview');
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2018/04/11/post17_python-file,directory/">
-            <time datetime="2018-04-11T06:38:47.000Z" itemprop="datePublished">2018-04-11</time>
+        <a href="/2018/04/12/post18-python-lambda_eng/">
+            <time datetime="2018-04-12T05:19:37.000Z" itemprop="datePublished">2018-04-12</time>
         </a>
     </div>
 
@@ -607,89 +433,65 @@ ga('send', 'pageview');
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h1 id="파일-다루기"><a href="#파일-다루기" class="headerlink" title="파일 다루기"></a>파일 다루기</h1><h2 id="파일-목록열기"><a href="#파일-목록열기" class="headerlink" title="파일 목록열기"></a>파일 목록열기</h2><p><code>os</code>모듈 사용<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> os.listdir(<span class="string">'.'</span>) <span class="comment">#현재 디렉토리의 파일목록</span></span><br><span class="line"><span class="keyword">print</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> os.listdir(<span class="string">'../'</span>) <span class="comment">#현재 디렉토리의 부모 디렉토리의 파일 목록</span></span><br></pre></td></tr></table></figure></p>
-<hr>
-<h2 id="파일-종류-알아보기"><a href="#파일-종류-알아보기" class="headerlink" title="파일 종류 알아보기"></a>파일 종류 알아보기</h2><ul>
-<li><code>os.path</code> 모듈로 파일 종류 판단하여 <code>True</code>, <code>False</code> 반환<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">filetype</span><span class="params">(fpath)</span>:</span></span><br><span class="line">  <span class="keyword">print</span> fpath, <span class="string">":"</span>,</span><br><span class="line">  <span class="keyword">if</span> os.path.isfile(fpath):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'Regular file'</span></span><br><span class="line">  <span class="keyword">if</span> os.path.isdir(fpath):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'Directory'</span></span><br><span class="line">  <span class="keyword">if</span> os.path.islink(fpath):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'Symbolic link'</span></span><br><span class="line"></span><br><span class="line">flist = os.listdir(<span class="string">'.'</span>)</span><br><span class="line"><span class="keyword">for</span> fname <span class="keyword">in</span> flist:</span><br><span class="line">  filetype(fname)</span><br></pre></td></tr></table></figure>
+            <h1 id="the-definition-of-lambda-function"><a href="#the-definition-of-lambda-function" class="headerlink" title="the definition of lambda function"></a>the definition of lambda function</h1><ul>
+<li>new literal defining usual functions by one line</li>
+<li>usually it is used for defining one-time functions</li>
+<li>after <code>:</code>, only expression can follow</li>
+<li>lambda function is An object too</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="keyword">lambda</span> x: x + <span class="number">1</span></span><br><span class="line"><span class="keyword">print</span> f(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>Assigning variables and calling the lambda function having two parameters</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">g = <span class="keyword">lambda</span> x,y: x + y</span><br><span class="line"><span class="keyword">print</span> g(<span class="number">1</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-<hr>
-<h2 id="파일의-허가권"><a href="#파일의-허가권" class="headerlink" title="파일의 허가권"></a>파일의 허가권</h2><ol>
-<li><p>파일의 허가권 알아보기</p>
-<ul>
-<li><code>os.access(filepath, mode)</code><ul>
-<li><code>mode</code>에 들어갈 값<ul>
-<li><code>os.F_OK</code>: 파일 자체가 존재하는 것을 테스트</li>
-<li><code>os.R_OK</code>: 읽기 권한이 있는 것을 테스트</li>
-<li><code>os.W_OK</code>: 쓰기 권한이 있는 것을 테스트</li>
-<li><code>os.X_OK</code>: 실행 권한이 있는 것(또는 디렉토리인지)을 테스트</li>
-</ul>
+<li><p>Defining the lambda function having default argument</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">g = <span class="keyword">lambda</span> x, inc=<span class="number">1</span>: x+inc</span><br><span class="line"><span class="keyword">print</span> g(<span class="number">10</span>) <span class="comment"># default argument(inc=1) value is used</span></span><br><span class="line"><span class="keyword">print</span> g(<span class="number">10</span>, <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fileaccess</span><span class="params">(fpath)</span>:</span></span><br><span class="line">  <span class="keyword">print</span> fpath, <span class="string">':'</span>,</span><br><span class="line">  <span class="keyword">if</span> os.access(fpath, os.F_OK):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'Exists'</span>,</span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">  <span class="keyword">if</span> os.access(fpath, os.R_OK):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'R'</span>,</span><br><span class="line">  <span class="keyword">if</span> os.access(fpath, os.W_OK):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'W'</span>,</span><br><span class="line">  <span class="keyword">if</span> os.access(fpath, os.X_OK):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'X'</span>,</span><br><span class="line">  <span class="keyword">print</span></span><br><span class="line"></span><br><span class="line">flist = os.listdir(<span class="string">'.'</span>)</span><br><span class="line"><span class="keyword">for</span> fname <span class="keyword">in</span> flist:</span><br><span class="line">  fileaccess(fname)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>파일의 허가권 변경하기</p>
-<ul>
-<li><code>os.chmod(filepath, mode)</code></li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.chmod(<span class="string">'sample.txt'</span>, <span class="number">0777</span>)</span><br></pre></td></tr></table></figure>
+<li><p>Defining the lambda function having variable argument</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#args is returned</span></span><br><span class="line">vargs = <span class="keyword">lambda</span> x, *args: args</span><br><span class="line"><span class="keyword">print</span> vars(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <hr>
-<h2 id="파일-조작하기"><a href="#파일-조작하기" class="headerlink" title="파일 조작하기"></a>파일 조작하기</h2><ol>
-<li><p>파일 이름 변경하기</p>
-<ul>
-<li><code>os.rename(old_filepath, new_filepath)</code></li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.rename(<span class="string">'t.txt'</span>, <span class="string">'t1.txt'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> os.access(<span class="string">'t.txt'</span>, os.F_OK) <span class="comment"># 파일 존재 여부 확인</span></span><br><span class="line"><span class="keyword">print</span> os.access(<span class="string">'t1.txt'</span>, os.F_OK)</span><br></pre></td></tr></table></figure>
+<h2 id="Using-lambda-functions"><a href="#Using-lambda-functions" class="headerlink" title="Using lambda functions"></a>Using lambda functions</h2><ul>
+<li><p>Using usual function</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">(x)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> x*x + <span class="number">3</span>*x - <span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">(x)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> x*x*x</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">g</span><span class="params">(func)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> [func(x) <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">-10</span>, <span class="number">10</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> g(f1)</span><br><span class="line"><span class="keyword">print</span> g(f2)</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>파일 이동하기</p>
-<ul>
-<li><p><code>os.rename(oldfilepath, new_filepath)</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.rename(<span class="string">'t.txt'</span>, <span class="string">'example/t1.txt'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 파일 존재 여부 확인</span></span><br><span class="line"><span class="keyword">print</span> os.access(<span class="string">'example/t1.txt'</span>, os.F_OK)</span><br></pre></td></tr></table></figure>
+<li><p>Usiung lambda function</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">g</span><span class="params">(func)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> [func(x) <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">-10</span>, <span class="number">10</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> g(<span class="keyword">lambda</span> x: x*x + <span class="number">3</span>*x - <span class="number">10</span>)</span><br><span class="line"><span class="keyword">print</span> g(<span class="keyword">lambda</span> x: x*x*x)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-</li>
-<li><p>파일 복사하기</p>
-<ul>
-<li><code>shutil</code>모듈 활용</li>
-<li><code>shutil.copyfile(src_filepath, dest_filepath)</code></li>
+<h2 id="Utilizing-lambda-function"><a href="#Utilizing-lambda-function" class="headerlink" title="Utilizing lambda function"></a>Utilizing lambda function</h2><ul>
+<li><code>map</code>, <code>filter</code>, <code>reduce</code> built-in functions</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> shutil</span><br><span class="line">shutil.copyfile(<span class="string">'sample.txt'</span>, <span class="string">'sample_new.txt'</span>)</span><br><span class="line"><span class="keyword">print</span> os.access(<span class="string">'sample_new.txt'</span>, os.F_OK)</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p><code>map</code> built-in function</p>
+<ul>
+<li><p><code>map(function, seq)</code>: taking item by item in <code>seq</code> and running <code>function</code> with the item and returning the result as the type of <code>seq</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(x)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> x * x</span><br><span class="line">X - [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">Y = map(f, X)</span><br><span class="line"><span class="keyword">print</span> Y</span><br></pre></td></tr></table></figure>
 </li>
+<li><p>Using <code>map</code> and lambda function - most recommended</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">X = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">print</span> map(<span class="keyword">lambda</span> x: x * x, X)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>filter</code> built-in function</p>
+<ul>
+<li>taking item by item in <code>seq</code> and running <code>function</code> with the item and returning the result as the type of <code>seq</code> if the result is <code>True</code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> filter(<span class="keyword">lambda</span> x: x&gt;<span class="number">2</span>, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">45</span>])</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>reduce</code> built-in function</p>
+<ul>
+<li><code>reduce(function, seq[,initial])</code></li>
+<li>about each items in <code>seq</code>, applying <code>function</code> and mapping as A value</li>
+<li>the 1st paremeter(<code>function</code>) should take two values(ex: x,y)<ol>
+<li>the items of <code>seq</code> get into <code>y</code></li>
+<li>the result after calling the function gets into <code>x</code></li>
 </ol>
-<hr>
-<h2 id="파일-이름-다루기"><a href="#파일-이름-다루기" class="headerlink" title="파일 이름 다루기"></a>파일 이름 다루기</h2><ol>
-<li><p>상대 경로를 절대 경로로 변환하기</p>
-<ul>
-<li><code>os.path.abspath</code> - 상대경로<ul>
-<li>실제 파일 존재와는 무관하게 절대경로로 변경<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">print</span> os.path.abspath(<span class="string">'o.txt'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li>optionally, the 3rd parameter <code>initial</code> is used as default value of <code>x</code> at the 1st step<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> reduce(<span class="keyword">lambda</span> x, y: x + y, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>])</span><br><span class="line"><span class="keyword">print</span> reduce(<span class="keyword">lambda</span> x, y: x + y, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>], <span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-</li>
-</ul>
-</li>
-<li><p>주어진 경로에 파일이 존재하는지 확인</p>
-<ul>
-<li><code>os.path.exists(filepath)</code></li>
-</ul>
-</li>
-</ol>
-<hr>
-<h2 id="경로명-분리하기"><a href="#경로명-분리하기" class="headerlink" title="경로명 분리하기"></a>경로명 분리하기</h2><ol>
-<li><p>경로와 파일명으로 분리</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="string">'/Users/booski/git/python/t.txt'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> os.path.basename(f) <span class="comment"># 파일명만 추출</span></span><br><span class="line"><span class="keyword">print</span> os.path.dirname(f) <span class="comment"># 디렉토리 경로 추출</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>경로명과 파일명을 한번에 분리 - basename과 dirname을 튜플로 확인</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> os.path.split(f)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>MS윈도우즈에서 드라이브명과 파일 경로명을 분리</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> os.path.splitdrive(f)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>확장자 분리 - 경로와 확장자명으로 튜플 생성</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> os.path.splitext(f)</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 
@@ -757,7 +559,7 @@ ga('send', 'pageview');
 
             
     
-        <a href="http://bongbooski.github.io/2018/04/11/post17_python-file,directory/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/11/post17_python-file,directory/">Comments</a>
+        <a href="http://bongbooski.github.io/2018/04/12/post18-python-lambda_eng/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/12/post18-python-lambda_eng/">Comments</a>
     
 
         </footer>
@@ -965,7 +767,7 @@ ga('send', 'pageview');
 
 
 
-    <article id="post-post16_python_fileIO_eng" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-post17_python-file,directory" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -973,7 +775,7 @@ ga('send', 'pageview');
                 
     
         <h1 itemprop="name">
-            <a class="article-title" href="/2018/04/09/post16_python_fileIO_eng/">python File Input&amp;Output</a>
+            <a class="article-title" href="/2018/04/11/post17_python-file,directory/">python 파일 다루기</a>
         </h1>
     
 
@@ -982,8 +784,8 @@ ga('send', 'pageview');
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2018/04/09/post16_python_fileIO_eng/">
-            <time datetime="2018-04-09T06:09:17.000Z" itemprop="datePublished">2018-04-09</time>
+        <a href="/2018/04/11/post17_python-file,directory/">
+            <time datetime="2018-04-11T06:38:47.000Z" itemprop="datePublished">2018-04-11</time>
         </a>
     </div>
 
@@ -1003,66 +805,91 @@ ga('send', 'pageview');
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h1 id="File-IO"><a href="#File-IO" class="headerlink" title="File IO"></a>File IO</h1><ul>
-<li>mode can be set as the Second parameter of <code>open</code>built-in function<br>default value is <code>read only(r)</code></li>
-</ul>
-<ol>
-<li><code>r</code> - read only - file object is created in <code>read only</code>, file pointer moves to the beginning of the file, Error occurs if the file doesn’t exists</li>
-<li><code>w</code> - write only - creating new file or creating new file object in <code>write only</code> after removing original file’s content, file pointer moves to the beginning of the file</li>
-<li><code>a</code> - addding content at the bottom - creating file object in <code>write only</code> or creating new file if the file doesn’t exist and then putting the file pointer to the end of the file</li>
-</ol>
-<h2 id="Binary-file-mode"><a href="#Binary-file-mode" class="headerlink" title="Binary file mode"></a>Binary file mode</h2><ul>
-<li><code>rb</code></li>
-<li><code>wb</code></li>
-<li><code>ab</code></li>
+            <h1 id="파일-다루기"><a href="#파일-다루기" class="headerlink" title="파일 다루기"></a>파일 다루기</h1><h2 id="파일-목록열기"><a href="#파일-목록열기" class="headerlink" title="파일 목록열기"></a>파일 목록열기</h2><p><code>os</code>모듈 사용<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> os.listdir(<span class="string">'.'</span>) <span class="comment">#현재 디렉토리의 파일목록</span></span><br><span class="line"><span class="keyword">print</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> os.listdir(<span class="string">'../'</span>) <span class="comment">#현재 디렉토리의 부모 디렉토리의 파일 목록</span></span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="파일-종류-알아보기"><a href="#파일-종류-알아보기" class="headerlink" title="파일 종류 알아보기"></a>파일 종류 알아보기</h2><ul>
+<li><code>os.path</code> 모듈로 파일 종류 판단하여 <code>True</code>, <code>False</code> 반환<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">filetype</span><span class="params">(fpath)</span>:</span></span><br><span class="line">  <span class="keyword">print</span> fpath, <span class="string">":"</span>,</span><br><span class="line">  <span class="keyword">if</span> os.path.isfile(fpath):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'Regular file'</span></span><br><span class="line">  <span class="keyword">if</span> os.path.isdir(fpath):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'Directory'</span></span><br><span class="line">  <span class="keyword">if</span> os.path.islink(fpath):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'Symbolic link'</span></span><br><span class="line"></span><br><span class="line">flist = os.listdir(<span class="string">'.'</span>)</span><br><span class="line"><span class="keyword">for</span> fname <span class="keyword">in</span> flist:</span><br><span class="line">  filetype(fname)</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 <hr>
-<p>It is recommended to close the file object by <code>close()</code> immediately like <code>f.close()</code></p>
-<p>Using <code>read()</code> assigns whole content after reading everything</p>
-<h2 id="Reading-file-line-by-line"><a href="#Reading-file-line-by-line" class="headerlink" title="Reading file line by line"></a>Reading file line by line</h2><ol>
-<li><p>Using <code>for</code>loof statement</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'t.txt'</span>)</span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">  <span class="keyword">print</span> i, <span class="string">":"</span>, line,</span><br><span class="line">  i += <span class="number">1</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+<h2 id="파일의-허가권"><a href="#파일의-허가권" class="headerlink" title="파일의 허가권"></a>파일의 허가권</h2><ol>
+<li><p>파일의 허가권 알아보기</p>
+<ul>
+<li><code>os.access(filepath, mode)</code><ul>
+<li><code>mode</code>에 들어갈 값<ul>
+<li><code>os.F_OK</code>: 파일 자체가 존재하는 것을 테스트</li>
+<li><code>os.R_OK</code>: 읽기 권한이 있는 것을 테스트</li>
+<li><code>os.W_OK</code>: 쓰기 권한이 있는 것을 테스트</li>
+<li><code>os.X_OK</code>: 실행 권한이 있는 것(또는 디렉토리인지)을 테스트</li>
+</ul>
 </li>
-<li><p><code>readline()</code> - from present file pointer to new line character = A line</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'t.txt'</span>)</span><br><span class="line">line = f.readline()</span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> line:</span><br><span class="line">  <span class="keyword">print</span> i, <span class="string">":"</span>, line,</span><br><span class="line">  line = f.readline()</span><br><span class="line">  i += <span class="number">1</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+</ul>
 </li>
-<li><p><code>readlines()</code> - Saving line by line in a list, memory is used inefficiently<br>It works differently depending on each cases - <code>for in</code>statement: not reading everything, taking line by line</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'t.txt'</span>)</span><br><span class="line"><span class="keyword">print</span> f.readlines() <span class="comment"># returning a list</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># file pointer moves to the beginning of the file</span></span><br><span class="line">f.seek(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> f.readlines():</span><br><span class="line">  <span class="keyword">print</span> i, <span class="string">":"</span>, line,</span><br><span class="line">  i += <span class="number">1</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fileaccess</span><span class="params">(fpath)</span>:</span></span><br><span class="line">  <span class="keyword">print</span> fpath, <span class="string">':'</span>,</span><br><span class="line">  <span class="keyword">if</span> os.access(fpath, os.F_OK):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'Exists'</span>,</span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">  <span class="keyword">if</span> os.access(fpath, os.R_OK):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'R'</span>,</span><br><span class="line">  <span class="keyword">if</span> os.access(fpath, os.W_OK):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'W'</span>,</span><br><span class="line">  <span class="keyword">if</span> os.access(fpath, os.X_OK):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'X'</span>,</span><br><span class="line">  <span class="keyword">print</span></span><br><span class="line"></span><br><span class="line">flist = os.listdir(<span class="string">'.'</span>)</span><br><span class="line"><span class="keyword">for</span> fname <span class="keyword">in</span> flist:</span><br><span class="line">  fileaccess(fname)</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><code>xreadlines()</code> - memory inefficiency improved</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'t.txt'</span>)</span><br><span class="line"><span class="keyword">print</span> f.xreadlines() <span class="comment"># returning file object</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># file pointer moves to the beginning of the file</span></span><br><span class="line">f.seek(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> f.xreadlines():</span><br><span class="line">  <span class="keyword">print</span> i, <span class="string">":"</span>, line,</span><br><span class="line">  i += <span class="number">1</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+<li><p>파일의 허가권 변경하기</p>
+<ul>
+<li><code>os.chmod(filepath, mode)</code></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.chmod(<span class="string">'sample.txt'</span>, <span class="number">0777</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<p><strong><em><code>for in</code> or <code>xreadlines()</code> are recommended</em></strong></p>
 <hr>
-<h2 id="the-way-to-write-down-line-by-line"><a href="#the-way-to-write-down-line-by-line" class="headerlink" title="the way to write down line by line"></a>the way to write down line by line</h2><ol>
-<li><p><code>writelines()</code> - for writing line by line</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">lines = [<span class="string">'1st line\n'</span>, <span class="string">'2nd line\n'</span>, <span class="string">'3rd line\n'</span>]</span><br><span class="line">f = open(<span class="string">'t1.txt'</span>,<span class="string">'w'</span>)</span><br><span class="line">f.writelines(lines)</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f = open(<span class="string">'t1.txt'</span>)</span><br><span class="line"><span class="keyword">print</span> f.read() <span class="comment"># reading whole content</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+<h2 id="파일-조작하기"><a href="#파일-조작하기" class="headerlink" title="파일 조작하기"></a>파일 조작하기</h2><ol>
+<li><p>파일 이름 변경하기</p>
+<ul>
+<li><code>os.rename(old_filepath, new_filepath)</code></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.rename(<span class="string">'t.txt'</span>, <span class="string">'t1.txt'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> os.access(<span class="string">'t.txt'</span>, os.F_OK) <span class="comment"># 파일 존재 여부 확인</span></span><br><span class="line"><span class="keyword">print</span> os.access(<span class="string">'t1.txt'</span>, os.F_OK)</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><code>write()</code> - putting <code>\n</code> between items</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">lines = [<span class="string">'1st line'</span>, <span class="string">'2nd line'</span>, <span class="string">'3rd line'</span>]</span><br><span class="line">f = open(<span class="string">'t1.txt'</span>,<span class="string">'w'</span>)</span><br><span class="line">f.write(<span class="string">'\n'</span>.join(lines))</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f = open(<span class="string">'t1.txt'</span>)</span><br><span class="line"><span class="keyword">print</span> f.read() <span class="comment"># reading whole content</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+<li><p>파일 이동하기</p>
+<ul>
+<li><p><code>os.rename(oldfilepath, new_filepath)</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.rename(<span class="string">'t.txt'</span>, <span class="string">'example/t1.txt'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 파일 존재 여부 확인</span></span><br><span class="line"><span class="keyword">print</span> os.access(<span class="string">'example/t1.txt'</span>, os.F_OK)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>파일 복사하기</p>
+<ul>
+<li><code>shutil</code>모듈 활용</li>
+<li><code>shutil.copyfile(src_filepath, dest_filepath)</code></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> shutil</span><br><span class="line">shutil.copyfile(<span class="string">'sample.txt'</span>, <span class="string">'sample_new.txt'</span>)</span><br><span class="line"><span class="keyword">print</span> os.access(<span class="string">'sample_new.txt'</span>, os.F_OK)</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h2 id="Adding-content-in-the-existing-file-existing"><a href="#Adding-content-in-the-existing-file-existing" class="headerlink" title="Adding content in the existing file existing"></a>Adding content in the existing file existing</h2><ul>
-<li>Using mode <code>a</code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'removeme.txt'</span>, <span class="string">'a'</span>)</span><br><span class="line">f.write(<span class="string">'3rd line\n'</span>)</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f = open(<span class="string">'removeme.txt'</span>)</span><br><span class="line"><span class="keyword">print</span> f.read()</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="Seeking-specific-file-pointer"><a href="#Seeking-specific-file-pointer" class="headerlink" title="Seeking specific file pointer"></a>Seeking specific file pointer</h2><ul>
-<li>Sequential access</li>
-<li>specific access<ul>
-<li><code>seek(n)</code> - moving file pointer to the point which is n byte far from the beginning of the file</li>
-<li><code>tell()</code> - returning present file pointer in the file</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">'t.txt'</span></span><br><span class="line">f = open(name, <span class="string">'w+'</span>) <span class="comment"># read and write mode</span></span><br><span class="line">s = <span class="string">'0123456789asdf'</span></span><br><span class="line">f.write(s)</span><br><span class="line"></span><br><span class="line">f.seek(<span class="number">5</span>)</span><br><span class="line"><span class="keyword">print</span> f.tell()</span><br><span class="line"><span class="keyword">print</span> f.read(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">print</span> f.tell()</span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="sys-module’s-standard-IO-monitor-object"><a href="#sys-module’s-standard-IO-monitor-object" class="headerlink" title="sys module’s standard IO(monitor) object"></a>sys module’s standard IO(monitor) object</h2><ul>
-<li>sys.stdout: standard Input and Output</li>
-<li>sys.stderr: standard error Output</li>
-<li>sys.stdin: standard Input</li>
+<h2 id="파일-이름-다루기"><a href="#파일-이름-다루기" class="headerlink" title="파일 이름 다루기"></a>파일 이름 다루기</h2><ol>
+<li><p>상대 경로를 절대 경로로 변환하기</p>
+<ul>
+<li><code>os.path.abspath</code> - 상대경로<ul>
+<li>실제 파일 존재와는 무관하게 절대경로로 변경<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">print</span> os.path.abspath(<span class="string">'o.txt'</span>)</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<h3 id="Saving-a-file-by-standard-output"><a href="#Saving-a-file-by-standard-output" class="headerlink" title="Saving a file by standard output"></a>Saving a file by standard output</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">f = open(<span class="string">'t.txt'</span>,<span class="string">'w'</span>)</span><br><span class="line">stdout = sys.stdout <span class="comment"># saving standard output</span></span><br><span class="line">sys.stdout = f <span class="comment"># changing standard output to file object</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">'Sample output'</span></span><br><span class="line">pirnt <span class="string">'Good'</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">'Good'</span></span><br><span class="line">f.close()</span><br><span class="line">sys.stdout = stdout <span class="comment"># restoring standard output</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>주어진 경로에 파일이 존재하는지 확인</p>
+<ul>
+<li><code>os.path.exists(filepath)</code></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="경로명-분리하기"><a href="#경로명-분리하기" class="headerlink" title="경로명 분리하기"></a>경로명 분리하기</h2><ol>
+<li><p>경로와 파일명으로 분리</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="string">'/Users/booski/git/python/t.txt'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> os.path.basename(f) <span class="comment"># 파일명만 추출</span></span><br><span class="line"><span class="keyword">print</span> os.path.dirname(f) <span class="comment"># 디렉토리 경로 추출</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>경로명과 파일명을 한번에 분리 - basename과 dirname을 튜플로 확인</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> os.path.split(f)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>MS윈도우즈에서 드라이브명과 파일 경로명을 분리</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> os.path.splitdrive(f)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>확장자 분리 - 경로와 확장자명으로 튜플 생성</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> os.path.splitext(f)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 
         
         </div>
@@ -1128,7 +955,7 @@ ga('send', 'pageview');
 
             
     
-        <a href="http://bongbooski.github.io/2018/04/09/post16_python_fileIO_eng/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/09/post16_python_fileIO_eng/">Comments</a>
+        <a href="http://bongbooski.github.io/2018/04/11/post17_python-file,directory/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/11/post17_python-file,directory/">Comments</a>
     
 
         </footer>
@@ -1300,6 +1127,179 @@ ga('send', 'pageview');
             
     
         <a href="http://bongbooski.github.io/2018/04/09/post16_python_fileIO/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/09/post16_python_fileIO/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-post16_python_fileIO_eng" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/04/09/post16_python_fileIO_eng/">python File Input&amp;Output</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/04/09/post16_python_fileIO_eng/">
+            <time datetime="2018-04-09T06:09:17.000Z" itemprop="datePublished">2018-04-09</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="File-IO"><a href="#File-IO" class="headerlink" title="File IO"></a>File IO</h1><ul>
+<li>mode can be set as the Second parameter of <code>open</code>built-in function<br>default value is <code>read only(r)</code></li>
+</ul>
+<ol>
+<li><code>r</code> - read only - file object is created in <code>read only</code>, file pointer moves to the beginning of the file, Error occurs if the file doesn’t exists</li>
+<li><code>w</code> - write only - creating new file or creating new file object in <code>write only</code> after removing original file’s content, file pointer moves to the beginning of the file</li>
+<li><code>a</code> - addding content at the bottom - creating file object in <code>write only</code> or creating new file if the file doesn’t exist and then putting the file pointer to the end of the file</li>
+</ol>
+<h2 id="Binary-file-mode"><a href="#Binary-file-mode" class="headerlink" title="Binary file mode"></a>Binary file mode</h2><ul>
+<li><code>rb</code></li>
+<li><code>wb</code></li>
+<li><code>ab</code></li>
+</ul>
+<hr>
+<p>It is recommended to close the file object by <code>close()</code> immediately like <code>f.close()</code></p>
+<p>Using <code>read()</code> assigns whole content after reading everything</p>
+<h2 id="Reading-file-line-by-line"><a href="#Reading-file-line-by-line" class="headerlink" title="Reading file line by line"></a>Reading file line by line</h2><ol>
+<li><p>Using <code>for</code>loof statement</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'t.txt'</span>)</span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">  <span class="keyword">print</span> i, <span class="string">":"</span>, line,</span><br><span class="line">  i += <span class="number">1</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>readline()</code> - from present file pointer to new line character = A line</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'t.txt'</span>)</span><br><span class="line">line = f.readline()</span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> line:</span><br><span class="line">  <span class="keyword">print</span> i, <span class="string">":"</span>, line,</span><br><span class="line">  line = f.readline()</span><br><span class="line">  i += <span class="number">1</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>readlines()</code> - Saving line by line in a list, memory is used inefficiently<br>It works differently depending on each cases - <code>for in</code>statement: not reading everything, taking line by line</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'t.txt'</span>)</span><br><span class="line"><span class="keyword">print</span> f.readlines() <span class="comment"># returning a list</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># file pointer moves to the beginning of the file</span></span><br><span class="line">f.seek(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> f.readlines():</span><br><span class="line">  <span class="keyword">print</span> i, <span class="string">":"</span>, line,</span><br><span class="line">  i += <span class="number">1</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>xreadlines()</code> - memory inefficiency improved</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'t.txt'</span>)</span><br><span class="line"><span class="keyword">print</span> f.xreadlines() <span class="comment"># returning file object</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># file pointer moves to the beginning of the file</span></span><br><span class="line">f.seek(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> f.xreadlines():</span><br><span class="line">  <span class="keyword">print</span> i, <span class="string">":"</span>, line,</span><br><span class="line">  i += <span class="number">1</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong><em><code>for in</code> or <code>xreadlines()</code> are recommended</em></strong></p>
+<hr>
+<h2 id="the-way-to-write-down-line-by-line"><a href="#the-way-to-write-down-line-by-line" class="headerlink" title="the way to write down line by line"></a>the way to write down line by line</h2><ol>
+<li><p><code>writelines()</code> - for writing line by line</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">lines = [<span class="string">'1st line\n'</span>, <span class="string">'2nd line\n'</span>, <span class="string">'3rd line\n'</span>]</span><br><span class="line">f = open(<span class="string">'t1.txt'</span>,<span class="string">'w'</span>)</span><br><span class="line">f.writelines(lines)</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f = open(<span class="string">'t1.txt'</span>)</span><br><span class="line"><span class="keyword">print</span> f.read() <span class="comment"># reading whole content</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>write()</code> - putting <code>\n</code> between items</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">lines = [<span class="string">'1st line'</span>, <span class="string">'2nd line'</span>, <span class="string">'3rd line'</span>]</span><br><span class="line">f = open(<span class="string">'t1.txt'</span>,<span class="string">'w'</span>)</span><br><span class="line">f.write(<span class="string">'\n'</span>.join(lines))</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f = open(<span class="string">'t1.txt'</span>)</span><br><span class="line"><span class="keyword">print</span> f.read() <span class="comment"># reading whole content</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="Adding-content-in-the-existing-file-existing"><a href="#Adding-content-in-the-existing-file-existing" class="headerlink" title="Adding content in the existing file existing"></a>Adding content in the existing file existing</h2><ul>
+<li>Using mode <code>a</code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'removeme.txt'</span>, <span class="string">'a'</span>)</span><br><span class="line">f.write(<span class="string">'3rd line\n'</span>)</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f = open(<span class="string">'removeme.txt'</span>)</span><br><span class="line"><span class="keyword">print</span> f.read()</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="Seeking-specific-file-pointer"><a href="#Seeking-specific-file-pointer" class="headerlink" title="Seeking specific file pointer"></a>Seeking specific file pointer</h2><ul>
+<li>Sequential access</li>
+<li>specific access<ul>
+<li><code>seek(n)</code> - moving file pointer to the point which is n byte far from the beginning of the file</li>
+<li><code>tell()</code> - returning present file pointer in the file</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">'t.txt'</span></span><br><span class="line">f = open(name, <span class="string">'w+'</span>) <span class="comment"># read and write mode</span></span><br><span class="line">s = <span class="string">'0123456789asdf'</span></span><br><span class="line">f.write(s)</span><br><span class="line"></span><br><span class="line">f.seek(<span class="number">5</span>)</span><br><span class="line"><span class="keyword">print</span> f.tell()</span><br><span class="line"><span class="keyword">print</span> f.read(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">print</span> f.tell()</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="sys-module’s-standard-IO-monitor-object"><a href="#sys-module’s-standard-IO-monitor-object" class="headerlink" title="sys module’s standard IO(monitor) object"></a>sys module’s standard IO(monitor) object</h2><ul>
+<li>sys.stdout: standard Input and Output</li>
+<li>sys.stderr: standard error Output</li>
+<li>sys.stdin: standard Input</li>
+</ul>
+<h3 id="Saving-a-file-by-standard-output"><a href="#Saving-a-file-by-standard-output" class="headerlink" title="Saving a file by standard output"></a>Saving a file by standard output</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">f = open(<span class="string">'t.txt'</span>,<span class="string">'w'</span>)</span><br><span class="line">stdout = sys.stdout <span class="comment"># saving standard output</span></span><br><span class="line">sys.stdout = f <span class="comment"># changing standard output to file object</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">'Sample output'</span></span><br><span class="line">pirnt <span class="string">'Good'</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">'Good'</span></span><br><span class="line">f.close()</span><br><span class="line">sys.stdout = stdout <span class="comment"># restoring standard output</span></span><br></pre></td></tr></table></figure>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://bongbooski.github.io/2018/04/09/post16_python_fileIO_eng/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/09/post16_python_fileIO_eng/">Comments</a>
     
 
         </footer>
