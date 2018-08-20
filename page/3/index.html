@@ -174,7 +174,7 @@ ga('send', 'pageview');
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                42
+                43
                 <span>posts</span>
             </div>
             <div class="article-info-block">
@@ -221,6 +221,206 @@ ga('send', 'pageview');
 
             
             <section id="main">
+    <article id="post-post19-python-import" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/04/15/post19-python-import/">python 모듈 import하기</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/04/15/post19-python-import/">
+            <time datetime="2018-04-15T02:48:23.000Z" itemprop="datePublished">2018-04-15</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="import-모듈명"><a href="#import-모듈명" class="headerlink" title="import 모듈명"></a>import 모듈명</h1><ol>
+<li><p>기본적인 형태</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> mymath</span><br><span class="line"><span class="keyword">print</span> mymath.area(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>from 모듈명 import 가져올 대상</p>
+<ul>
+<li>해당 모듈에 존재하는 대상을 가져옴</li>
+<li>기존에 존재하던 이름이면 기존 객체가 상실됨</li>
+<li>모듈 이름 없이 바로 사용 가능<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> mymath <span class="keyword">import</span> area, mypi</span><br><span class="line"><span class="keyword">print</span> area(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>from 모듈명 import *</p>
+<ul>
+<li>해당 모듈에 존재하는 <code>__</code>로 시작되는 것들을 제외한 모든 대상을 가져옴<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> mymath <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">print</span> area(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>import 모듈명 as 새로운 모듈 이름</p>
+<ul>
+<li>해당 모듈을 다른 이름으로 사용하고자 할 때 사용</li>
+<li>기존 모듈 이름이 너무 길거나 현재 사용중인 이름인 경우 유용<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> string <span class="keyword">as</span> chstr</span><br><span class="line"><span class="keyword">print</span> chstr</span><br><span class="line"><span class="keyword">print</span></span><br><span class="line"><span class="keyword">print</span> chstr.punctuation</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>from 모듈명 import 이름 as 새로운 이름[, 이름 as 새로운 이름]</p>
+<ul>
+<li>해당 모듈 내에 정의된 이름을 새로운 이름으로 사용하고자 할 때<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> string <span class="keyword">import</span> replace <span class="keyword">as</span> substitute[, upper <span class="keyword">as</span> up]</span><br><span class="line"><span class="keyword">print</span> substitute</span><br><span class="line"><span class="keyword">print</span> substitute(<span class="string">'ham chicken spam'</span>, <span class="string">'chicke'</span>, <span class="string">'egg'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> up</span><br><span class="line"><span class="keyword">print</span> up(<span class="string">'abc'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>import문은 어디에서나 사용가능(함수 내에서도 가능)</li>
+</ul>
+<hr>
+<h1 id="컴파일과-적재시간"><a href="#컴파일과-적재시간" class="headerlink" title="컴파일과 적재시간"></a>컴파일과 적재시간</h1><ul>
+<li><p><code>import mymath</code>를 수행할 때 발생하는 일</p>
+<ol>
+<li><code>mymath.pyc</code>를 찾는다</li>
+<li>없다면 <code>mymath.py</code>를 찾아서 <code>mymath.pyc</code>를 생성한다</li>
+<li><code>mymath.pyc</code>를 메모리로 읽어들여 수행한다</li>
+</ol>
+</li>
+<li><p><code>.pyc</code>파일</p>
+<ol>
+<li><p>바이트 코드 파일</p>
+<ul>
+<li>기계나 플랫폼(운영체제 등)에 의존하지 않도록 만들어진 일종의 목적 코드(Object code)</li>
+<li>파이썬은 컴파일 언어이면서 동시에 인터프리터 언어의 수행 방식을 취함</li>
+</ul>
+</li>
+<li><p>새로운 <code>.pyc</code>파일 생성에 대한 판단</p>
+<ul>
+<li><code>.py</code>수정시간이 <code>.pyc</code>수정 시간보다 더 최근일 때</li>
+</ul>
+</li>
+<li><code>.py</code>가 없이 <code>.pyc</code>파일만 있어도 <code>import</code>가능<ul>
+<li>코드를 숨기는 방법으로 활용 가능</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h1 id="같은-이름을-다시-사용할-때"><a href="#같은-이름을-다시-사용할-때" class="headerlink" title="같은 이름을 다시 사용할 때"></a>같은 이름을 다시 사용할 때</h1><ul>
+<li>같은 이름 사용하면 이전의 내용이 삭제되지만 모듈은 메모리에 남아있고, 다시 <code>import</code>하면 다시 가져오는 것이 아니라 메모리에 존재하는 모듈을 활용함. 따라서 기존에 추가 정의한 내용들 사용가능</li>
+</ul>
+<hr>
+<h1 id="모듈의-실행과-테스트-코드"><a href="#모듈의-실행과-테스트-코드" class="headerlink" title="모듈의 실행과 테스트 코드"></a>모듈의 실행과 테스트 코드</h1><ul>
+<li><p><code>__name__</code></p>
+<ul>
+<li>현재의 모듈이 최상위 모듈로서 수행되는지, 아니면다른 모듈에 의해 <code>imort</code>되어 수행되는지를 구별하기 위해 주로 사용</li>
+<li>최상위 모듈에서 사용할 때 -&gt; <code>__main__</code></li>
+<li><p>다른 모듈에서 사용될 때 -&gt; 해당 모듈의 이름</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> __name__ <span class="comment"># __main__ 출력</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> prname</span><br><span class="line"><span class="keyword">print</span> prname.__name__ <span class="comment"># prname출력</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>사용방법</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(a, b)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> a + b</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"Python is becoming popular."</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">  <span class="keyword">print</span> add(<span class="number">1</span>, <span class="number">10</span>)</span><br><span class="line">  f()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>직접 실행할 때는 <code>if</code>절 동작</li>
+<li>다른 곳에서 활용할 경우 <code>if</code>절 무시</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://bongbooski.github.io/2018/04/15/post19-python-import/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/15/post19-python-import/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-post18-python-lambda" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -965,177 +1165,6 @@ ga('send', 'pageview');
 
 
 
-    <article id="post-post16_python_fileIO" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/04/09/post16_python_fileIO/">python 파일 입출력</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/04/09/post16_python_fileIO/">
-            <time datetime="2018-04-09T06:09:17.000Z" itemprop="datePublished">2018-04-09</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/python/">python</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h1 id="파일-입출력"><a href="#파일-입출력" class="headerlink" title="파일 입출력"></a>파일 입출력</h1><p><code>open</code>내장 함수 사용시 두번째 인자값으로 mode설정<br>생략시 읽기전용(r)으로 설정</p>
-<ol>
-<li><code>r</code> -읽기 전용 - 파일 객체를 읽기 모드로 생성, 파일 포인터를 파일 처음 위치로, 존재하지 않는 파일이면 에러발생</li>
-<li><code>w</code> - 쓰기 전용 - 새로운 파일을 생성하거나 기존 파일의 내용을 다 없애고 쓰기모드로 생성, 파일 포인터를 파일 처음 위치로</li>
-<li><code>a</code> - 파일 끝에 추가 - 이미 존재하는 파일을 쓰기모드로 생성하거나 존재하지 않으면 파일 만들고 생성, 파일 포인터를 마지막 위치에 놓음</li>
-</ol>
-<h2 id="이진파일-모드"><a href="#이진파일-모드" class="headerlink" title="이진파일 모드"></a>이진파일 모드</h2><ul>
-<li><code>rb</code></li>
-<li><code>wb</code></li>
-<li><code>ab</code></li>
-</ul>
-<hr>
-<p><code>f.close()</code>처럼 <code>close()</code>로 그때그때 닫아주는 것이 좋음</p>
-<p><code>read()</code>를 사용하면 전체를 다 읽어서 할당함</p>
-<h2 id="라인단위로-파일-읽기"><a href="#라인단위로-파일-읽기" class="headerlink" title="라인단위로 파일 읽기"></a>라인단위로 파일 읽기</h2><ol>
-<li><p><code>for</code> 반복문 활용</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'t.txt'</span>)</span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">  <span class="keyword">print</span> i, <span class="string">":"</span>, line,</span><br><span class="line">  i += <span class="number">1</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>readline()</code>-현재의 파일 포인터에서 개행 문자까지 읽음 = 한 라인</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'t.txt'</span>)</span><br><span class="line">line = f.readline()</span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> line:</span><br><span class="line">  <span class="keyword">print</span> i, <span class="string">":"</span>, line,</span><br><span class="line">  line = f.readline()</span><br><span class="line">  i += <span class="number">1</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>readlines()</code>-각 라인을 모두 읽어서 리스트로 저장, 메모리는 비효율적으로 사용<br>상황별로 다른 동작함 - <code>for in</code>구문: 전체x, 라인별로 가져옴</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'t.txt'</span>)</span><br><span class="line"><span class="keyword">print</span> f.readlines() <span class="comment">#리스트 나옴</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#파일 포인터를 맨 앞으로</span></span><br><span class="line">f.seek(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> f.readlines():</span><br><span class="line">  <span class="keyword">print</span> i, <span class="string">":"</span>, line,</span><br><span class="line">  i += <span class="number">1</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>xreadlines()</code> - 메모리 비효율 개선</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'t.txt'</span>)</span><br><span class="line"><span class="keyword">print</span> f.xreadlines() <span class="comment">#파일객체 자체가 나옴</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#파일 포인터를 맨 앞으로</span></span><br><span class="line">f.seek(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> f.xreadlines():</span><br><span class="line">  <span class="keyword">print</span> i, <span class="string">":"</span>, line,</span><br><span class="line">  i += <span class="number">1</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p><strong><em><code>for in</code> 또는 <code>xreadlines()</code> 추천</em></strong></p>
-<hr>
-<h2 id="라인-단위로-쓰는-방법"><a href="#라인-단위로-쓰는-방법" class="headerlink" title="라인 단위로 쓰는 방법"></a>라인 단위로 쓰는 방법</h2><ol>
-<li><p><code>writelines()</code> - 라인단위로 쓰기 작업</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">lines = [<span class="string">'1st line\n'</span>, <span class="string">'2nd line\n'</span>, <span class="string">'3rd line\n'</span>]</span><br><span class="line">f = open(<span class="string">'t1.txt'</span>,<span class="string">'w'</span>)</span><br><span class="line">f.writelines(lines)</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f = open(<span class="string">'t1.txt'</span>)</span><br><span class="line"><span class="keyword">print</span> f.read() <span class="comment">#전체내용 읽음</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>write()</code> - 임의로 중간에 ‘\n’ 넣어줌</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">lines = [<span class="string">'1st line'</span>, <span class="string">'2nd line'</span>, <span class="string">'3rd line'</span>]</span><br><span class="line">f = open(<span class="string">'t1.txt'</span>,<span class="string">'w'</span>)</span><br><span class="line">f.write(<span class="string">'\n'</span>.join(lines))</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f = open(<span class="string">'t1.txt'</span>)</span><br><span class="line"><span class="keyword">print</span> f.read() <span class="comment">#전체내용 읽음</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h2 id="기존-파일에-내용-추가"><a href="#기존-파일에-내용-추가" class="headerlink" title="기존 파일에 내용 추가"></a>기존 파일에 내용 추가</h2><ul>
-<li><code>a</code>모드 사용<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'removeme.txt'</span>, <span class="string">'a'</span>)</span><br><span class="line">f.write(<span class="string">'3rd line\n'</span>)</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f = open(<span class="string">'removeme.txt'</span>)</span><br><span class="line"><span class="keyword">print</span> f.read()</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="파일-내-임의-위치로-접근"><a href="#파일-내-임의-위치로-접근" class="headerlink" title="파일 내 임의 위치로 접근"></a>파일 내 임의 위치로 접근</h2><ul>
-<li>순차접근</li>
-<li>임의접근<ul>
-<li><code>seek(n)</code> - 파일의 가장 첫번째 위치에서 n번째 바이트로 포인터이동</li>
-<li><code>tell()</code> - 파일 내 현재 포인터 위치를 반환</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">'t.txt'</span></span><br><span class="line">f = open(name, <span class="string">'w+'</span>) <span class="comment"># 읽고 쓰기모드</span></span><br><span class="line">s = <span class="string">'0123456789asdf'</span></span><br><span class="line">f.write(s)</span><br><span class="line"></span><br><span class="line">f.seek(<span class="number">5</span>)</span><br><span class="line"><span class="keyword">print</span> f.tell()</span><br><span class="line"><span class="keyword">print</span> f.read(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">print</span> f.tell()</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="sys-모듈의-표준-입출력-모니터-관련-객체"><a href="#sys-모듈의-표준-입출력-모니터-관련-객체" class="headerlink" title="sys 모듈의 표준 입출력(모니터) 관련 객체"></a>sys 모듈의 표준 입출력(모니터) 관련 객체</h2><ul>
-<li>sys.stdout: 표준 입출력</li>
-<li>sys.stderr: 표준 에러 출력</li>
-<li>sys.stdin: 표준 입력</li>
-</ul>
-<h3 id="표준-출력으로-파일-저장하기"><a href="#표준-출력으로-파일-저장하기" class="headerlink" title="표준 출력으로 파일 저장하기"></a>표준 출력으로 파일 저장하기</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">f = open(<span class="string">'t.txt'</span>,<span class="string">'w'</span>)</span><br><span class="line">stdout = sys.stdout <span class="comment">#표준 출력 저장</span></span><br><span class="line">sys.stdout = f <span class="comment">#파일 객체로 표준 출력 변경</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">'Sample output'</span></span><br><span class="line">pirnt <span class="string">'Good'</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">'Good'</span></span><br><span class="line">f.close()</span><br><span class="line">sys.stdout = stdout <span class="comment">#표준 출력 복원</span></span><br></pre></td></tr></table></figure>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-    <div class="a2a_kit a2a_default_style">
-    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
-    <span class="a2a_divider"></span>
-    <a class="a2a_button_facebook"></a>
-    <a class="a2a_button_twitter"></a>
-    <a class="a2a_button_google_plus"></a>
-    <a class="a2a_button_pinterest"></a>
-    <a class="a2a_button_tumblr"></a>
-</div>
-<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
-<style>
-    .a2a_menu {
-        border-radius: 4px;
-    }
-    .a2a_menu a {
-        margin: 2px 0;
-        font-size: 14px;
-        line-height: 16px;
-        border-radius: 4px;
-        color: inherit !important;
-        font-family: 'Microsoft Yahei';
-    }
-    #a2apage_dropdown {
-        margin: 10px 0;
-    }
-    .a2a_mini_services {
-        padding: 10px;
-    }
-    a.a2a_i,
-    i.a2a_i {
-        width: 122px;
-        line-height: 16px;
-    }
-    a.a2a_i .a2a_svg,
-    a.a2a_more .a2a_svg {
-        width: 16px;
-        height: 16px;
-        line-height: 16px;
-        vertical-align: top;
-        background-size: 16px;
-    }
-    a.a2a_i {
-        border: none !important;
-    }
-    a.a2a_menu_show_more_less {
-        margin: 0;
-        padding: 10px 0;
-        line-height: 16px;
-    }
-    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
-    .a2a_mini_services{*+height:1%;}
-</style>
-
-</div>
-
-            
-    
-        <a href="http://bongbooski.github.io/2018/04/09/post16_python_fileIO/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/09/post16_python_fileIO/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <article id="post-post16_python_fileIO_eng" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -1300,6 +1329,177 @@ ga('send', 'pageview');
             
     
         <a href="http://bongbooski.github.io/2018/04/09/post16_python_fileIO_eng/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/09/post16_python_fileIO_eng/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-post16_python_fileIO" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/04/09/post16_python_fileIO/">python 파일 입출력</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/04/09/post16_python_fileIO/">
+            <time datetime="2018-04-09T06:09:17.000Z" itemprop="datePublished">2018-04-09</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="파일-입출력"><a href="#파일-입출력" class="headerlink" title="파일 입출력"></a>파일 입출력</h1><p><code>open</code>내장 함수 사용시 두번째 인자값으로 mode설정<br>생략시 읽기전용(r)으로 설정</p>
+<ol>
+<li><code>r</code> -읽기 전용 - 파일 객체를 읽기 모드로 생성, 파일 포인터를 파일 처음 위치로, 존재하지 않는 파일이면 에러발생</li>
+<li><code>w</code> - 쓰기 전용 - 새로운 파일을 생성하거나 기존 파일의 내용을 다 없애고 쓰기모드로 생성, 파일 포인터를 파일 처음 위치로</li>
+<li><code>a</code> - 파일 끝에 추가 - 이미 존재하는 파일을 쓰기모드로 생성하거나 존재하지 않으면 파일 만들고 생성, 파일 포인터를 마지막 위치에 놓음</li>
+</ol>
+<h2 id="이진파일-모드"><a href="#이진파일-모드" class="headerlink" title="이진파일 모드"></a>이진파일 모드</h2><ul>
+<li><code>rb</code></li>
+<li><code>wb</code></li>
+<li><code>ab</code></li>
+</ul>
+<hr>
+<p><code>f.close()</code>처럼 <code>close()</code>로 그때그때 닫아주는 것이 좋음</p>
+<p><code>read()</code>를 사용하면 전체를 다 읽어서 할당함</p>
+<h2 id="라인단위로-파일-읽기"><a href="#라인단위로-파일-읽기" class="headerlink" title="라인단위로 파일 읽기"></a>라인단위로 파일 읽기</h2><ol>
+<li><p><code>for</code> 반복문 활용</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'t.txt'</span>)</span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">  <span class="keyword">print</span> i, <span class="string">":"</span>, line,</span><br><span class="line">  i += <span class="number">1</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>readline()</code>-현재의 파일 포인터에서 개행 문자까지 읽음 = 한 라인</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'t.txt'</span>)</span><br><span class="line">line = f.readline()</span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">while</span> line:</span><br><span class="line">  <span class="keyword">print</span> i, <span class="string">":"</span>, line,</span><br><span class="line">  line = f.readline()</span><br><span class="line">  i += <span class="number">1</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>readlines()</code>-각 라인을 모두 읽어서 리스트로 저장, 메모리는 비효율적으로 사용<br>상황별로 다른 동작함 - <code>for in</code>구문: 전체x, 라인별로 가져옴</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'t.txt'</span>)</span><br><span class="line"><span class="keyword">print</span> f.readlines() <span class="comment">#리스트 나옴</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#파일 포인터를 맨 앞으로</span></span><br><span class="line">f.seek(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> f.readlines():</span><br><span class="line">  <span class="keyword">print</span> i, <span class="string">":"</span>, line,</span><br><span class="line">  i += <span class="number">1</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>xreadlines()</code> - 메모리 비효율 개선</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'t.txt'</span>)</span><br><span class="line"><span class="keyword">print</span> f.xreadlines() <span class="comment">#파일객체 자체가 나옴</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#파일 포인터를 맨 앞으로</span></span><br><span class="line">f.seek(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> f.xreadlines():</span><br><span class="line">  <span class="keyword">print</span> i, <span class="string">":"</span>, line,</span><br><span class="line">  i += <span class="number">1</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><strong><em><code>for in</code> 또는 <code>xreadlines()</code> 추천</em></strong></p>
+<hr>
+<h2 id="라인-단위로-쓰는-방법"><a href="#라인-단위로-쓰는-방법" class="headerlink" title="라인 단위로 쓰는 방법"></a>라인 단위로 쓰는 방법</h2><ol>
+<li><p><code>writelines()</code> - 라인단위로 쓰기 작업</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">lines = [<span class="string">'1st line\n'</span>, <span class="string">'2nd line\n'</span>, <span class="string">'3rd line\n'</span>]</span><br><span class="line">f = open(<span class="string">'t1.txt'</span>,<span class="string">'w'</span>)</span><br><span class="line">f.writelines(lines)</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f = open(<span class="string">'t1.txt'</span>)</span><br><span class="line"><span class="keyword">print</span> f.read() <span class="comment">#전체내용 읽음</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>write()</code> - 임의로 중간에 ‘\n’ 넣어줌</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">lines = [<span class="string">'1st line'</span>, <span class="string">'2nd line'</span>, <span class="string">'3rd line'</span>]</span><br><span class="line">f = open(<span class="string">'t1.txt'</span>,<span class="string">'w'</span>)</span><br><span class="line">f.write(<span class="string">'\n'</span>.join(lines))</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f = open(<span class="string">'t1.txt'</span>)</span><br><span class="line"><span class="keyword">print</span> f.read() <span class="comment">#전체내용 읽음</span></span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="기존-파일에-내용-추가"><a href="#기존-파일에-내용-추가" class="headerlink" title="기존 파일에 내용 추가"></a>기존 파일에 내용 추가</h2><ul>
+<li><code>a</code>모드 사용<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f = open(<span class="string">'removeme.txt'</span>, <span class="string">'a'</span>)</span><br><span class="line">f.write(<span class="string">'3rd line\n'</span>)</span><br><span class="line">f.close()</span><br><span class="line"></span><br><span class="line">f = open(<span class="string">'removeme.txt'</span>)</span><br><span class="line"><span class="keyword">print</span> f.read()</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="파일-내-임의-위치로-접근"><a href="#파일-내-임의-위치로-접근" class="headerlink" title="파일 내 임의 위치로 접근"></a>파일 내 임의 위치로 접근</h2><ul>
+<li>순차접근</li>
+<li>임의접근<ul>
+<li><code>seek(n)</code> - 파일의 가장 첫번째 위치에서 n번째 바이트로 포인터이동</li>
+<li><code>tell()</code> - 파일 내 현재 포인터 위치를 반환</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">'t.txt'</span></span><br><span class="line">f = open(name, <span class="string">'w+'</span>) <span class="comment"># 읽고 쓰기모드</span></span><br><span class="line">s = <span class="string">'0123456789asdf'</span></span><br><span class="line">f.write(s)</span><br><span class="line"></span><br><span class="line">f.seek(<span class="number">5</span>)</span><br><span class="line"><span class="keyword">print</span> f.tell()</span><br><span class="line"><span class="keyword">print</span> f.read(<span class="number">1</span>)</span><br><span class="line"><span class="keyword">print</span> f.tell()</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="sys-모듈의-표준-입출력-모니터-관련-객체"><a href="#sys-모듈의-표준-입출력-모니터-관련-객체" class="headerlink" title="sys 모듈의 표준 입출력(모니터) 관련 객체"></a>sys 모듈의 표준 입출력(모니터) 관련 객체</h2><ul>
+<li>sys.stdout: 표준 입출력</li>
+<li>sys.stderr: 표준 에러 출력</li>
+<li>sys.stdin: 표준 입력</li>
+</ul>
+<h3 id="표준-출력으로-파일-저장하기"><a href="#표준-출력으로-파일-저장하기" class="headerlink" title="표준 출력으로 파일 저장하기"></a>표준 출력으로 파일 저장하기</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">f = open(<span class="string">'t.txt'</span>,<span class="string">'w'</span>)</span><br><span class="line">stdout = sys.stdout <span class="comment">#표준 출력 저장</span></span><br><span class="line">sys.stdout = f <span class="comment">#파일 객체로 표준 출력 변경</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">'Sample output'</span></span><br><span class="line">pirnt <span class="string">'Good'</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">'Good'</span></span><br><span class="line">f.close()</span><br><span class="line">sys.stdout = stdout <span class="comment">#표준 출력 복원</span></span><br></pre></td></tr></table></figure>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://bongbooski.github.io/2018/04/09/post16_python_fileIO/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/09/post16_python_fileIO/">Comments</a>
     
 
         </footer>
@@ -1663,238 +1863,6 @@ ga('send', 'pageview');
 
 
 
-    <article id="post-post13_okky_seminor_kr" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/02/28/post13_okky_seminor_kr/">OKKY세미나 IT회사 탐방기 - 18.02.27</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/02/28/post13_okky_seminor_kr/">
-            <time datetime="2018-02-28T04:48:17.000Z" itemprop="datePublished">2018-02-28</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/okky/">okky</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>TGL경복빌딩의 eBrain에서 있었던 OKKY세미나에 형들과 다녀왔다.<br>마이다스 아이티에서 10년 3개월 5일(?) 일하다가 나오신 황후순님이 세미나를 해주셨고,<br>주제는 <strong>IT회사 탐방기</strong> 였다.</p>
-<p>황후순님의 이력에 대한 간단한 설명을 듣고<br>(안전도 시뮬레이션등을 하는 회사, 인공지능 면접 솔루션 개발 등),</p>
-<p>어떻게 많은 회사들을 다녀오실 수 있었는지도말씀해주셨는데,<br><code>facebook</code>등과 같은 SNS를 활용하신다고 한다.</p>
-<p>예를 들면 회사는 내가 누구인지 모르니 나를 알려야 하므로, 그 회사에 다니는 사람 등의<br>게시물에 댓글을 달거나 하는 식으로 인맥을 확장해 나가는 방식!<br>SNS에서 소통하다가 방문하는 방식이라고 한다.</p>
-<hr>
-<p>연사님은 개발자로 10년을 일을 하셨는데 퇴사를 하게 된 계기는 두가지라고 했다.</p>
-<ol>
-<li><strong>데이터 사이언스</strong>, <strong>AI</strong> 에 흥미가 있었고, <strong>TensorFlow</strong> 등에서 가져다 쓰는것보다는 직접 개발해보고 싶었다</li>
-<li>영어를 활용하는 환경</li>
-</ol>
-<p><strong><em>싱가폴로!</em></strong></p>
-<hr>
-<h2 id="기업탐방-해외-싱가폴"><a href="#기업탐방-해외-싱가폴" class="headerlink" title="기업탐방 - 해외(싱가폴)"></a>기업탐방 - 해외(싱가폴)</h2><h3 id="싱가폴-페이스북"><a href="#싱가폴-페이스북" class="headerlink" title="싱가폴 페이스북"></a>싱가폴 페이스북</h3><ul>
-<li>식당이 좋다, 다양한 종류의 사람들이 있으므로 음식도 종류별로 준비된다.</li>
-<li>성과위주이기에 업무에 도움이 되거나 휴식을 위해 음주가 가능하지만 대부분 안함</li>
-<li>모니터에 코드만 안찍히면 구경가서 사진촬영도 가능</li>
-<li>모든 층이 계단으로 연결되어있고, <strong>face to face</strong> 를 선호한다 - 전화 잘 안울림</li>
-<li>포토존이 많다. <em>왜..?</em></li>
-<li>면접<ol>
-<li>길다 - 한두달걸림</li>
-<li>기술면접을 분야별로 본다</li>
-<li>면접마다 평가해서 회사가 연봉을 측정</li>
-<li>통과하면 면접자에게 희망연봉을 묻는다</li>
-<li>측정치랑 일치하거나 측정치보다 낮으면 계약서, 측정치보다 높으면 협상<br><em>일단 한 10억 던지고 협상ㄱㄱ</em></li>
-</ol>
-</li>
-<li><strong>몸값을 제대로 받아야 일도 제대로함 - 연봉만큼의 일이 들어옴</strong></li>
-<li>순수개발자의 비중이 생각보다 작음 - <strong>로컬화</strong> 위주이기 때문</li>
-</ul>
-<p><br></p>
-<h3 id="WeWork-stashaway-이주원님"><a href="#WeWork-stashaway-이주원님" class="headerlink" title="WeWork, stashaway(이주원님)"></a>WeWork, stashaway(이주원님)</h3><ul>
-<li>면접<ol>
-<li>페이스북과 다르다</li>
-<li>면접자가 연봉을 먼저 제시하고</li>
-<li>그 금액에 맞는 면접을 회사가 준비해온다 - 통과하면 처음 부른 액수 그대로 받는다</li>
-</ol>
-</li>
-<li>한국: 신입은 개발좋아하는 사람, 경력은 필요한 스택에 맞는사람</li>
-<li>싱가폴: 지원자가 잘하는 언어로 면접봄(연봉에 맞춘 난이도로), 나머지 언어는 들어와서 배우면됨</li>
-<li>개발자에 대한 대우가 다르다 - 대졸4년차 기본연봉1억</li>
-<li>회사보다는 가족 - 남들 쉴 때 일하는 것은 혼자 미꾸라지되겠다는 의미로 받아들임</li>
-</ul>
-<p><br></p>
-<h3 id="Grab-아시아버전-우버-그랩"><a href="#Grab-아시아버전-우버-그랩" class="headerlink" title="Grab(아시아버전 우버) 그랩"></a>Grab(아시아버전 우버) 그랩</h3><ul>
-<li>연사님이 만나신 분은 <code>Google Developer</code>신분(?)이셔서 코딩테스트 패스하셨고 화상면접, 라이브코딩 여러번을 거치셨다고 한다.</li>
-<li>카카오 입사도 통과하셔서 그 연봉의 2.5배를 제시했는데 바로 계약서가 왔다(회사가 자체 평가한 금액을 넘지 못했다는 의미..)</li>
-<li>입사연봉기준으로 다음 연봉협상 이뤄지기 때문에, 첫 연봉이 중요하다.</li>
-</ul>
-<p><br></p>
-<h3 id="황후순님이-알려주신-팁"><a href="#황후순님이-알려주신-팁" class="headerlink" title="황후순님이 알려주신 팁!"></a>황후순님이 알려주신 팁!</h3><ul>
-<li>혼자 공부하는건 오픈소스외에는 큰 프로젝트보기힘들다 따라서 회사에들어가서 배우는게 빠르다.</li>
-<li>면접여러번 보다보면 언어도 늘기 때문에 영어에 너무 좌절하지 말것!</li>
-<li>영어 회사들어가서 해라</li>
-<li>기술을 보고, 사람을 본다</li>
-<li>개발자는 개발에도 두려움을 가질 필요가 없다. 배우면되기에!</li>
-</ul>
-<p><em>싱가폴-&gt; 개발자가 일하기 좋은 나라</em><br><br></p>
-<hr>
-<h2 id="기업탐방-국내"><a href="#기업탐방-국내" class="headerlink" title="기업탐방(국내)"></a>기업탐방(국내)</h2><h3 id="Clova-naver"><a href="#Clova-naver" class="headerlink" title="Clova(naver)"></a>Clova(naver)</h3><ul>
-<li>네이버의 인공지능분야 담당</li>
-<li>AI관련해서는 면접자가 기여할 부분이 있다면 학사도 뽑음(싱가폴은 학사면 서류에서 이미 거른다고함)</li>
-<li>성과중심 - 본인 업무를 다했다면 출근카드 찍기만 하면된다.<br><br><h3 id="우아한-형제들-배달의-민족"><a href="#우아한-형제들-배달의-민족" class="headerlink" title="우아한 형제들(배달의 민족)"></a>우아한 형제들(배달의 민족)</h3></li>
-<li>평생직장따윈 없다, 최고가 되어 떠나라<br><br><h3 id="카카오"><a href="#카카오" class="headerlink" title="카카오"></a>카카오</h3></li>
-<li>대부분 어떻게든 관리자가 되지 않으려고함. 개발자로 남으려함<br><br><h3 id="구글코리아"><a href="#구글코리아" class="headerlink" title="구글코리아"></a>구글코리아</h3></li>
-<li>영어 중요하다, 아주 잘해야함</li>
-<li>자유로운 문화 - 익히 아는 딱 그 문화</li>
-<li>영어보다 소통능력이 더중요함 - 공감능력, 소통, 성과를 잘보여주는 능력</li>
-<li>인사평가는 자기PR로 함</li>
-<li>구글에 천재가 많음, 하고싶어서 하는 천재, 노력하는 천재가 많다.<br><br><h3 id="삼성SDS-애자일-코어팀"><a href="#삼성SDS-애자일-코어팀" class="headerlink" title="삼성SDS - 애자일 코어팀"></a>삼성SDS - 애자일 코어팀</h3></li>
-<li>si회사로 볼 수 있지만 애자일 코어팀은 변화를 이끌고자 하는 조직</li>
-<li>삼성의 새로운 문화를 이끌려는 조직<br><br><h3 id="셈웨어"><a href="#셈웨어" class="headerlink" title="셈웨어"></a>셈웨어</h3></li>
-<li>서울대에 있는 회사</li>
-<li>math tool개발</li>
-<li>mathFreeOn</li>
-<li><code>실패</code>라는 단어를 사용하지 않고 <code>실수</code>로 여김, <code>실수</code>는 <code>성공</code>하기 위한 과정임</li>
-<li>우주의 움직임도 그래픽으로 물리, 지구과학등으로 분야 넒히려고 함 - 동현이?<br><br><h3 id="데일리-인텔리전스"><a href="#데일리-인텔리전스" class="headerlink" title="데일리 인텔리전스"></a>데일리 인텔리전스</h3></li>
-<li>AI플랫폼 - 다빈치(DaVinCi)</li>
-<li>은행 및 보험사</li>
-</ul>
-<ul>
-<li>더루프 - 루프체인</li>
-<li>인프런 - 강사와 사람들을 연결해주는 서비스<br><br><h3 id="오마이랩"><a href="#오마이랩" class="headerlink" title="오마이랩"></a>오마이랩</h3></li>
-</ul>
-<ul>
-<li>잔디 시작한 개발자(최영근), 이규원 - c#개발자 오마이랩CTO<br><br><h3 id="코더블-상상충전소"><a href="#코더블-상상충전소" class="headerlink" title="코더블/ 상상충전소"></a>코더블/ 상상충전소</h3></li>
-<li>교육커리큘럼, 책만듦<br><br></li>
-</ul>
-<hr>
-<h1 id="프로vs-고수"><a href="#프로vs-고수" class="headerlink" title="프로vs 고수"></a>프로vs 고수</h1><p>나는 어느 쪽을 추구하는지 고민해볼 부분</p>
-<ul>
-<li>프로<ul>
-<li>돈에 움직이는 사람,</li>
-<li>회사에서 원하는 방향을 따르거나 맞는 곳을 찾아감</li>
-<li>고객의 니즈를 맞춰줄 수 있는 사람</li>
-<li>자신의 가치를 돈으로 판단<br><br></li>
-</ul>
-</li>
-<li>고수<ul>
-<li>일은 프로처럼함(고객의 니즈) + 자기의 생각을 담음</li>
-<li>고객의 니즈를 바꾸지 않고 자신의 생각이 추가됨</li>
-<li>자신에 대한 가치를 기술적인 것으로 판단<br><br></li>
-</ul>
-</li>
-<li>은거하면서 아트하는데 그걸로돈도 들어오는…??</li>
-</ul>
-<h2 id="개발자-테크트리의-끝은"><a href="#개발자-테크트리의-끝은" class="headerlink" title="개발자 테크트리의 끝은?"></a>개발자 테크트리의 끝은?</h2><ul>
-<li>관리자냐 테크니션이냐… 고민할 필요없다</li>
-<li>회사에 필요한 기술을 공부하면됨 <strong>필요</strong> 한것을 공부</li>
-<li>현재는 선택할 것이 많다(두갈래가 아니다)</li>
-</ul>
-<hr>
-<p><strong><em>공부는 공부의 결과를 낳는다.</em></strong></p>
-<ul>
-<li>언어는 도구다!</li>
-<li>책보다는 도큐먼트!</li>
-<li>책은 모르고 쓰는 사람도 많다 - 책을 볼때는 다 코드짜보고 맞는지도 확인할것!</li>
-<li>기술공부도 좋지만 시야와 그릇을 넓힐것.</li>
-</ul>
-<p><strong>개발은 80까지!!</strong></p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-    <div class="a2a_kit a2a_default_style">
-    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
-    <span class="a2a_divider"></span>
-    <a class="a2a_button_facebook"></a>
-    <a class="a2a_button_twitter"></a>
-    <a class="a2a_button_google_plus"></a>
-    <a class="a2a_button_pinterest"></a>
-    <a class="a2a_button_tumblr"></a>
-</div>
-<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
-<style>
-    .a2a_menu {
-        border-radius: 4px;
-    }
-    .a2a_menu a {
-        margin: 2px 0;
-        font-size: 14px;
-        line-height: 16px;
-        border-radius: 4px;
-        color: inherit !important;
-        font-family: 'Microsoft Yahei';
-    }
-    #a2apage_dropdown {
-        margin: 10px 0;
-    }
-    .a2a_mini_services {
-        padding: 10px;
-    }
-    a.a2a_i,
-    i.a2a_i {
-        width: 122px;
-        line-height: 16px;
-    }
-    a.a2a_i .a2a_svg,
-    a.a2a_more .a2a_svg {
-        width: 16px;
-        height: 16px;
-        line-height: 16px;
-        vertical-align: top;
-        background-size: 16px;
-    }
-    a.a2a_i {
-        border: none !important;
-    }
-    a.a2a_menu_show_more_less {
-        margin: 0;
-        padding: 10px 0;
-        line-height: 16px;
-    }
-    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
-    .a2a_mini_services{*+height:1%;}
-</style>
-
-</div>
-
-            
-    
-        <a href="http://bongbooski.github.io/2018/02/28/post13_okky_seminor_kr/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/02/28/post13_okky_seminor_kr/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <nav id="page-nav">
         <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
@@ -1908,6 +1876,25 @@ ga('send', 'pageview');
         <h3 class="widget-title">recent</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/08/20/post35-exception/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/08/20/post35-exception/" class="title">Exception</a></p>
+                            <p class="item-date"><time datetime="2018-08-20T12:45:20.000Z" itemprop="datePublished">2018-08-20</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1985,25 +1972,6 @@ ga('send', 'pageview');
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/08/12/post30-jsp expression/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/08/12/post30-jsp expression/" class="title">JSP Scriptlet, declaration, expression, 지시자, comment</a></p>
-                            <p class="item-date"><time datetime="2018-08-12T05:48:20.000Z" itemprop="datePublished">2018-08-12</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -2015,7 +1983,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">13</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">13</span></li></ul>
         </div>
     </div>
 
@@ -2024,7 +1992,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSP/">JSP</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySql/">MySql</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Servlet/">Servlet</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/okky/">okky</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">14</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSP/">JSP</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySql/">MySql</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Servlet/">Servlet</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/okky/">okky</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">14</span></li></ul>
         </div>
     </div>
 
@@ -2033,7 +2001,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/JSP/" style="font-size: 17.5px;">JSP</a> <a href="/tags/MySql/" style="font-size: 12.5px;">MySql</a> <a href="/tags/Node-js/" style="font-size: 17.5px;">Node.js</a> <a href="/tags/Servlet/" style="font-size: 15px;">Servlet</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/okky/" style="font-size: 10px;">okky</a> <a href="/tags/python/" style="font-size: 20px;">python</a>
+            <a href="/tags/JSP/" style="font-size: 18px;">JSP</a> <a href="/tags/MySql/" style="font-size: 12px;">MySql</a> <a href="/tags/Node-js/" style="font-size: 16px;">Node.js</a> <a href="/tags/Servlet/" style="font-size: 14px;">Servlet</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/node-js/" style="font-size: 10px;">node.js</a> <a href="/tags/okky/" style="font-size: 10px;">okky</a> <a href="/tags/python/" style="font-size: 20px;">python</a>
         </div>
     </div>
 
