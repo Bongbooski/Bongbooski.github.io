@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://bongbooski.github.io/"/>
-  <updated>2018-08-20T13:03:29.000Z</updated>
+  <updated>2018-08-23T14:01:43.614Z</updated>
   <id>http://bongbooski.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java bean</title>
+    <link href="http://bongbooski.github.io/2018/08/23/post36-java-bean/"/>
+    <id>http://bongbooski.github.io/2018/08/23/post36-java-bean/</id>
+    <published>2018-08-23T13:49:20.000Z</published>
+    <updated>2018-08-23T14:01:43.614Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Java-bean"><a href="#Java-bean" class="headerlink" title="Java bean?"></a>Java bean?</h1><ul><li>반복적인 작업을 효율적으로 하기 위해 사용</li><li><code>Java</code>의 데이터(속성)와 기능(메소드)으로 이루어진 클래스</li><li><code>JSP</code>페이지를 만들고, 액션태그를 이용해서 빈 사용, 내부 데이터 처리</li></ul><h2 id="빈-관련-액션-태그-useBean-setProperty-getProperty"><a href="#빈-관련-액션-태그-useBean-setProperty-getProperty" class="headerlink" title="빈 관련 액션 태그(useBean, setProperty,getProperty)"></a>빈 관련 액션 태그(<code>useBean</code>, <code>setProperty</code>,<code>getProperty</code>)</h2><ul><li>액션 태그 중에서 <code>bean</code>과 관련한 태그들</li><li>주로 데이터 업데이트하고 얻어오는 역할</li></ul><hr><h3 id="useBean"><a href="#useBean" class="headerlink" title="useBean"></a><code>useBean</code></h3><ul><li>특정 <code>bean</code>을 사용한다고 명시할 때 사용<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:useBean id=<span class="string">"student"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.javalec.ex.Student"</span> scope=<span class="string">"page"</span> /&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">// &lt;jsp:useBean id="빈 이름" class="클래스 이름" scope="스코프 범위" /&gt;</span></span><br></pre></td></tr></table></figure></li></ul><ul><li>scope<ul><li><code>page</code> : 생성된 페이지 내에서만 사용 가능</li><li><code>request</code> : 요청된 페이지 내에서만 사용 가능</li><li><code>session</code> : 웹브라우저의 생명주기와 동일하게 사용 가능</li><li><code>application</code> : 웹애플리케이션의 생명주기와 동일하게 사용 가능</li></ul></li></ul><hr><h3 id="setProperty"><a href="#setProperty" class="headerlink" title="setProperty"></a><code>setProperty</code></h3><ul><li>데이터 값을 설정할 때 사용<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:setProperty name=<span class="string">"student"</span> property=<span class="string">"name"</span> value=<span class="string">"홍길동"</span> /&gt;</span><br><span class="line"><span class="comment">// &lt;jsp:setProperty name="빈 이름" property="속성이름" value="속성(데이터)값" /&gt;</span></span><br></pre></td></tr></table></figure></li></ul><hr><h3 id="getProperty"><a href="#getProperty" class="headerlink" title="getProperty"></a><code>getProperty</code></h3><ul><li>데이터 값을 가져올 때 사용<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:getProperty name=<span class="string">"student"</span> property=<span class="string">"name /&gt;</span></span><br><span class="line"><span class="string">// &lt;jsp:setProperty name="</span>빈 이름<span class="string">" property="</span>속성이름<span class="string">" /&gt;</span></span><br></pre></td></tr></table></figure></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Java-bean&quot;&gt;&lt;a href=&quot;#Java-bean&quot; class=&quot;headerlink&quot; title=&quot;Java bean?&quot;&gt;&lt;/a&gt;Java bean?&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;반복적인 작업을 효율적으로 하기 위해 사용&lt;/li&gt;
+&lt;li&gt;&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="JSP" scheme="http://bongbooski.github.io/tags/JSP/"/>
+    
+  </entry>
   
   <entry>
     <title>Exception</title>
@@ -186,6 +211,30 @@
   </entry>
   
   <entry>
+    <title>Servlet parameter, korean handling</title>
+    <link href="http://bongbooski.github.io/2018/08/12/post27-servlet04/"/>
+    <id>http://bongbooski.github.io/2018/08/12/post27-servlet04/</id>
+    <published>2018-08-12T03:26:20.000Z</published>
+    <updated>2018-08-12T04:05:09.528Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="parameter"><a href="#parameter" class="headerlink" title="parameter"></a>parameter</h2><ul><li><code>form</code>태그의 <code>submit</code>버튼을 클릭해서 데이터를 서버로 전송하면, 해당 <code>servlet</code>에서는 <code>HttpServletRequest</code>객체를 이용하여 <code>parameter</code>값을 얻을 수 있다</li><li><code>getParameter(name)</code> - <code>name</code>의 <code>value</code>값을 줌</li><li><code>getParameterValues(name)</code> - <code>name</code>의 값이 여러개 일때</li><li><code>getParameterNames()</code> - 해당 <code>form</code>태그의 하위 태그들 줌</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String id = request.getParameter(<span class="string">"id"</span>);</span><br><span class="line">String pw = request.getParameter(<span class="string">"pw"</span>);</span><br></pre></td></tr></table></figure><h2 id="korean-handling"><a href="#korean-handling" class="headerlink" title="korean handling"></a>korean handling</h2><ul><li><code>Tomcat</code>은 <code>ISO-8859-1</code>방식을 기본 문자 처리 방식으로 하기 때문에 별도의 인코딩이 없으면 한글이 깨져보임</li><li><code>Get</code>방식과 <code>Post</code>방식에 따라서 한글 인코딩 방법이 다름</li></ul><ul><li><p><code>Get</code>방식 -&gt; <code>&lt;server.xml&gt;</code>수정</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Connector</span> <span class="attr">URLEncoding</span>=<span class="string">"EUC-KR"</span> <span class="attr">port</span>=<span class="string">"8181"</span>/&gt;</span></span><br></pre></td></tr></table></figure></li><li><p><code>Post</code>방식 -&gt; <code>request.setCharacterEncoding()</code> 메소드 이용</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">request.setCharacterEncoding(<span class="string">"EUC-KR"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;parameter&quot;&gt;&lt;a href=&quot;#parameter&quot; class=&quot;headerlink&quot; title=&quot;parameter&quot;&gt;&lt;/a&gt;parameter&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;form&lt;/code&gt;태그의 &lt;code&gt;submit&lt;/c
+      
+    
+    </summary>
+    
+    
+      <category term="Servlet" scheme="http://bongbooski.github.io/tags/Servlet/"/>
+    
+  </entry>
+  
+  <entry>
     <title>ServletConfig, ServletContext, ServletContextListener</title>
     <link href="http://bongbooski.github.io/2018/08/12/post28-servlet05/"/>
     <id>http://bongbooski.github.io/2018/08/12/post28-servlet05/</id>
@@ -201,30 +250,6 @@
         &lt;h2 id=&quot;ServletConfig&quot;&gt;&lt;a href=&quot;#ServletConfig&quot; class=&quot;headerlink&quot; title=&quot;ServletConfig&quot;&gt;&lt;/a&gt;ServletConfig&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;서블릿 초기화 파라미터&lt;/li&gt;
 &lt;l
-      
-    
-    </summary>
-    
-    
-      <category term="Servlet" scheme="http://bongbooski.github.io/tags/Servlet/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Servlet parameter, korean handling</title>
-    <link href="http://bongbooski.github.io/2018/08/12/post27-servlet04/"/>
-    <id>http://bongbooski.github.io/2018/08/12/post27-servlet04/</id>
-    <published>2018-08-12T03:26:20.000Z</published>
-    <updated>2018-08-12T04:05:09.528Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="parameter"><a href="#parameter" class="headerlink" title="parameter"></a>parameter</h2><ul><li><code>form</code>태그의 <code>submit</code>버튼을 클릭해서 데이터를 서버로 전송하면, 해당 <code>servlet</code>에서는 <code>HttpServletRequest</code>객체를 이용하여 <code>parameter</code>값을 얻을 수 있다</li><li><code>getParameter(name)</code> - <code>name</code>의 <code>value</code>값을 줌</li><li><code>getParameterValues(name)</code> - <code>name</code>의 값이 여러개 일때</li><li><code>getParameterNames()</code> - 해당 <code>form</code>태그의 하위 태그들 줌</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String id = request.getParameter(<span class="string">"id"</span>);</span><br><span class="line">String pw = request.getParameter(<span class="string">"pw"</span>);</span><br></pre></td></tr></table></figure><h2 id="korean-handling"><a href="#korean-handling" class="headerlink" title="korean handling"></a>korean handling</h2><ul><li><code>Tomcat</code>은 <code>ISO-8859-1</code>방식을 기본 문자 처리 방식으로 하기 때문에 별도의 인코딩이 없으면 한글이 깨져보임</li><li><code>Get</code>방식과 <code>Post</code>방식에 따라서 한글 인코딩 방법이 다름</li></ul><ul><li><p><code>Get</code>방식 -&gt; <code>&lt;server.xml&gt;</code>수정</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Connector</span> <span class="attr">URLEncoding</span>=<span class="string">"EUC-KR"</span> <span class="attr">port</span>=<span class="string">"8181"</span>/&gt;</span></span><br></pre></td></tr></table></figure></li><li><p><code>Post</code>방식 -&gt; <code>request.setCharacterEncoding()</code> 메소드 이용</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">request.setCharacterEncoding(<span class="string">"EUC-KR"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;parameter&quot;&gt;&lt;a href=&quot;#parameter&quot; class=&quot;headerlink&quot; title=&quot;parameter&quot;&gt;&lt;/a&gt;parameter&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;form&lt;/code&gt;태그의 &lt;code&gt;submit&lt;/c
       
     
     </summary>
@@ -429,30 +454,6 @@
   </entry>
   
   <entry>
-    <title>python 패키지</title>
-    <link href="http://bongbooski.github.io/2018/04/15/post20-python-package/"/>
-    <id>http://bongbooski.github.io/2018/04/15/post20-python-package/</id>
-    <published>2018-04-15T06:48:23.000Z</published>
-    <updated>2018-04-17T13:44:32.128Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="패키지-Package"><a href="#패키지-Package" class="headerlink" title="패키지(Package)"></a>패키지(Package)</h1><ul><li>여러 모듈들을 한데 묶어서 정리해 놓은 구조</li><li>물리적으로 여러 모듈 파일을 모아 놓은 디렉토리에 해당<ul><li>최상위 디렉토리 이름이 패키지 이름이 된다.</li><li>최상위 디렉토리 하위에 여러 서브 디렉토리는 해당 최상위패키지의 하위 패키지가 된다.</li><li>모듈=파일, 패키지=디렉토리</li></ul></li></ul><hr><h2 id="init-py의-역할"><a href="#init-py의-역할" class="headerlink" title="__init__.py의 역할"></a><code>__init__.py</code>의 역할</h2><ul><li>디렉토리를 패키지로 인식시키는 역할</li><li>서브 패키지에도 패키지와 마찬가지로 필요(없으면 단순 폴더역할)</li></ul><hr><h2 id="import하기"><a href="#import하기" class="headerlink" title="import하기"></a>import하기</h2>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Speech</span><br></pre></td></tr></table></figure><ul><li><code>Speech</code>디렉토리가 <code>sys.path</code>(또는 <code>PYTHONPATH</code>환경변수)에 열거된 폴더 중 하나에 위치해야함</li><li><code>Speech/Recognition/HMM.py</code>코드 내용<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">train</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"Train"</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">loadModel</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"LoadModel"</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">saveModel</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"SaveModel"</span></span><br><span class="line">  <span class="keyword">pass</span></span><br></pre></td></tr></table></figure></li></ul><h3 id="특정-함수-사용하는-방법"><a href="#특정-함수-사용하는-방법" class="headerlink" title="특정 함수 사용하는 방법"></a>특정 함수 사용하는 방법</h3>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 사용불가. 패키지명에서 .으로 특정 모듈, 함수 가져와야함</span></span><br><span class="line"><span class="keyword">import</span> Speech</span><br><span class="line">Speech.Recognition.HMM.train()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 적절한 방법</span></span><br><span class="line"><span class="keyword">import</span> Speech.Recognition.HMM</span><br><span class="line">Speech.Recognition.HMM.train()</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> Speech.Recognition <span class="keyword">import</span> HMM</span><br><span class="line">HMM.train()</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> Speech.Recognition.HMM <span class="keyword">import</span> train</span><br><span class="line">train()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 모듈 내의 변수 전부 다 가져옴, 모듈이름 없이 사용가능</span></span><br><span class="line"><span class="keyword">from</span> Speech.Recognition.HMM <span class="keyword">import</span> *</span><br><span class="line">train()</span><br><span class="line">loadModel()</span><br><span class="line">saveModel()</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;패키지-Package&quot;&gt;&lt;a href=&quot;#패키지-Package&quot; class=&quot;headerlink&quot; title=&quot;패키지(Package)&quot;&gt;&lt;/a&gt;패키지(Package)&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;여러 모듈들을 한데 묶어서 정리해 놓은 구조&lt;/
-      
-    
-    </summary>
-    
-    
-      <category term="python" scheme="http://bongbooski.github.io/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
     <title>python Package</title>
     <link href="http://bongbooski.github.io/2018/04/15/post20-python-package_eng/"/>
     <id>http://bongbooski.github.io/2018/04/15/post20-python-package_eng/</id>
@@ -477,19 +478,20 @@
   </entry>
   
   <entry>
-    <title>python module importing</title>
-    <link href="http://bongbooski.github.io/2018/04/15/post19-python-import_eng/"/>
-    <id>http://bongbooski.github.io/2018/04/15/post19-python-import_eng/</id>
-    <published>2018-04-15T02:48:23.000Z</published>
-    <updated>2018-04-17T13:44:07.242Z</updated>
+    <title>python 패키지</title>
+    <link href="http://bongbooski.github.io/2018/04/15/post20-python-package/"/>
+    <id>http://bongbooski.github.io/2018/04/15/post20-python-package/</id>
+    <published>2018-04-15T06:48:23.000Z</published>
+    <updated>2018-04-17T13:44:32.128Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="import-module’s-name"><a href="#import-module’s-name" class="headerlink" title="import module’s name"></a>import module’s name</h1><ol><li><p>Basic form</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> mymath</span><br><span class="line"><span class="keyword">print</span> mymath.area(<span class="number">5</span>)</span><br></pre></td></tr></table></figure></li><li><p>from module’s name import wanted object</p><ul><li>taking the wanted object from the module</li><li>original object is lost if the name is using</li><li>it can be used without the module’s name<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> mymath <span class="keyword">import</span> area, mypi</span><br><span class="line"><span class="keyword">print</span> area(<span class="number">5</span>)</span><br></pre></td></tr></table></figure></li></ul></li><li><p>from module’s name import *</p><ul><li>taking everything from the module without objects starting <code>__</code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> mymath <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">print</span> area(<span class="number">5</span>)</span><br></pre></td></tr></table></figure></li></ul></li><li><p>import module’s name as another module name</p><ul><li>another name is used for calling the module</li><li>It is recommended when the original name is too long or already used<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> string <span class="keyword">as</span> chstr</span><br><span class="line"><span class="keyword">print</span> chstr</span><br><span class="line"><span class="keyword">print</span></span><br><span class="line"><span class="keyword">print</span> chstr.punctuation</span><br></pre></td></tr></table></figure></li></ul></li><li><p>from module’s name import original name as another name[, name2 as another name2]</p><ul><li>another name is used for calling the module<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> string <span class="keyword">import</span> replace <span class="keyword">as</span> substitute[, upper <span class="keyword">as</span> up]</span><br><span class="line"><span class="keyword">print</span> substitute</span><br><span class="line"><span class="keyword">print</span> substitute(<span class="string">'ham chicken spam'</span>, <span class="string">'chicke'</span>, <span class="string">'egg'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> up</span><br><span class="line"><span class="keyword">print</span> up(<span class="string">'abc'</span>)</span><br></pre></td></tr></table></figure></li></ul></li></ol><ul><li><code>import</code> can be used anywhere(including in a function)</li></ul><hr><h1 id="Compile-and-Load-time"><a href="#Compile-and-Load-time" class="headerlink" title="Compile and Load time"></a>Compile and Load time</h1><ul><li><p><code>import mymath</code> works like this</p><ol><li>Finding <code>mymath.pyc</code></li><li>If that doesn’t exist, Finding <code>mymath.py</code> and creating <code>mymath.pyc</code></li><li>Loading <code>mymath.pyc</code> into memory and executing</li></ol></li><li><p><code>.pyc</code> file</p><ol><li><p>Byte code file</p><ul><li>Kind of Object code not depending on machines or platform(OS)</li><li>Python takes both executing ways of compile language and interpreter language</li></ul></li><li><p>Deciding about creating new <code>.pyc</code>file</p><ul><li>When modificatin time of <code>.py</code> is more recently than modification time of <code>.pyc</code></li></ul></li><li>Without <code>.py</code>file, <code>import</code> is available with <code>.pyc</code><ul><li>It can be use as the way to hide the original code</li></ul></li></ol></li></ul><hr><h1 id="Using-the-same-name-again"><a href="#Using-the-same-name-again" class="headerlink" title="Using the same name again"></a>Using the same name again</h1><ul><li>Though the name’s target is changed, the module remains in memory, if we <code>import</code> the module, that takes the module existing in memory. So, we can use the thing we defined additionally in the module at the code</li></ul><hr><h1 id="Executing-module-and-test-code"><a href="#Executing-module-and-test-code" class="headerlink" title="Executing module and test code"></a>Executing module and test code</h1><ul><li><p><code>__name__</code></p><ul><li>It is usually used for knowing if this module is used as the root module or in other module by <code>import</code></li><li>Being used as the root module -&gt; <code>__main__</code></li><li><p>Being used in other module -&gt; that module’s name</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> __name__ <span class="comment"># __main__ print</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> prname</span><br><span class="line"><span class="keyword">print</span> prname.__name__ <span class="comment"># prname print</span></span><br></pre></td></tr></table></figure></li><li><p>How to use</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(a, b)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> a + b</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"Python is becoming popular."</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">  <span class="keyword">print</span> add(<span class="number">1</span>, <span class="number">10</span>)</span><br><span class="line">  f()</span><br></pre></td></tr></table></figure><ul><li>Direct executing runs <code>if</code> statement</li><li>Being used in other module ignores <code>if</code> statement</li></ul></li></ul></li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="패키지-Package"><a href="#패키지-Package" class="headerlink" title="패키지(Package)"></a>패키지(Package)</h1><ul><li>여러 모듈들을 한데 묶어서 정리해 놓은 구조</li><li>물리적으로 여러 모듈 파일을 모아 놓은 디렉토리에 해당<ul><li>최상위 디렉토리 이름이 패키지 이름이 된다.</li><li>최상위 디렉토리 하위에 여러 서브 디렉토리는 해당 최상위패키지의 하위 패키지가 된다.</li><li>모듈=파일, 패키지=디렉토리</li></ul></li></ul><hr><h2 id="init-py의-역할"><a href="#init-py의-역할" class="headerlink" title="__init__.py의 역할"></a><code>__init__.py</code>의 역할</h2><ul><li>디렉토리를 패키지로 인식시키는 역할</li><li>서브 패키지에도 패키지와 마찬가지로 필요(없으면 단순 폴더역할)</li></ul><hr><h2 id="import하기"><a href="#import하기" class="headerlink" title="import하기"></a>import하기</h2>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Speech</span><br></pre></td></tr></table></figure><ul><li><code>Speech</code>디렉토리가 <code>sys.path</code>(또는 <code>PYTHONPATH</code>환경변수)에 열거된 폴더 중 하나에 위치해야함</li><li><code>Speech/Recognition/HMM.py</code>코드 내용<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">train</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"Train"</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">loadModel</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"LoadModel"</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">saveModel</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"SaveModel"</span></span><br><span class="line">  <span class="keyword">pass</span></span><br></pre></td></tr></table></figure></li></ul><h3 id="특정-함수-사용하는-방법"><a href="#특정-함수-사용하는-방법" class="headerlink" title="특정 함수 사용하는 방법"></a>특정 함수 사용하는 방법</h3>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 사용불가. 패키지명에서 .으로 특정 모듈, 함수 가져와야함</span></span><br><span class="line"><span class="keyword">import</span> Speech</span><br><span class="line">Speech.Recognition.HMM.train()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 적절한 방법</span></span><br><span class="line"><span class="keyword">import</span> Speech.Recognition.HMM</span><br><span class="line">Speech.Recognition.HMM.train()</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> Speech.Recognition <span class="keyword">import</span> HMM</span><br><span class="line">HMM.train()</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> Speech.Recognition.HMM <span class="keyword">import</span> train</span><br><span class="line">train()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 모듈 내의 변수 전부 다 가져옴, 모듈이름 없이 사용가능</span></span><br><span class="line"><span class="keyword">from</span> Speech.Recognition.HMM <span class="keyword">import</span> *</span><br><span class="line">train()</span><br><span class="line">loadModel()</span><br><span class="line">saveModel()</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;import-module’s-name&quot;&gt;&lt;a href=&quot;#import-module’s-name&quot; class=&quot;headerlink&quot; title=&quot;import module’s name&quot;&gt;&lt;/a&gt;import module’s name&lt;/h1&gt;&lt;
+        &lt;h1 id=&quot;패키지-Package&quot;&gt;&lt;a href=&quot;#패키지-Package&quot; class=&quot;headerlink&quot; title=&quot;패키지(Package)&quot;&gt;&lt;/a&gt;패키지(Package)&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;여러 모듈들을 한데 묶어서 정리해 놓은 구조&lt;/
       
     
     </summary>

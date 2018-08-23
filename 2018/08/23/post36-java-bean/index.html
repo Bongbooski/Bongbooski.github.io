@@ -3,15 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Archive: 2018 | Booski&#39;s programming</title>
+    <title>Java bean | Booski&#39;s programming</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Booski&#39;s programming">
-<meta property="og:url" content="http://bongbooski.github.io/archives/2018/page/6/index.html">
+    <meta name="description" content="Java bean? 반복적인 작업을 효율적으로 하기 위해 사용 Java의 데이터(속성)와 기능(메소드)으로 이루어진 클래스 JSP페이지를 만들고, 액션태그를 이용해서 빈 사용, 내부 데이터 처리  빈 관련 액션 태그(useBean, setProperty,getProperty) 액션 태그 중에서 bean과 관련한 태그들 주로 데이터 업데이트하고 얻어오는 역할">
+<meta name="keywords" content="JSP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java bean">
+<meta property="og:url" content="http://bongbooski.github.io/2018/08/23/post36-java-bean/index.html">
 <meta property="og:site_name" content="Booski&#39;s programming">
+<meta property="og:description" content="Java bean? 반복적인 작업을 효율적으로 하기 위해 사용 Java의 데이터(속성)와 기능(메소드)으로 이루어진 클래스 JSP페이지를 만들고, 액션태그를 이용해서 빈 사용, 내부 데이터 처리  빈 관련 액션 태그(useBean, setProperty,getProperty) 액션 태그 중에서 bean과 관련한 태그들 주로 데이터 업데이트하고 얻어오는 역할">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-08-23T14:01:43.614Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Booski&#39;s programming">
+<meta name="twitter:title" content="Java bean">
+<meta name="twitter:description" content="Java bean? 반복적인 작업을 효율적으로 하기 위해 사용 Java의 데이터(속성)와 기능(메소드)으로 이루어진 클래스 JSP페이지를 만들고, 액션태그를 이용해서 빈 사용, 내부 데이터 처리  빈 관련 액션 태그(useBean, setProperty,getProperty) 액션 태그 중에서 bean과 관련한 태그들 주로 데이터 업데이트하고 얻어오는 역할">
 <meta property="fb:app_id" content="965647770265499">
     
 
@@ -220,168 +225,173 @@ ga('send', 'pageview');
 </aside>
 
             
-            <section id="main"><div class="timeline timeline-wrap">
-    
-            <div class="timeline-row timeline-row-major">
-                <span class="node"><i class="fa fa-calendar"></i></span>
-                <h1 class="title">2018</h1>
-            </div>
+            <section id="main"><article id="post-post36-java-bean" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/04/11/post17_python-file,directory_eng/">python operating files</a>
+        <h1 class="article-title" itemprop="name">
+            Java bean
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2018/04/11/post17_python-file,directory_eng/">
-            <time datetime="2018-04-11T06:38:47.000Z" itemprop="datePublished">2018-04-11</time>
+        <a href="/2018/08/23/post36-java-bean/">
+            <time datetime="2018-08-23T13:49:20.000Z" itemprop="datePublished">2018-08-23</time>
         </a>
     </div>
 
 
-                    
-                    
+                        
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/python/">python</a>
+        <a class="tag-link" href="/tags/JSP/">JSP</a>
     </div>
 
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+                    </div>
                 
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/04/09/post16_python_fileIO_eng/">python File Input&amp;Output</a>
-        </h1>
-    
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="Java-bean"><a href="#Java-bean" class="headerlink" title="Java bean?"></a>Java bean?</h1><ul>
+<li>반복적인 작업을 효율적으로 하기 위해 사용</li>
+<li><code>Java</code>의 데이터(속성)와 기능(메소드)으로 이루어진 클래스</li>
+<li><code>JSP</code>페이지를 만들고, 액션태그를 이용해서 빈 사용, 내부 데이터 처리</li>
+</ul>
+<h2 id="빈-관련-액션-태그-useBean-setProperty-getProperty"><a href="#빈-관련-액션-태그-useBean-setProperty-getProperty" class="headerlink" title="빈 관련 액션 태그(useBean, setProperty,getProperty)"></a>빈 관련 액션 태그(<code>useBean</code>, <code>setProperty</code>,<code>getProperty</code>)</h2><ul>
+<li>액션 태그 중에서 <code>bean</code>과 관련한 태그들</li>
+<li>주로 데이터 업데이트하고 얻어오는 역할</li>
+</ul>
+<hr>
+<h3 id="useBean"><a href="#useBean" class="headerlink" title="useBean"></a><code>useBean</code></h3><ul>
+<li>특정 <code>bean</code>을 사용한다고 명시할 때 사용<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:useBean id=<span class="string">"student"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.javalec.ex.Student"</span> scope=<span class="string">"page"</span> /&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">// &lt;jsp:useBean id="빈 이름" class="클래스 이름" scope="스코프 범위" /&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>scope<ul>
+<li><code>page</code> : 생성된 페이지 내에서만 사용 가능</li>
+<li><code>request</code> : 요청된 페이지 내에서만 사용 가능</li>
+<li><code>session</code> : 웹브라우저의 생명주기와 동일하게 사용 가능</li>
+<li><code>application</code> : 웹애플리케이션의 생명주기와 동일하게 사용 가능</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="setProperty"><a href="#setProperty" class="headerlink" title="setProperty"></a><code>setProperty</code></h3><ul>
+<li>데이터 값을 설정할 때 사용<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:setProperty name=<span class="string">"student"</span> property=<span class="string">"name"</span> value=<span class="string">"홍길동"</span> /&gt;</span><br><span class="line"><span class="comment">// &lt;jsp:setProperty name="빈 이름" property="속성이름" value="속성(데이터)값" /&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h3 id="getProperty"><a href="#getProperty" class="headerlink" title="getProperty"></a><code>getProperty</code></h3><ul>
+<li>데이터 값을 가져올 때 사용<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:getProperty name=<span class="string">"student"</span> property=<span class="string">"name /&gt;</span></span><br><span class="line"><span class="string">// &lt;jsp:setProperty name="</span>빈 이름<span class="string">" property="</span>속성이름<span class="string">" /&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/04/09/post16_python_fileIO_eng/">
-            <time datetime="2018-04-09T06:09:17.000Z" itemprop="datePublished">2018-04-09</time>
-        </a>
-    </div>
-
-
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/python/">python</a>
-    </div>
-
-                </div>
-            </div>
+        
         </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/04/09/post16_python_fileIO/">python 파일 입출력</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/04/09/post16_python_fileIO/">
-            <time datetime="2018-04-09T06:09:17.000Z" itemprop="datePublished">2018-04-09</time>
-        </a>
-    </div>
+        <footer class="article-footer">
+            <div class="share-container">
 
 
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/python/">python</a>
-    </div>
 
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/03/22/post15_gitignore+config-setting/">.gitignore, config파일 사용</a>
-        </h1>
-    
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
 
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/03/22/post15_gitignore+config-setting/">
-            <time datetime="2018-03-22T06:09:17.000Z" itemprop="datePublished">2018-03-22</time>
-        </a>
-    </div>
-
-
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/github/">github</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/03/22/hello-world/">Hello World</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/03/22/hello-world/">
-            <time datetime="2018-03-22T06:09:16.793Z" itemprop="datePublished">2018-03-22</time>
-        </a>
-    </div>
-
-
-                    
-                    
-                </div>
-            </div>
-        </div>
-    
 </div>
 
-    <nav id="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/2018/page/5/">&laquo; Prev</a><a class="page-number" href="/archives/2018/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2018/page/4/">4</a><a class="page-number" href="/archives/2018/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/archives/2018/page/7/">7</a><a class="page-number" href="/archives/2018/page/8/">8</a><a class="page-number" href="/archives/2018/page/9/">9</a><a class="extend next" rel="next" href="/archives/2018/page/7/">Next &raquo;</a>
-    </nav>
+            
+    
+        <a href="http://bongbooski.github.io/2018/08/23/post36-java-bean/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/08/23/post36-java-bean/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2018/08/20/post35-exception/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">Exception</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+        <section id="comments">
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+</section>
+    
+
 </section>
             
                 
@@ -556,11 +566,13 @@ ga('send', 'pageview');
     <script>
     var disqus_config = function () {
         
-        this.page.identifier = '';
+            this.page.url = 'http://bongbooski.github.io/2018/08/23/post36-java-bean/';
+        
+        this.page.identifier = 'post36-java-bean';
     };
     (function() { 
         var d = document, s = d.createElement('script');  
-        s.src = '//' + 'https-bongbooski-github-io' + '.disqus.com/count.js';
+        s.src = '//' + 'https-bongbooski-github-io' + '.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();

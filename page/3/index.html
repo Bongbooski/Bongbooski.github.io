@@ -174,7 +174,7 @@ ga('send', 'pageview');
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                43
+                44
                 <span>posts</span>
             </div>
             <div class="article-info-block">
@@ -221,6 +221,206 @@ ga('send', 'pageview');
 
             
             <section id="main">
+    <article id="post-post19-python-import_eng" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/04/15/post19-python-import_eng/">python module importing</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/04/15/post19-python-import_eng/">
+            <time datetime="2018-04-15T02:48:23.000Z" itemprop="datePublished">2018-04-15</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="import-module’s-name"><a href="#import-module’s-name" class="headerlink" title="import module’s name"></a>import module’s name</h1><ol>
+<li><p>Basic form</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> mymath</span><br><span class="line"><span class="keyword">print</span> mymath.area(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>from module’s name import wanted object</p>
+<ul>
+<li>taking the wanted object from the module</li>
+<li>original object is lost if the name is using</li>
+<li>it can be used without the module’s name<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> mymath <span class="keyword">import</span> area, mypi</span><br><span class="line"><span class="keyword">print</span> area(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>from module’s name import *</p>
+<ul>
+<li>taking everything from the module without objects starting <code>__</code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> mymath <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">print</span> area(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>import module’s name as another module name</p>
+<ul>
+<li>another name is used for calling the module</li>
+<li>It is recommended when the original name is too long or already used<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> string <span class="keyword">as</span> chstr</span><br><span class="line"><span class="keyword">print</span> chstr</span><br><span class="line"><span class="keyword">print</span></span><br><span class="line"><span class="keyword">print</span> chstr.punctuation</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>from module’s name import original name as another name[, name2 as another name2]</p>
+<ul>
+<li>another name is used for calling the module<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> string <span class="keyword">import</span> replace <span class="keyword">as</span> substitute[, upper <span class="keyword">as</span> up]</span><br><span class="line"><span class="keyword">print</span> substitute</span><br><span class="line"><span class="keyword">print</span> substitute(<span class="string">'ham chicken spam'</span>, <span class="string">'chicke'</span>, <span class="string">'egg'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> up</span><br><span class="line"><span class="keyword">print</span> up(<span class="string">'abc'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><code>import</code> can be used anywhere(including in a function)</li>
+</ul>
+<hr>
+<h1 id="Compile-and-Load-time"><a href="#Compile-and-Load-time" class="headerlink" title="Compile and Load time"></a>Compile and Load time</h1><ul>
+<li><p><code>import mymath</code> works like this</p>
+<ol>
+<li>Finding <code>mymath.pyc</code></li>
+<li>If that doesn’t exist, Finding <code>mymath.py</code> and creating <code>mymath.pyc</code></li>
+<li>Loading <code>mymath.pyc</code> into memory and executing</li>
+</ol>
+</li>
+<li><p><code>.pyc</code> file</p>
+<ol>
+<li><p>Byte code file</p>
+<ul>
+<li>Kind of Object code not depending on machines or platform(OS)</li>
+<li>Python takes both executing ways of compile language and interpreter language</li>
+</ul>
+</li>
+<li><p>Deciding about creating new <code>.pyc</code>file</p>
+<ul>
+<li>When modificatin time of <code>.py</code> is more recently than modification time of <code>.pyc</code></li>
+</ul>
+</li>
+<li>Without <code>.py</code>file, <code>import</code> is available with <code>.pyc</code><ul>
+<li>It can be use as the way to hide the original code</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h1 id="Using-the-same-name-again"><a href="#Using-the-same-name-again" class="headerlink" title="Using the same name again"></a>Using the same name again</h1><ul>
+<li>Though the name’s target is changed, the module remains in memory, if we <code>import</code> the module, that takes the module existing in memory. So, we can use the thing we defined additionally in the module at the code</li>
+</ul>
+<hr>
+<h1 id="Executing-module-and-test-code"><a href="#Executing-module-and-test-code" class="headerlink" title="Executing module and test code"></a>Executing module and test code</h1><ul>
+<li><p><code>__name__</code></p>
+<ul>
+<li>It is usually used for knowing if this module is used as the root module or in other module by <code>import</code></li>
+<li>Being used as the root module -&gt; <code>__main__</code></li>
+<li><p>Being used in other module -&gt; that module’s name</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> __name__ <span class="comment"># __main__ print</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> prname</span><br><span class="line"><span class="keyword">print</span> prname.__name__ <span class="comment"># prname print</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>How to use</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(a, b)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> a + b</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"Python is becoming popular."</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">  <span class="keyword">print</span> add(<span class="number">1</span>, <span class="number">10</span>)</span><br><span class="line">  f()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Direct executing runs <code>if</code> statement</li>
+<li>Being used in other module ignores <code>if</code> statement</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://bongbooski.github.io/2018/04/15/post19-python-import_eng/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/15/post19-python-import_eng/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-post19-python-import" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -421,180 +621,6 @@ ga('send', 'pageview');
 
 
 
-    <article id="post-post18-python-lambda" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/04/12/post18-python-lambda/">python 람다(lambda) 함수</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/04/12/post18-python-lambda/">
-            <time datetime="2018-04-12T05:19:37.000Z" itemprop="datePublished">2018-04-12</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/python/">python</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h1 id="람다-lambda-함수-정의"><a href="#람다-lambda-함수-정의" class="headerlink" title="람다(lambda)함수 정의"></a>람다(lambda)함수 정의</h1><ul>
-<li>일반적인 함수를 한 줄의 문으로 정의할 수 있는 새로운 함수 정의 리터럴</li>
-<li>일회성으로 활용할 함수 정의할 때 주로 사용</li>
-<li><code>:</code>뒤에는 식만 올 수 있음</li>
-<li>람다 함수도 하나의 객체임</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="keyword">lambda</span> x: x + <span class="number">1</span></span><br><span class="line"><span class="keyword">print</span> f(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-<ol>
-<li><p>인수가 두 개 있는 람다 함수를 지니는 변수 지정 및 함수 호출</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">g = <span class="keyword">lambda</span> x,y: x + y</span><br><span class="line"><span class="keyword">print</span> g(<span class="number">1</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>기본 인수를 지니는 람다 함수 정의</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">g = <span class="keyword">lambda</span> x, inc=<span class="number">1</span>: x+inc</span><br><span class="line"><span class="keyword">print</span> g(<span class="number">10</span>) <span class="comment"># inc기본 인수 값으로 1사용</span></span><br><span class="line"><span class="keyword">print</span> g(<span class="number">10</span>, <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>가변 인수를 지니는 람다 함수 정의</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vargs = <span class="keyword">lambda</span> x, *args: args <span class="comment">#args가 리턴됨</span></span><br><span class="line"><span class="keyword">print</span> vars(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<hr>
-<h2 id="람다-함수-사용하기"><a href="#람다-함수-사용하기" class="headerlink" title="람다 함수 사용하기"></a>람다 함수 사용하기</h2><ul>
-<li><p>일반 함수 사용</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">(x)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> x*x + <span class="number">3</span>*x - <span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">(x)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> x*x*x</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">g</span><span class="params">(func)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> [func(x) <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">-10</span>, <span class="number">10</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> g(f1)</span><br><span class="line"><span class="keyword">print</span> g(f2)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>람다 함수 사용</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">g</span><span class="params">(func)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> [func(x) <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">-10</span>, <span class="number">10</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> g(<span class="keyword">lambda</span> x: x*x + <span class="number">3</span>*x - <span class="number">10</span>)</span><br><span class="line"><span class="keyword">print</span> g(<span class="keyword">lambda</span> x: x*x*x)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="람다-함수-활용"><a href="#람다-함수-활용" class="headerlink" title="람다 함수 활용"></a>람다 함수 활용</h2><ul>
-<li><code>map</code>, <code>filter</code>, <code>reduce</code> 내장 함수</li>
-</ul>
-<ol>
-<li><p><code>map</code> 내장 함수</p>
-<ul>
-<li><p><code>map(function, seq)</code>: <code>seq</code>의 원소를 차례로 돌면서 <code>function</code>에 적용한 결과를 <code>seq</code>의 자료형으로 반환</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(x)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> x * x</span><br><span class="line">X - [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">Y = map(f, X)</span><br><span class="line"><span class="keyword">print</span> Y</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>map</code>과 람다 함수를 동시에 사용 - 가장 추천</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">X = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">print</span> map(<span class="keyword">lambda</span> x: x * x, X)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p><code>filter</code> 내장 함수</p>
-<ul>
-<li><code>seq</code>자료형이 지닌 각 원소값에 대해 <code>function</code>에 적용한 결과가 참인 원소값들만을 동일 시퀀스 자료형으로 반환<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> filter(<span class="keyword">lambda</span> x: x&gt;<span class="number">2</span>, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">45</span>])</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p><code>reduce</code> 내장 함수</p>
-<ul>
-<li><code>reduce(function, seq[,initial])</code></li>
-<li><code>seq</code>자료형이 지닌 각 원소값에 대해 <code>function</code>함수를 적용하면서 하나의 값으로 매핑</li>
-<li>첫번째 인자(<code>function</code>)는 반드시 두 개의 인자(ex. x,y)를 받아야한다.<ul>
-<li><code>seq</code>의 각 원소값들이 차례로 <code>y</code>에 들어간다</li>
-<li>함수가 수행된 값은 차례대로 <code>x</code>에 들어간다</li>
-</ul>
-</li>
-<li>추가적으로 제공가능한 세번재 인자인 <code>initial</code>은 첫번째 단계에서 <code>x</code>에 할당할 초기값으로 사용된다<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> reduce(<span class="keyword">lambda</span> x, y: x + y, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>])</span><br><span class="line"><span class="keyword">print</span> reduce(<span class="keyword">lambda</span> x, y: x + y, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>], <span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ol>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-    <div class="a2a_kit a2a_default_style">
-    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
-    <span class="a2a_divider"></span>
-    <a class="a2a_button_facebook"></a>
-    <a class="a2a_button_twitter"></a>
-    <a class="a2a_button_google_plus"></a>
-    <a class="a2a_button_pinterest"></a>
-    <a class="a2a_button_tumblr"></a>
-</div>
-<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
-<style>
-    .a2a_menu {
-        border-radius: 4px;
-    }
-    .a2a_menu a {
-        margin: 2px 0;
-        font-size: 14px;
-        line-height: 16px;
-        border-radius: 4px;
-        color: inherit !important;
-        font-family: 'Microsoft Yahei';
-    }
-    #a2apage_dropdown {
-        margin: 10px 0;
-    }
-    .a2a_mini_services {
-        padding: 10px;
-    }
-    a.a2a_i,
-    i.a2a_i {
-        width: 122px;
-        line-height: 16px;
-    }
-    a.a2a_i .a2a_svg,
-    a.a2a_more .a2a_svg {
-        width: 16px;
-        height: 16px;
-        line-height: 16px;
-        vertical-align: top;
-        background-size: 16px;
-    }
-    a.a2a_i {
-        border: none !important;
-    }
-    a.a2a_menu_show_more_less {
-        margin: 0;
-        padding: 10px 0;
-        line-height: 16px;
-    }
-    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
-    .a2a_mini_services{*+height:1%;}
-</style>
-
-</div>
-
-            
-    
-        <a href="http://bongbooski.github.io/2018/04/12/post18-python-lambda/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/12/post18-python-lambda/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <article id="post-post18-python-lambda_eng" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -769,7 +795,7 @@ ga('send', 'pageview');
 
 
 
-    <article id="post-post17_python-file,directory_eng" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-post18-python-lambda" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -777,7 +803,7 @@ ga('send', 'pageview');
                 
     
         <h1 itemprop="name">
-            <a class="article-title" href="/2018/04/11/post17_python-file,directory_eng/">python operating files</a>
+            <a class="article-title" href="/2018/04/12/post18-python-lambda/">python 람다(lambda) 함수</a>
         </h1>
     
 
@@ -786,8 +812,8 @@ ga('send', 'pageview');
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2018/04/11/post17_python-file,directory_eng/">
-            <time datetime="2018-04-11T06:38:47.000Z" itemprop="datePublished">2018-04-11</time>
+        <a href="/2018/04/12/post18-python-lambda/">
+            <time datetime="2018-04-12T05:19:37.000Z" itemprop="datePublished">2018-04-12</time>
         </a>
     </div>
 
@@ -807,89 +833,65 @@ ga('send', 'pageview');
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h1 id="Operating-files"><a href="#Operating-files" class="headerlink" title="Operating files"></a>Operating files</h1><h2 id="Opening-file-list"><a href="#Opening-file-list" class="headerlink" title="Opening file list"></a>Opening file list</h2><p>Using <code>os</code>module<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> os.listdir(<span class="string">'.'</span>) <span class="comment"># file list of present directory</span></span><br><span class="line"><span class="keyword">print</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> os.listdir(<span class="string">'../'</span>) <span class="comment"># file list of parent directory</span></span><br></pre></td></tr></table></figure></p>
-<hr>
-<h2 id="Recognizing-file’s-category"><a href="#Recognizing-file’s-category" class="headerlink" title="Recognizing file’s category"></a>Recognizing file’s category</h2><ul>
-<li><code>os.path</code>module recognizes and returns <code>True</code> or <code>False</code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">filetype</span><span class="params">(fpath)</span>:</span></span><br><span class="line">  <span class="keyword">print</span> fpath, <span class="string">":"</span>,</span><br><span class="line">  <span class="keyword">if</span> os.path.isfile(fpath):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'Regular file'</span></span><br><span class="line">  <span class="keyword">if</span> os.path.isdir(fpath):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'Directory'</span></span><br><span class="line">  <span class="keyword">if</span> os.path.islink(fpath):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'Symbolic link'</span></span><br><span class="line"></span><br><span class="line">flist = os.listdir(<span class="string">'.'</span>)</span><br><span class="line"><span class="keyword">for</span> fname <span class="keyword">in</span> flist:</span><br><span class="line">  filetype(fname)</span><br></pre></td></tr></table></figure>
+            <h1 id="람다-lambda-함수-정의"><a href="#람다-lambda-함수-정의" class="headerlink" title="람다(lambda)함수 정의"></a>람다(lambda)함수 정의</h1><ul>
+<li>일반적인 함수를 한 줄의 문으로 정의할 수 있는 새로운 함수 정의 리터럴</li>
+<li>일회성으로 활용할 함수 정의할 때 주로 사용</li>
+<li><code>:</code>뒤에는 식만 올 수 있음</li>
+<li>람다 함수도 하나의 객체임</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="keyword">lambda</span> x: x + <span class="number">1</span></span><br><span class="line"><span class="keyword">print</span> f(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>인수가 두 개 있는 람다 함수를 지니는 변수 지정 및 함수 호출</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">g = <span class="keyword">lambda</span> x,y: x + y</span><br><span class="line"><span class="keyword">print</span> g(<span class="number">1</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-<hr>
-<h2 id="Permission-about-file"><a href="#Permission-about-file" class="headerlink" title="Permission about file"></a>Permission about file</h2><ol>
-<li><p>Learning permission about file</p>
-<ul>
-<li><code>os.access(filepath, mode)</code><ul>
-<li>the values we can put for <code>mode</code><ul>
-<li><code>os.F_OK</code>: testing if the file exists</li>
-<li><code>os.R_OK</code>: testing about reading permission</li>
-<li><code>os.W_OK</code>: testing about writing permission</li>
-<li><code>os.X_OK</code>: testing about opening or executing permission</li>
-</ul>
+<li><p>기본 인수를 지니는 람다 함수 정의</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">g = <span class="keyword">lambda</span> x, inc=<span class="number">1</span>: x+inc</span><br><span class="line"><span class="keyword">print</span> g(<span class="number">10</span>) <span class="comment"># inc기본 인수 값으로 1사용</span></span><br><span class="line"><span class="keyword">print</span> g(<span class="number">10</span>, <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fileaccess</span><span class="params">(fpath)</span>:</span></span><br><span class="line">  <span class="keyword">print</span> fpath, <span class="string">':'</span>,</span><br><span class="line">  <span class="keyword">if</span> os.access(fpath, os.F_OK):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'Exists'</span>,</span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">  <span class="keyword">if</span> os.access(fpath, os.R_OK):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'R'</span>,</span><br><span class="line">  <span class="keyword">if</span> os.access(fpath, os.W_OK):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'W'</span>,</span><br><span class="line">  <span class="keyword">if</span> os.access(fpath, os.X_OK):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'X'</span>,</span><br><span class="line">  <span class="keyword">print</span></span><br><span class="line"></span><br><span class="line">flist = os.listdir(<span class="string">'.'</span>)</span><br><span class="line"><span class="keyword">for</span> fname <span class="keyword">in</span> flist:</span><br><span class="line">  fileaccess(fname)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Chagning the Permission for the file</p>
-<ul>
-<li><code>os.chmod(filepath, mode)</code></li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.chmod(<span class="string">'sample.txt'</span>, <span class="number">0777</span>)</span><br></pre></td></tr></table></figure>
+<li><p>가변 인수를 지니는 람다 함수 정의</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vargs = <span class="keyword">lambda</span> x, *args: args <span class="comment">#args가 리턴됨</span></span><br><span class="line"><span class="keyword">print</span> vars(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <hr>
-<h2 id="Manipulating-files"><a href="#Manipulating-files" class="headerlink" title="Manipulating files"></a>Manipulating files</h2><ol>
-<li><p>Chagning the name of the file</p>
+<h2 id="람다-함수-사용하기"><a href="#람다-함수-사용하기" class="headerlink" title="람다 함수 사용하기"></a>람다 함수 사용하기</h2><ul>
+<li><p>일반 함수 사용</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">(x)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> x*x + <span class="number">3</span>*x - <span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">(x)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> x*x*x</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">g</span><span class="params">(func)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> [func(x) <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">-10</span>, <span class="number">10</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> g(f1)</span><br><span class="line"><span class="keyword">print</span> g(f2)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>람다 함수 사용</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">g</span><span class="params">(func)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> [func(x) <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">-10</span>, <span class="number">10</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> g(<span class="keyword">lambda</span> x: x*x + <span class="number">3</span>*x - <span class="number">10</span>)</span><br><span class="line"><span class="keyword">print</span> g(<span class="keyword">lambda</span> x: x*x*x)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="람다-함수-활용"><a href="#람다-함수-활용" class="headerlink" title="람다 함수 활용"></a>람다 함수 활용</h2><ul>
+<li><code>map</code>, <code>filter</code>, <code>reduce</code> 내장 함수</li>
+</ul>
+<ol>
+<li><p><code>map</code> 내장 함수</p>
 <ul>
-<li><code>os.rename(old_filepath, new_filepath)</code></li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.rename(<span class="string">'t.txt'</span>, <span class="string">'t1.txt'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> os.access(<span class="string">'t.txt'</span>, os.F_OK) <span class="comment"># checking if the file exists</span></span><br><span class="line"><span class="keyword">print</span> os.access(<span class="string">'t1.txt'</span>, os.F_OK)</span><br></pre></td></tr></table></figure>
+<li><p><code>map(function, seq)</code>: <code>seq</code>의 원소를 차례로 돌면서 <code>function</code>에 적용한 결과를 <code>seq</code>의 자료형으로 반환</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(x)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> x * x</span><br><span class="line">X - [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">Y = map(f, X)</span><br><span class="line"><span class="keyword">print</span> Y</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>Moving the file</p>
+<li><p><code>map</code>과 람다 함수를 동시에 사용 - 가장 추천</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">X = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">print</span> map(<span class="keyword">lambda</span> x: x * x, X)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>filter</code> 내장 함수</p>
 <ul>
-<li><p><code>os.rename(oldfilepath, new_filepath)</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.rename(<span class="string">'t.txt'</span>, <span class="string">'example/t1.txt'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># checking if the file exists</span></span><br><span class="line"><span class="keyword">print</span> os.access(<span class="string">'example/t1.txt'</span>, os.F_OK)</span><br></pre></td></tr></table></figure>
+<li><code>seq</code>자료형이 지닌 각 원소값에 대해 <code>function</code>에 적용한 결과가 참인 원소값들만을 동일 시퀀스 자료형으로 반환<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> filter(<span class="keyword">lambda</span> x: x&gt;<span class="number">2</span>, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">45</span>])</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
-<li><p>Copying the file</p>
+<li><p><code>reduce</code> 내장 함수</p>
 <ul>
-<li><code>shutil</code>module is used</li>
-<li><code>shutil.copyfile(src_filepath, dest_filepath)</code></li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> shutil</span><br><span class="line">shutil.copyfile(<span class="string">'sample.txt'</span>, <span class="string">'sample_new.txt'</span>)</span><br><span class="line"><span class="keyword">print</span> os.access(<span class="string">'sample_new.txt'</span>, os.F_OK)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<hr>
-<h2 id="Manipulating-the-path-of-the-file"><a href="#Manipulating-the-path-of-the-file" class="headerlink" title="Manipulating the path of the file"></a>Manipulating the path of the file</h2><ol>
-<li><p>Changing relative path to absolute path</p>
-<ul>
-<li><code>os.path.abspath</code> - relative path<ul>
-<li>no matter the existance of the file, it changes the path to absolute path<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">print</span> os.path.abspath(<span class="string">'o.txt'</span>)</span><br></pre></td></tr></table></figure>
-</li>
+<li><code>reduce(function, seq[,initial])</code></li>
+<li><code>seq</code>자료형이 지닌 각 원소값에 대해 <code>function</code>함수를 적용하면서 하나의 값으로 매핑</li>
+<li>첫번째 인자(<code>function</code>)는 반드시 두 개의 인자(ex. x,y)를 받아야한다.<ul>
+<li><code>seq</code>의 각 원소값들이 차례로 <code>y</code>에 들어간다</li>
+<li>함수가 수행된 값은 차례대로 <code>x</code>에 들어간다</li>
 </ul>
 </li>
+<li>추가적으로 제공가능한 세번재 인자인 <code>initial</code>은 첫번째 단계에서 <code>x</code>에 할당할 초기값으로 사용된다<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> reduce(<span class="keyword">lambda</span> x, y: x + y, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>])</span><br><span class="line"><span class="keyword">print</span> reduce(<span class="keyword">lambda</span> x, y: x + y, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>], <span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-</li>
-<li><p>Checking if the file exists in the given path</p>
-<ul>
-<li><code>os.path.exists(filepath)</code></li>
-</ul>
-</li>
-</ol>
-<hr>
-<h2 id="Dividing-path-name"><a href="#Dividing-path-name" class="headerlink" title="Dividing path name"></a>Dividing path name</h2><ol>
-<li><p>Dividing path and file’s name</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="string">'/Users/booski/git/python/t.txt'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> os.path.basename(f) <span class="comment"># extracting only the file's name</span></span><br><span class="line"><span class="keyword">print</span> os.path.dirname(f) <span class="comment"># extracting the directory's name</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Dividing path and file’s name by one line - <code>basename</code> and <code>dirname</code> are made in a tuple</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> os.path.split(f)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Dividing drive’s name and file path in MS windows</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> os.path.splitdrive(f)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Dividing extension - <code>path</code> and <code>extension</code> are made in a tuple</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> os.path.splitext(f)</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 
@@ -957,7 +959,7 @@ ga('send', 'pageview');
 
             
     
-        <a href="http://bongbooski.github.io/2018/04/11/post17_python-file,directory_eng/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/11/post17_python-file,directory_eng/">Comments</a>
+        <a href="http://bongbooski.github.io/2018/04/12/post18-python-lambda/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/12/post18-python-lambda/">Comments</a>
     
 
         </footer>
@@ -1156,6 +1158,204 @@ ga('send', 'pageview');
             
     
         <a href="http://bongbooski.github.io/2018/04/11/post17_python-file,directory/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/11/post17_python-file,directory/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-post17_python-file,directory_eng" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/04/11/post17_python-file,directory_eng/">python operating files</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/04/11/post17_python-file,directory_eng/">
+            <time datetime="2018-04-11T06:38:47.000Z" itemprop="datePublished">2018-04-11</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="Operating-files"><a href="#Operating-files" class="headerlink" title="Operating files"></a>Operating files</h1><h2 id="Opening-file-list"><a href="#Opening-file-list" class="headerlink" title="Opening file list"></a>Opening file list</h2><p>Using <code>os</code>module<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> os.listdir(<span class="string">'.'</span>) <span class="comment"># file list of present directory</span></span><br><span class="line"><span class="keyword">print</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> os.listdir(<span class="string">'../'</span>) <span class="comment"># file list of parent directory</span></span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="Recognizing-file’s-category"><a href="#Recognizing-file’s-category" class="headerlink" title="Recognizing file’s category"></a>Recognizing file’s category</h2><ul>
+<li><code>os.path</code>module recognizes and returns <code>True</code> or <code>False</code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">filetype</span><span class="params">(fpath)</span>:</span></span><br><span class="line">  <span class="keyword">print</span> fpath, <span class="string">":"</span>,</span><br><span class="line">  <span class="keyword">if</span> os.path.isfile(fpath):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'Regular file'</span></span><br><span class="line">  <span class="keyword">if</span> os.path.isdir(fpath):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'Directory'</span></span><br><span class="line">  <span class="keyword">if</span> os.path.islink(fpath):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'Symbolic link'</span></span><br><span class="line"></span><br><span class="line">flist = os.listdir(<span class="string">'.'</span>)</span><br><span class="line"><span class="keyword">for</span> fname <span class="keyword">in</span> flist:</span><br><span class="line">  filetype(fname)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h2 id="Permission-about-file"><a href="#Permission-about-file" class="headerlink" title="Permission about file"></a>Permission about file</h2><ol>
+<li><p>Learning permission about file</p>
+<ul>
+<li><code>os.access(filepath, mode)</code><ul>
+<li>the values we can put for <code>mode</code><ul>
+<li><code>os.F_OK</code>: testing if the file exists</li>
+<li><code>os.R_OK</code>: testing about reading permission</li>
+<li><code>os.W_OK</code>: testing about writing permission</li>
+<li><code>os.X_OK</code>: testing about opening or executing permission</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fileaccess</span><span class="params">(fpath)</span>:</span></span><br><span class="line">  <span class="keyword">print</span> fpath, <span class="string">':'</span>,</span><br><span class="line">  <span class="keyword">if</span> os.access(fpath, os.F_OK):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'Exists'</span>,</span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">  <span class="keyword">if</span> os.access(fpath, os.R_OK):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'R'</span>,</span><br><span class="line">  <span class="keyword">if</span> os.access(fpath, os.W_OK):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'W'</span>,</span><br><span class="line">  <span class="keyword">if</span> os.access(fpath, os.X_OK):</span><br><span class="line">    <span class="keyword">print</span> <span class="string">'X'</span>,</span><br><span class="line">  <span class="keyword">print</span></span><br><span class="line"></span><br><span class="line">flist = os.listdir(<span class="string">'.'</span>)</span><br><span class="line"><span class="keyword">for</span> fname <span class="keyword">in</span> flist:</span><br><span class="line">  fileaccess(fname)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Chagning the Permission for the file</p>
+<ul>
+<li><code>os.chmod(filepath, mode)</code></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.chmod(<span class="string">'sample.txt'</span>, <span class="number">0777</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h2 id="Manipulating-files"><a href="#Manipulating-files" class="headerlink" title="Manipulating files"></a>Manipulating files</h2><ol>
+<li><p>Chagning the name of the file</p>
+<ul>
+<li><code>os.rename(old_filepath, new_filepath)</code></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.rename(<span class="string">'t.txt'</span>, <span class="string">'t1.txt'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> os.access(<span class="string">'t.txt'</span>, os.F_OK) <span class="comment"># checking if the file exists</span></span><br><span class="line"><span class="keyword">print</span> os.access(<span class="string">'t1.txt'</span>, os.F_OK)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Moving the file</p>
+<ul>
+<li><p><code>os.rename(oldfilepath, new_filepath)</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.rename(<span class="string">'t.txt'</span>, <span class="string">'example/t1.txt'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># checking if the file exists</span></span><br><span class="line"><span class="keyword">print</span> os.access(<span class="string">'example/t1.txt'</span>, os.F_OK)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Copying the file</p>
+<ul>
+<li><code>shutil</code>module is used</li>
+<li><code>shutil.copyfile(src_filepath, dest_filepath)</code></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> shutil</span><br><span class="line">shutil.copyfile(<span class="string">'sample.txt'</span>, <span class="string">'sample_new.txt'</span>)</span><br><span class="line"><span class="keyword">print</span> os.access(<span class="string">'sample_new.txt'</span>, os.F_OK)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h2 id="Manipulating-the-path-of-the-file"><a href="#Manipulating-the-path-of-the-file" class="headerlink" title="Manipulating the path of the file"></a>Manipulating the path of the file</h2><ol>
+<li><p>Changing relative path to absolute path</p>
+<ul>
+<li><code>os.path.abspath</code> - relative path<ul>
+<li>no matter the existance of the file, it changes the path to absolute path<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">print</span> os.path.abspath(<span class="string">'o.txt'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Checking if the file exists in the given path</p>
+<ul>
+<li><code>os.path.exists(filepath)</code></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="Dividing-path-name"><a href="#Dividing-path-name" class="headerlink" title="Dividing path name"></a>Dividing path name</h2><ol>
+<li><p>Dividing path and file’s name</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="string">'/Users/booski/git/python/t.txt'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> os.path.basename(f) <span class="comment"># extracting only the file's name</span></span><br><span class="line"><span class="keyword">print</span> os.path.dirname(f) <span class="comment"># extracting the directory's name</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Dividing path and file’s name by one line - <code>basename</code> and <code>dirname</code> are made in a tuple</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> os.path.split(f)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Dividing drive’s name and file path in MS windows</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> os.path.splitdrive(f)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Dividing extension - <code>path</code> and <code>extension</code> are made in a tuple</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> os.path.splitext(f)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://bongbooski.github.io/2018/04/11/post17_python-file,directory_eng/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/11/post17_python-file,directory_eng/">Comments</a>
     
 
         </footer>
@@ -1742,127 +1942,6 @@ ga('send', 'pageview');
 
 
 
-    <article id="post-post14_nodejs-bulletin-board_kr" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/03/07/post14_nodejs-bulletin-board_kr/">node.js 게시판 만들기 첫 포스팅</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/03/07/post14_nodejs-bulletin-board_kr/">
-            <time datetime="2018-03-07T09:09:17.000Z" itemprop="datePublished">2018-03-07</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/node-js/">node.js</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h1 id="시작"><a href="#시작" class="headerlink" title="시작"></a>시작</h1><p><code>node.js</code>의 전반적인 내용을 훑고 공부할 겸 게시판만들기 프로젝트를 시작했다.<br>이것저것 생각하며 만들다보니 영 속도도 안나고 삽질만 하고있지만..</p>
-<hr>
-<h1 id="삽질"><a href="#삽질" class="headerlink" title="삽질"></a>삽질</h1><p>어제까지 <code>route</code>와 <code>module</code>들을 하나하나 잡으며 고생했는데 알고보니<br><code>express framework</code>쓰니까 내가 이틀 고생해서 만든 것보다 더 깔끔하고 알찬 형태로<br>구성해 주더라..</p>
-<hr>
-<h1 id="local-mySQL"><a href="#local-mySQL" class="headerlink" title="local mySQL"></a>local mySQL</h1><p>로컬 <code>mySQL</code>로 <code>database</code>를 연동시키려고 했는데 웬걸, 실행이 안되고 있었다.<br>이전에 일하던 회사에서 익숙해진김에 <code>hediSQL</code>을 사용하는데 로그인이 안됐다.</p>
-<p>알고보니 내 컴퓨터의 <code>mySQL</code>서비스가 꺼져있던것!<br>내컴퓨터 - 왼쪽에 있는 <code>내 PC</code>를 우클릭하면 나오는 <code>관리</code> - <code>서비스 및 응용 프로그램</code> - <code>서비스</code> - <code>mySQL</code>또는 <code>mySQL56</code>(버전마다 다를듯)을 실행하고나서 다시 <code>hediSQL</code>접속 시도하니까 접속가능!</p>
-<hr>
-<h1 id="routing-문제"><a href="#routing-문제" class="headerlink" title="routing 문제"></a>routing 문제</h1><p>게시판 종류를 두 개로 하려다보니 각각의 CRUD용 페이지를 구성하는게 고민이다.<br>어떤 부분을 하나로 쓰고 어떤 부분을 나누는게 가장 효율적일지는 좀더 생각해봐야 할 것 같다.</p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-    <div class="a2a_kit a2a_default_style">
-    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
-    <span class="a2a_divider"></span>
-    <a class="a2a_button_facebook"></a>
-    <a class="a2a_button_twitter"></a>
-    <a class="a2a_button_google_plus"></a>
-    <a class="a2a_button_pinterest"></a>
-    <a class="a2a_button_tumblr"></a>
-</div>
-<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
-<style>
-    .a2a_menu {
-        border-radius: 4px;
-    }
-    .a2a_menu a {
-        margin: 2px 0;
-        font-size: 14px;
-        line-height: 16px;
-        border-radius: 4px;
-        color: inherit !important;
-        font-family: 'Microsoft Yahei';
-    }
-    #a2apage_dropdown {
-        margin: 10px 0;
-    }
-    .a2a_mini_services {
-        padding: 10px;
-    }
-    a.a2a_i,
-    i.a2a_i {
-        width: 122px;
-        line-height: 16px;
-    }
-    a.a2a_i .a2a_svg,
-    a.a2a_more .a2a_svg {
-        width: 16px;
-        height: 16px;
-        line-height: 16px;
-        vertical-align: top;
-        background-size: 16px;
-    }
-    a.a2a_i {
-        border: none !important;
-    }
-    a.a2a_menu_show_more_less {
-        margin: 0;
-        padding: 10px 0;
-        line-height: 16px;
-    }
-    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
-    .a2a_mini_services{*+height:1%;}
-</style>
-
-</div>
-
-            
-    
-        <a href="http://bongbooski.github.io/2018/03/07/post14_nodejs-bulletin-board_kr/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/03/07/post14_nodejs-bulletin-board_kr/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <nav id="page-nav">
         <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
@@ -1876,6 +1955,25 @@ ga('send', 'pageview');
         <h3 class="widget-title">recent</h3>
         <div class="widget">
             <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/08/23/post36-java-bean/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/08/23/post36-java-bean/" class="title">Java bean</a></p>
+                            <p class="item-date"><time datetime="2018-08-23T13:49:20.000Z" itemprop="datePublished">2018-08-23</time></p>
+                        </div>
+                    </li>
                 
                     <li>
                         
@@ -1953,25 +2051,6 @@ ga('send', 'pageview');
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/08/12/post31-jsp request,response/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/08/12/post31-jsp request,response/" class="title">JSP request, response object</a></p>
-                            <p class="item-date"><time datetime="2018-08-12T06:29:20.000Z" itemprop="datePublished">2018-08-12</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1983,7 +2062,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">13</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">13</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/02/">February 2018</a><span class="archive-list-count">13</span></li></ul>
         </div>
     </div>
 
@@ -1992,7 +2071,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSP/">JSP</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySql/">MySql</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Servlet/">Servlet</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/okky/">okky</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">14</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JSP/">JSP</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySql/">MySql</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Servlet/">Servlet</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node-js/">node.js</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/okky/">okky</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/python/">python</a><span class="tag-list-count">14</span></li></ul>
         </div>
     </div>
 
