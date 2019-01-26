@@ -215,206 +215,6 @@ ga('send', 'pageview');
 
             
             <section id="main">
-    <article id="post-post19-python-import_eng" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/04/15/post19-python-import_eng/">python module importing</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/04/15/post19-python-import_eng/">
-            <time datetime="2018-04-15T02:48:23.000Z" itemprop="datePublished">2018-04-15</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/python/">python</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h1 id="import-module’s-name"><a href="#import-module’s-name" class="headerlink" title="import module’s name"></a>import module’s name</h1><ol>
-<li><p>Basic form</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> mymath</span><br><span class="line"><span class="keyword">print</span> mymath.area(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>from module’s name import wanted object</p>
-<ul>
-<li>taking the wanted object from the module</li>
-<li>original object is lost if the name is using</li>
-<li>it can be used without the module’s name<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> mymath <span class="keyword">import</span> area, mypi</span><br><span class="line"><span class="keyword">print</span> area(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>from module’s name import *</p>
-<ul>
-<li>taking everything from the module without objects starting <code>__</code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> mymath <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">print</span> area(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>import module’s name as another module name</p>
-<ul>
-<li>another name is used for calling the module</li>
-<li>It is recommended when the original name is too long or already used<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> string <span class="keyword">as</span> chstr</span><br><span class="line"><span class="keyword">print</span> chstr</span><br><span class="line"><span class="keyword">print</span></span><br><span class="line"><span class="keyword">print</span> chstr.punctuation</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-<li><p>from module’s name import original name as another name[, name2 as another name2]</p>
-<ul>
-<li>another name is used for calling the module<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> string <span class="keyword">import</span> replace <span class="keyword">as</span> substitute[, upper <span class="keyword">as</span> up]</span><br><span class="line"><span class="keyword">print</span> substitute</span><br><span class="line"><span class="keyword">print</span> substitute(<span class="string">'ham chicken spam'</span>, <span class="string">'chicke'</span>, <span class="string">'egg'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> up</span><br><span class="line"><span class="keyword">print</span> up(<span class="string">'abc'</span>)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ol>
-<ul>
-<li><code>import</code> can be used anywhere(including in a function)</li>
-</ul>
-<hr>
-<h1 id="Compile-and-Load-time"><a href="#Compile-and-Load-time" class="headerlink" title="Compile and Load time"></a>Compile and Load time</h1><ul>
-<li><p><code>import mymath</code> works like this</p>
-<ol>
-<li>Finding <code>mymath.pyc</code></li>
-<li>If that doesn’t exist, Finding <code>mymath.py</code> and creating <code>mymath.pyc</code></li>
-<li>Loading <code>mymath.pyc</code> into memory and executing</li>
-</ol>
-</li>
-<li><p><code>.pyc</code> file</p>
-<ol>
-<li><p>Byte code file</p>
-<ul>
-<li>Kind of Object code not depending on machines or platform(OS)</li>
-<li>Python takes both executing ways of compile language and interpreter language</li>
-</ul>
-</li>
-<li><p>Deciding about creating new <code>.pyc</code>file</p>
-<ul>
-<li>When modificatin time of <code>.py</code> is more recently than modification time of <code>.pyc</code></li>
-</ul>
-</li>
-<li>Without <code>.py</code>file, <code>import</code> is available with <code>.pyc</code><ul>
-<li>It can be use as the way to hide the original code</li>
-</ul>
-</li>
-</ol>
-</li>
-</ul>
-<hr>
-<h1 id="Using-the-same-name-again"><a href="#Using-the-same-name-again" class="headerlink" title="Using the same name again"></a>Using the same name again</h1><ul>
-<li>Though the name’s target is changed, the module remains in memory, if we <code>import</code> the module, that takes the module existing in memory. So, we can use the thing we defined additionally in the module at the code</li>
-</ul>
-<hr>
-<h1 id="Executing-module-and-test-code"><a href="#Executing-module-and-test-code" class="headerlink" title="Executing module and test code"></a>Executing module and test code</h1><ul>
-<li><p><code>__name__</code></p>
-<ul>
-<li>It is usually used for knowing if this module is used as the root module or in other module by <code>import</code></li>
-<li>Being used as the root module -&gt; <code>__main__</code></li>
-<li><p>Being used in other module -&gt; that module’s name</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> __name__ <span class="comment"># __main__ print</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> prname</span><br><span class="line"><span class="keyword">print</span> prname.__name__ <span class="comment"># prname print</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>How to use</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(a, b)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> a + b</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"Python is becoming popular."</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">  <span class="keyword">print</span> add(<span class="number">1</span>, <span class="number">10</span>)</span><br><span class="line">  f()</span><br></pre></td></tr></table></figure>
-<ul>
-<li>Direct executing runs <code>if</code> statement</li>
-<li>Being used in other module ignores <code>if</code> statement</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-    <div class="a2a_kit a2a_default_style">
-    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
-    <span class="a2a_divider"></span>
-    <a class="a2a_button_facebook"></a>
-    <a class="a2a_button_twitter"></a>
-    <a class="a2a_button_google_plus"></a>
-    <a class="a2a_button_pinterest"></a>
-    <a class="a2a_button_tumblr"></a>
-</div>
-<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
-<style>
-    .a2a_menu {
-        border-radius: 4px;
-    }
-    .a2a_menu a {
-        margin: 2px 0;
-        font-size: 14px;
-        line-height: 16px;
-        border-radius: 4px;
-        color: inherit !important;
-        font-family: 'Microsoft Yahei';
-    }
-    #a2apage_dropdown {
-        margin: 10px 0;
-    }
-    .a2a_mini_services {
-        padding: 10px;
-    }
-    a.a2a_i,
-    i.a2a_i {
-        width: 122px;
-        line-height: 16px;
-    }
-    a.a2a_i .a2a_svg,
-    a.a2a_more .a2a_svg {
-        width: 16px;
-        height: 16px;
-        line-height: 16px;
-        vertical-align: top;
-        background-size: 16px;
-    }
-    a.a2a_i {
-        border: none !important;
-    }
-    a.a2a_menu_show_more_less {
-        margin: 0;
-        padding: 10px 0;
-        line-height: 16px;
-    }
-    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
-    .a2a_mini_services{*+height:1%;}
-</style>
-
-</div>
-
-            
-    
-        <a href="http://bongbooski.github.io/2018/04/15/post19-python-import_eng/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/15/post19-python-import_eng/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <article id="post-post19-python-import" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -615,7 +415,7 @@ ga('send', 'pageview');
 
 
 
-    <article id="post-post18-python-lambda" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-post19-python-import_eng" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -623,7 +423,7 @@ ga('send', 'pageview');
                 
     
         <h1 itemprop="name">
-            <a class="article-title" href="/2018/04/12/post18-python-lambda/">python 람다(lambda) 함수</a>
+            <a class="article-title" href="/2018/04/15/post19-python-import_eng/">python module importing</a>
         </h1>
     
 
@@ -632,8 +432,8 @@ ga('send', 'pageview');
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2018/04/12/post18-python-lambda/">
-            <time datetime="2018-04-12T05:19:37.000Z" itemprop="datePublished">2018-04-12</time>
+        <a href="/2018/04/15/post19-python-import_eng/">
+            <time datetime="2018-04-15T02:48:23.000Z" itemprop="datePublished">2018-04-15</time>
         </a>
     </div>
 
@@ -653,67 +453,93 @@ ga('send', 'pageview');
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h1 id="람다-lambda-함수-정의"><a href="#람다-lambda-함수-정의" class="headerlink" title="람다(lambda)함수 정의"></a>람다(lambda)함수 정의</h1><ul>
-<li>일반적인 함수를 한 줄의 문으로 정의할 수 있는 새로운 함수 정의 리터럴</li>
-<li>일회성으로 활용할 함수 정의할 때 주로 사용</li>
-<li><code>:</code>뒤에는 식만 올 수 있음</li>
-<li>람다 함수도 하나의 객체임</li>
+            <h1 id="import-module’s-name"><a href="#import-module’s-name" class="headerlink" title="import module’s name"></a>import module’s name</h1><ol>
+<li><p>Basic form</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> mymath</span><br><span class="line"><span class="keyword">print</span> mymath.area(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>from module’s name import wanted object</p>
+<ul>
+<li>taking the wanted object from the module</li>
+<li>original object is lost if the name is using</li>
+<li>it can be used without the module’s name<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> mymath <span class="keyword">import</span> area, mypi</span><br><span class="line"><span class="keyword">print</span> area(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="keyword">lambda</span> x: x + <span class="number">1</span></span><br><span class="line"><span class="keyword">print</span> f(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-<ol>
-<li><p>인수가 두 개 있는 람다 함수를 지니는 변수 지정 및 함수 호출</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">g = <span class="keyword">lambda</span> x,y: x + y</span><br><span class="line"><span class="keyword">print</span> g(<span class="number">1</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>기본 인수를 지니는 람다 함수 정의</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">g = <span class="keyword">lambda</span> x, inc=<span class="number">1</span>: x+inc</span><br><span class="line"><span class="keyword">print</span> g(<span class="number">10</span>) <span class="comment"># inc기본 인수 값으로 1사용</span></span><br><span class="line"><span class="keyword">print</span> g(<span class="number">10</span>, <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+<li><p>from module’s name import *</p>
+<ul>
+<li>taking everything from the module without objects starting <code>__</code><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> mymath <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">print</span> area(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>가변 인수를 지니는 람다 함수 정의</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vargs = <span class="keyword">lambda</span> x, *args: args <span class="comment">#args가 리턴됨</span></span><br><span class="line"><span class="keyword">print</span> vars(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+</ul>
+</li>
+<li><p>import module’s name as another module name</p>
+<ul>
+<li>another name is used for calling the module</li>
+<li>It is recommended when the original name is too long or already used<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> string <span class="keyword">as</span> chstr</span><br><span class="line"><span class="keyword">print</span> chstr</span><br><span class="line"><span class="keyword">print</span></span><br><span class="line"><span class="keyword">print</span> chstr.punctuation</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>from module’s name import original name as another name[, name2 as another name2]</p>
+<ul>
+<li>another name is used for calling the module<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> string <span class="keyword">import</span> replace <span class="keyword">as</span> substitute[, upper <span class="keyword">as</span> up]</span><br><span class="line"><span class="keyword">print</span> substitute</span><br><span class="line"><span class="keyword">print</span> substitute(<span class="string">'ham chicken spam'</span>, <span class="string">'chicke'</span>, <span class="string">'egg'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> up</span><br><span class="line"><span class="keyword">print</span> up(<span class="string">'abc'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 </li>
 </ol>
+<ul>
+<li><code>import</code> can be used anywhere(including in a function)</li>
+</ul>
 <hr>
-<h2 id="람다-함수-사용하기"><a href="#람다-함수-사용하기" class="headerlink" title="람다 함수 사용하기"></a>람다 함수 사용하기</h2><ul>
-<li><p>일반 함수 사용</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">(x)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> x*x + <span class="number">3</span>*x - <span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">(x)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> x*x*x</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">g</span><span class="params">(func)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> [func(x) <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">-10</span>, <span class="number">10</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> g(f1)</span><br><span class="line"><span class="keyword">print</span> g(f2)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>람다 함수 사용</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">g</span><span class="params">(func)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> [func(x) <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">-10</span>, <span class="number">10</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> g(<span class="keyword">lambda</span> x: x*x + <span class="number">3</span>*x - <span class="number">10</span>)</span><br><span class="line"><span class="keyword">print</span> g(<span class="keyword">lambda</span> x: x*x*x)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="람다-함수-활용"><a href="#람다-함수-활용" class="headerlink" title="람다 함수 활용"></a>람다 함수 활용</h2><ul>
-<li><code>map</code>, <code>filter</code>, <code>reduce</code> 내장 함수</li>
-</ul>
+<h1 id="Compile-and-Load-time"><a href="#Compile-and-Load-time" class="headerlink" title="Compile and Load time"></a>Compile and Load time</h1><ul>
+<li><p><code>import mymath</code> works like this</p>
 <ol>
-<li><p><code>map</code> 내장 함수</p>
+<li>Finding <code>mymath.pyc</code></li>
+<li>If that doesn’t exist, Finding <code>mymath.py</code> and creating <code>mymath.pyc</code></li>
+<li>Loading <code>mymath.pyc</code> into memory and executing</li>
+</ol>
+</li>
+<li><p><code>.pyc</code> file</p>
+<ol>
+<li><p>Byte code file</p>
 <ul>
-<li><p><code>map(function, seq)</code>: <code>seq</code>의 원소를 차례로 돌면서 <code>function</code>에 적용한 결과를 <code>seq</code>의 자료형으로 반환</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(x)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> x * x</span><br><span class="line">X - [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">Y = map(f, X)</span><br><span class="line"><span class="keyword">print</span> Y</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>map</code>과 람다 함수를 동시에 사용 - 가장 추천</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">X = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">print</span> map(<span class="keyword">lambda</span> x: x * x, X)</span><br></pre></td></tr></table></figure>
-</li>
+<li>Kind of Object code not depending on machines or platform(OS)</li>
+<li>Python takes both executing ways of compile language and interpreter language</li>
 </ul>
 </li>
-<li><p><code>filter</code> 내장 함수</p>
+<li><p>Deciding about creating new <code>.pyc</code>file</p>
 <ul>
-<li><code>seq</code>자료형이 지닌 각 원소값에 대해 <code>function</code>에 적용한 결과가 참인 원소값들만을 동일 시퀀스 자료형으로 반환<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> filter(<span class="keyword">lambda</span> x: x&gt;<span class="number">2</span>, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">45</span>])</span><br></pre></td></tr></table></figure>
-</li>
+<li>When modificatin time of <code>.py</code> is more recently than modification time of <code>.pyc</code></li>
 </ul>
 </li>
-<li><p><code>reduce</code> 내장 함수</p>
-<ul>
-<li><code>reduce(function, seq[,initial])</code></li>
-<li><code>seq</code>자료형이 지닌 각 원소값에 대해 <code>function</code>함수를 적용하면서 하나의 값으로 매핑</li>
-<li>첫번째 인자(<code>function</code>)는 반드시 두 개의 인자(ex. x,y)를 받아야한다.<ul>
-<li><code>seq</code>의 각 원소값들이 차례로 <code>y</code>에 들어간다</li>
-<li>함수가 수행된 값은 차례대로 <code>x</code>에 들어간다</li>
-</ul>
-</li>
-<li>추가적으로 제공가능한 세번재 인자인 <code>initial</code>은 첫번째 단계에서 <code>x</code>에 할당할 초기값으로 사용된다<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> reduce(<span class="keyword">lambda</span> x, y: x + y, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>])</span><br><span class="line"><span class="keyword">print</span> reduce(<span class="keyword">lambda</span> x, y: x + y, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>], <span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
-</li>
+<li>Without <code>.py</code>file, <code>import</code> is available with <code>.pyc</code><ul>
+<li>It can be use as the way to hide the original code</li>
 </ul>
 </li>
 </ol>
+</li>
+</ul>
+<hr>
+<h1 id="Using-the-same-name-again"><a href="#Using-the-same-name-again" class="headerlink" title="Using the same name again"></a>Using the same name again</h1><ul>
+<li>Though the name’s target is changed, the module remains in memory, if we <code>import</code> the module, that takes the module existing in memory. So, we can use the thing we defined additionally in the module at the code</li>
+</ul>
+<hr>
+<h1 id="Executing-module-and-test-code"><a href="#Executing-module-and-test-code" class="headerlink" title="Executing module and test code"></a>Executing module and test code</h1><ul>
+<li><p><code>__name__</code></p>
+<ul>
+<li>It is usually used for knowing if this module is used as the root module or in other module by <code>import</code></li>
+<li>Being used as the root module -&gt; <code>__main__</code></li>
+<li><p>Being used in other module -&gt; that module’s name</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> __name__ <span class="comment"># __main__ print</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> prname</span><br><span class="line"><span class="keyword">print</span> prname.__name__ <span class="comment"># prname print</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>How to use</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(a, b)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> a + b</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"Python is becoming popular."</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">  <span class="keyword">print</span> add(<span class="number">1</span>, <span class="number">10</span>)</span><br><span class="line">  f()</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Direct executing runs <code>if</code> statement</li>
+<li>Being used in other module ignores <code>if</code> statement</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
         
         </div>
@@ -779,7 +605,7 @@ ga('send', 'pageview');
 
             
     
-        <a href="http://bongbooski.github.io/2018/04/12/post18-python-lambda/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/12/post18-python-lambda/">Comments</a>
+        <a href="http://bongbooski.github.io/2018/04/15/post19-python-import_eng/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/15/post19-python-import_eng/">Comments</a>
     
 
         </footer>
@@ -954,6 +780,180 @@ ga('send', 'pageview');
             
     
         <a href="http://bongbooski.github.io/2018/04/12/post18-python-lambda_eng/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/12/post18-python-lambda_eng/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-post18-python-lambda" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/04/12/post18-python-lambda/">python 람다(lambda) 함수</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/04/12/post18-python-lambda/">
+            <time datetime="2018-04-12T05:19:37.000Z" itemprop="datePublished">2018-04-12</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="람다-lambda-함수-정의"><a href="#람다-lambda-함수-정의" class="headerlink" title="람다(lambda)함수 정의"></a>람다(lambda)함수 정의</h1><ul>
+<li>일반적인 함수를 한 줄의 문으로 정의할 수 있는 새로운 함수 정의 리터럴</li>
+<li>일회성으로 활용할 함수 정의할 때 주로 사용</li>
+<li><code>:</code>뒤에는 식만 올 수 있음</li>
+<li>람다 함수도 하나의 객체임</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">f = <span class="keyword">lambda</span> x: x + <span class="number">1</span></span><br><span class="line"><span class="keyword">print</span> f(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>인수가 두 개 있는 람다 함수를 지니는 변수 지정 및 함수 호출</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">g = <span class="keyword">lambda</span> x,y: x + y</span><br><span class="line"><span class="keyword">print</span> g(<span class="number">1</span>,<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>기본 인수를 지니는 람다 함수 정의</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">g = <span class="keyword">lambda</span> x, inc=<span class="number">1</span>: x+inc</span><br><span class="line"><span class="keyword">print</span> g(<span class="number">10</span>) <span class="comment"># inc기본 인수 값으로 1사용</span></span><br><span class="line"><span class="keyword">print</span> g(<span class="number">10</span>, <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>가변 인수를 지니는 람다 함수 정의</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vargs = <span class="keyword">lambda</span> x, *args: args <span class="comment">#args가 리턴됨</span></span><br><span class="line"><span class="keyword">print</span> vars(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h2 id="람다-함수-사용하기"><a href="#람다-함수-사용하기" class="headerlink" title="람다 함수 사용하기"></a>람다 함수 사용하기</h2><ul>
+<li><p>일반 함수 사용</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f1</span><span class="params">(x)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> x*x + <span class="number">3</span>*x - <span class="number">10</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f2</span><span class="params">(x)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> x*x*x</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">g</span><span class="params">(func)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> [func(x) <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">-10</span>, <span class="number">10</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> g(f1)</span><br><span class="line"><span class="keyword">print</span> g(f2)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>람다 함수 사용</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">g</span><span class="params">(func)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> [func(x) <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">-10</span>, <span class="number">10</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> g(<span class="keyword">lambda</span> x: x*x + <span class="number">3</span>*x - <span class="number">10</span>)</span><br><span class="line"><span class="keyword">print</span> g(<span class="keyword">lambda</span> x: x*x*x)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="람다-함수-활용"><a href="#람다-함수-활용" class="headerlink" title="람다 함수 활용"></a>람다 함수 활용</h2><ul>
+<li><code>map</code>, <code>filter</code>, <code>reduce</code> 내장 함수</li>
+</ul>
+<ol>
+<li><p><code>map</code> 내장 함수</p>
+<ul>
+<li><p><code>map(function, seq)</code>: <code>seq</code>의 원소를 차례로 돌면서 <code>function</code>에 적용한 결과를 <code>seq</code>의 자료형으로 반환</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">(x)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> x * x</span><br><span class="line">X - [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">Y = map(f, X)</span><br><span class="line"><span class="keyword">print</span> Y</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>map</code>과 람다 함수를 동시에 사용 - 가장 추천</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">X = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">print</span> map(<span class="keyword">lambda</span> x: x * x, X)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>filter</code> 내장 함수</p>
+<ul>
+<li><code>seq</code>자료형이 지닌 각 원소값에 대해 <code>function</code>에 적용한 결과가 참인 원소값들만을 동일 시퀀스 자료형으로 반환<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> filter(<span class="keyword">lambda</span> x: x&gt;<span class="number">2</span>, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">45</span>])</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p><code>reduce</code> 내장 함수</p>
+<ul>
+<li><code>reduce(function, seq[,initial])</code></li>
+<li><code>seq</code>자료형이 지닌 각 원소값에 대해 <code>function</code>함수를 적용하면서 하나의 값으로 매핑</li>
+<li>첫번째 인자(<code>function</code>)는 반드시 두 개의 인자(ex. x,y)를 받아야한다.<ul>
+<li><code>seq</code>의 각 원소값들이 차례로 <code>y</code>에 들어간다</li>
+<li>함수가 수행된 값은 차례대로 <code>x</code>에 들어간다</li>
+</ul>
+</li>
+<li>추가적으로 제공가능한 세번재 인자인 <code>initial</code>은 첫번째 단계에서 <code>x</code>에 할당할 초기값으로 사용된다<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> reduce(<span class="keyword">lambda</span> x, y: x + y, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>])</span><br><span class="line"><span class="keyword">print</span> reduce(<span class="keyword">lambda</span> x, y: x + y, [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>], <span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://bongbooski.github.io/2018/04/12/post18-python-lambda/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/12/post18-python-lambda/">Comments</a>
     
 
         </footer>
