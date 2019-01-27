@@ -5,9 +5,9 @@
   <subtitle>A line of code, A piece of Beauty</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://bongbooski.github.io/"/>
+  <link href="https://bongbooski.github.io/"/>
   <updated>2018-08-23T14:13:35.474Z</updated>
-  <id>http://bongbooski.github.io/</id>
+  <id>https://bongbooski.github.io/</id>
   
   <author>
     <name>Booski</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Java bean</title>
-    <link href="http://bongbooski.github.io/2018/08/23/post36-java-bean/"/>
-    <id>http://bongbooski.github.io/2018/08/23/post36-java-bean/</id>
+    <link href="https://bongbooski.github.io/2018/08/23/post36-java-bean/"/>
+    <id>https://bongbooski.github.io/2018/08/23/post36-java-bean/</id>
     <published>2018-08-23T13:49:20.000Z</published>
     <updated>2018-08-23T14:13:35.474Z</updated>
     
@@ -37,14 +37,14 @@
     </summary>
     
     
-      <category term="JSP" scheme="http://bongbooski.github.io/tags/JSP/"/>
+      <category term="JSP" scheme="https://bongbooski.github.io/tags/JSP/"/>
     
   </entry>
   
   <entry>
     <title>Exception</title>
-    <link href="http://bongbooski.github.io/2018/08/20/post35-exception/"/>
-    <id>http://bongbooski.github.io/2018/08/20/post35-exception/</id>
+    <link href="https://bongbooski.github.io/2018/08/20/post35-exception/"/>
+    <id>https://bongbooski.github.io/2018/08/20/post35-exception/</id>
     <published>2018-08-20T12:45:20.000Z</published>
     <updated>2018-08-20T13:03:29.000Z</updated>
     
@@ -63,14 +63,14 @@
     </summary>
     
     
-      <category term="JSP" scheme="http://bongbooski.github.io/tags/JSP/"/>
+      <category term="JSP" scheme="https://bongbooski.github.io/tags/JSP/"/>
     
   </entry>
   
   <entry>
     <title>Session</title>
-    <link href="http://bongbooski.github.io/2018/08/16/post34-Session/"/>
-    <id>http://bongbooski.github.io/2018/08/16/post34-Session/</id>
+    <link href="https://bongbooski.github.io/2018/08/16/post34-Session/"/>
+    <id>https://bongbooski.github.io/2018/08/16/post34-Session/</id>
     <published>2018-08-16T12:45:20.000Z</published>
     <updated>2018-08-16T13:29:02.106Z</updated>
     
@@ -87,14 +87,14 @@
     </summary>
     
     
-      <category term="JSP" scheme="http://bongbooski.github.io/tags/JSP/"/>
+      <category term="JSP" scheme="https://bongbooski.github.io/tags/JSP/"/>
     
   </entry>
   
   <entry>
     <title>Cookie</title>
-    <link href="http://bongbooski.github.io/2018/08/15/post33-Cookie/"/>
-    <id>http://bongbooski.github.io/2018/08/15/post33-Cookie/</id>
+    <link href="https://bongbooski.github.io/2018/08/15/post33-Cookie/"/>
+    <id>https://bongbooski.github.io/2018/08/15/post33-Cookie/</id>
     <published>2018-08-15T13:03:20.000Z</published>
     <updated>2018-08-15T13:32:51.075Z</updated>
     
@@ -112,14 +112,14 @@
     </summary>
     
     
-      <category term="JSP" scheme="http://bongbooski.github.io/tags/JSP/"/>
+      <category term="JSP" scheme="https://bongbooski.github.io/tags/JSP/"/>
     
   </entry>
   
   <entry>
     <title>JSP action tag</title>
-    <link href="http://bongbooski.github.io/2018/08/13/post32-jsp%20actionTag/"/>
-    <id>http://bongbooski.github.io/2018/08/13/post32-jsp actionTag/</id>
+    <link href="https://bongbooski.github.io/2018/08/13/post32-jsp%20actionTag/"/>
+    <id>https://bongbooski.github.io/2018/08/13/post32-jsp actionTag/</id>
     <published>2018-08-13T13:22:20.000Z</published>
     <updated>2018-08-13T13:31:32.428Z</updated>
     
@@ -136,14 +136,14 @@
     </summary>
     
     
-      <category term="JSP" scheme="http://bongbooski.github.io/tags/JSP/"/>
+      <category term="JSP" scheme="https://bongbooski.github.io/tags/JSP/"/>
     
   </entry>
   
   <entry>
     <title>JSP request, response object</title>
-    <link href="http://bongbooski.github.io/2018/08/12/post31-jsp%20request,response/"/>
-    <id>http://bongbooski.github.io/2018/08/12/post31-jsp request,response/</id>
+    <link href="https://bongbooski.github.io/2018/08/12/post31-jsp%20request,response/"/>
+    <id>https://bongbooski.github.io/2018/08/12/post31-jsp request,response/</id>
     <published>2018-08-12T06:29:20.000Z</published>
     <updated>2018-08-12T06:49:00.686Z</updated>
     
@@ -160,14 +160,14 @@
     </summary>
     
     
-      <category term="JSP" scheme="http://bongbooski.github.io/tags/JSP/"/>
+      <category term="JSP" scheme="https://bongbooski.github.io/tags/JSP/"/>
     
   </entry>
   
   <entry>
     <title>JSP Scriptlet, declaration, expression, 지시자, comment</title>
-    <link href="http://bongbooski.github.io/2018/08/12/post30-jsp%20expression/"/>
-    <id>http://bongbooski.github.io/2018/08/12/post30-jsp expression/</id>
+    <link href="https://bongbooski.github.io/2018/08/12/post30-jsp%20expression/"/>
+    <id>https://bongbooski.github.io/2018/08/12/post30-jsp expression/</id>
     <published>2018-08-12T05:48:20.000Z</published>
     <updated>2018-08-12T06:28:34.473Z</updated>
     
@@ -183,14 +183,14 @@
     </summary>
     
     
-      <category term="JSP" scheme="http://bongbooski.github.io/tags/JSP/"/>
+      <category term="JSP" scheme="https://bongbooski.github.io/tags/JSP/"/>
     
   </entry>
   
   <entry>
     <title>JSP tags, way to run, internal object</title>
-    <link href="http://bongbooski.github.io/2018/08/12/post29-jsp%20tag/"/>
-    <id>http://bongbooski.github.io/2018/08/12/post29-jsp tag/</id>
+    <link href="https://bongbooski.github.io/2018/08/12/post29-jsp%20tag/"/>
+    <id>https://bongbooski.github.io/2018/08/12/post29-jsp tag/</id>
     <published>2018-08-12T04:26:20.000Z</published>
     <updated>2018-08-12T06:28:28.424Z</updated>
     
@@ -206,14 +206,14 @@
     </summary>
     
     
-      <category term="JSP" scheme="http://bongbooski.github.io/tags/JSP/"/>
+      <category term="JSP" scheme="https://bongbooski.github.io/tags/JSP/"/>
     
   </entry>
   
   <entry>
     <title>ServletConfig, ServletContext, ServletContextListener</title>
-    <link href="http://bongbooski.github.io/2018/08/12/post28-servlet05/"/>
-    <id>http://bongbooski.github.io/2018/08/12/post28-servlet05/</id>
+    <link href="https://bongbooski.github.io/2018/08/12/post28-servlet05/"/>
+    <id>https://bongbooski.github.io/2018/08/12/post28-servlet05/</id>
     <published>2018-08-12T03:26:20.000Z</published>
     <updated>2018-08-12T05:07:25.289Z</updated>
     
@@ -231,14 +231,14 @@
     </summary>
     
     
-      <category term="Servlet" scheme="http://bongbooski.github.io/tags/Servlet/"/>
+      <category term="Servlet" scheme="https://bongbooski.github.io/tags/Servlet/"/>
     
   </entry>
   
   <entry>
     <title>Servlet parameter, korean handling</title>
-    <link href="http://bongbooski.github.io/2018/08/12/post27-servlet04/"/>
-    <id>http://bongbooski.github.io/2018/08/12/post27-servlet04/</id>
+    <link href="https://bongbooski.github.io/2018/08/12/post27-servlet04/"/>
+    <id>https://bongbooski.github.io/2018/08/12/post27-servlet04/</id>
     <published>2018-08-12T03:26:20.000Z</published>
     <updated>2018-08-12T04:05:09.528Z</updated>
     
@@ -255,14 +255,14 @@
     </summary>
     
     
-      <category term="Servlet" scheme="http://bongbooski.github.io/tags/Servlet/"/>
+      <category term="Servlet" scheme="https://bongbooski.github.io/tags/Servlet/"/>
     
   </entry>
   
   <entry>
     <title>Servlet&#39;s way to run</title>
-    <link href="http://bongbooski.github.io/2018/08/11/post26-servlet03/"/>
-    <id>http://bongbooski.github.io/2018/08/11/post26-servlet03/</id>
+    <link href="https://bongbooski.github.io/2018/08/11/post26-servlet03/"/>
+    <id>https://bongbooski.github.io/2018/08/11/post26-servlet03/</id>
     <published>2018-08-11T08:24:20.000Z</published>
     <updated>2018-08-11T13:45:31.234Z</updated>
     
@@ -279,14 +279,14 @@
     </summary>
     
     
-      <category term="Servlet" scheme="http://bongbooski.github.io/tags/Servlet/"/>
+      <category term="Servlet" scheme="https://bongbooski.github.io/tags/Servlet/"/>
     
   </entry>
   
   <entry>
     <title>Servlet start</title>
-    <link href="http://bongbooski.github.io/2018/08/11/post25-servlet02/"/>
-    <id>http://bongbooski.github.io/2018/08/11/post25-servlet02/</id>
+    <link href="https://bongbooski.github.io/2018/08/11/post25-servlet02/"/>
+    <id>https://bongbooski.github.io/2018/08/11/post25-servlet02/</id>
     <published>2018-08-11T04:34:20.000Z</published>
     <updated>2018-08-11T05:05:57.818Z</updated>
     
@@ -304,14 +304,14 @@
     </summary>
     
     
-      <category term="Servlet" scheme="http://bongbooski.github.io/tags/Servlet/"/>
+      <category term="Servlet" scheme="https://bongbooski.github.io/tags/Servlet/"/>
     
   </entry>
   
   <entry>
     <title>Servlet</title>
-    <link href="http://bongbooski.github.io/2018/08/11/post24-servlet01/"/>
-    <id>http://bongbooski.github.io/2018/08/11/post24-servlet01/</id>
+    <link href="https://bongbooski.github.io/2018/08/11/post24-servlet01/"/>
+    <id>https://bongbooski.github.io/2018/08/11/post24-servlet01/</id>
     <published>2018-08-11T03:38:20.000Z</published>
     <updated>2018-08-11T04:32:45.999Z</updated>
     
@@ -329,14 +329,14 @@
     </summary>
     
     
-      <category term="Servlet" scheme="http://bongbooski.github.io/tags/Servlet/"/>
+      <category term="Servlet" scheme="https://bongbooski.github.io/tags/Servlet/"/>
     
   </entry>
   
   <entry>
     <title>JSP</title>
-    <link href="http://bongbooski.github.io/2018/08/09/post23-jsp1/"/>
-    <id>http://bongbooski.github.io/2018/08/09/post23-jsp1/</id>
+    <link href="https://bongbooski.github.io/2018/08/09/post23-jsp1/"/>
+    <id>https://bongbooski.github.io/2018/08/09/post23-jsp1/</id>
     <published>2018-08-09T12:19:20.000Z</published>
     <updated>2018-08-11T03:39:39.056Z</updated>
     
@@ -355,37 +355,14 @@
     </summary>
     
     
-      <category term="JSP" scheme="http://bongbooski.github.io/tags/JSP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python Exception Raise</title>
-    <link href="http://bongbooski.github.io/2018/04/17/post22-python-exception-raise_eng/"/>
-    <id>http://bongbooski.github.io/2018/04/17/post22-python-exception-raise_eng/</id>
-    <published>2018-04-17T05:47:23.000Z</published>
-    <updated>2018-04-17T13:45:09.869Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Exception-raise"><a href="#Exception-raise" class="headerlink" title="Exception raise"></a>Exception raise</h1><h2 id="Occuring-exception-by-raise"><a href="#Occuring-exception-by-raise" class="headerlink" title="Occuring exception by raise"></a>Occuring exception by <code>raise</code></h2><ul><li><code>raise</code>keyword can make an exception in specific situation</li><li><p><code>IndexError</code> occurs when <code>__getitem__</code>method(which implements indexing when sequance type class is made) goes out of the index range</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SquareSeq</span>:</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, n)</span>:</span></span><br><span class="line">    self.n = n</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span><span class="params">(self,k)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> k &gt;= self.n <span class="keyword">or</span> k &lt; <span class="number">0</span>:</span><br><span class="line">      <span class="keyword">raise</span> IndexError <span class="comment"># out of index range, IndexError occurs</span></span><br><span class="line">    <span class="keyword">return</span> k * k</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__len_</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> self.n</span><br><span class="line"></span><br><span class="line">s = SquareSeq(<span class="number">10</span>)</span><br><span class="line"><span class="keyword">print</span> s[<span class="number">2</span>], s[<span class="number">4</span>]</span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> s: <span class="comment"># repeating until IndexError occurs</span></span><br><span class="line">   <span class="keyword">print</span> x,</span><br><span class="line"><span class="keyword">print</span> s[<span class="number">20</span>] <span class="comment"># out of the index range</span></span><br></pre></td></tr></table></figure></li></ul><hr><h2 id="Customized-exception-class"><a href="#Customized-exception-class" class="headerlink" title="Customized exception class"></a>Customized exception class</h2><ul><li>Generally It is implemented by extending <code>Exception</code>class<br>(Other exceptions are unusual)</li><li>How to raise the exception<ul><li>Same to built-in exception. Using <code>raise [class instance]</code></li></ul></li><li>How to catch the exception from Customized exception class<ul><li>Using the class’ name like <code>except [class name]</code></li></ul></li><li><p>In the example below, <code>except Big</code> catches <code>Big</code>and <code>Small</code> exception<br>-&gt; Because <code>Small</code>is <code>Big</code>‘s sub-class’</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Big</span><span class="params">(Exception)</span>:</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Small</span><span class="params">(Big)</span>:</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dosomething1</span><span class="params">()</span>:</span></span><br><span class="line">  x = Big()</span><br><span class="line">  <span class="keyword">raise</span> x <span class="comment"># x is exception object, it can use raise</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dosomething2</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">raise</span> Small()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> (dosomething1, dosomething2):</span><br><span class="line">  <span class="keyword">try</span>:</span><br><span class="line">    f()</span><br><span class="line">  <span class="keyword">except</span> Big:</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"Exception occurs!"</span></span><br></pre></td></tr></table></figure></li></ul><hr><h2 id="Passing-exception"><a href="#Passing-exception" class="headerlink" title="Passing exception"></a>Passing exception</h2><ul><li><p>After <code>raise</code>keyword, with exception, additional message can follow</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">raise</span> Exception, <span class="string">'message!!!'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  f()</span><br><span class="line"><span class="keyword">except</span> Exception, a:</span><br><span class="line">  <span class="keyword">print</span> a</span><br></pre></td></tr></table></figure></li><li><p>When <code>except</code> keyword is used, exception message in initializer can be taken as 2nd parameter.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10</span></span><br><span class="line">b = <span class="number">0</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  <span class="keyword">if</span> b == <span class="number">0</span>:</span><br><span class="line">    <span class="keyword">raise</span> ArithmeticError(<span class="string">'you are dividing by 0'</span>)</span><br><span class="line">    a/b</span><br><span class="line"><span class="keyword">except</span> ArithmeticError, v:</span><br><span class="line">  <span class="keyword">print</span> v</span><br></pre></td></tr></table></figure></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h1 id=&quot;Exception-raise&quot;&gt;&lt;a href=&quot;#Exception-raise&quot; class=&quot;headerlink&quot; title=&quot;Exception raise&quot;&gt;&lt;/a&gt;Exception raise&lt;/h1&gt;&lt;h2 id=&quot;Occuring-exce
-      
-    
-    </summary>
-    
-    
-      <category term="python" scheme="http://bongbooski.github.io/tags/python/"/>
+      <category term="JSP" scheme="https://bongbooski.github.io/tags/JSP/"/>
     
   </entry>
   
   <entry>
     <title>python 예외 발생시키기</title>
-    <link href="http://bongbooski.github.io/2018/04/17/post22-python-exception-raise/"/>
-    <id>http://bongbooski.github.io/2018/04/17/post22-python-exception-raise/</id>
+    <link href="https://bongbooski.github.io/2018/04/17/post22-python-exception-raise/"/>
+    <id>https://bongbooski.github.io/2018/04/17/post22-python-exception-raise/</id>
     <published>2018-04-17T05:47:23.000Z</published>
     <updated>2018-04-17T13:44:56.436Z</updated>
     
@@ -401,38 +378,37 @@
     </summary>
     
     
-      <category term="python" scheme="http://bongbooski.github.io/tags/python/"/>
+      <category term="python" scheme="https://bongbooski.github.io/tags/python/"/>
     
   </entry>
   
   <entry>
-    <title>python 예외처리</title>
-    <link href="http://bongbooski.github.io/2018/04/17/post21-python-exception-handling/"/>
-    <id>http://bongbooski.github.io/2018/04/17/post21-python-exception-handling/</id>
-    <published>2018-04-17T00:47:23.000Z</published>
-    <updated>2018-04-17T13:45:45.593Z</updated>
+    <title>python Exception Raise</title>
+    <link href="https://bongbooski.github.io/2018/04/17/post22-python-exception-raise_eng/"/>
+    <id>https://bongbooski.github.io/2018/04/17/post22-python-exception-raise_eng/</id>
+    <published>2018-04-17T05:47:23.000Z</published>
+    <updated>2018-04-17T13:45:09.869Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Exception-Handling"><a href="#Exception-Handling" class="headerlink" title="Exception Handling"></a>Exception Handling</h1><ul><li><p>구문 에러(Syntax Error)</p><ul><li>문법적 에러</li><li>IDE에서는 구문에러 체크해줌</li><li>파이썬은 상대적으로 문법이 간단해서 에러 발생 비율이 낮거나 다른 도구로 제거 가능</li></ul></li><li><p>예외(Exception)</p><ul><li>구문 에러는 없으나 프로그램 실행 중 더 이상 진행할 수 없는 경우</li><li>예외가 발생하면 프로그램이 종료됨</li></ul><ol><li><p><code>NameError</code> (정의되지 않은 변수 사용)</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">4</span> + boo*<span class="number">3</span></span><br></pre></td></tr></table></figure></li><li><p><code>ZeroDivisionError</code> (<code>0</code>으로 나누는 경우)</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10</span></span><br><span class="line">b = <span class="number">0</span></span><br><span class="line">c = a / b</span><br></pre></td></tr></table></figure></li><li><p><code>TypeError</code> (ex: 문자열 + 수치형 자료)</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'2'</span> + <span class="number">2</span></span><br></pre></td></tr></table></figure></li><li><p><code>IndexError</code> (참조 범위를 넘어서 인덱스 사용)</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">l = [<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line"><span class="keyword">print</span> l[<span class="number">2</span>]</span><br></pre></td></tr></table></figure></li><li><p><code>KeyError</code> (등록되지 않은 키로 사전 검색)</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">"a"</span>:<span class="number">1</span>, <span class="string">"b"</span>:<span class="number">2</span>&#125;</span><br><span class="line"><span class="keyword">print</span> d[<span class="string">'c'</span>]</span><br></pre></td></tr></table></figure></li><li><p><code>IOError</code> (존재하지 않는 파일을 열고자 할 때)</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = open(<span class="string">'aaa.txt'</span>)</span><br></pre></td></tr></table></figure></li></ol><hr></li></ul><h1 id="예외-처리-방법"><a href="#예외-처리-방법" class="headerlink" title="예외 처리 방법"></a>예외 처리 방법</h1><ol><li><p><code>try</code>,<code>except</code>,<code>else</code>,<code>finally</code>절 사용하기</p><ul><li>예외가 발생할 만한 상황을 예상하여 상황별로 전체 코드 흐름을 제어할 수 있다</li><li><p><code>try</code>,<code>except</code>,<code>else</code>,<code>finally</code>절</p><ul><li>구조<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  (예외 발생 가능한) 일반적인 수행문들</span><br><span class="line"><span class="keyword">except</span> Exception:</span><br><span class="line">  예외가 발생하였을 때 수행되는 문들</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">  예외가 발생하지 않았을 때 수행되는 문들</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">  예외 발생 유무와 관계없이 무조건 수행되는 문들</span><br></pre></td></tr></table></figure></li></ul><hr></li></ul></li></ol><ul><li><p>예외 처리를 하면 예외 발생시 프로그램이 종료되지 않는다.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">0</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="number">1.0</span>/a</span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'zero division error!!!'</span></span><br></pre></td></tr></table></figure></li><li><p><code>msg</code>변수: <code>ZeroDivisionError</code>를 정의한 사람이 발생될 때 주는 메시지<br>ex: float division by zero</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">division</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">5</span>):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">      <span class="keyword">print</span> <span class="number">10.0</span> / n</span><br><span class="line">    <span class="keyword">except</span> ZeroDivisionError, msg</span><br><span class="line">      <span class="keyword">print</span> msg</span><br><span class="line"></span><br><span class="line">division()</span><br></pre></td></tr></table></figure></li><li><p><code>try</code>절 안에서 간접적으로 호출한 함수의 내부 예외도 처리 가능</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  spam()</span><br><span class="line"><span class="keyword">except</span> NameError, msg:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Error -'</span>, msg</span><br></pre></td></tr></table></figure><p><code>,</code>대신 <code>as</code>로도 사용가능</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 위와 동일한 예제</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  spam()</span><br><span class="line"><span class="keyword">except</span> NameError <span class="keyword">as</span> msg:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Error -'</span>, msg</span><br></pre></td></tr></table></figure></li><li><p><code>except</code>뒤에 예외를 명시하지 않으면 모든 예외에 대해 처리됨</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  spam()</span><br><span class="line">  <span class="keyword">print</span> <span class="number">1.0</span>/<span class="number">0.0</span></span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Error'</span></span><br></pre></td></tr></table></figure></li><li><p>여러 예외들 각각에 대해 <code>except</code>절로 다중처리 가능</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">b = <span class="number">0.0</span></span><br><span class="line">name = <span class="string">'aaa.txt'</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="number">1.0</span> / b</span><br><span class="line">  spam()</span><br><span class="line">  f = open(name, <span class="string">'r'</span>)</span><br><span class="line">  <span class="string">'2'</span> + <span class="number">2</span></span><br><span class="line"><span class="keyword">except</span> NameError:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'NameError !!!'</span></span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'ZeroDivisionError !!!'</span></span><br><span class="line">excpet (TypeError, IOError):</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'TypeError or IOERror !!!'</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'No Exception'</span></span><br><span class="line"><span class="keyword">finally</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Exit !!!'</span></span><br></pre></td></tr></table></figure></li></ul><hr><h1 id="같은-부류의-예외-다-잡아내기"><a href="#같은-부류의-예외-다-잡아내기" class="headerlink" title="같은 부류의 예외 다 잡아내기"></a>같은 부류의 예외 다 잡아내기</h1><ul><li>예외 클래스의 상속에 의한 계층 관계를 이용하여 여러 예외들을 한꺼번에 잡을 수 있다.</li><li><p>예를 들어, <code>ArithmeticError</code>의 하위 클래스로서 <code>FloatingPointError</code>, <code>OverflowError</code>, <code>ZeroDivisionError</code>가 존재하기 때문에 이들 하위 클래스 예외가 발생하면 <code>ArithmeticError</code>로 처리할 수 있다.</p></li><li><p>예외가 임의의 <code>except</code>에서 잡히면 다른 <code>except</code>에서는 잡히지 않는다.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dosomething</span><span class="params">()</span>:</span></span><br><span class="line">  a = <span class="number">1</span>/<span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  dosomething()</span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">"ZeroDivisionError occured"</span></span><br><span class="line"><span class="keyword">except</span> ArithmeticError:</span><br><span class="line">   <span class="keyword">print</span> <span class="string">"ArithmeticError occured"</span></span><br></pre></td></tr></table></figure></li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="Exception-raise"><a href="#Exception-raise" class="headerlink" title="Exception raise"></a>Exception raise</h1><h2 id="Occuring-exception-by-raise"><a href="#Occuring-exception-by-raise" class="headerlink" title="Occuring exception by raise"></a>Occuring exception by <code>raise</code></h2><ul><li><code>raise</code>keyword can make an exception in specific situation</li><li><p><code>IndexError</code> occurs when <code>__getitem__</code>method(which implements indexing when sequance type class is made) goes out of the index range</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SquareSeq</span>:</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, n)</span>:</span></span><br><span class="line">    self.n = n</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span><span class="params">(self,k)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> k &gt;= self.n <span class="keyword">or</span> k &lt; <span class="number">0</span>:</span><br><span class="line">      <span class="keyword">raise</span> IndexError <span class="comment"># out of index range, IndexError occurs</span></span><br><span class="line">    <span class="keyword">return</span> k * k</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__len_</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> self.n</span><br><span class="line"></span><br><span class="line">s = SquareSeq(<span class="number">10</span>)</span><br><span class="line"><span class="keyword">print</span> s[<span class="number">2</span>], s[<span class="number">4</span>]</span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> s: <span class="comment"># repeating until IndexError occurs</span></span><br><span class="line">   <span class="keyword">print</span> x,</span><br><span class="line"><span class="keyword">print</span> s[<span class="number">20</span>] <span class="comment"># out of the index range</span></span><br></pre></td></tr></table></figure></li></ul><hr><h2 id="Customized-exception-class"><a href="#Customized-exception-class" class="headerlink" title="Customized exception class"></a>Customized exception class</h2><ul><li>Generally It is implemented by extending <code>Exception</code>class<br>(Other exceptions are unusual)</li><li>How to raise the exception<ul><li>Same to built-in exception. Using <code>raise [class instance]</code></li></ul></li><li>How to catch the exception from Customized exception class<ul><li>Using the class’ name like <code>except [class name]</code></li></ul></li><li><p>In the example below, <code>except Big</code> catches <code>Big</code>and <code>Small</code> exception<br>-&gt; Because <code>Small</code>is <code>Big</code>‘s sub-class’</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Big</span><span class="params">(Exception)</span>:</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Small</span><span class="params">(Big)</span>:</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dosomething1</span><span class="params">()</span>:</span></span><br><span class="line">  x = Big()</span><br><span class="line">  <span class="keyword">raise</span> x <span class="comment"># x is exception object, it can use raise</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dosomething2</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">raise</span> Small()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> f <span class="keyword">in</span> (dosomething1, dosomething2):</span><br><span class="line">  <span class="keyword">try</span>:</span><br><span class="line">    f()</span><br><span class="line">  <span class="keyword">except</span> Big:</span><br><span class="line">    <span class="keyword">print</span> <span class="string">"Exception occurs!"</span></span><br></pre></td></tr></table></figure></li></ul><hr><h2 id="Passing-exception"><a href="#Passing-exception" class="headerlink" title="Passing exception"></a>Passing exception</h2><ul><li><p>After <code>raise</code>keyword, with exception, additional message can follow</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">f</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">raise</span> Exception, <span class="string">'message!!!'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  f()</span><br><span class="line"><span class="keyword">except</span> Exception, a:</span><br><span class="line">  <span class="keyword">print</span> a</span><br></pre></td></tr></table></figure></li><li><p>When <code>except</code> keyword is used, exception message in initializer can be taken as 2nd parameter.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10</span></span><br><span class="line">b = <span class="number">0</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  <span class="keyword">if</span> b == <span class="number">0</span>:</span><br><span class="line">    <span class="keyword">raise</span> ArithmeticError(<span class="string">'you are dividing by 0'</span>)</span><br><span class="line">    a/b</span><br><span class="line"><span class="keyword">except</span> ArithmeticError, v:</span><br><span class="line">  <span class="keyword">print</span> v</span><br></pre></td></tr></table></figure></li></ul>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;Exception-Handling&quot;&gt;&lt;a href=&quot;#Exception-Handling&quot; class=&quot;headerlink&quot; title=&quot;Exception Handling&quot;&gt;&lt;/a&gt;Exception Handling&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;
+        &lt;h1 id=&quot;Exception-raise&quot;&gt;&lt;a href=&quot;#Exception-raise&quot; class=&quot;headerlink&quot; title=&quot;Exception raise&quot;&gt;&lt;/a&gt;Exception raise&lt;/h1&gt;&lt;h2 id=&quot;Occuring-exce
       
     
     </summary>
     
     
-      <category term="python" scheme="http://bongbooski.github.io/tags/python/"/>
+      <category term="python" scheme="https://bongbooski.github.io/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>python Exception Handling</title>
-    <link href="http://bongbooski.github.io/2018/04/17/post21-python-exception-handling_eng/"/>
-    <id>http://bongbooski.github.io/2018/04/17/post21-python-exception-handling_eng/</id>
+    <link href="https://bongbooski.github.io/2018/04/17/post21-python-exception-handling_eng/"/>
+    <id>https://bongbooski.github.io/2018/04/17/post21-python-exception-handling_eng/</id>
     <published>2018-04-17T00:47:23.000Z</published>
     <updated>2018-04-17T13:46:10.336Z</updated>
     
@@ -449,38 +425,38 @@
     </summary>
     
     
-      <category term="python" scheme="http://bongbooski.github.io/tags/python/"/>
+      <category term="python" scheme="https://bongbooski.github.io/tags/python/"/>
     
   </entry>
   
   <entry>
-    <title>python Package</title>
-    <link href="http://bongbooski.github.io/2018/04/15/post20-python-package_eng/"/>
-    <id>http://bongbooski.github.io/2018/04/15/post20-python-package_eng/</id>
-    <published>2018-04-15T06:48:23.000Z</published>
-    <updated>2018-04-17T13:44:32.768Z</updated>
+    <title>python 예외처리</title>
+    <link href="https://bongbooski.github.io/2018/04/17/post21-python-exception-handling/"/>
+    <id>https://bongbooski.github.io/2018/04/17/post21-python-exception-handling/</id>
+    <published>2018-04-17T00:47:23.000Z</published>
+    <updated>2018-04-17T13:45:45.593Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Package"><a href="#Package" class="headerlink" title="Package"></a>Package</h1><ul><li>Structure gathering many modules in one directory physically<ul><li>Top directory’s name is the package’s name</li><li>Sub directories under the Top directory become sub-package of the top package</li><li>Module = file, package = directory</li></ul></li></ul><hr><h2 id="Role-of-init-py"><a href="#Role-of-init-py" class="headerlink" title="Role of __init__.py"></a>Role of <code>__init__.py</code></h2><ul><li>The role recognizing the directory as a package</li><li>For sub-packes, this file is requried(if not, that will be usual folder)</li></ul><hr><h2 id="Doing-import"><a href="#Doing-import" class="headerlink" title="Doing import"></a>Doing import</h2>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Speech</span><br></pre></td></tr></table></figure><ul><li><code>Speech</code>directory should be one of the directories of <code>sys.path</code>(or <code>PYTHONPATH</code> environment variable)</li><li>Let’s say <code>Speech/Recognition/HMM.py</code> looks like this<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">train</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"Train"</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">loadModel</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"LoadModel"</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">saveModel</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"SaveModel"</span></span><br><span class="line">  <span class="keyword">pass</span></span><br></pre></td></tr></table></figure></li></ul><h3 id="How-to-use-specific-function"><a href="#How-to-use-specific-function" class="headerlink" title="How to use specific function"></a>How to use specific function</h3>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># can't use. from package's name, we need dot(.) for calling the module or function</span></span><br><span class="line"><span class="keyword">import</span> Speech</span><br><span class="line">Speech.Recognition.HMM.train()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Proper way</span></span><br><span class="line"><span class="keyword">import</span> Speech.Recognition.HMM</span><br><span class="line">Speech.Recognition.HMM.train()</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> Speech.Recognition <span class="keyword">import</span> HMM</span><br><span class="line">HMM.train()</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> Speech.Recognition.HMM <span class="keyword">import</span> train</span><br><span class="line">train()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Taking everything from the module. It can be used without the module's name</span></span><br><span class="line"><span class="keyword">from</span> Speech.Recognition.HMM <span class="keyword">import</span> *</span><br><span class="line">train()</span><br><span class="line">loadModel()</span><br><span class="line">saveModel()</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h1 id="Exception-Handling"><a href="#Exception-Handling" class="headerlink" title="Exception Handling"></a>Exception Handling</h1><ul><li><p>구문 에러(Syntax Error)</p><ul><li>문법적 에러</li><li>IDE에서는 구문에러 체크해줌</li><li>파이썬은 상대적으로 문법이 간단해서 에러 발생 비율이 낮거나 다른 도구로 제거 가능</li></ul></li><li><p>예외(Exception)</p><ul><li>구문 에러는 없으나 프로그램 실행 중 더 이상 진행할 수 없는 경우</li><li>예외가 발생하면 프로그램이 종료됨</li></ul><ol><li><p><code>NameError</code> (정의되지 않은 변수 사용)</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">4</span> + boo*<span class="number">3</span></span><br></pre></td></tr></table></figure></li><li><p><code>ZeroDivisionError</code> (<code>0</code>으로 나누는 경우)</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10</span></span><br><span class="line">b = <span class="number">0</span></span><br><span class="line">c = a / b</span><br></pre></td></tr></table></figure></li><li><p><code>TypeError</code> (ex: 문자열 + 수치형 자료)</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'2'</span> + <span class="number">2</span></span><br></pre></td></tr></table></figure></li><li><p><code>IndexError</code> (참조 범위를 넘어서 인덱스 사용)</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">l = [<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line"><span class="keyword">print</span> l[<span class="number">2</span>]</span><br></pre></td></tr></table></figure></li><li><p><code>KeyError</code> (등록되지 않은 키로 사전 검색)</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">"a"</span>:<span class="number">1</span>, <span class="string">"b"</span>:<span class="number">2</span>&#125;</span><br><span class="line"><span class="keyword">print</span> d[<span class="string">'c'</span>]</span><br></pre></td></tr></table></figure></li><li><p><code>IOError</code> (존재하지 않는 파일을 열고자 할 때)</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = open(<span class="string">'aaa.txt'</span>)</span><br></pre></td></tr></table></figure></li></ol><hr></li></ul><h1 id="예외-처리-방법"><a href="#예외-처리-방법" class="headerlink" title="예외 처리 방법"></a>예외 처리 방법</h1><ol><li><p><code>try</code>,<code>except</code>,<code>else</code>,<code>finally</code>절 사용하기</p><ul><li>예외가 발생할 만한 상황을 예상하여 상황별로 전체 코드 흐름을 제어할 수 있다</li><li><p><code>try</code>,<code>except</code>,<code>else</code>,<code>finally</code>절</p><ul><li>구조<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  (예외 발생 가능한) 일반적인 수행문들</span><br><span class="line"><span class="keyword">except</span> Exception:</span><br><span class="line">  예외가 발생하였을 때 수행되는 문들</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">  예외가 발생하지 않았을 때 수행되는 문들</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">  예외 발생 유무와 관계없이 무조건 수행되는 문들</span><br></pre></td></tr></table></figure></li></ul><hr></li></ul></li></ol><ul><li><p>예외 처리를 하면 예외 발생시 프로그램이 종료되지 않는다.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">0</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="number">1.0</span>/a</span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'zero division error!!!'</span></span><br></pre></td></tr></table></figure></li><li><p><code>msg</code>변수: <code>ZeroDivisionError</code>를 정의한 사람이 발생될 때 주는 메시지<br>ex: float division by zero</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">division</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">5</span>):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">      <span class="keyword">print</span> <span class="number">10.0</span> / n</span><br><span class="line">    <span class="keyword">except</span> ZeroDivisionError, msg</span><br><span class="line">      <span class="keyword">print</span> msg</span><br><span class="line"></span><br><span class="line">division()</span><br></pre></td></tr></table></figure></li><li><p><code>try</code>절 안에서 간접적으로 호출한 함수의 내부 예외도 처리 가능</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  spam()</span><br><span class="line"><span class="keyword">except</span> NameError, msg:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Error -'</span>, msg</span><br></pre></td></tr></table></figure><p><code>,</code>대신 <code>as</code>로도 사용가능</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 위와 동일한 예제</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  spam()</span><br><span class="line"><span class="keyword">except</span> NameError <span class="keyword">as</span> msg:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Error -'</span>, msg</span><br></pre></td></tr></table></figure></li><li><p><code>except</code>뒤에 예외를 명시하지 않으면 모든 예외에 대해 처리됨</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  spam()</span><br><span class="line">  <span class="keyword">print</span> <span class="number">1.0</span>/<span class="number">0.0</span></span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Error'</span></span><br></pre></td></tr></table></figure></li><li><p>여러 예외들 각각에 대해 <code>except</code>절로 다중처리 가능</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">b = <span class="number">0.0</span></span><br><span class="line">name = <span class="string">'aaa.txt'</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="number">1.0</span> / b</span><br><span class="line">  spam()</span><br><span class="line">  f = open(name, <span class="string">'r'</span>)</span><br><span class="line">  <span class="string">'2'</span> + <span class="number">2</span></span><br><span class="line"><span class="keyword">except</span> NameError:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'NameError !!!'</span></span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'ZeroDivisionError !!!'</span></span><br><span class="line">excpet (TypeError, IOError):</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'TypeError or IOERror !!!'</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'No Exception'</span></span><br><span class="line"><span class="keyword">finally</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Exit !!!'</span></span><br></pre></td></tr></table></figure></li></ul><hr><h1 id="같은-부류의-예외-다-잡아내기"><a href="#같은-부류의-예외-다-잡아내기" class="headerlink" title="같은 부류의 예외 다 잡아내기"></a>같은 부류의 예외 다 잡아내기</h1><ul><li>예외 클래스의 상속에 의한 계층 관계를 이용하여 여러 예외들을 한꺼번에 잡을 수 있다.</li><li><p>예를 들어, <code>ArithmeticError</code>의 하위 클래스로서 <code>FloatingPointError</code>, <code>OverflowError</code>, <code>ZeroDivisionError</code>가 존재하기 때문에 이들 하위 클래스 예외가 발생하면 <code>ArithmeticError</code>로 처리할 수 있다.</p></li><li><p>예외가 임의의 <code>except</code>에서 잡히면 다른 <code>except</code>에서는 잡히지 않는다.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dosomething</span><span class="params">()</span>:</span></span><br><span class="line">  a = <span class="number">1</span>/<span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  dosomething()</span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">"ZeroDivisionError occured"</span></span><br><span class="line"><span class="keyword">except</span> ArithmeticError:</span><br><span class="line">   <span class="keyword">print</span> <span class="string">"ArithmeticError occured"</span></span><br></pre></td></tr></table></figure></li></ul>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;Package&quot;&gt;&lt;a href=&quot;#Package&quot; class=&quot;headerlink&quot; title=&quot;Package&quot;&gt;&lt;/a&gt;Package&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;Structure gathering many modules in one dire
+        &lt;h1 id=&quot;Exception-Handling&quot;&gt;&lt;a href=&quot;#Exception-Handling&quot; class=&quot;headerlink&quot; title=&quot;Exception Handling&quot;&gt;&lt;/a&gt;Exception Handling&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;
       
     
     </summary>
     
     
-      <category term="python" scheme="http://bongbooski.github.io/tags/python/"/>
+      <category term="python" scheme="https://bongbooski.github.io/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>python 패키지</title>
-    <link href="http://bongbooski.github.io/2018/04/15/post20-python-package/"/>
-    <id>http://bongbooski.github.io/2018/04/15/post20-python-package/</id>
+    <link href="https://bongbooski.github.io/2018/04/15/post20-python-package/"/>
+    <id>https://bongbooski.github.io/2018/04/15/post20-python-package/</id>
     <published>2018-04-15T06:48:23.000Z</published>
     <updated>2018-04-17T13:44:32.128Z</updated>
     
@@ -497,7 +473,31 @@
     </summary>
     
     
-      <category term="python" scheme="http://bongbooski.github.io/tags/python/"/>
+      <category term="python" scheme="https://bongbooski.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python Package</title>
+    <link href="https://bongbooski.github.io/2018/04/15/post20-python-package_eng/"/>
+    <id>https://bongbooski.github.io/2018/04/15/post20-python-package_eng/</id>
+    <published>2018-04-15T06:48:23.000Z</published>
+    <updated>2018-04-17T13:44:32.768Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Package"><a href="#Package" class="headerlink" title="Package"></a>Package</h1><ul><li>Structure gathering many modules in one directory physically<ul><li>Top directory’s name is the package’s name</li><li>Sub directories under the Top directory become sub-package of the top package</li><li>Module = file, package = directory</li></ul></li></ul><hr><h2 id="Role-of-init-py"><a href="#Role-of-init-py" class="headerlink" title="Role of __init__.py"></a>Role of <code>__init__.py</code></h2><ul><li>The role recognizing the directory as a package</li><li>For sub-packes, this file is requried(if not, that will be usual folder)</li></ul><hr><h2 id="Doing-import"><a href="#Doing-import" class="headerlink" title="Doing import"></a>Doing import</h2>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Speech</span><br></pre></td></tr></table></figure><ul><li><code>Speech</code>directory should be one of the directories of <code>sys.path</code>(or <code>PYTHONPATH</code> environment variable)</li><li>Let’s say <code>Speech/Recognition/HMM.py</code> looks like this<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">train</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"Train"</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">loadModel</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"LoadModel"</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">saveModel</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"SaveModel"</span></span><br><span class="line">  <span class="keyword">pass</span></span><br></pre></td></tr></table></figure></li></ul><h3 id="How-to-use-specific-function"><a href="#How-to-use-specific-function" class="headerlink" title="How to use specific function"></a>How to use specific function</h3>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># can't use. from package's name, we need dot(.) for calling the module or function</span></span><br><span class="line"><span class="keyword">import</span> Speech</span><br><span class="line">Speech.Recognition.HMM.train()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Proper way</span></span><br><span class="line"><span class="keyword">import</span> Speech.Recognition.HMM</span><br><span class="line">Speech.Recognition.HMM.train()</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> Speech.Recognition <span class="keyword">import</span> HMM</span><br><span class="line">HMM.train()</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> Speech.Recognition.HMM <span class="keyword">import</span> train</span><br><span class="line">train()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Taking everything from the module. It can be used without the module's name</span></span><br><span class="line"><span class="keyword">from</span> Speech.Recognition.HMM <span class="keyword">import</span> *</span><br><span class="line">train()</span><br><span class="line">loadModel()</span><br><span class="line">saveModel()</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Package&quot;&gt;&lt;a href=&quot;#Package&quot; class=&quot;headerlink&quot; title=&quot;Package&quot;&gt;&lt;/a&gt;Package&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;Structure gathering many modules in one dire
+      
+    
+    </summary>
+    
+    
+      <category term="python" scheme="https://bongbooski.github.io/tags/python/"/>
     
   </entry>
   
