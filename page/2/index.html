@@ -1034,197 +1034,6 @@ ga('send', 'pageview');
 
 
 
-    <article id="post-post21-python-exception-handling_eng" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/04/17/post21-python-exception-handling_eng/">python Exception Handling</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/04/17/post21-python-exception-handling_eng/">
-            <time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/python/">python</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h1 id="Exception-Handling"><a href="#Exception-Handling" class="headerlink" title="Exception Handling"></a>Exception Handling</h1><ul>
-<li><p>Syntax Error</p>
-<ul>
-<li>Grammatical error</li>
-<li>IDE checks syntax error automatically</li>
-<li>Becasue python’s grammar is simpler relatively, error occur rate is smaller and it is easy to delete errors</li>
-</ul>
-</li>
-<li><p>Exception</p>
-<ul>
-<li>the cases having no syntax errors, the program can’t progress</li>
-<li>Occuring exception, the program ends</li>
-</ul>
-<ol>
-<li><p><code>NameError</code> (Usiung undefined variable)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">4</span> + boo*<span class="number">3</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>ZeroDivisionError</code> (Dividing by <code>0</code>)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10</span></span><br><span class="line">b = <span class="number">0</span></span><br><span class="line">c = a / b</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>TypeError</code> (ex: String + Number type)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'2'</span> + <span class="number">2</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>IndexError</code> (Using index over the range of index)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">l = [1,2]</span><br><span class="line">print l[2]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>KeyError</code> (Searching dictionary by unregisted key)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">"a"</span>:<span class="number">1</span>, <span class="string">"b"</span>:<span class="number">2</span>&#125;</span><br><span class="line"><span class="keyword">print</span> d[<span class="string">'c'</span>]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>IOError</code> (Opening not existing file)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = open(<span class="string">'aaa.txt'</span>)</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<hr>
-</li>
-</ul>
-<h1 id="How-to-dispose-of-exceptions"><a href="#How-to-dispose-of-exceptions" class="headerlink" title="How to dispose of exceptions"></a>How to dispose of exceptions</h1><ol>
-<li><p>Using <code>try</code>,<code>except</code>,<code>else</code>,<code>finally</code> statements</p>
-<ul>
-<li>By expecting the situations making exceptions, we can control the whole code’s flow</li>
-<li><p><code>try</code>,<code>except</code>,<code>else</code>,<code>finally</code></p>
-<ul>
-<li>structure<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  (possible to make errors) usual statements</span><br><span class="line"><span class="keyword">except</span> Exception:</span><br><span class="line">  the statements working when error occurs</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">  the statements working when error doesn<span class="string">'t occur</span></span><br><span class="line"><span class="string">finally:</span></span><br><span class="line"><span class="string">  the statements working anyway no matter error</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<hr>
-</li>
-</ul>
-</li>
-</ol>
-<ul>
-<li><p>Doing exception handling, when error occurs the program doesn’t stop</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">0</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="number">1.0</span>/a</span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'zero division error!!!'</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>msg</code>variable: the message that the person who defined <code>ZeroDivisionError</code> gives<br>ex: float division by zero</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">division</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">5</span>):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">      <span class="keyword">print</span> <span class="number">10.0</span> / n</span><br><span class="line">    <span class="keyword">except</span> ZeroDivisionError, msg</span><br><span class="line">      <span class="keyword">print</span> msg</span><br><span class="line"></span><br><span class="line">division()</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>It can handle the error from the called function in <code>try</code>statement indirectly</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  spam()</span><br><span class="line"><span class="keyword">except</span> NameError, msg:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Error -'</span>, msg</span><br></pre></td></tr></table></figure>
-<p><code>,</code> can be replaced with <code>as</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># same code with upper one</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  spam()</span><br><span class="line"><span class="keyword">except</span> NameError <span class="keyword">as</span> msg:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Error -'</span>, msg</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>After <code>except</code>, not evincing any exceptions, it takes care of all exceptions</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  spam()</span><br><span class="line">  <span class="keyword">print</span> <span class="number">1.0</span>/<span class="number">0.0</span></span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Error'</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>About many exceptions, they can be taked care by each <code>except</code>statement</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">b = <span class="number">0.0</span></span><br><span class="line">name = <span class="string">'aaa.txt'</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="number">1.0</span> / b</span><br><span class="line">  spam()</span><br><span class="line">  f = open(name, <span class="string">'r'</span>)</span><br><span class="line">  <span class="string">'2'</span> + <span class="number">2</span></span><br><span class="line"><span class="keyword">except</span> NameError:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'NameError !!!'</span></span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'ZeroDivisionError !!!'</span></span><br><span class="line">excpet (TypeError, IOError):</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'TypeError or IOERror !!!'</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'No Exception'</span></span><br><span class="line"><span class="keyword">finally</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Exit !!!'</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<hr>
-<h1 id="Catching-All-exception-in-same-kind"><a href="#Catching-All-exception-in-same-kind" class="headerlink" title="Catching All exception in same kind"></a>Catching All exception in same kind</h1><ul>
-<li>By using the hierarchy of Inheritance of exception class, It can take care of many exceptions by once</li>
-<li><p>For example, there are <code>FloatingPointError</code>, <code>OverflowError</code>, <code>ZeroDivisionError</code> as sub-class of <code>ArithmeticError</code> so, about sub-class exceptions, <code>ArithmeticError</code> can take care of them</p>
-</li>
-<li><p>When an exception is catched by specific <code>except</code>, that one is not catched in other <code>except</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dosomething</span><span class="params">()</span>:</span></span><br><span class="line">  a = <span class="number">1</span>/<span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  dosomething()</span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">"ZeroDivisionError occured"</span></span><br><span class="line"><span class="keyword">except</span> ArithmeticError:</span><br><span class="line">   <span class="keyword">print</span> <span class="string">"ArithmeticError occured"</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-    <div class="a2a_kit a2a_default_style">
-    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
-    <span class="a2a_divider"></span>
-    <a class="a2a_button_facebook"></a>
-    <a class="a2a_button_twitter"></a>
-    <a class="a2a_button_google_plus"></a>
-    <a class="a2a_button_pinterest"></a>
-    <a class="a2a_button_tumblr"></a>
-</div>
-<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
-<style>
-    .a2a_menu {
-        border-radius: 4px;
-    }
-    .a2a_menu a {
-        margin: 2px 0;
-        font-size: 14px;
-        line-height: 16px;
-        border-radius: 4px;
-        color: inherit !important;
-        font-family: 'Microsoft Yahei';
-    }
-    #a2apage_dropdown {
-        margin: 10px 0;
-    }
-    .a2a_mini_services {
-        padding: 10px;
-    }
-    a.a2a_i,
-    i.a2a_i {
-        width: 122px;
-        line-height: 16px;
-    }
-    a.a2a_i .a2a_svg,
-    a.a2a_more .a2a_svg {
-        width: 16px;
-        height: 16px;
-        line-height: 16px;
-        vertical-align: top;
-        background-size: 16px;
-    }
-    a.a2a_i {
-        border: none !important;
-    }
-    a.a2a_menu_show_more_less {
-        margin: 0;
-        padding: 10px 0;
-        line-height: 16px;
-    }
-    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
-    .a2a_mini_services{*+height:1%;}
-</style>
-
-</div>
-
-            
-    
-        <a href="http://bongbooski.github.io/2018/04/17/post21-python-exception-handling_eng/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/17/post21-python-exception-handling_eng/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <article id="post-post21-python-exception-handling" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -1416,7 +1225,7 @@ ga('send', 'pageview');
 
 
 
-    <article id="post-post20-python-package" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-post21-python-exception-handling_eng" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -1424,7 +1233,7 @@ ga('send', 'pageview');
                 
     
         <h1 itemprop="name">
-            <a class="article-title" href="/2018/04/15/post20-python-package/">python 패키지</a>
+            <a class="article-title" href="/2018/04/17/post21-python-exception-handling_eng/">python Exception Handling</a>
         </h1>
     
 
@@ -1433,8 +1242,8 @@ ga('send', 'pageview');
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2018/04/15/post20-python-package/">
-            <time datetime="2018-04-15T06:48:23.000Z" itemprop="datePublished">2018-04-15</time>
+        <a href="/2018/04/17/post21-python-exception-handling_eng/">
+            <time datetime="2018-04-17T00:47:23.000Z" itemprop="datePublished">2018-04-17</time>
         </a>
     </div>
 
@@ -1454,28 +1263,84 @@ ga('send', 'pageview');
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h1 id="패키지-Package"><a href="#패키지-Package" class="headerlink" title="패키지(Package)"></a>패키지(Package)</h1><ul>
-<li>여러 모듈들을 한데 묶어서 정리해 놓은 구조</li>
-<li>물리적으로 여러 모듈 파일을 모아 놓은 디렉토리에 해당<ul>
-<li>최상위 디렉토리 이름이 패키지 이름이 된다.</li>
-<li>최상위 디렉토리 하위에 여러 서브 디렉토리는 해당 최상위패키지의 하위 패키지가 된다.</li>
-<li>모듈=파일, 패키지=디렉토리</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h2 id="init-py의-역할"><a href="#init-py의-역할" class="headerlink" title="__init__.py의 역할"></a><code>__init__.py</code>의 역할</h2><ul>
-<li>디렉토리를 패키지로 인식시키는 역할</li>
-<li>서브 패키지에도 패키지와 마찬가지로 필요(없으면 단순 폴더역할)</li>
-</ul>
-<hr>
-<h2 id="import하기"><a href="#import하기" class="headerlink" title="import하기"></a>import하기</h2>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Speech</span><br></pre></td></tr></table></figure>
+            <h1 id="Exception-Handling"><a href="#Exception-Handling" class="headerlink" title="Exception Handling"></a>Exception Handling</h1><ul>
+<li><p>Syntax Error</p>
 <ul>
-<li><code>Speech</code>디렉토리가 <code>sys.path</code>(또는 <code>PYTHONPATH</code>환경변수)에 열거된 폴더 중 하나에 위치해야함</li>
-<li><code>Speech/Recognition/HMM.py</code>코드 내용<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">train</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"Train"</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">loadModel</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"LoadModel"</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">saveModel</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"SaveModel"</span></span><br><span class="line">  <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<li>Grammatical error</li>
+<li>IDE checks syntax error automatically</li>
+<li>Becasue python’s grammar is simpler relatively, error occur rate is smaller and it is easy to delete errors</li>
+</ul>
+</li>
+<li><p>Exception</p>
+<ul>
+<li>the cases having no syntax errors, the program can’t progress</li>
+<li>Occuring exception, the program ends</li>
+</ul>
+<ol>
+<li><p><code>NameError</code> (Usiung undefined variable)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">4</span> + boo*<span class="number">3</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>ZeroDivisionError</code> (Dividing by <code>0</code>)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10</span></span><br><span class="line">b = <span class="number">0</span></span><br><span class="line">c = a / b</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>TypeError</code> (ex: String + Number type)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'2'</span> + <span class="number">2</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>IndexError</code> (Using index over the range of index)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">l = [1,2]</span><br><span class="line">print l[2]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>KeyError</code> (Searching dictionary by unregisted key)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">"a"</span>:<span class="number">1</span>, <span class="string">"b"</span>:<span class="number">2</span>&#125;</span><br><span class="line"><span class="keyword">print</span> d[<span class="string">'c'</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>IOError</code> (Opening not existing file)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = open(<span class="string">'aaa.txt'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
 </li>
 </ul>
-<h3 id="특정-함수-사용하는-방법"><a href="#특정-함수-사용하는-방법" class="headerlink" title="특정 함수 사용하는 방법"></a>특정 함수 사용하는 방법</h3>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 사용불가. 패키지명에서 .으로 특정 모듈, 함수 가져와야함</span></span><br><span class="line"><span class="keyword">import</span> Speech</span><br><span class="line">Speech.Recognition.HMM.train()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 적절한 방법</span></span><br><span class="line"><span class="keyword">import</span> Speech.Recognition.HMM</span><br><span class="line">Speech.Recognition.HMM.train()</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> Speech.Recognition <span class="keyword">import</span> HMM</span><br><span class="line">HMM.train()</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> Speech.Recognition.HMM <span class="keyword">import</span> train</span><br><span class="line">train()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 모듈 내의 변수 전부 다 가져옴, 모듈이름 없이 사용가능</span></span><br><span class="line"><span class="keyword">from</span> Speech.Recognition.HMM <span class="keyword">import</span> *</span><br><span class="line">train()</span><br><span class="line">loadModel()</span><br><span class="line">saveModel()</span><br></pre></td></tr></table></figure>
+<h1 id="How-to-dispose-of-exceptions"><a href="#How-to-dispose-of-exceptions" class="headerlink" title="How to dispose of exceptions"></a>How to dispose of exceptions</h1><ol>
+<li><p>Using <code>try</code>,<code>except</code>,<code>else</code>,<code>finally</code> statements</p>
+<ul>
+<li>By expecting the situations making exceptions, we can control the whole code’s flow</li>
+<li><p><code>try</code>,<code>except</code>,<code>else</code>,<code>finally</code></p>
+<ul>
+<li>structure<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  (possible to make errors) usual statements</span><br><span class="line"><span class="keyword">except</span> Exception:</span><br><span class="line">  the statements working when error occurs</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">  the statements working when error doesn<span class="string">'t occur</span></span><br><span class="line"><span class="string">finally:</span></span><br><span class="line"><span class="string">  the statements working anyway no matter error</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li><p>Doing exception handling, when error occurs the program doesn’t stop</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">0</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="number">1.0</span>/a</span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'zero division error!!!'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>msg</code>variable: the message that the person who defined <code>ZeroDivisionError</code> gives<br>ex: float division by zero</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">division</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">for</span> n <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">5</span>):</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">      <span class="keyword">print</span> <span class="number">10.0</span> / n</span><br><span class="line">    <span class="keyword">except</span> ZeroDivisionError, msg</span><br><span class="line">      <span class="keyword">print</span> msg</span><br><span class="line"></span><br><span class="line">division()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>It can handle the error from the called function in <code>try</code>statement indirectly</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  spam()</span><br><span class="line"><span class="keyword">except</span> NameError, msg:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Error -'</span>, msg</span><br></pre></td></tr></table></figure>
+<p><code>,</code> can be replaced with <code>as</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># same code with upper one</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  spam()</span><br><span class="line"><span class="keyword">except</span> NameError <span class="keyword">as</span> msg:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Error -'</span>, msg</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>After <code>except</code>, not evincing any exceptions, it takes care of all exceptions</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  spam()</span><br><span class="line">  <span class="keyword">print</span> <span class="number">1.0</span>/<span class="number">0.0</span></span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Error'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>About many exceptions, they can be taked care by each <code>except</code>statement</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">b = <span class="number">0.0</span></span><br><span class="line">name = <span class="string">'aaa.txt'</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="number">1.0</span> / b</span><br><span class="line">  spam()</span><br><span class="line">  f = open(name, <span class="string">'r'</span>)</span><br><span class="line">  <span class="string">'2'</span> + <span class="number">2</span></span><br><span class="line"><span class="keyword">except</span> NameError:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'NameError !!!'</span></span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'ZeroDivisionError !!!'</span></span><br><span class="line">excpet (TypeError, IOError):</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'TypeError or IOERror !!!'</span></span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">'No Exception'</span></span><br><span class="line"><span class="keyword">finally</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">'Exit !!!'</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h1 id="Catching-All-exception-in-same-kind"><a href="#Catching-All-exception-in-same-kind" class="headerlink" title="Catching All exception in same kind"></a>Catching All exception in same kind</h1><ul>
+<li>By using the hierarchy of Inheritance of exception class, It can take care of many exceptions by once</li>
+<li><p>For example, there are <code>FloatingPointError</code>, <code>OverflowError</code>, <code>ZeroDivisionError</code> as sub-class of <code>ArithmeticError</code> so, about sub-class exceptions, <code>ArithmeticError</code> can take care of them</p>
+</li>
+<li><p>When an exception is catched by specific <code>except</code>, that one is not catched in other <code>except</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">dosomething</span><span class="params">()</span>:</span></span><br><span class="line">  a = <span class="number">1</span>/<span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">  dosomething()</span><br><span class="line"><span class="keyword">except</span> ZeroDivisionError:</span><br><span class="line">  <span class="keyword">print</span> <span class="string">"ZeroDivisionError occured"</span></span><br><span class="line"><span class="keyword">except</span> ArithmeticError:</span><br><span class="line">   <span class="keyword">print</span> <span class="string">"ArithmeticError occured"</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 
         
         </div>
@@ -1541,7 +1406,7 @@ ga('send', 'pageview');
 
             
     
-        <a href="http://bongbooski.github.io/2018/04/15/post20-python-package/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/15/post20-python-package/">Comments</a>
+        <a href="http://bongbooski.github.io/2018/04/17/post21-python-exception-handling_eng/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/17/post21-python-exception-handling_eng/">Comments</a>
     
 
         </footer>
@@ -1676,6 +1541,141 @@ ga('send', 'pageview');
             
     
         <a href="http://bongbooski.github.io/2018/04/15/post20-python-package_eng/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/15/post20-python-package_eng/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-post20-python-package" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/04/15/post20-python-package/">python 패키지</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/04/15/post20-python-package/">
+            <time datetime="2018-04-15T06:48:23.000Z" itemprop="datePublished">2018-04-15</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/python/">python</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="패키지-Package"><a href="#패키지-Package" class="headerlink" title="패키지(Package)"></a>패키지(Package)</h1><ul>
+<li>여러 모듈들을 한데 묶어서 정리해 놓은 구조</li>
+<li>물리적으로 여러 모듈 파일을 모아 놓은 디렉토리에 해당<ul>
+<li>최상위 디렉토리 이름이 패키지 이름이 된다.</li>
+<li>최상위 디렉토리 하위에 여러 서브 디렉토리는 해당 최상위패키지의 하위 패키지가 된다.</li>
+<li>모듈=파일, 패키지=디렉토리</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="init-py의-역할"><a href="#init-py의-역할" class="headerlink" title="__init__.py의 역할"></a><code>__init__.py</code>의 역할</h2><ul>
+<li>디렉토리를 패키지로 인식시키는 역할</li>
+<li>서브 패키지에도 패키지와 마찬가지로 필요(없으면 단순 폴더역할)</li>
+</ul>
+<hr>
+<h2 id="import하기"><a href="#import하기" class="headerlink" title="import하기"></a>import하기</h2>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Speech</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>Speech</code>디렉토리가 <code>sys.path</code>(또는 <code>PYTHONPATH</code>환경변수)에 열거된 폴더 중 하나에 위치해야함</li>
+<li><code>Speech/Recognition/HMM.py</code>코드 내용<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">train</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"Train"</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">loadModel</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"LoadModel"</span></span><br><span class="line">  <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">saveModel</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="keyword">print</span> <span class="string">"SaveModel"</span></span><br><span class="line">  <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="특정-함수-사용하는-방법"><a href="#특정-함수-사용하는-방법" class="headerlink" title="특정 함수 사용하는 방법"></a>특정 함수 사용하는 방법</h3>  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 사용불가. 패키지명에서 .으로 특정 모듈, 함수 가져와야함</span></span><br><span class="line"><span class="keyword">import</span> Speech</span><br><span class="line">Speech.Recognition.HMM.train()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 적절한 방법</span></span><br><span class="line"><span class="keyword">import</span> Speech.Recognition.HMM</span><br><span class="line">Speech.Recognition.HMM.train()</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> Speech.Recognition <span class="keyword">import</span> HMM</span><br><span class="line">HMM.train()</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> Speech.Recognition.HMM <span class="keyword">import</span> train</span><br><span class="line">train()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 모듈 내의 변수 전부 다 가져옴, 모듈이름 없이 사용가능</span></span><br><span class="line"><span class="keyword">from</span> Speech.Recognition.HMM <span class="keyword">import</span> *</span><br><span class="line">train()</span><br><span class="line">loadModel()</span><br><span class="line">saveModel()</span><br></pre></td></tr></table></figure>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://bongbooski.github.io/2018/04/15/post20-python-package/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://bongbooski.github.io/2018/04/15/post20-python-package/">Comments</a>
     
 
         </footer>
